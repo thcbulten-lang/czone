@@ -1,0 +1,1005 @@
+<title>Carnet de Cave</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: phone-first app shell. Sticky header, scrolling main, fixed bottom tabs, full-screen sheets for detail/forms. */
+:root{
+  --bg:#F3F1F4; --surface:#FFFFFF; --surface-2:#EAE6EC; --fg:#1D1821; --muted:#6E6677; --line:#DDD7E0;
+  --accent:#7A1E3C; --accent-fg:#FFFFFF; --accent-soft:#F3E4EA; --gold:#9E7718; --ok:#2F7A4D; --warn:#B4651C; --danger:#A32A2A;
+  --w-rood:#8B2140; --w-wit:#D9C56A; --w-rose:#E79AA6; --w-mousserend:#CFC48F; --w-oranje:#D98B3C; --w-zoet:#C9A24A; --w-overig:#8E8797;
+  --font-display:'Fraunces',Georgia,'Times New Roman',serif; --font-ui:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --radius:14px; --nav-h:62px; --shadow:0 1px 2px rgba(29,24,33,.06),0 6px 20px rgba(29,24,33,.06);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#141019; --surface:#1E1925; --surface-2:#2A2333; --fg:#F0EAF2; --muted:#A399AC; --line:#332B3D;
+  --accent:#D65079; --accent-fg:#1A0810; --accent-soft:#3A1E2B; --gold:#DDB04E; --ok:#5DBB82; --warn:#E0924A; --danger:#E26B6B;
+  --w-wit:#E5D58A; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35); color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#141019; --surface:#1E1925; --surface-2:#2A2333; --fg:#F0EAF2; --muted:#A399AC; --line:#332B3D;
+  --accent:#D65079; --accent-fg:#1A0810; --accent-soft:#3A1E2B; --gold:#DDB04E; --ok:#5DBB82; --warn:#E0924A; --danger:#E26B6B;
+  --w-wit:#E5D58A; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35); color-scheme:dark }
+
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-ui);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+*{box-sizing:border-box}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{margin:0;text-wrap:balance;font-weight:600}
+p{margin:0}
+.display{font-family:var(--font-display);font-weight:600;letter-spacing:-.01em}
+.num{font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.eyebrow{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+/* header + tabs */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding-block:12px 10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-bottom:1px solid var(--line)}
+.brand{font-family:var(--font-display);font-size:21px;font-weight:600;letter-spacing:-.01em}
+.brand em{font-style:italic;font-weight:400;color:var(--accent)}
+.status{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted);display:inline-block}
+.dot.on{background:var(--ok)} .dot.off{background:var(--warn)}
+main{padding-block:16px calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 20px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));max-width:720px;margin:0 auto;width:100%}
+.view{display:flex;flex-direction:column;gap:18px}
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:9;display:grid;grid-template-columns:repeat(4,1fr);background:var(--surface);border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom,0px);padding-left:max(0px,env(safe-area-inset-left,0px));padding-right:max(0px,env(safe-area-inset-right,0px));height:calc(var(--nav-h) + env(safe-area-inset-bottom,0px))}
+.tabs button{background:none;border:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--muted);font-size:11.5px;font-weight:600;letter-spacing:.02em;padding:6px 0}
+.tabs button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tabs button[aria-current="page"]{color:var(--accent)}
+
+/* cards & lists */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow)}
+.card.flat{box-shadow:none}
+.section-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px}
+.section-h h2{font-size:15px;font-weight:700}
+.rows{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden}
+.row{display:grid;grid-template-columns:14px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 14px;border-top:1px solid var(--line);background:none;border-left:0;border-right:0;border-bottom:0;text-align:left;width:100%;min-width:0}
+.row:first-child{border-top:0}
+.row .t{font-family:var(--font-display);font-size:16.5px;font-weight:600;line-height:1.25;overflow-wrap:anywhere}
+.row .s{font-size:13px;color:var(--muted);margin-top:2px;overflow-wrap:anywhere}
+.row .r{display:flex;flex-direction:column;align-items:flex-end;gap:3px;min-width:0}
+.sw{width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.15);flex:none}
+.sw.rood{background:var(--w-rood)} .sw.wit{background:var(--w-wit)} .sw.rosé{background:var(--w-rose)} .sw.mousserend{background:var(--w-mousserend);box-shadow:inset 0 0 0 2px var(--surface),inset 0 0 0 3px var(--w-mousserend)} .sw.oranje{background:var(--w-oranje)} .sw.zoet{background:var(--w-zoet)} .sw.overig{background:var(--w-overig)}
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--surface-2);color:var(--fg);white-space:nowrap}
+.badge.score{background:var(--accent-soft);color:var(--accent)}
+.badge.ok{background:color-mix(in srgb,var(--ok) 15%,transparent);color:var(--ok)}
+.badge.gold{background:color-mix(in srgb,var(--gold) 18%,transparent);color:var(--gold)}
+.badge.warn{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
+.price{font-variant-numeric:tabular-nums;font-weight:600}
+.empty{padding:28px 18px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:var(--radius)}
+.empty strong{color:var(--fg);display:block;font-family:var(--font-display);font-size:18px;font-weight:600;margin-bottom:6px}
+
+/* buttons & inputs */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:10px 14px;font-weight:600;min-height:44px}
+.btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.btn.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.btn.ghost{background:none;border-color:transparent}
+.btn.danger{color:var(--danger)}
+.btn:disabled{opacity:.5;cursor:default}
+.btn.big{padding:16px;font-size:16px;border-radius:16px;flex-direction:column;gap:6px;min-height:92px}
+.btn.big svg{width:28px;height:28px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:5px;min-width:0}
+.field label{font-size:12.5px;font-weight:600;color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 12px;min-height:44px}
+.field textarea{min-height:96px;resize:vertical}
+.field .hint{font-size:12px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:2fr 1fr;gap:12px}
+@media (max-width:360px){.grid2,.grid3{grid-template-columns:1fr}}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 12px;font-weight:600;font-size:13.5px;display:inline-flex;align-items:center;gap:6px;min-height:36px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.rating{display:grid;grid-template-columns:repeat(10,1fr);gap:5px}
+.rating button{border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:0;height:40px;font-weight:700;font-variant-numeric:tabular-nums}
+.rating button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#1D1821}
+.rating button.lead{background:color-mix(in srgb,var(--gold) 30%,var(--surface));border-color:transparent}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* sheets */
+.sheet{position:fixed;inset:0;z-index:20;background:var(--bg);overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;padding-top:env(safe-area-inset-top,0px)}
+.sheet-h{position:sticky;top:0;z-index:2;background:var(--bg);display:flex;align-items:center;gap:8px;padding-block:10px;padding-left:max(8px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px));border-bottom:1px solid var(--line)}
+.sheet-h h2{font-size:16px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sheet-b{padding-block:16px calc(24px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:16px;max-width:720px;margin:0 auto;width:100%}
+.iconbtn{background:none;border:0;width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--fg)}
+.iconbtn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.photo{width:100%;max-height:300px;object-fit:cover;border-radius:var(--radius);background:var(--surface-2);display:block}
+.photo-ph{width:100%;aspect-ratio:3/2;max-width:100%;border-radius:var(--radius);background:var(--surface-2);border:1px dashed var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
+.thumbs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.thumbs img{height:84px;width:auto;border-radius:10px;border:1px solid var(--line);flex:none}
+.title-xl{font-family:var(--font-display);font-size:26px;font-weight:600;line-height:1.15;letter-spacing:-.015em;overflow-wrap:anywhere}
+.title-xl .prod{display:block;font-size:15px;font-family:var(--font-ui);font-weight:600;color:var(--muted);letter-spacing:0;margin-bottom:4px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 0;color:var(--muted);font-size:13.5px}
+.meta>*+*::before{content:"·";margin:0 7px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px}
+.kv dt{color:var(--muted)} .kv dd{margin:0;overflow-wrap:anywhere}
+.ai{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--muted);padding:10px 12px;border-radius:10px;background:var(--surface-2)}
+.spin{width:16px;height:16px;border-radius:50%;border:2px solid var(--line);border-top-color:var(--accent);animation:spin .8s linear infinite;flex:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.spin{animation-duration:2s}}
+.prose{font-size:15px;line-height:1.55}
+.prose h3{font-family:var(--font-display);font-size:17px;margin:14px 0 4px;color:var(--accent)}
+.prose h3:first-child{margin-top:0}
+.prose p{margin:0 0 8px} .prose ul{margin:0 0 8px;padding-left:20px} .prose li{margin:2px 0}
+.prose strong{font-weight:700}
+.notes{white-space:pre-wrap;overflow-wrap:anywhere}
+.items{display:flex;flex-direction:column;gap:2px}
+.items .sec{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:14px 0 4px}
+.item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;padding:9px 0;border-top:1px solid var(--line);align-items:start}
+.item .n{font-weight:600;overflow-wrap:anywhere} .item .d{font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+.item .p{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.item .b{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
+.item.hit{background:color-mix(in srgb,var(--accent-soft) 60%,transparent);margin:0 -8px;padding-left:8px;padding-right:8px;border-radius:8px}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media (min-width:520px){.tiles{grid-template-columns:repeat(4,1fr)}}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px}
+.tile .v{font-family:var(--font-display);font-size:26px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.1}
+.tile .l{font-size:12px;color:var(--muted);margin-top:2px}
+.bars{display:flex;flex-direction:column;gap:7px}
+.bar{display:grid;grid-template-columns:110px 1fr 36px;gap:10px;align-items:center;font-size:13.5px}
+.bar .tr{height:10px;background:var(--surface-2);border-radius:5px;overflow:hidden}
+.bar .fl{height:100%;background:var(--accent);border-radius:5px}
+.bar .c{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+#toast{position:fixed;left:50%;bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 14px);transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:999px;font-size:14px;font-weight:600;z-index:50;max-width:90vw;box-shadow:var(--shadow);transition:opacity .25s}
+#toast[hidden]{display:none}
+.banner{padding:10px 14px;border-radius:12px;background:color-mix(in srgb,var(--warn) 14%,var(--surface));color:var(--fg);font-size:13.5px;border:1px solid color-mix(in srgb,var(--warn) 40%,transparent)}
+.inline-form{display:flex;gap:8px;align-items:flex-end}
+.inline-form .field{flex:1}
+.confirm{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+</style>
+<header class="top">
+  <div class="brand">Carnet <em>de Cave</em></div>
+  <div class="status"><span id="syncDot" class="dot"></span><span id="syncText">verbinden…</span></div>
+</header>
+
+<main id="main">
+  <!-- VANAVOND -->
+  <section id="view-vanavond" class="view">
+    <div id="dbBanner" class="banner" hidden>Opslag niet beschikbaar. Open deze pagina ingelogd op claude.ai om wijnen te bewaren.</div>
+    <div class="card">
+      <div class="eyebrow">Waar zit je?</div>
+      <div class="inline-form" style="margin-top:8px">
+        <div class="field"><label for="placeName" class="sr-only">Restaurant of plek</label><input id="placeName" list="placesDl" placeholder="Restaurant of plek" autocomplete="off"></div>
+        <div class="field" style="max-width:38%"><label for="placeCity" class="sr-only">Stad</label><input id="placeCity" placeholder="Stad" autocomplete="off"></div>
+      </div>
+      <datalist id="placesDl"></datalist>
+      <p class="hint small muted" style="margin-top:6px">Alles wat je nu logt, hangt aan deze plek. Vul in zodra je zit.</p>
+    </div>
+    <div class="actions">
+      <button class="btn big primary" id="btnPhotoList" type="button">
+        <svg viewBox="0 0 24 24"><path d="M4 7h3l2-3h6l2 3h3v12H4z"/><circle cx="12" cy="13" r="3.5"/></svg>
+        Wijnkaart fotograferen
+      </button>
+      <button class="btn big" id="btnPhotoWine" type="button">
+        <svg viewBox="0 0 24 24"><path d="M10 2h4v4l1.5 3c.3.6.5 1.3.5 2v9a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-9c0-.7.2-1.4.5-2L10 6z"/><path d="M8 13h8"/></svg>
+        Fles loggen
+      </button>
+    </div>
+    <div>
+      <div class="section-h"><h2 id="tonightTitle">Vanavond</h2><button class="btn ghost small" id="btnManualWine" type="button">+ Zonder foto</button></div>
+      <div id="tonightList"></div>
+    </div>
+    <div>
+      <div class="section-h"><h2>Laatst gedronken</h2><button class="btn ghost small" id="btnAllWines" type="button">Alles</button></div>
+      <div id="recentList"></div>
+    </div>
+  </section>
+
+  <!-- WIJNEN -->
+  <section id="view-wijnen" class="view" hidden>
+    <div class="field"><label for="wineSearch" class="sr-only">Zoek</label><input id="wineSearch" type="search" placeholder="Zoek op producent, wijn, appellation, plek…"></div>
+    <div class="seg" id="wineFilter">
+      <button type="button" data-f="alle" aria-pressed="true">Alle</button>
+      <button type="button" data-f="rood" aria-pressed="false"><span class="sw rood"></span>Rood</button>
+      <button type="button" data-f="wit" aria-pressed="false"><span class="sw wit"></span>Wit</button>
+      <button type="button" data-f="mousserend" aria-pressed="false"><span class="sw mousserend"></span>Bubbels</button>
+      <button type="button" data-f="top" aria-pressed="false">8+</button>
+    </div>
+    <div id="winesList"></div>
+  </section>
+
+  <!-- KAARTEN -->
+  <section id="view-kaarten" class="view" hidden>
+    <p class="muted small">Elke gefotografeerde wijnkaart, met je cijfer en het advies van die avond.</p>
+    <div id="listsList"></div>
+  </section>
+
+  <!-- INZICHTEN -->
+  <section id="view-inzichten" class="view" hidden>
+    <div class="tiles" id="tiles"></div>
+    <div class="card"><div class="section-h"><h2>Per kleur</h2></div><div class="bars" id="barsColor"></div></div>
+    <div class="card"><div class="section-h"><h2>Streken</h2><span class="small muted">gem. cijfer</span></div><div class="bars" id="barsRegion"></div></div>
+    <div><div class="section-h"><h2>Hoogst gewaardeerd</h2></div><div id="topWines"></div></div>
+    <div><div class="section-h"><h2>Komt terug op kaarten</h2></div><div id="recurring"></div></div>
+    <div class="card flat">
+      <div class="section-h"><h2>Jouw data</h2><span class="small muted" id="usage"></span></div>
+      <p class="small muted" style="margin-bottom:10px">Alles staat in je eigen database bij dit artifact. Exporteer wanneer je wilt als JSON (wijnen, kaarten, notities, fiches).</p>
+      <button class="btn" id="btnExport" type="button">Exporteer JSON</button>
+    </div>
+  </section>
+</main>
+
+<nav class="tabs" aria-label="Hoofdmenu">
+  <button type="button" data-view="vanavond" aria-current="page"><svg viewBox="0 0 24 24"><path d="M12 3l9 8h-3v9h-5v-6h-2v6H6v-9H3z"/></svg>Vanavond</button>
+  <button type="button" data-view="wijnen"><svg viewBox="0 0 24 24"><path d="M8 3h8l-1 7a3 3 0 0 1-6 0z"/><path d="M12 13v7M8 20h8"/></svg>Wijnen</button>
+  <button type="button" data-view="kaarten"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg>Kaarten</button>
+  <button type="button" data-view="inzichten"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>Inzichten</button>
+</nav>
+
+<input type="file" id="fileWine" accept="image/*" capture="environment" hidden>
+<input type="file" id="fileListCam" accept="image/*" capture="environment" hidden>
+<input type="file" id="fileListGal" accept="image/*" multiple hidden>
+
+<!-- SHEET: wijn formulier -->
+<div id="sheetWine" class="sheet" hidden>
+  <div class="sheet-h"><button class="iconbtn" type="button" data-close><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button><h2 id="wineFormTitle">Fles loggen</h2><button class="btn primary" id="btnSaveWine" type="button">Bewaren</button></div>
+  <div class="sheet-b">
+    <div id="wineFormPhoto"></div>
+    <div id="wineAi" class="ai" hidden><span class="spin"></span><span id="wineAiText">Etiket lezen…</span></div>
+    <div class="grid3">
+      <div class="field"><label for="fProducer">Producent / domein</label><input id="fProducer" autocomplete="off"></div>
+      <div class="field"><label for="fVintage">Jaargang</label><input id="fVintage" inputmode="numeric" placeholder="2019"></div>
+    </div>
+    <div class="field"><label for="fName">Wijn / cuvée</label><input id="fName" autocomplete="off"></div>
+    <div class="grid2">
+      <div class="field"><label for="fAppellation">Appellation</label><input id="fAppellation" autocomplete="off"></div>
+      <div class="field"><label for="fRegion">Streek</label><input id="fRegion" autocomplete="off"></div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label for="fCountry">Land</label><input id="fCountry" autocomplete="off"></div>
+      <div class="field"><label for="fGrapes">Druiven</label><input id="fGrapes" placeholder="Pinot Noir, …" autocomplete="off"></div>
+    </div>
+    <div class="field"><span class="eyebrow" style="margin-bottom:4px">Kleur</span>
+      <div class="seg" id="fColor" role="radiogroup" aria-label="Kleur">
+        <button type="button" data-v="rood" aria-pressed="false"><span class="sw rood"></span>Rood</button>
+        <button type="button" data-v="wit" aria-pressed="false"><span class="sw wit"></span>Wit</button>
+        <button type="button" data-v="rosé" aria-pressed="false"><span class="sw rosé"></span>Rosé</button>
+        <button type="button" data-v="mousserend" aria-pressed="false"><span class="sw mousserend"></span>Bubbels</button>
+        <button type="button" data-v="oranje" aria-pressed="false"><span class="sw oranje"></span>Oranje</button>
+        <button type="button" data-v="zoet" aria-pressed="false"><span class="sw zoet"></span>Zoet</button>
+      </div>
+    </div>
+    <div class="field"><span class="eyebrow" style="margin-bottom:4px">Cijfer <span id="fRatingLabel" class="muted" style="text-transform:none;letter-spacing:0"></span></span>
+      <div class="rating" id="fRating" role="radiogroup" aria-label="Cijfer 1 tot 10"></div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label for="fPrice">Prijs (€)</label><input id="fPrice" inputmode="decimal" placeholder="65"></div>
+      <div class="field"><label for="fContext">Waar</label><select id="fContext"><option value="restaurant">Restaurant</option><option value="thuis">Thuis</option><option value="winkel">Winkel / proeverij</option><option value="anders">Anders</option></select></div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label for="fPlace">Plek</label><input id="fPlace" list="placesDl" autocomplete="off"></div>
+      <div class="field"><label for="fCity">Stad</label><input id="fCity" autocomplete="off"></div>
+    </div>
+    <div class="field"><label for="fNotes">Notities</label><textarea id="fNotes" placeholder="Wat vind je ervan? Neus, mond, bij welk gerecht, met wie…"></textarea>
+      <span class="hint">Inspreken: tik in dit veld op de microfoon van je toetsenbord (Gboard). Zo wordt spraak direct tekst.</span></div>
+    <div class="small muted" id="fGeo"></div>
+    <button class="btn danger" id="btnDeleteWine" type="button" hidden>Verwijder deze wijn</button>
+  </div>
+</div>
+
+<!-- SHEET: wijn detail -->
+<div id="sheetWineDetail" class="sheet" hidden>
+  <div class="sheet-h"><button class="iconbtn" type="button" data-close><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button><h2>Wijn</h2><button class="btn" id="btnEditWine" type="button">Bewerk</button></div>
+  <div class="sheet-b" id="wineDetailBody"></div>
+</div>
+
+<!-- SHEET: nieuwe kaart -->
+<div id="sheetListNew" class="sheet" hidden>
+  <div class="sheet-h"><button class="iconbtn" type="button" data-close><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button><h2>Wijnkaart</h2></div>
+  <div class="sheet-b">
+    <p class="muted small">Fotografeer elke pagina van de kaart. Scherp, recht van boven, zonder flits-reflectie. Daarna leest de app alle wijnen uit.</p>
+    <div class="thumbs" id="listNewThumbs"></div>
+    <div class="actions">
+      <button class="btn" id="btnListAddPage" type="button">+ Pagina fotograferen</button>
+      <button class="btn" id="btnListGallery" type="button">Uit galerij</button>
+    </div>
+    <div class="grid2">
+      <div class="field"><label for="lPlace">Restaurant</label><input id="lPlace" list="placesDl" autocomplete="off"></div>
+      <div class="field"><label for="lCity">Stad</label><input id="lCity" autocomplete="off"></div>
+    </div>
+    <div id="listAi" class="ai" hidden><span class="spin"></span><span id="listAiText">Kaart lezen…</span></div>
+    <button class="btn primary" id="btnListRead" type="button" disabled>Kaart lezen</button>
+  </div>
+</div>
+
+<!-- SHEET: kaart detail -->
+<div id="sheetListDetail" class="sheet" hidden>
+  <div class="sheet-h"><button class="iconbtn" type="button" data-close><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button><h2 id="listDetailTitle">Kaart</h2><button class="btn ghost" id="btnListAddPage2" type="button">+ Pagina</button></div>
+  <div class="sheet-b" id="listDetailBody"></div>
+</div>
+
+<div id="toast" hidden></div>
+<script>
+(function(){
+'use strict';
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+const COLORS = ['rood','wit','rosé','mousserend','oranje','zoet'];
+const colorClass = c => COLORS.includes(c) ? c : 'overig';
+const fmtPrice = p => (p == null || p === '' || isNaN(p)) ? '' : '€ ' + Number(p).toLocaleString('nl-NL', {maximumFractionDigits: 0});
+const fmtDate = iso => { if (!iso) return ''; const d = new Date(iso); return d.toLocaleDateString('nl-NL', {day:'numeric', month:'short', year: d.getFullYear() === new Date().getFullYear() ? undefined : 'numeric'}); };
+const todayKey = (d = new Date()) => d.toISOString().slice(0, 10);
+const clean = o => JSON.parse(JSON.stringify(o, (k, v) => v === undefined ? null : v));
+const numOrNull = v => { if (v == null || v === '') return null; const n = Number(String(v).replace(',', '.').replace(/[^\d.\-]/g, '')); return isNaN(n) ? null : n; };
+
+let toastT;
+function toast(msg, ms = 2600) { const t = $('#toast'); t.textContent = msg; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { t.hidden = true; }, ms); }
+
+// --- normalisatie voor matching (producent + wijn) ---
+const STOP = new Set(['domaine','dom','chateau','château','maison','clos','cuvee','cuvée','les','le','la','des','de','du','et','the','wine','wines','vin','vins','vignoble','vignobles','famille','cave','caves','cru','grand','premier','1er','aoc','aop','appellation','controlee','contrôlée','protegee','protégée','mis','en','bouteille','au','a','à','d']);
+function norm(s) {
+  return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+}
+function tokens(s) { return norm(s).split(' ').filter(t => t && !STOP.has(t) && !/^\d{4}$/.test(t)); }
+function wineKey(w) { return tokens(w.producer).join(' ') + '|' + tokens(w.name).join(' '); }
+// similarity 0..1 tussen twee wijnen (producent + naam + appellation), jaargang-onafhankelijk
+function wineSim(a, b) {
+  const ta = new Set([...tokens(a.producer), ...tokens(a.name)]);
+  const tb = new Set([...tokens(b.producer), ...tokens(b.name)]);
+  if (!ta.size || !tb.size) return 0;
+  let inter = 0; for (const t of ta) if (tb.has(t)) inter++;
+  const jac = inter / (ta.size + tb.size - inter);
+  const pa = tokens(a.producer).join(' '), pb = tokens(b.producer).join(' ');
+  const prodMatch = pa && pb && (pa === pb || pa.includes(pb) || pb.includes(pa));
+  const appMatch = norm(a.appellation) && norm(a.appellation) === norm(b.appellation);
+  let s = jac;
+  if (prodMatch) s = Math.max(s, 0.55 + 0.45 * jac);
+  if (prodMatch && appMatch) s = Math.max(s, 0.8);
+  return s;
+}
+const SAME = 0.6;
+
+// --- EXIF: GPS + opnamemoment uit de originele JPEG ---
+async function readExif(file) {
+  try {
+    const buf = await file.slice(0, 512 * 1024).arrayBuffer();
+    const dv = new DataView(buf);
+    if (dv.getUint16(0) !== 0xFFD8) return null;
+    let off = 2;
+    while (off + 4 < dv.byteLength) {
+      const marker = dv.getUint16(off); const len = dv.getUint16(off + 2);
+      if (marker === 0xFFE1 && dv.getUint32(off + 4) === 0x45786966) { return parseTiff(dv, off + 10); }
+      if ((marker & 0xFF00) !== 0xFF00 || marker === 0xFFDA) break;
+      off += 2 + len;
+    }
+  } catch (e) { /* geen exif */ }
+  return null;
+}
+function parseTiff(dv, base) {
+  const le = dv.getUint16(base) === 0x4949;
+  const u16 = o => dv.getUint16(base + o, le), u32 = o => dv.getUint32(base + o, le);
+  const ifd0 = u32(4);
+  const readIfd = (o) => { const n = u16(o); const tags = {}; for (let i = 0; i < n; i++) { const e = o + 2 + i * 12; tags[u16(e)] = {type: u16(e + 2), count: u32(e + 4), voff: e + 8}; } return tags; };
+  const str = t => { const s = []; const start = base + (t.count > 4 ? u32(t.voff) : t.voff); for (let i = 0; i < t.count - 1; i++) s.push(String.fromCharCode(dv.getUint8(start + i))); return s.join(''); };
+  const rat = t => { const start = base + u32(t.voff); const out = []; for (let i = 0; i < t.count; i++) { const n = dv.getUint32(start + i * 8, le), d = dv.getUint32(start + i * 8 + 4, le); out.push(d ? n / d : 0); } return out; };
+  const out = {};
+  const t0 = readIfd(ifd0);
+  if (t0[0x8769]) { const ex = readIfd(u32(t0[0x8769].voff)); if (ex[0x9003]) { const s = str(ex[0x9003]); const m = s.match(/(\d{4}):(\d{2}):(\d{2}) (\d{2}):(\d{2}):(\d{2})/); if (m) out.takenAt = new Date(+m[1], +m[2] - 1, +m[3], +m[4], +m[5], +m[6]).toISOString(); } }
+  if (t0[0x8825]) {
+    const g = readIfd(u32(t0[0x8825].voff));
+    if (g[1] && g[2] && g[3] && g[4]) {
+      const toDeg = a => a[0] + a[1] / 60 + a[2] / 3600;
+      let lat = toDeg(rat(g[2])), lon = toDeg(rat(g[4]));
+      if (str(g[1]).trim().toUpperCase() === 'S') lat = -lat;
+      if (str(g[3]).trim().toUpperCase() === 'W') lon = -lon;
+      if (isFinite(lat) && isFinite(lon) && (lat || lon)) out.geo = {lat: +lat.toFixed(6), lon: +lon.toFixed(6)};
+    }
+  }
+  return out;
+}
+
+// --- foto verkleinen (JPEG, max 1600px) ---
+async function shrink(file, max = 1600, q = 0.82) {
+  let bmp;
+  try { bmp = await createImageBitmap(file, {imageOrientation: 'from-image'}); }
+  catch (e) { bmp = await new Promise((res, rej) => { const img = new Image(); img.onload = () => res(img); img.onerror = rej; img.src = URL.createObjectURL(file); }); }
+  const w = bmp.width, h = bmp.height; const sc = Math.min(1, max / Math.max(w, h));
+  const c = document.createElement('canvas'); c.width = Math.round(w * sc); c.height = Math.round(h * sc);
+  c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
+  if (bmp.close) bmp.close();
+  return await new Promise(res => c.toBlob(res, 'image/jpeg', q));
+}
+
+// --- mini markdown (veilig): ##/### koppen, -/* lijsten, **vet**, *cursief*, alinea's ---
+function md(text) {
+  const lines = String(text || '').split(/\r?\n/); let html = ''; let inUl = false;
+  const inline = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>');
+  const closeUl = () => { if (inUl) { html += '</ul>'; inUl = false; } };
+  for (const raw of lines) {
+    const l = raw.trim();
+    if (!l) { closeUl(); continue; }
+    let m;
+    if ((m = l.match(/^#{1,4}\s+(.*)/))) { closeUl(); html += '<h3>' + inline(m[1]) + '</h3>'; }
+    else if ((m = l.match(/^[-*•]\s+(.*)/))) { if (!inUl) { html += '<ul>'; inUl = true; } html += '<li>' + inline(m[1]) + '</li>'; }
+    else if ((m = l.match(/^(\d+)[.)]\s+(.*)/))) { if (!inUl) { html += '<ul>'; inUl = true; } html += '<li>' + inline(m[2]) + '</li>'; }
+    else { closeUl(); html += '<p>' + inline(l) + '</p>'; }
+  }
+  closeUl(); return html;
+}
+
+// --- per-apparaat voorkeuren (huidige plek) ---
+const store = {
+  get(k, d) { try { const v = localStorage.getItem('cdc:' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem('cdc:' + k, JSON.stringify(v)); } catch (e) {} }
+};
+
+window.CDC = {$, $$, esc, uid, COLORS, colorClass, fmtPrice, fmtDate, todayKey, clean, numOrNull, toast, norm, tokens, wineKey, wineSim, SAME, readExif, shrink, md, store};
+})();
+</script>
+<script>
+(function(){
+'use strict';
+const {$, $$, esc, uid, colorClass, fmtPrice, fmtDate, clean, toast, store, wineSim, SAME} = window.CDC;
+
+const S = window.CDC.S = {
+  wines: [], lists: [], db: null, assets: null, sample: null, downloads: null, canImages: false, ready: false,
+  session: store.get('session', {place: '', city: ''}),
+  wineFilter: 'alle', wineQuery: ''
+};
+const use = async n => { try { return (window.claude && window.claude.use) ? await window.claude.use(n) : null; } catch (e) { return null; } };
+
+function setSync(state, text) { const d = $('#syncDot'); d.className = 'dot ' + (state === true ? 'on' : state === false ? 'off' : ''); $('#syncText').textContent = text; }
+
+// ---- data access ----
+const byDateDesc = (a, b) => String(b.createdAt || '').localeCompare(String(a.createdAt || ''));
+async function saveWine(w) {
+  w = clean(w);
+  const i = S.wines.findIndex(x => x.id === w.id); if (i >= 0) S.wines[i] = w; else S.wines.unshift(w);
+  S.wines.sort(byDateDesc); renderAll();
+  if (!S.db) { toast('Lokaal bewaard, niet in je database (geen verbinding)'); return; }
+  try { await S.db.collection('wines').doc(w.id).set(w); } catch (e) { console.error(e); toast('Opslaan mislukt: ' + (e.code || 'fout')); }
+}
+async function deleteWine(id) {
+  S.wines = S.wines.filter(x => x.id !== id); renderAll();
+  if (S.db) { try { await S.db.collection('wines').doc(id).delete(); } catch (e) { toast('Verwijderen mislukt'); } }
+}
+async function saveList(l) {
+  l = clean(l);
+  const i = S.lists.findIndex(x => x.id === l.id); if (i >= 0) S.lists[i] = l; else S.lists.unshift(l);
+  S.lists.sort(byDateDesc); renderAll();
+  if (!S.db) { toast('Lokaal bewaard, niet in je database (geen verbinding)'); return; }
+  try { await S.db.collection('lists').doc(l.id).set(l); } catch (e) { console.error(e); toast('Opslaan mislukt: ' + (e.code || 'fout')); }
+}
+async function deleteList(id) {
+  S.lists = S.lists.filter(x => x.id !== id); renderAll();
+  if (S.db) { try { await S.db.collection('lists').doc(id).delete(); } catch (e) { toast('Verwijderen mislukt'); } }
+}
+async function uploadPhoto(blob) {
+  if (!S.assets) return null;
+  try { const r = await S.assets.upload(blob, {type: 'image/jpeg'}); return r.id; }
+  catch (e) { console.error(e); toast('Foto niet opgeslagen (' + (e.code || 'fout') + ')'); return null; }
+}
+const photoUrl = id => id ? '/_blob/' + id : null;
+
+// ---- matching ----
+// Gedronken wijnen die lijken op een kaart-item
+function drunkMatches(item) { return S.wines.map(w => ({w, s: wineSim(item, w)})).filter(x => x.s >= SAME).sort((a, b) => b.s - a.s); }
+// Andere kaarten waarop een (vergelijkbare) wijn staat
+function otherListsWith(item, exceptListId) {
+  const out = [];
+  for (const l of S.lists) { if (l.id === exceptListId) continue; if ((l.items || []).some(it => wineSim(item, it) >= SAME)) out.push(l); }
+  return out;
+}
+
+// ---- rendering ----
+function wineRow(w, opts = {}) {
+  const t = [w.producer, w.name].filter(Boolean).join(', ') || w.appellation || 'Onbekende wijn';
+  const sub = [w.appellation && w.appellation !== t ? w.appellation : null, w.vintage, opts.noPlace ? null : w.placeName, fmtDate(w.createdAt)].filter(Boolean).map(esc).join(' · ');
+  return `<button class="row" type="button" data-wine="${esc(w.id)}"><span class="sw ${colorClass(w.color)}"></span>
+    <span style="min-width:0"><div class="t">${esc(t)}</div><div class="s">${sub}</div></span>
+    <span class="r">${w.rating ? `<span class="badge score num">${esc(w.rating)}</span>` : ''}${w.price ? `<span class="price small">${fmtPrice(w.price)}</span>` : ''}</span></button>`;
+}
+function listRow(l) {
+  const n = (l.items || []).length;
+  const drunk = (l.items || []).filter(it => drunkMatches(it).length).length;
+  const sub = [l.city, fmtDate(l.createdAt), n ? n + ' wijnen' : 'nog niet gelezen', drunk ? drunk + ' gedronken' : null].filter(Boolean).map(esc).join(' · ');
+  return `<button class="row" type="button" data-list="${esc(l.id)}"><span class="sw overig" style="border-radius:3px"></span>
+    <span style="min-width:0"><div class="t">${esc(l.placeName || 'Wijnkaart')}</div><div class="s">${sub}</div></span>
+    <span class="r">${l.rating ? `<span class="badge score num">${esc(l.rating)}</span>` : ''}${l.advice ? `<span class="badge gold">advies</span>` : ''}</span></button>`;
+}
+const rows = html => html ? `<div class="rows">${html}</div>` : '';
+
+function renderTonight() {
+  const since = Date.now() - 14 * 3600 * 1000;
+  const place = S.session.place.trim().toLowerCase();
+  const recent = x => new Date(x.createdAt).getTime() >= since;
+  const here = x => place && String(x.placeName || '').trim().toLowerCase() === place;
+  const ws = S.wines.filter(w => recent(w) || here(w));
+  const ls = S.lists.filter(l => recent(l) || here(l));
+  $('#tonightTitle').textContent = S.session.place ? S.session.place : 'Vanavond';
+  const el = $('#tonightList');
+  if (!ws.length && !ls.length) {
+    el.innerHTML = `<div class="empty"><strong>${S.wines.length ? 'Nog niets vanavond' : 'Je kelderboek is nog leeg'}</strong>Fotografeer de wijnkaart om advies te krijgen, of log de eerste fles zodra hij op tafel staat.</div>`;
+    return;
+  }
+  el.innerHTML = rows(ls.map(listRow).join('') + ws.map(w => wineRow(w, {noPlace: true})).join(''));
+}
+function renderRecent() {
+  const el = $('#recentList'); const ws = S.wines.slice(0, 5);
+  el.innerHTML = ws.length ? rows(ws.map(w => wineRow(w)).join('')) : `<p class="muted small">Hier verschijnen je laatste flessen.</p>`;
+}
+function renderWines() {
+  const q = S.wineQuery.trim().toLowerCase(); const f = S.wineFilter;
+  let ws = S.wines;
+  if (f === 'top') ws = ws.filter(w => (w.rating || 0) >= 8); else if (f !== 'alle') ws = ws.filter(w => w.color === f);
+  if (q) ws = ws.filter(w => [w.producer, w.name, w.appellation, w.region, w.country, w.placeName, w.city, w.notes, (w.grapes || []).join(' '), w.vintage].join(' ').toLowerCase().includes(q));
+  $('#winesList').innerHTML = ws.length ? rows(ws.map(w => wineRow(w)).join('')) : `<div class="empty"><strong>${S.wines.length ? 'Geen wijn gevonden' : 'Nog geen wijnen'}</strong>${S.wines.length ? 'Pas je zoekopdracht of filter aan.' : 'Log je eerste fles via Vanavond.'}</div>`;
+}
+function renderLists() {
+  $('#listsList').innerHTML = S.lists.length ? rows(S.lists.map(listRow).join('')) : `<div class="empty"><strong>Nog geen wijnkaarten</strong>Fotografeer een kaart via Vanavond. De app leest alle wijnen uit, vergelijkt ze met wat je dronk en geeft advies.</div>`;
+}
+function renderPlaces() {
+  const seen = new Map();
+  for (const x of [...S.lists, ...S.wines]) { const p = (x.placeName || '').trim(); if (p && !seen.has(p.toLowerCase())) seen.set(p.toLowerCase(), {name: p, city: x.city || ''}); }
+  $('#placesDl').innerHTML = [...seen.values()].map(p => `<option value="${esc(p.name)}">${esc(p.city)}</option>`).join('');
+  S.places = seen;
+}
+function renderAll() {
+  renderPlaces(); renderTonight(); renderRecent(); renderWines(); renderLists();
+  if (window.CDC.renderInsights) window.CDC.renderInsights();
+  if (S.ready) setSync(!!S.db, S.db ? `${S.wines.length} flessen · ${S.lists.length} kaarten` : 'niet verbonden');
+}
+
+// ---- navigation ----
+const VIEWS = ['vanavond', 'wijnen', 'kaarten', 'inzichten'];
+function showView(name) {
+  if (!VIEWS.includes(name)) name = 'vanavond';
+  for (const v of VIEWS) $('#view-' + v).hidden = v !== name;
+  for (const b of $$('.tabs button')) { if (b.dataset.view === name) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); }
+  try { if (location.hash.slice(1) !== name) history.replaceState(null, '', '#' + name); } catch (e) {}
+  window.scrollTo(0, 0);
+}
+const sheetStack = [];
+function openSheet(id) { const el = $('#' + id); el.hidden = false; el.scrollTop = 0; sheetStack.push(id); document.body.style.overflow = 'hidden'; }
+function closeSheet(id) {
+  const top = id || sheetStack[sheetStack.length - 1]; if (!top) return;
+  $('#' + top).hidden = true; const i = sheetStack.lastIndexOf(top); if (i >= 0) sheetStack.splice(i, 1);
+  if (!sheetStack.length) document.body.style.overflow = '';
+}
+function closeAllSheets() { while (sheetStack.length) closeSheet(); }
+
+Object.assign(window.CDC, {use, setSync, saveWine, deleteWine, saveList, deleteList, uploadPhoto, photoUrl, drunkMatches, otherListsWith, wineRow, listRow, rows, renderAll, showView, openSheet, closeSheet, closeAllSheets});
+})();
+</script>
+<script>
+(function(){
+'use strict';
+const C = window.CDC; const {$, $$, esc, uid, COLORS, colorClass, fmtPrice, fmtDate, numOrNull, toast, store, readExif, shrink, md, S} = C;
+
+const RATING_WORDS = {1:'slecht',2:'slecht',3:'zwak',4:'matig',5:'matig',6:'oké',7:'goed',8:'heel goed',9:'uitstekend',10:'onvergetelijk'};
+let form = null;
+
+// rating pills
+(function buildRating(){ $('#fRating').innerHTML = Array.from({length: 10}, (_, i) => `<button type="button" data-v="${i + 1}" aria-pressed="false" class="num">${i + 1}</button>`).join(''); })();
+function setRating(v) { form.rating = v || null; for (const b of $$('#fRating button')) { const n = +b.dataset.v; b.setAttribute('aria-pressed', String(n === v)); b.classList.toggle('lead', !!v && n < v); } $('#fRatingLabel').textContent = v ? `${v} · ${RATING_WORDS[v]}` : ''; }
+function setColor(v) { form.color = v || null; for (const b of $$('#fColor button')) b.setAttribute('aria-pressed', String(b.dataset.v === v)); }
+$('#fRating').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setRating(form.rating === +b.dataset.v ? null : +b.dataset.v); });
+$('#fColor').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setColor(form.color === b.dataset.v ? null : b.dataset.v); });
+
+function fillForm(w) {
+  $('#fProducer').value = w.producer || ''; $('#fName').value = w.name || ''; $('#fVintage').value = w.vintage || '';
+  $('#fAppellation').value = w.appellation || ''; $('#fRegion').value = w.region || ''; $('#fCountry').value = w.country || '';
+  $('#fGrapes').value = (w.grapes || []).join(', '); $('#fPrice').value = w.price ?? ''; $('#fContext').value = w.context || 'restaurant';
+  $('#fPlace').value = w.placeName || ''; $('#fCity').value = w.city || ''; $('#fNotes').value = w.notes || '';
+  setColor(w.color || null); setRating(w.rating || null);
+  renderGeo();
+}
+function renderGeo() {
+  const g = form.geo; const t = form.takenAt;
+  $('#fGeo').textContent = g ? `Locatie uit foto: ${g.lat.toFixed(4)}, ${g.lon.toFixed(4)}${t ? ' · genomen ' + new Date(t).toLocaleString('nl-NL', {dateStyle: 'short', timeStyle: 'short'}) : ''}` : (form.photoBlob || form.photo ? 'Geen locatie in de foto gevonden (zet locatie aan in je camera-app).' : '');
+}
+function renderFormPhoto() {
+  const el = $('#wineFormPhoto');
+  if (form.previewUrl) el.innerHTML = `<img class="photo" src="${form.previewUrl}" alt="Etiket">`;
+  else if (form.photo) el.innerHTML = `<img class="photo" src="${C.photoUrl(form.photo)}" alt="Etiket">`;
+  else el.innerHTML = `<button class="photo-ph" id="btnFormPhoto" type="button">Tik om een foto van het etiket te maken</button>`;
+}
+
+async function openWineForm(existing, file) {
+  form = existing ? Object.assign({}, existing, {editing: true}) : {id: uid(), createdAt: new Date().toISOString(), context: 'restaurant', placeName: S.session.place, city: S.session.city, grapes: []};
+  form.photoBlob = null; form.previewUrl = null;
+  $('#wineFormTitle').textContent = existing ? 'Wijn bewerken' : 'Fles loggen';
+  $('#btnDeleteWine').hidden = !existing; $('#wineAi').hidden = true;
+  fillForm(form); renderFormPhoto(); C.openSheet('sheetWine');
+  if (file) await attachPhoto(file);
+}
+async function attachPhoto(file) {
+  form.previewUrl = URL.createObjectURL(file); renderFormPhoto();
+  const [exif, blob] = await Promise.all([readExif(file), shrink(file)]);
+  form.photoBlob = blob;
+  if (exif) { if (exif.geo) form.geo = exif.geo; if (exif.takenAt) form.takenAt = exif.takenAt; }
+  renderGeo();
+  await readLabel(blob);
+}
+async function readLabel(blob) {
+  if (!S.sample || !S.canImages) { $('#wineAi').hidden = false; $('#wineAi').innerHTML = `<span>Etiket lezen is hier niet beschikbaar. Vul de velden zelf in.</span>`; return; }
+  $('#wineAi').hidden = false; $('#wineAi').innerHTML = `<span class="spin"></span><span id="wineAiText">Etiket lezen…</span>`;
+  const prompt = `Je ziet een foto van een wijnetiket of wijnfles. Lees het etiket en geef uitsluitend één JSON-object terug met precies deze velden:
+{"producer": producent/domein/château/maison (string of null), "name": cuvée- of wijnnaam ZONDER de producent (string of null; bij een wijn zonder aparte cuvéenaam: de appellation of het dorp), "appellation": AOC/AOP/DOC(G)/IGP/VDP enz. (string of null), "region": wijnstreek zoals Bourgogne, Loire, Rhône, Piemonte (string of null), "country": land in het Nederlands (string of null), "vintage": jaargang als getal of null, "color": precies één van "rood","wit","rosé","mousserend","oranje","zoet" of null, "grapes": array met druivenrassen (lees van etiket of leid af uit de appellation; mag leeg), "alcohol": percentage als getal of null, "confidence": "hoog"|"middel"|"laag", "note": korte Nederlandse opmerking over wat onzeker of niet leesbaar is, of null}
+Gebruik je wijnkennis om regio, land, kleur en druiven af te leiden uit de appellation als ze niet op het etiket staan. Verzin geen jaargang of producent als die niet leesbaar is: gebruik dan null. Geen tekst buiten het JSON.`;
+  try {
+    const r = await S.sample.json(prompt, {images: [blob], modelTier: 'default', effort: 'low'});
+    if (r && typeof r === 'object') {
+      const set = (id, v) => { const el = $('#' + id); if (v != null && v !== '' && !el.value.trim()) el.value = v; };
+      set('fProducer', r.producer); set('fName', r.name); set('fAppellation', r.appellation); set('fRegion', r.region); set('fCountry', r.country);
+      if (r.vintage && !$('#fVintage').value) $('#fVintage').value = r.vintage;
+      if (Array.isArray(r.grapes) && r.grapes.length && !$('#fGrapes').value.trim()) $('#fGrapes').value = r.grapes.join(', ');
+      if (COLORS.includes(r.color) && !form.color) setColor(r.color);
+      form.alcohol = numOrNull(r.alcohol);
+      $('#wineAi').innerHTML = `<span>Etiket gelezen${r.confidence ? ' (zekerheid: ' + esc(r.confidence) + ')' : ''}.${r.note ? ' ' + esc(r.note) : ''} Controleer en pas aan waar nodig.</span>`;
+    } else $('#wineAi').innerHTML = `<span>Etiket niet herkend. Vul de velden zelf in.</span>`;
+  } catch (e) {
+    console.error(e);
+    const msg = e.code === 'not_granted' ? 'Geen toestemming voor Claude in deze pagina. Vul zelf in.' : e.code === 'rate_limited' ? 'Even te druk; probeer zo opnieuw of vul zelf in.' : e.code === 'image_rejected' ? 'Foto niet geaccepteerd; probeer een andere.' : 'Etiket lezen mislukt (' + (e.code || 'fout') + '). Vul zelf in.';
+    $('#wineAi').innerHTML = `<span>${esc(msg)}</span>`;
+  }
+}
+
+function collectForm() {
+  const w = Object.assign({}, form);
+  delete w.photoBlob; delete w.previewUrl; delete w.editing;
+  w.producer = $('#fProducer').value.trim() || null; w.name = $('#fName').value.trim() || null; w.vintage = numOrNull($('#fVintage').value);
+  w.appellation = $('#fAppellation').value.trim() || null; w.region = $('#fRegion').value.trim() || null; w.country = $('#fCountry').value.trim() || null;
+  w.grapes = $('#fGrapes').value.split(/[,;]/).map(s => s.trim()).filter(Boolean);
+  w.price = numOrNull($('#fPrice').value); w.context = $('#fContext').value; w.placeName = $('#fPlace').value.trim() || null; w.city = $('#fCity').value.trim() || null;
+  w.notes = $('#fNotes').value.trim() || null; w.updatedAt = new Date().toISOString();
+  return w;
+}
+async function saveForm() {
+  const btn = $('#btnSaveWine'); btn.disabled = true; btn.textContent = 'Bewaren…';
+  try {
+    const w = collectForm();
+    if (!w.producer && !w.name && !w.appellation) { toast('Vul minstens producent, wijn of appellation in'); return; }
+    if (form.photoBlob) { const id = await C.uploadPhoto(form.photoBlob); if (id) w.photo = id; }
+    if (w.placeName && w.placeName !== S.session.place) { S.session = {place: w.placeName, city: w.city || ''}; store.set('session', S.session); $('#placeName').value = S.session.place; $('#placeCity').value = S.session.city; }
+    await C.saveWine(w);
+    C.closeSheet('sheetWine'); toast(form.editing ? 'Bijgewerkt' : 'Fles bewaard');
+    if (form.editing) openWineDetail(w.id); else openWineDetail(w.id);
+  } finally { btn.disabled = false; btn.textContent = 'Bewaren'; }
+}
+
+// ---- detail ----
+let detailId = null;
+function openWineDetail(id) {
+  detailId = id; renderWineDetail();
+  if ($('#sheetWineDetail').hidden) C.openSheet('sheetWineDetail');
+}
+function renderWineDetail() {
+  const w = S.wines.find(x => x.id === detailId); const b = $('#wineDetailBody');
+  if (!w) { b.innerHTML = '<p class="muted">Deze wijn bestaat niet meer.</p>'; return; }
+  const title = [w.name, !w.name ? w.appellation : null].filter(Boolean).join(' ') || 'Onbekende wijn';
+  const onLists = S.lists.map(l => ({l, its: (l.items || []).filter(it => C.wineSim(w, it) >= C.SAME)})).filter(x => x.its.length);
+  const kv = [['Appellation', w.appellation], ['Streek', [w.region, w.country].filter(Boolean).join(', ')], ['Druiven', (w.grapes || []).join(', ')], ['Alcohol', w.alcohol ? w.alcohol + '%' : null],
+    ['Prijs', w.price ? fmtPrice(w.price) + (w.context === 'restaurant' ? ' (restaurant)' : '') : null], ['Plek', [w.placeName, w.city].filter(Boolean).join(', ')], ['Datum', fmtDate(w.createdAt)],
+    ['Locatie', w.geo ? `<a href="https://www.google.com/maps?q=${w.geo.lat},${w.geo.lon}" target="_blank" rel="noopener">${w.geo.lat.toFixed(4)}, ${w.geo.lon.toFixed(4)}</a>` : null]].filter(x => x[1]);
+  b.innerHTML = `
+    ${w.photo ? `<img class="photo" src="${C.photoUrl(w.photo)}" alt="Etiket van ${esc(title)}">` : ''}
+    <div><h2 class="title-xl"><span class="prod">${esc(w.producer || '')}</span>${esc(title)}${w.vintage ? ` <span class="num muted" style="font-weight:400">${esc(w.vintage)}</span>` : ''}</h2>
+      <div class="meta" style="margin-top:8px"><span class="badge"><span class="sw ${colorClass(w.color)}"></span>${esc(w.color || 'kleur onbekend')}</span>${w.rating ? `<span class="badge score num">${esc(w.rating)} · ${RATING_WORDS[w.rating]}</span>` : '<span class="badge">nog geen cijfer</span>'}</div></div>
+    <dl class="kv">${kv.map(([k, v]) => `<dt>${k}</dt><dd>${k === 'Locatie' ? v : esc(v)}</dd>`).join('')}</dl>
+    ${w.notes ? `<div class="card flat"><div class="eyebrow" style="margin-bottom:6px">Notities</div><div class="notes">${esc(w.notes)}</div></div>` : ''}
+    ${onLists.length ? `<div class="card flat"><div class="eyebrow" style="margin-bottom:6px">Op wijnkaarten</div>${onLists.map(({l, its}) => `<div class="small" style="padding:4px 0"><strong>${esc(l.placeName || 'kaart')}</strong> · ${esc(fmtDate(l.createdAt))}: ${its.map(it => [it.vintage, it.price ? fmtPrice(it.price) : null].filter(Boolean).join(' ')).map(esc).join(', ') || 'zonder prijs'}</div>`).join('')}</div>` : ''}
+    <div class="card">
+      <div class="section-h"><h2>Fiche technique</h2>${w.fiche ? `<button class="btn ghost small" id="btnFicheRefresh" type="button">Vernieuw</button>` : ''}</div>
+      <div id="ficheOut" class="prose">${w.fiche ? md(w.fiche.text) : '<p class="muted small">Domein, terroir, vinificatie, stijl en wat je aan tafel kunt vertellen. Gemaakt met Claude op basis van het etiket; controleer details bij kleine producenten.</p>'}</div>
+      ${!w.fiche ? `<button class="btn primary" id="btnFiche" type="button" style="margin-top:10px" ${S.sample ? '' : 'disabled'}>Fiche technique opvragen</button>` : ''}
+    </div>`;
+  const go = () => makeFiche(w);
+  $('#btnFiche')?.addEventListener('click', go); $('#btnFicheRefresh')?.addEventListener('click', go);
+}
+async function makeFiche(w) {
+  const out = $('#ficheOut'); const btn = $('#btnFiche') || $('#btnFicheRefresh'); if (btn) btn.disabled = true;
+  out.innerHTML = `<div class="ai"><span class="spin"></span><span>Fiche schrijven… (kan een halve minuut duren)</span></div>`;
+  const desc = [w.producer && 'Producent: ' + w.producer, w.name && 'Wijn/cuvée: ' + w.name, w.appellation && 'Appellation: ' + w.appellation, w.region && 'Streek: ' + w.region, w.country && 'Land: ' + w.country, w.vintage && 'Jaargang: ' + w.vintage, w.color && 'Kleur: ' + w.color, w.grapes?.length && 'Druiven: ' + w.grapes.join(', '), w.alcohol && 'Alcohol: ' + w.alcohol + '%'].filter(Boolean).join('\n');
+  const prompt = `Schrijf een compacte fiche technique in het Nederlands (wijntermen mogen Frans blijven) voor een ervaren liefhebber van Franse wijn die deze fles nu open op tafel heeft:
+${desc}
+
+Gebruik precies deze kopjes, elk op een eigen regel beginnend met "## ": Domein & wijnmaker, Streek & terroir, Druiven & vinificatie, Stijl & smaak, Drinken & serveren, Aan tafel, Weetjes.
+Wees concreet (percelen, bodem, leeftijd stokken, gisting, opvoeding, hout, filosofie, eigenaar/generatie, jaargangkarakter) waar je het weet. Markeer onzekere details met "(onzeker)" in plaats van ze te verzinnen; zeg het als je het domein niet kent. Korte alinea's of streepjeslijsten, maximaal ongeveer 350 woorden, geen inleiding of afsluiting.`;
+  try {
+    const {text} = await S.sample(prompt, {modelTier: 'default', cache: false, onText: ({text}) => { out.innerHTML = md(text); }});
+    const fresh = S.wines.find(x => x.id === w.id) || w;
+    await C.saveWine(Object.assign({}, fresh, {fiche: {text, createdAt: new Date().toISOString()}}));
+    renderWineDetail();
+  } catch (e) {
+    console.error(e);
+    out.innerHTML = (e.text ? md(e.text) : '') + `<p class="muted small">${esc(e.code === 'not_granted' ? 'Geen toestemming om Claude te gebruiken in deze pagina.' : e.code === 'rate_limited' ? 'Even te druk, probeer het zo opnieuw.' : 'Fiche maken mislukt (' + (e.code || 'fout') + ').')}</p>`;
+    if (btn) btn.disabled = false;
+  }
+}
+
+// events
+$('#btnSaveWine').addEventListener('click', saveForm);
+$('#btnDeleteWine').addEventListener('click', () => {
+  const b = $('#btnDeleteWine');
+  if (b.dataset.armed) { C.deleteWine(form.id); C.closeAllSheets(); toast('Verwijderd'); delete b.dataset.armed; b.textContent = 'Verwijder deze wijn'; }
+  else { b.dataset.armed = '1'; b.textContent = 'Zeker? Tik nogmaals om te verwijderen'; setTimeout(() => { delete b.dataset.armed; b.textContent = 'Verwijder deze wijn'; }, 4000); }
+});
+$('#wineFormPhoto').addEventListener('click', e => { if (e.target.closest('#btnFormPhoto')) $('#fileWine').click(); });
+$('#fileWine').addEventListener('change', async e => {
+  const f = e.target.files && e.target.files[0]; e.target.value = ''; if (!f) return;
+  if (!$('#sheetWine').hidden && form) await attachPhoto(f); else await openWineForm(null, f);
+});
+$('#btnPhotoWine').addEventListener('click', () => $('#fileWine').click());
+$('#btnManualWine').addEventListener('click', () => openWineForm(null, null));
+$('#btnEditWine').addEventListener('click', () => { const w = S.wines.find(x => x.id === detailId); if (w) openWineForm(w, null); });
+
+Object.assign(C, {openWineForm, openWineDetail, renderWineDetail, RATING_WORDS});
+})();
+</script>
+<script>
+(function(){
+'use strict';
+const C = window.CDC; const {$, $$, esc, uid, COLORS, colorClass, fmtPrice, fmtDate, numOrNull, toast, store, readExif, shrink, md, S} = C;
+
+let nl = null; // nieuwe kaart in opbouw
+function startNewList() {
+  nl = {id: uid(), createdAt: new Date().toISOString(), photos: [], geo: null};
+  $('#lPlace').value = S.session.place || ''; $('#lCity').value = S.session.city || '';
+  $('#listNewThumbs').innerHTML = ''; $('#listAi').hidden = true; $('#btnListRead').disabled = true; $('#btnListRead').textContent = 'Kaart lezen';
+  C.openSheet('sheetListNew');
+}
+async function addPage(file) {
+  const p = {url: URL.createObjectURL(file), blob: null, assetId: null};
+  nl.photos.push(p); renderThumbs();
+  const [exif, blob] = await Promise.all([readExif(file), shrink(file)]);
+  p.blob = blob; if (exif && exif.geo && !nl.geo) nl.geo = exif.geo;
+  $('#btnListRead').disabled = false; $('#btnListRead').textContent = nl.photos.length > 1 ? `Kaart lezen (${nl.photos.length} pagina's)` : 'Kaart lezen';
+}
+function renderThumbs() { $('#listNewThumbs').innerHTML = nl.photos.map((p, i) => `<img src="${p.url}" alt="Pagina ${i + 1}">`).join(''); }
+
+const ITEM_PROMPT = `Dit is een foto van (een pagina van) een wijnkaart in een restaurant. Lees ALLE wijnen die leesbaar zijn en geef uitsluitend een JSON-array terug met één object per wijn, in de volgorde van de kaart:
+{"producer": producent/domein (string of null), "name": cuvée- of wijnnaam ZONDER producent (string of null; als er geen aparte naam is: het dorp of de appellation), "appellation": string of null, "region": wijnstreek (string of null; leid af uit appellation of sectiekop), "country": land in het Nederlands (string of null), "vintage": jaargang als getal of null, "color": precies één van "rood","wit","rosé","mousserend","oranje","zoet" of null (leid af uit sectiekop), "grapes": array met druiven als vermeld of zeker af te leiden (mag leeg), "price": prijs per fles als getal zonder valutateken of null, "glass_price": prijs per glas als getal of null, "size": "fles"|"magnum"|"halve fles"|"glas"|null, "section": de sectiekop op de kaart waar deze wijn onder staat (string of null)}
+Sla niets over; bij twijfel wel opnemen met null-velden. Geen tekst buiten de JSON-array.`;
+
+function normItem(it) {
+  if (!it || typeof it !== 'object') return null;
+  const o = {producer: it.producer || null, name: it.name || null, appellation: it.appellation || null, region: it.region || null, country: it.country || null,
+    vintage: numOrNull(it.vintage), color: COLORS.includes(it.color) ? it.color : null, grapes: Array.isArray(it.grapes) ? it.grapes.map(String).slice(0, 6) : [],
+    price: numOrNull(it.price), glassPrice: numOrNull(it.glass_price ?? it.glassPrice), size: it.size || null, section: it.section || null};
+  if (!o.producer && !o.name && !o.appellation) return null;
+  return o;
+}
+async function readPages(photos, onProgress) {
+  const items = []; let failed = 0;
+  for (let i = 0; i < photos.length; i++) {
+    onProgress(`Pagina ${i + 1} van ${photos.length} lezen…`);
+    try { const r = await S.sample.json(ITEM_PROMPT, {images: [photos[i].blob], modelTier: 'default', effort: 'low'}); if (Array.isArray(r)) for (const it of r) { const n = normItem(it); if (n) { n.page = i + 1; items.push(n); } } }
+    catch (e) { console.error(e); failed++; if (e.code === 'not_granted' || e.code === 'rate_limited') throw e; }
+  }
+  return {items, failed};
+}
+async function readNewList() {
+  if (!S.sample || !S.canImages) { toast('Kaart lezen is hier niet beschikbaar'); return; }
+  const btn = $('#btnListRead'); btn.disabled = true; $('#listAi').hidden = false;
+  const prog = t => { $('#listAiText').textContent = t; };
+  try {
+    if (nl.photos.some(p => !p.blob)) { prog('Foto\'s verwerken…'); while (nl.photos.some(p => !p.blob)) await new Promise(r => setTimeout(r, 150)); }
+    const {items, failed} = await readPages(nl.photos, prog);
+    prog('Foto\'s opslaan…');
+    const ids = []; for (const p of nl.photos) { const id = await C.uploadPhoto(p.blob); if (id) ids.push(id); }
+    const l = {id: nl.id, createdAt: nl.createdAt, placeName: $('#lPlace').value.trim() || null, city: $('#lCity').value.trim() || null, geo: nl.geo, photos: ids, items, rating: null, notes: null, advice: null};
+    if (l.placeName) { S.session = {place: l.placeName, city: l.city || ''}; store.set('session', S.session); $('#placeName').value = S.session.place; $('#placeCity').value = S.session.city; }
+    await C.saveList(l);
+    C.closeSheet('sheetListNew');
+    toast(items.length ? `${items.length} wijnen gelezen${failed ? ', ' + failed + ' pagina(\'s) mislukt' : ''}` : 'Geen wijnen herkend; probeer een scherpere foto');
+    openListDetail(l.id);
+  } catch (e) {
+    console.error(e); $('#listAi').hidden = true; btn.disabled = false;
+    toast(e.code === 'not_granted' ? 'Geen toestemming om Claude te gebruiken in deze pagina' : e.code === 'rate_limited' ? 'Even te druk; probeer het zo opnieuw' : 'Kaart lezen mislukt (' + (e.code || 'fout') + ')');
+  }
+}
+async function addPageToExisting(listId, file) {
+  const l = S.lists.find(x => x.id === listId); if (!l || !S.sample || !S.canImages) return;
+  toast('Pagina lezen…', 20000);
+  try {
+    const blob = await shrink(file);
+    const {items} = await readPages([{blob}], () => {});
+    const id = await C.uploadPhoto(blob);
+    const pageNo = (l.photos || []).length + 1; for (const it of items) it.page = pageNo;
+    await C.saveList(Object.assign({}, l, {photos: [...(l.photos || []), ...(id ? [id] : [])], items: [...(l.items || []), ...items]}));
+    toast(`${items.length} wijnen toegevoegd`); renderListDetail();
+  } catch (e) { console.error(e); toast('Pagina lezen mislukt (' + (e.code || 'fout') + ')'); }
+}
+
+// ---- detail ----
+let detailId = null, itemFilter = 'alle', adviceCtl = null;
+function openListDetail(id) { detailId = id; itemFilter = 'alle'; renderListDetail(); if ($('#sheetListDetail').hidden) C.openSheet('sheetListDetail'); }
+function itemTitle(it) { return [it.producer, it.name].filter(Boolean).join(', ') || it.appellation || 'Onbekend'; }
+function renderListDetail() {
+  const l = S.lists.find(x => x.id === detailId); const b = $('#listDetailBody');
+  if (!l) { b.innerHTML = '<p class="muted">Deze kaart bestaat niet meer.</p>'; return; }
+  $('#listDetailTitle').textContent = l.placeName || 'Wijnkaart';
+  const items = (l.items || []).map((it, i) => ({it, i, drunk: C.drunkMatches(it), other: C.otherListsWith(it, l.id)}));
+  const nDrunk = items.filter(x => x.drunk.length).length, nOther = items.filter(x => x.other.length).length;
+  let shown = items;
+  if (itemFilter === 'gedronken') shown = items.filter(x => x.drunk.length); else if (itemFilter === 'elders') shown = items.filter(x => x.other.length); else if (COLORS.includes(itemFilter)) shown = items.filter(x => x.it.color === itemFilter);
+  const groups = []; for (const x of shown) { const sec = x.it.section || 'Overig'; let g = groups[groups.length - 1]; if (!g || g.sec !== sec) { g = {sec, xs: []}; groups.push(g); } g.xs.push(x); }
+  const chip = (f, label) => `<button type="button" data-f="${f}" aria-pressed="${String(itemFilter === f)}">${label}</button>`;
+  b.innerHTML = `
+    <div class="meta">${l.city ? `<span>${esc(l.city)}</span>` : ''}<span>${esc(fmtDate(l.createdAt))}</span><span class="num">${items.length} wijnen</span>${l.geo ? `<a href="https://www.google.com/maps?q=${l.geo.lat},${l.geo.lon}" target="_blank" rel="noopener">kaartlocatie</a>` : ''}</div>
+    ${(l.photos || []).length ? `<div class="thumbs">${l.photos.map((id, i) => `<a href="${C.photoUrl(id)}" target="_blank" rel="noopener"><img src="${C.photoUrl(id)}" alt="Pagina ${i + 1}"></a>`).join('')}</div>` : ''}
+    <div class="card">
+      <div class="section-h"><h2>Cijfer voor deze kaart</h2><span class="muted small" id="lRatingLabel">${l.rating ? l.rating + ' · ' + C.RATING_WORDS[l.rating] : ''}</span></div>
+      <div class="rating" id="lRating">${Array.from({length: 10}, (_, i) => `<button type="button" data-v="${i + 1}" aria-pressed="${String(l.rating === i + 1)}" class="num ${l.rating && i + 1 < l.rating ? 'lead' : ''}">${i + 1}</button>`).join('')}</div>
+      <div class="field" style="margin-top:10px"><label for="lNotes">Over de kaart</label><textarea id="lNotes" style="min-height:64px" placeholder="Breedte, prijsniveau, verrassingen, sommelier…">${esc(l.notes || '')}</textarea></div>
+    </div>
+    <div class="card">
+      <div class="section-h"><h2>Advies</h2>${l.advice ? `<span class="muted small">${esc(fmtDate(l.adviceAt))}</span>` : ''}</div>
+      <div class="field"><label for="lCtx">Context voor vanavond</label><input id="lCtx" placeholder="Bijv. 2 flessen, eerst vis dan eend, budget tot €90" value="${esc(l.adviceContext || '')}"></div>
+      <div style="display:flex;gap:8px;margin-top:10px"><button class="btn primary" id="btnAdvice" type="button" ${S.sample ? '' : 'disabled'}>${l.advice ? 'Nieuw advies' : 'Advies vragen'}</button><button class="btn" id="btnAdviceStop" type="button" hidden>Stop</button></div>
+      <div id="adviceOut" class="prose" style="margin-top:12px">${l.advice ? md(l.advice) : `<p class="muted small">Op basis van ${S.wines.length} gelogde flessen${nDrunk ? ', waarvan ' + nDrunk + ' op deze kaart staan' : ''}, prijs/kwaliteit en je context.</p>`}</div>
+    </div>
+    <div>
+      <div class="seg" style="margin-bottom:6px">${chip('alle', 'Alle')}${chip('gedronken', `Gedronken (${nDrunk})`)}${chip('elders', `Ook elders (${nOther})`)}${chip('rood', 'Rood')}${chip('wit', 'Wit')}${chip('mousserend', 'Bubbels')}</div>
+      <div class="items" id="items">${groups.map(g => `<div class="sec">${esc(g.sec)}</div>` + g.xs.map(x => itemHtml(x)).join('')).join('') || '<p class="muted small" style="padding:12px 0">Geen wijnen in deze selectie.</p>'}</div>
+    </div>
+    <button class="btn danger" id="btnDeleteList" type="button">Verwijder deze kaart</button>`;
+  wireDetail(l);
+}
+function itemHtml({it, i, drunk, other}) {
+  const best = drunk[0];
+  const d = [it.appellation && it.appellation !== itemTitle(it) ? it.appellation : null, it.vintage, it.grapes?.length ? it.grapes.join('/') : null, it.size && it.size !== 'fles' ? it.size : null].filter(Boolean).map(esc).join(' · ');
+  const badges = [best ? `<span class="badge ok">gedronken${best.w.rating ? ' · ' + best.w.rating : ''}</span>` : '', ...other.slice(0, 2).map(l => `<span class="badge">ook bij ${esc(l.placeName || 'kaart')}${(l.items || []).find(x => C.wineSim(it, x) >= C.SAME)?.price ? ' ' + fmtPrice((l.items || []).find(x => C.wineSim(it, x) >= C.SAME).price) : ''}</span>`)].join('');
+  return `<button class="item ${best ? 'hit' : ''}" type="button" data-item="${i}" style="text-align:left;background:${best ? '' : 'none'};border-left:0;border-right:0;border-bottom:0;width:100%">
+    <span style="min-width:0"><div class="n">${it.color ? `<span class="sw ${colorClass(it.color)}" style="display:inline-block;vertical-align:-1px;margin-right:6px"></span>` : ''}${esc(itemTitle(it))}</div>${d ? `<div class="d">${d}</div>` : ''}${badges ? `<div class="b">${badges}</div>` : ''}</span>
+    <span class="p">${it.price ? fmtPrice(it.price) : ''}${it.glassPrice ? `<div class="small muted">glas ${fmtPrice(it.glassPrice)}</div>` : ''}</span></button>`;
+}
+function wireDetail(l) {
+  $('#lRating').addEventListener('click', async e => { const bt = e.target.closest('button'); if (!bt) return; const v = +bt.dataset.v; const fresh = S.lists.find(x => x.id === l.id); await C.saveList(Object.assign({}, fresh, {rating: fresh.rating === v ? null : v})); renderListDetail(); });
+  let t; $('#lNotes').addEventListener('input', e => { clearTimeout(t); t = setTimeout(async () => { const fresh = S.lists.find(x => x.id === l.id); await C.saveList(Object.assign({}, fresh, {notes: e.target.value.trim() || null})); }, 800); });
+  $('#btnAdvice').addEventListener('click', () => askAdvice(l.id));
+  $('#btnAdviceStop').addEventListener('click', () => adviceCtl?.abort());
+  $$('.seg button', $('#listDetailBody')).forEach(bt => bt.addEventListener('click', () => { itemFilter = bt.dataset.f; renderListDetail(); }));
+  $('#items').addEventListener('click', e => {
+    const bt = e.target.closest('[data-item]'); if (!bt) return; const it = (l.items || [])[+bt.dataset.item]; if (!it) return;
+    const m = C.drunkMatches(it)[0];
+    if (m && m.s >= 0.8) { C.openWineDetail(m.w.id); return; }
+    C.openWineForm({id: uid(), createdAt: new Date().toISOString(), context: 'restaurant', placeName: l.placeName, city: l.city, producer: it.producer, name: it.name, appellation: it.appellation, region: it.region, country: it.country, vintage: it.vintage, color: it.color, grapes: it.grapes || [], price: it.price, geo: l.geo, listId: l.id}, null);
+    $('#wineFormTitle').textContent = 'Fles van de kaart loggen'; $('#btnDeleteWine').hidden = true;
+  });
+  $('#btnDeleteList').addEventListener('click', e => { const bt = e.currentTarget; if (bt.dataset.armed) { C.deleteList(l.id); C.closeAllSheets(); toast('Kaart verwijderd'); } else { bt.dataset.armed = '1'; bt.textContent = 'Zeker? Tik nogmaals om te verwijderen'; setTimeout(() => { delete bt.dataset.armed; bt.textContent = 'Verwijder deze kaart'; }, 4000); } });
+}
+
+function tasteProfile() {
+  const rated = S.wines.filter(w => w.rating);
+  const agg = (key) => { const m = new Map(); for (const w of rated) { const k = w[key]; if (!k) continue; const a = m.get(k) || {n: 0, s: 0}; a.n++; a.s += w.rating; m.set(k, a); } return [...m].sort((a, b) => b[1].n - a[1].n).slice(0, 8).map(([k, a]) => `${k} ${(a.s / a.n).toFixed(1)} (${a.n}x)`).join(', '); };
+  return [`Aantal gelogde flessen: ${S.wines.length}, met cijfer: ${rated.length}.`, agg('region') && 'Gemiddeld cijfer per streek: ' + agg('region'), agg('color') && 'Per kleur: ' + agg('color')].filter(Boolean).join('\n');
+}
+async function askAdvice(listId) {
+  const l = S.lists.find(x => x.id === listId); if (!l) return;
+  const ctx = $('#lCtx').value.trim(); const out = $('#adviceOut'); const btn = $('#btnAdvice'); const stop = $('#btnAdviceStop');
+  btn.disabled = true; stop.hidden = false; out.innerHTML = `<div class="ai"><span class="spin"></span><span>Kaart bestuderen… (30-90 seconden bij een grote kaart)</span></div>`;
+  const hist = S.wines.slice().sort((a, b) => (b.rating || 0) - (a.rating || 0)).slice(0, 150).map(w => `- ${[w.producer, w.name, w.appellation, w.vintage].filter(Boolean).join(' | ')} | ${w.color || '?'} | cijfer ${w.rating ?? '-'}${w.price ? ' | €' + w.price + (w.context === 'restaurant' ? ' rest.' : '') : ''}${w.notes ? ' | ' + w.notes.replace(/\s+/g, ' ').slice(0, 90) : ''}`).join('\n');
+  const known = (l.items || []).map((it, i) => ({it, i, m: C.drunkMatches(it)[0]})).filter(x => x.m).map(x => `#${x.i + 1} eerder gedronken: cijfer ${x.m.w.rating ?? '-'}${x.m.w.price ? ', toen €' + x.m.w.price : ''}`).join('\n');
+  const card = (l.items || []).map((it, i) => `#${i + 1} ${it.section ? '[' + it.section + '] ' : ''}${[it.producer, it.name, it.appellation, it.vintage].filter(Boolean).join(' | ')}${it.color ? ' | ' + it.color : ''}${it.price ? ' | €' + it.price : ''}${it.glassPrice ? ' | glas €' + it.glassPrice : ''}`).join('\n');
+  const prompt = `Je bent onze sommelier-vriend aan tafel in ${l.placeName || 'een restaurant'}${l.city ? ' (' + l.city + ')' : ''}. Ik ben een ervaren liefhebber met vooral kennis van Franse wijn. Adviseer welke flessen we bestellen.
+
+MIJN DRINKGESCHIEDENIS (cijfers 1-10):
+${tasteProfile()}
+${hist || '(nog geen flessen gelogd)'}
+
+DE WIJNKAART VAN VANAVOND (nummer, sectie, wijn, prijs per fles):
+${card || '(leeg)'}
+${known ? '\nOP DEZE KAART AL EERDER GEDRONKEN:\n' + known : ''}
+
+CONTEXT: ${ctx || 'geen extra context; ga uit van 2 flessen voor een diner'}
+
+Criteria: aansluiting bij wat ik hoog waardeerde én minstens één ontdekking; prijs/kwaliteit vergeleken met de gangbare winkel- en restaurantprijs van die wijn; drinkrijpheid van de jaargang; bij het eten als dat gegeven is. Gebruik je kennis van producenten en jaargangen.
+Antwoord in het Nederlands (wijntermen Frans), markdown, maximaal ongeveer 400 woorden:
+## Aanbevolen
+Per aanbeveling: "### #nummer Wijn — €prijs" en daaronder 2-3 zinnen waarom, plus een inschatting prijs/kwaliteit (scherp geprijsd / normaal / aan de prijs).
+## Opvallend op deze kaart
+2-4 korte regels: koopjes, bekende wijnen die ik eerder dronk, bijzondere jaargangen.
+## Liever niet
+1-2 regels.`;
+  adviceCtl = new AbortController();
+  try {
+    const {text} = await S.sample(prompt, {modelTier: 'default', cache: false, signal: adviceCtl.signal, onText: ({text}) => { out.innerHTML = md(text); }});
+    const fresh = S.lists.find(x => x.id === listId) || l;
+    await C.saveList(Object.assign({}, fresh, {advice: text, adviceAt: new Date().toISOString(), adviceContext: ctx || null}));
+    renderListDetail();
+  } catch (e) {
+    console.error(e);
+    out.innerHTML = (e.text ? md(e.text) : '') + (e.code === 'cancelled' ? '' : `<p class="muted small">${esc(e.code === 'not_granted' ? 'Geen toestemming om Claude te gebruiken in deze pagina.' : e.code === 'rate_limited' ? 'Even te druk, probeer het zo opnieuw.' : e.code === 'prompt_too_large' ? 'Te veel data; log minder notities of splits de kaart.' : 'Advies mislukt (' + (e.code || 'fout') + ').')}</p>`);
+    btn.disabled = false; stop.hidden = true;
+  }
+}
+
+// events
+$('#btnPhotoList').addEventListener('click', () => { startNewList(); $('#fileListCam').click(); });
+$('#btnListAddPage').addEventListener('click', () => $('#fileListCam').click());
+$('#btnListGallery').addEventListener('click', () => $('#fileListGal').click());
+$('#btnListRead').addEventListener('click', readNewList);
+$('#btnListAddPage2').addEventListener('click', () => { $('#fileListCam').dataset.target = detailId; $('#fileListCam').click(); });
+$('#fileListCam').addEventListener('change', async e => {
+  const f = e.target.files && e.target.files[0]; const target = e.target.dataset.target; delete e.target.dataset.target; e.target.value = ''; if (!f) return;
+  if (target && !$('#sheetListDetail').hidden) await addPageToExisting(target, f); else if (nl && !$('#sheetListNew').hidden) await addPage(f);
+});
+$('#fileListGal').addEventListener('change', async e => { const fs = Array.from(e.target.files || []); e.target.value = ''; if (nl) for (const f of fs) await addPage(f); });
+
+Object.assign(C, {openListDetail, renderListDetail});
+})();
+</script>
+<script>
+(function(){
+'use strict';
+const C = window.CDC; const {$, $$, esc, colorClass, fmtPrice, fmtDate, todayKey, toast, store, tokens, wineSim, SAME, S} = C;
+
+// ---- inzichten ----
+function renderInsights() {
+  if ($('#view-inzichten').hidden) return;
+  const ws = S.wines, rated = ws.filter(w => w.rating);
+  const avg = rated.length ? (rated.reduce((s, w) => s + w.rating, 0) / rated.length).toFixed(1) : '–';
+  const places = new Set(ws.map(w => (w.placeName || '').toLowerCase()).filter(Boolean));
+  const spent = ws.filter(w => w.price && w.context === 'restaurant').reduce((s, w) => s + w.price, 0);
+  $('#tiles').innerHTML = [[ws.length, 'flessen gelogd'], [avg, 'gemiddeld cijfer'], [S.lists.length, 'wijnkaarten'], [places.size, 'plekken']].map(([v, l]) => `<div class="tile"><div class="v">${esc(v)}</div><div class="l">${l}</div></div>`).join('');
+  const bars = (el, map, withAvg) => {
+    const arr = [...map].sort((a, b) => b[1].n - a[1].n).slice(0, 8); const max = Math.max(1, ...arr.map(x => x[1].n));
+    $(el).innerHTML = arr.length ? arr.map(([k, a]) => `<div class="bar"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(k)}</span><span class="tr"><span class="fl" style="width:${(a.n / max * 100).toFixed(0)}%"></span></span><span class="c">${withAvg && a.r ? (a.s / a.r).toFixed(1) : a.n}</span></div>`).join('') : '<p class="muted small">Nog geen data.</p>';
+  };
+  const agg = key => { const m = new Map(); for (const w of ws) { const k = w[key]; if (!k) continue; const a = m.get(k) || {n: 0, s: 0, r: 0}; a.n++; if (w.rating) { a.s += w.rating; a.r++; } m.set(k, a); } return m; };
+  bars('#barsColor', agg('color'), false); bars('#barsRegion', agg('region'), true);
+  const top = rated.slice().sort((a, b) => b.rating - a.rating || String(b.createdAt).localeCompare(String(a.createdAt))).slice(0, 5);
+  $('#topWines').innerHTML = top.length ? C.rows(top.map(w => C.wineRow(w)).join('')) : '<p class="muted small">Geef je flessen een cijfer en hier verschijnen je favorieten.</p>';
+  // terugkerende wijnen over kaarten: groepeer op producent, dan op gelijkenis
+  const byProd = new Map();
+  for (const l of S.lists) for (const it of (l.items || [])) { const k = tokens(it.producer).join(' ') || ('~' + tokens(it.name).join(' ')); if (!k || k === '~') continue; if (!byProd.has(k)) byProd.set(k, []); byProd.get(k).push({it, l}); }
+  const clusters = [];
+  for (const arr of byProd.values()) {
+    const used = new Set();
+    for (let i = 0; i < arr.length; i++) { if (used.has(i)) continue; const cl = [arr[i]]; used.add(i); for (let j = i + 1; j < arr.length; j++) { if (!used.has(j) && wineSim(arr[i].it, arr[j].it) >= SAME) { cl.push(arr[j]); used.add(j); } }
+      const lists = new Map(cl.map(x => [x.l.id, x.l])); if (lists.size >= 2) clusters.push({it: arr[i].it, lists: [...lists.values()], prices: cl.map(x => x.it.price).filter(Boolean)}); }
+  }
+  clusters.sort((a, b) => b.lists.length - a.lists.length);
+  $('#recurring').innerHTML = clusters.length ? C.rows(clusters.slice(0, 12).map(c => `<div class="row"><span class="sw ${colorClass(c.it.color)}"></span><span style="min-width:0"><div class="t">${esc([c.it.producer, c.it.name].filter(Boolean).join(', '))}</div><div class="s">${esc([c.it.appellation, c.lists.map(l => l.placeName || 'kaart').join(', ')].filter(Boolean).join(' · '))}</div></span><span class="r"><span class="badge num">${c.lists.length} kaarten</span>${c.prices.length ? `<span class="small muted num">${fmtPrice(Math.min(...c.prices))}${c.prices.length > 1 ? ' – ' + fmtPrice(Math.max(...c.prices)) : ''}</span>` : ''}</span></div>`).join('')) : '<p class="muted small">Zodra een wijn op twee of meer gefotografeerde kaarten staat, zie je hem hier, met het prijsverschil.</p>';
+  if (spent) $('#usage').textContent = `€${Math.round(spent)} aan restaurantflessen`;
+  if (S.assets && !S.usageLoaded) { S.usageLoaded = true; S.assets.list().then(r => { const mb = (r.usage.bytes / 1048576).toFixed(1); $('#usage').textContent = `${r.usage.files} foto's · ${mb} MB`; }).catch(() => {}); }
+}
+C.renderInsights = renderInsights;
+
+async function exportJson() {
+  const data = JSON.stringify({app: 'Carnet de Cave', exportedAt: new Date().toISOString(), note: 'photo/photos zijn asset-ids; de bestanden staan bij het artifact onder /_blob/<id>.', wines: S.wines, lists: S.lists}, null, 2);
+  if (!S.downloads) { try { await navigator.clipboard.writeText(data); toast('Download niet beschikbaar; JSON naar klembord gekopieerd'); } catch (e) { toast('Exporteren niet beschikbaar in deze weergave'); } return; }
+  try { await S.downloads.save({filename: `carnet-de-cave-${todayKey()}.json`, data}); toast('Export opgeslagen'); }
+  catch (e) { if (e.code !== 'declined') toast('Export mislukt (' + (e.code || 'fout') + ')'); }
+}
+
+// ---- events ----
+$$('.tabs button').forEach(b => b.addEventListener('click', () => { C.showView(b.dataset.view); renderInsights(); }));
+window.addEventListener('hashchange', () => C.showView(location.hash.slice(1)));
+document.addEventListener('click', e => {
+  const cl = e.target.closest('[data-close]'); if (cl) { C.closeSheet(cl.closest('.sheet').id); return; }
+  const w = e.target.closest('[data-wine]'); if (w) { C.openWineDetail(w.dataset.wine); return; }
+  const l = e.target.closest('[data-list]'); if (l) { C.openListDetail(l.dataset.list); return; }
+});
+const saveSession = () => { S.session = {place: $('#placeName').value.trim(), city: $('#placeCity').value.trim()}; store.set('session', S.session); C.renderAll(); };
+$('#placeName').addEventListener('change', () => { const p = S.places && S.places.get($('#placeName').value.trim().toLowerCase()); if (p && p.city && !$('#placeCity').value) $('#placeCity').value = p.city; saveSession(); });
+$('#placeCity').addEventListener('change', saveSession);
+$('#wineSearch').addEventListener('input', e => { S.wineQuery = e.target.value; C.renderAll(); });
+$('#wineFilter').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S.wineFilter = b.dataset.f; $$('#wineFilter button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); C.renderAll(); });
+$('#btnAllWines').addEventListener('click', () => C.showView('wijnen'));
+$('#btnExport').addEventListener('click', exportJson);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') C.closeSheet(); });
+
+// ---- opstart ----
+async function init() {
+  $('#placeName').value = S.session.place || ''; $('#placeCity').value = S.session.city || '';
+  C.showView(location.hash.slice(1) || 'vanavond'); C.renderAll();
+  const [db, assets, sample, downloads] = await Promise.all([C.use('db'), C.use('assets'), C.use('sample'), C.use('downloads')]);
+  S.db = db; S.assets = assets; S.sample = sample; S.downloads = downloads;
+  if (sample) { try { const lim = await sample.limits(); S.canImages = !!lim.images; } catch (e) { S.canImages = false; } }
+  $('#dbBanner').hidden = !!db;
+  if (!db) { S.ready = true; C.setSync(false, 'niet verbonden'); C.renderAll(); return; }
+  const onErr = e => { console.error(e); C.setSync(false, 'opslagfout'); };
+  db.collection('wines').onSnapshot(snap => { S.wines = snap.docs.map(d => Object.assign({id: d.id}, d.data())).sort((a, b) => String(b.createdAt || '').localeCompare(String(a.createdAt || ''))); S.ready = true; C.renderAll(); if (!$('#sheetWineDetail').hidden) C.renderWineDetail(); }, onErr);
+  db.collection('lists').onSnapshot(snap => { S.lists = snap.docs.map(d => Object.assign({id: d.id}, d.data())).sort((a, b) => String(b.createdAt || '').localeCompare(String(a.createdAt || ''))); S.ready = true; C.renderAll(); }, onErr);
+}
+init();
+})();
+</script>
