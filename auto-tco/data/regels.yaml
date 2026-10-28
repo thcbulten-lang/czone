@@ -1,0 +1,118 @@
+# Fiscale en economische spelregels voor het autovergelijk (Nederland, DGA).
+# Elke post draagt een bron, een datum en een zekerheid: hoog / midden / laag.
+# Verandert een regel (nieuw belastingplan), dan wijzig je dit bestand en niet de code.
+versie: "2026-10-28"
+basisjaar: 2026
+
+bijtelling:
+  # Standaardtarief over de cataloguswaarde (nieuwprijs incl. btw en bpm, incl. fabrieksopties).
+  # Auto's met eerste toelating voor 2017 houden 25%.
+  standaard_pct: 22
+  standaard_pct_voor_2017: 25
+  # Verlaagd tarief voor auto's zonder CO2-uitstoot, naar jaar van eerste toelating.
+  # 'pct' geldt over de eerste 'cap' euro cataloguswaarde, daarboven het standaardtarief.
+  # Looptijd: 60 maanden vanaf de eerste dag van de maand na de eerste toelating.
+  # Daarna geldt per kalenderjaar het verlaagde tarief van dat jaar (geen nieuwe 60 maanden).
+  ev_per_jaar_eerste_toelating:
+    2019: {pct: 4,  cap: 50000}
+    2020: {pct: 8,  cap: 45000}
+    2021: {pct: 12, cap: 40000}
+    2022: {pct: 16, cap: 35000}
+    2023: {pct: 16, cap: 30000}
+    2024: {pct: 16, cap: 30000}
+    2025: {pct: 17, cap: 30000}
+    2026: {pct: 18, cap: 30000}
+    2027: {pct: 20, cap: 30000}
+    2028: {pct: 22, cap: 0}
+  youngtimer:
+    minimale_leeftijd_jaren: 15
+    pct: 35                      # over de waarde in het economisch verkeer (dagwaarde)
+  grens_prive_km_geen_bijtelling: 500
+  zekerheid: hoog
+  bron: "Belastingdienst; amendement Belastingplan 2026 (18% in 2026, 20% in 2027, 22% vanaf 2028); salarisvanmorgen.nl 9-3-2026 over de 60-maandsregel"
+  datum: "2026-10-28"
+
+motorrijtuigenbelasting:
+  # Rijksdeel per kwartaal voor een personenauto (benzine of elektrisch), als benadering van de
+  # staffel in art. 23 Wet MRB 1994. Vervang 'staffel' door de officiele tabel zodra die binnen is.
+  grondslag: rijklaar             # sinds 1-7-2026: massa rijklaar = massa ledig + 100 kg
+  staffel:
+    basis_kg: 550
+    basis_bedrag_kwartaal: 25.00
+    per_100kg_kwartaal: 11.25
+  opcenten_pct:                   # provinciale opcenten als percentage van het rijksdeel
+    Noord-Brabant: 80.4
+    Noord-Holland: 67.9
+    Zuid-Holland: 98.7
+    Utrecht: 80.6
+    Gelderland: 93.0
+    Limburg: 78.7
+    Overijssel: 79.9
+    Flevoland: 83.6
+    Friesland: 89.7
+    Groningen: 95.8
+    Drenthe: 92.0
+    Zeeland: 82.3
+  ev_factor_per_jaar: {2025: 0.25, 2026: 0.70, 2027: 0.70, 2028: 0.70, 2029: 0.75, 2030: 1.00}
+  diesel_toeslag_factor: 2.3      # ruwe benadering: diesel betaalt circa 2,3x het benzinetarief
+  zekerheid: midden
+  bron: "Belastingdienst (70% van het benzinetarief voor EV in 2026); ANWB (30% korting t/m 2028, 25% in 2029, 0% vanaf 2030). Staffel: lineaire benadering geijkt op twee gepubliceerde voorbeelden (Volvo EX30 1.750 kg, Utrecht-voorbeeld); opcenten per provincie: benadering. Beide verifieren met de rekenhulp van de Belastingdienst."
+  datum: "2026-10-28"
+
+inkomstenbelasting_box1:
+  jaar: 2026
+  schijven:
+    - {tot: 38883, pct: 35.70}
+    - {tot: 79137, pct: 37.56}
+    - {tot: null,  pct: 49.50}
+  algemene_heffingskorting: {maximum: 3115, afbouw_vanaf: 29000, afbouw_tot: 79137}
+  arbeidskorting: {maximum: 5712, afbouw_vanaf: 45000, afbouw_pct: 6.51}
+  zekerheid: midden
+  bron: "Miljoenennota 2026 / taxlive.nl (schijven); heffingskortingen zijn een benadering van de 2026-cijfers"
+  datum: "2026-10-28"
+
+box2: {schijf1_tot: 68843, pct1: 24.5, pct2: 31.0, zekerheid: hoog, bron: "Belastingplan 2026"}
+vennootschapsbelasting: {schijf1_tot: 200000, pct1: 19.0, pct2: 25.8, zekerheid: hoog, bron: "Belastingplan 2026"}
+zvw: {werkgeversheffing_pct: 6.10, maximum_bijdrageloon: 79409, zekerheid: hoog, bron: "Staatscourant / Grant Thornton loonheffingen 2026"}
+gebruikelijk_loon: {minimum: 58000, zekerheid: hoog, bron: "Belastingdienst 2026"}
+
+btw:
+  pct: 21
+  # Correctie privegebruik auto van de zaak, per jaar, over de cataloguswaarde incl. btw en bpm:
+  correctie_prive_pct: 2.7        # als btw op aanschaf is afgetrokken, jaar van ingebruikname + 4 jaar
+  correctie_prive_pct_laag: 1.5   # daarna, en voor auto's zonder btw-aftrek bij aanschaf (marge-auto)
+  correctie_hoog_jaren: 5
+  zekerheid: hoog
+  bron: "Besluit btw heffing privegebruik auto"
+
+km_vergoeding:
+  onbelast_per_km: 0.25           # 2026, met terugwerkende kracht tot 1-1-2026 (was 0.23)
+  zekerheid: hoog
+  bron: "Belastingdienst, verhoging onbelaste kilometervergoeding 2026"
+  datum: "2026-10-28"
+
+investeringsaftrek:
+  # Personenauto's komen niet in aanmerking voor KIA; bestelauto's (grijs kenteken) wel.
+  kia: {van: 2901, tot: 70602, pct: 28, zekerheid: midden}
+  mia_ev_personenauto_pct: 0      # sinds 2022 van de Milieulijst
+  mia_ev_bestelauto_pct: 0        # Milieulijst 2026: vermoedelijk vervallen, verifieren bij RVO
+  zekerheid: laag
+  bron: "RVO Milieulijst; mkbservicedesk.nl"
+
+restwaarde:
+  # Waarde als percentage van de nieuwprijs, naar leeftijd in jaren (index 0 = nieuw).
+  # Dit is de grootste onzekerheid in elk TCO-vergelijk. De gevoeligheidsanalyse laat zien hoeveel het uitmaakt.
+  curves:
+    ev_europees_premium:   [100, 72, 61, 53, 47, 42, 38, 34, 31, 28, 25, 23]
+    ev_mainstream:         [100, 68, 57, 49, 43, 38, 34, 30, 27, 24, 22, 20]
+    ev_tesla:              [100, 65, 55, 47, 41, 36, 32, 29, 26, 23, 21, 19]
+    ev_chinees_nieuw_merk: [100, 60, 50, 42, 36, 31, 27, 24, 21, 19, 17, 15]
+    personenbus_ev:        [100, 70, 60, 52, 46, 41, 37, 33, 30, 27, 25, 23]
+    phev:                  [100, 70, 59, 50, 43, 38, 34, 30, 27, 24, 22, 20]
+  zekerheid: laag
+  bron: "Eerste schatting op basis van algemene richtlijnen (KBC: 50-60% na 3 jaar) en de ervaring dat Chinese nieuwkomers harder dalen; geen harde Nederlandse data"
+  datum: "2026-10-28"
+
+energie:
+  brandstofprijs_per_liter: {benzine: 2.05, diesel: 1.80}
+  zekerheid: midden

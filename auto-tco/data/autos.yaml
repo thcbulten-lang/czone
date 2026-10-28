@@ -1,0 +1,386 @@
+# Auto's. Elke auto draagt bron, datum en zekerheid (hoog / midden / laag).
+# Let op de drie prijzen die fiscaal elk iets anders doen:
+#   catalogusprijs  = nieuwprijs incl. btw en bpm, incl. fabrieksopties: de basis voor bijtelling en btw-correctie, ook bij een occasion
+#   aanschafprijs   = wat we nu betalen, incl. btw
+#   restwaarde      = volgt de curve uit regels.yaml (of restwaarde_jaarlijks_pct voor oude auto's)
+# Verbruik is praktijkverbruik (kWh/100 km), niet WLTP.
+
+- id: e_klasse_youngtimer
+  naam: "Mercedes E-klasse youngtimer (huidige auto)"
+  categorie: sedan
+  aandrijving: benzine
+  nieuw: false
+  eerste_toelating: "2008-06"       # ONBEKEND: vul het echte bouwjaar in
+  catalogusprijs: 65000             # niet relevant: youngtimer rekent over de dagwaarde
+  aanschafprijs: 7500               # dagwaarde nu (ONBEKEND); dit is het kapitaal dat erin zit
+  btw_auto: false
+  massa_ledig_kg: 1700
+  brandstof_l_100km: 9.5
+  trekgewicht_geremd_kg: 1900
+  zitplaatsen: 5
+  bagageruimte_l: 540
+  restwaarde_jaarlijks_pct: 92      # verliest circa 8 procent per jaar
+  onderhoud_pj: 2000
+  banden_pj: 350
+  verzekering_pj: 700
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 4, merkrisico: 5, laadsnelheid: 1}
+  notities: "Vul in: type, bouwjaar, brandstof, dagwaarde, werkelijk verbruik en onderhoud van de laatste jaren."
+  bron: "aannames"
+  zekerheid: laag
+  datum: "2026-10-28"
+
+- id: xpeng_g9_nieuw
+  naam: "Xpeng G9 RWD Long Range (nieuw)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 64990
+  aanschafprijs: 64990
+  btw_auto: true
+  massa_ledig_kg: 2320
+  accu_kwh: 93.1
+  actieradius_wltp_km: 570
+  verbruik_praktijk_kwh_100km: 21.5
+  trekgewicht_geremd_kg: 1500
+  zitplaatsen: 5
+  bagageruimte_l: 660
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 400
+  banden_pj: 550
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1200
+  trekhaak_fabrieksoptie: false
+  garantie: "verifieren bij dealer"
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 3, merkrisico: 2, laadsnelheid: 5}
+  notities: "Proefrit gemaakt in oktober 2026; indruk vastleggen in het logboek."
+  bron: "ev-database.org, autoreview.nl, kentekenrapporten (prijs vanaf 59.990 voor de SR; LR geschat)"
+  zekerheid: midden
+  datum: "2026-10-28"
+
+- id: xpeng_g9_occasion_2024
+  naam: "Xpeng G9 RWD Long Range (occasion 2024)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2024-03"
+  catalogusprijs: 72990             # nieuwprijs destijds; bepaalt de bijtelling
+  aanschafprijs: 40000              # ONBEKEND: schatting van het aanbod
+  btw_auto: true
+  km_stand: 45000
+  massa_ledig_kg: 2320
+  accu_kwh: 98
+  actieradius_wltp_km: 570
+  verbruik_praktijk_kwh_100km: 22
+  trekgewicht_geremd_kg: 1500
+  zitplaatsen: 5
+  bagageruimte_l: 660
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 450
+  banden_pj: 550
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1200
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 3, merkrisico: 2, laadsnelheid: 5}
+  notities: "Bijtelling 16% over 30.000 tot en met maart 2029, daarna het tarief van dat jaar."
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-10-28"
+
+- id: zeekr_7x_privilege
+  naam: "Zeekr 7X Privilege AWD 100 kWh (nieuw)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 62990
+  aanschafprijs: 62990
+  btw_auto: true
+  massa_ledig_kg: 2435
+  accu_kwh: 100
+  actieradius_wltp_km: 543
+  verbruik_praktijk_kwh_100km: 23
+  trekgewicht_geremd_kg: 2000
+  zitplaatsen: 5
+  bagageruimte_l: 539
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 400
+  banden_pj: 600
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1200
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 4, merkrisico: 2, laadsnelheid: 5}
+  notities: "Proefrit gepland. Duurtest Bright: winterverbruik rond 25 kWh/100 km."
+  bron: "autozine.nl (april 2025), kentekenrapporten, viabovag"
+  zekerheid: midden
+  datum: "2026-10-28"
+
+- id: zeekr_7x_core
+  naam: "Zeekr 7X Core RWD 75 kWh (nieuw)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 52990
+  aanschafprijs: 52990
+  btw_auto: true
+  massa_ledig_kg: 2295
+  accu_kwh: 75
+  actieradius_wltp_km: 480
+  verbruik_praktijk_kwh_100km: 21.5
+  trekgewicht_geremd_kg: 2000      # verifieren: geldt dit ook voor de RWD?
+  zitplaatsen: 5
+  bagageruimte_l: 539
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 400
+  banden_pj: 550
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1200
+  kwalitatief: {ruimte: 4, comfort: 3, trekervaring: 3, merkrisico: 2, laadsnelheid: 5}
+  bron: "autozine.nl (april 2025)"
+  zekerheid: midden
+  datum: "2026-10-28"
+
+- id: kia_ev9_occasion_2024
+  naam: "Kia EV9 AWD 99,8 kWh 7p (occasion 2024)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2024-02"
+  catalogusprijs: 84000
+  aanschafprijs: 58000              # ONBEKEND: schatting van het aanbod
+  btw_auto: true
+  km_stand: 40000
+  massa_ledig_kg: 2564
+  accu_kwh: 99.8
+  actieradius_wltp_km: 505
+  verbruik_praktijk_kwh_100km: 24
+  trekgewicht_geremd_kg: 2500
+  zitplaatsen: 7
+  bagageruimte_l: 828
+  restwaarde_curve: ev_mainstream
+  onderhoud_pj: 450
+  banden_pj: 650
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1100
+  kwalitatief: {ruimte: 5, comfort: 4, trekervaring: 5, merkrisico: 4, laadsnelheid: 5}
+  notities: "RWD-versie trekt maar 900 kg; alleen de AWD telt. Zeven zitplaatsen."
+  bron: "ev-database.org, autoscout24 (aanbod 2023-2025: 63.000 tot 71.000)"
+  zekerheid: midden
+  datum: "2026-10-28"
+
+- id: id_buzz_nieuw
+  naam: "VW ID. Buzz LWB Pro 86 kWh 7p (nieuw)"
+  categorie: personenbus
+  aandrijving: ev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 58000             # bronnen lopen uiteen van 49.000 tot 67.000; verifieren
+  aanschafprijs: 58000
+  btw_auto: true
+  massa_ledig_kg: 2650
+  accu_kwh: 86
+  actieradius_wltp_km: 450
+  verbruik_praktijk_kwh_100km: 25
+  trekgewicht_geremd_kg: 1600      # bronnen noemen 1.200 tot 1.800 afhankelijk van uitvoering; verifieren
+  zitplaatsen: 7
+  bagageruimte_l: 1340
+  restwaarde_curve: personenbus_ev
+  onderhoud_pj: 450
+  banden_pj: 600
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1100
+  kwalitatief: {ruimte: 5, comfort: 4, trekervaring: 3, merkrisico: 4, laadsnelheid: 4}
+  bron: "ev-database.org, autoreview.nl, viabovag"
+  zekerheid: laag
+  datum: "2026-10-28"
+
+- id: id_buzz_occasion_2025
+  naam: "VW ID. Buzz LWB Pro 86 kWh (occasion 2025)"
+  categorie: personenbus
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2025-10"
+  catalogusprijs: 66990
+  aanschafprijs: 52000              # 42.970 excl. btw gezien bij viabovag
+  btw_auto: true
+  km_stand: 12000
+  massa_ledig_kg: 2650
+  accu_kwh: 86
+  actieradius_wltp_km: 450
+  verbruik_praktijk_kwh_100km: 25
+  trekgewicht_geremd_kg: 1600
+  zitplaatsen: 7
+  bagageruimte_l: 1340
+  restwaarde_curve: personenbus_ev
+  onderhoud_pj: 450
+  banden_pj: 600
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1100
+  kwalitatief: {ruimte: 5, comfort: 4, trekervaring: 3, merkrisico: 4, laadsnelheid: 4}
+  bron: "viabovag (okt 2026)"
+  zekerheid: midden
+  datum: "2026-10-28"
+
+- id: tesla_model_y_nieuw
+  naam: "Tesla Model Y Long Range AWD (nieuw)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 52990
+  aanschafprijs: 52990
+  btw_auto: true
+  massa_ledig_kg: 1995
+  accu_kwh: 78
+  actieradius_wltp_km: 586
+  verbruik_praktijk_kwh_100km: 17.5
+  trekgewicht_geremd_kg: 1600
+  zitplaatsen: 5
+  bagageruimte_l: 854
+  restwaarde_curve: ev_tesla
+  onderhoud_pj: 300
+  banden_pj: 450
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1350
+  trekhaak_fabrieksoptie: true      # telt mee in de cataloguswaarde en dus in de bijtelling
+  kwalitatief: {ruimte: 3, comfort: 3, trekervaring: 3, merkrisico: 4, laadsnelheid: 5}
+  notities: "De zuinige referentie: laag verbruik, lage massa, dus lage MRB."
+  bron: "tesla.com (prijs geschat), ev-database.org"
+  zekerheid: midden
+  datum: "2026-10-28"
+
+- id: tesla_model_y_occasion_2023
+  naam: "Tesla Model Y Long Range AWD (occasion 2023)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2023-05"
+  catalogusprijs: 58990
+  aanschafprijs: 31000
+  btw_auto: true
+  km_stand: 70000
+  massa_ledig_kg: 1980
+  accu_kwh: 75
+  actieradius_wltp_km: 533
+  verbruik_praktijk_kwh_100km: 18
+  trekgewicht_geremd_kg: 1600
+  zitplaatsen: 5
+  bagageruimte_l: 854
+  restwaarde_curve: ev_tesla
+  onderhoud_pj: 350
+  banden_pj: 450
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 3, comfort: 3, trekervaring: 3, merkrisico: 4, laadsnelheid: 5}
+  notities: "Bijtelling 16% over 30.000 tot en met mei 2028."
+  bron: "schatting van het aanbod"
+  zekerheid: midden
+  datum: "2026-10-28"
+
+- id: ford_e_tourneo_custom
+  naam: "Ford E-Tourneo Custom L2 (nieuw)"
+  categorie: personenbus
+  aandrijving: ev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 70000
+  aanschafprijs: 70000
+  btw_auto: true
+  massa_ledig_kg: 2750
+  accu_kwh: 75
+  actieradius_wltp_km: 300
+  verbruik_praktijk_kwh_100km: 28
+  trekgewicht_geremd_kg: 2000      # verifieren
+  zitplaatsen: 8
+  bagageruimte_l: 1500
+  restwaarde_curve: personenbus_ev
+  onderhoud_pj: 500
+  banden_pj: 650
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1000
+  kwalitatief: {ruimte: 5, comfort: 3, trekervaring: 4, merkrisico: 4, laadsnelheid: 3}
+  notities: "Kleine actieradius (circa 300 km WLTP); met aanhanger fors minder."
+  bron: "elektrischeauto.nl (68.349 vanaf), autorai.nl"
+  zekerheid: laag
+  datum: "2026-10-28"
+
+- id: kia_pv5_passenger
+  naam: "Kia PV5 Passenger 71,2 kWh (nieuw)"
+  categorie: personenbus
+  aandrijving: ev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 42000
+  aanschafprijs: 42000
+  btw_auto: true
+  massa_ledig_kg: 2100
+  accu_kwh: 71.2
+  actieradius_wltp_km: 400
+  verbruik_praktijk_kwh_100km: 21
+  trekgewicht_geremd_kg: 750       # verifieren
+  zitplaatsen: 5
+  bagageruimte_l: 1300
+  restwaarde_curve: ev_mainstream
+  onderhoud_pj: 350
+  banden_pj: 450
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 900
+  kwalitatief: {ruimte: 4, comfort: 3, trekervaring: 1, merkrisico: 4, laadsnelheid: 3}
+  bron: "driveduel.de (vanaf 39.800), vergelijkingssites"
+  zekerheid: laag
+  datum: "2026-10-28"
+
+- id: jaecoo_5_ev
+  naam: "Jaecoo 5 EV (nieuw)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 32990
+  aanschafprijs: 32990
+  btw_auto: true
+  massa_ledig_kg: 1800
+  accu_kwh: 58.9
+  actieradius_wltp_km: 402
+  verbruik_praktijk_kwh_100km: 18
+  trekgewicht_geremd_kg: 750       # ONBEKEND: nergens gevonden, verifieren bij Jaecoo
+  zitplaatsen: 5
+  bagageruimte_l: 480
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 350
+  banden_pj: 400
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 900
+  kwalitatief: {ruimte: 2, comfort: 3, trekervaring: 1, merkrisico: 2, laadsnelheid: 3}
+  notities: "Compact; waarschijnlijk te klein en te licht voor de eisen."
+  bron: "viabovag (vanaf 32.990), topgear.nl"
+  zekerheid: midden
+  datum: "2026-10-28"
+
+- id: jaecoo_7_shs
+  naam: "Jaecoo 7 SHS plug-in hybride (nieuw, referentie)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 39900
+  aanschafprijs: 39900
+  btw_auto: true
+  massa_ledig_kg: 1800
+  accu_kwh: 18.3
+  actieradius_wltp_km: 90
+  verbruik_praktijk_kwh_100km: 20
+  ev_aandeel_km: 0.55               # deel van de kilometers elektrisch
+  brandstof_l_100km: 6.5
+  trekgewicht_geremd_kg: 1500
+  zitplaatsen: 5
+  bagageruimte_l: 500
+  restwaarde_curve: phev
+  onderhoud_pj: 500
+  banden_pj: 400
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1000
+  kwalitatief: {ruimte: 3, comfort: 3, trekervaring: 3, merkrisico: 2, laadsnelheid: 2}
+  notities: "Niet volledig elektrisch, dus geen EV-korting op bijtelling en MRB. Staat erin om het fiscale verschil zichtbaar te maken."
+  bron: "autorai.nl (vanaf 37.900), viabovag"
+  zekerheid: laag
+  datum: "2026-10-28"

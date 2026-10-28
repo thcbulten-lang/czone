@@ -1,0 +1,49 @@
+# Financiele constructies. 'eigenaar' bepaalt wie betaalt en welke fiscale regels gelden.
+# Rente 'null' betekent: de rendementseis uit het profiel.
+- id: bv_koop
+  naam: "BV koopt"
+  eigenaar: bv
+  financiering: eigen
+  prive_gebruik: true
+  toelichting: "De BV koopt en betaalt alles; btw op aanschaf en kosten terug (bij een btw-auto); bijtelling bij jou prive; btw-correctie privegebruik."
+
+- id: bv_financial_lease
+  naam: "BV financial lease"
+  eigenaar: bv
+  financiering: financial_lease
+  prive_gebruik: true
+  rente_pct: 6.5
+  aanbetaling_pct: 10
+  toelichting: "Economisch gelijk aan kopen met een lening; de auto staat op de balans van de BV."
+
+- id: bv_operational_lease
+  naam: "BV operational lease"
+  eigenaar: bv
+  financiering: operational_lease
+  prive_gebruik: true
+  inbegrepen: [afschrijving, vermogenskosten, verzekering, onderhoud, banden, mrb]
+  lease_opslag_pct: 8             # alleen voor de schatting als er geen offerte is
+  toelichting: "Vast maandbedrag, restwaarderisico bij de maatschappij. Zonder offerte schat het model het maandbedrag en markeert dat."
+
+- id: bv_koop_geen_prive
+  naam: "BV koopt, geen privegebruik"
+  eigenaar: bv
+  financiering: eigen
+  prive_gebruik: false
+  toelichting: "Minder dan 500 km prive per jaar met sluitende rittenregistratie: geen bijtelling, geen btw-correctie. Vereist een tweede auto voor prive."
+
+- id: prive_koop_kmvergoeding
+  naam: "Prive koop + km-vergoeding"
+  eigenaar: prive
+  financiering: eigen
+  km_vergoeding: true
+  toelichting: "Jij koopt prive (met netto geld), de BV vergoedt 0,25 per zakelijke kilometer onbelast. Geen bijtelling."
+
+- id: prive_lease_kmvergoeding
+  naam: "Private lease + km-vergoeding"
+  eigenaar: prive
+  financiering: operational_lease
+  km_vergoeding: true
+  inbegrepen: [afschrijving, vermogenskosten, verzekering, onderhoud, banden, mrb]
+  lease_opslag_pct: 10
+  toelichting: "Private lease uit netto inkomen, plus de onbelaste vergoeding voor zakelijke kilometers."

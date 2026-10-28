@@ -1,0 +1,45 @@
+# Jouw situatie en voorkeuren. Alles wat hier 'ONBEKEND' heet is een eerste aanname die je moet vervangen.
+naam: Thomas
+rol: dga
+bv_provincie: Noord-Brabant
+
+# Inkomen en tarieven
+salaris_bruto: 58000              # gebruikelijk loon 2026; vervang door het werkelijke DGA-loon
+ib_marginaal_effectief_pct: null  # null = berekenen uit box 1 inclusief afbouw heffingskortingen; anders vast, bijv. 50.0
+vpb_pct: 19.0                     # aanname: BV-winst onder de 200.000 euro
+box2_pct: 24.5                    # aanname: uitkeringen onder de 68.843 euro per jaar
+bijtelling_vult_gebruikelijk_loon: false  # zit je op het minimum gebruikelijk loon, dan mag de bijtelling dat opvullen en kan het cash-salaris omlaag
+rendementseis_bv_pct: 5.0         # wat geld in de BV anders opbrengt, of de rente die de BV betaalt
+rendementseis_prive_pct: 3.0      # idem voor privegeld, na belasting
+
+# Horizon
+horizon_jaren: 5                  # hoofdhorizon; het rapport rekent ook 3 en 7 door
+horizonnen_rapport: [3, 5, 7]
+startmaand: "2026-12"             # maand waarin de nieuwe auto op naam komt
+
+# Gebruik (ONBEKEND: eerste aannames)
+km_per_jaar:
+  zakelijk: 15000                 # inclusief woon-werk
+  prive: 10000
+  trekkend: 1500                  # kilometers met aanhanger of caravan, vallen binnen zakelijk + prive
+verbruik_factor_trekkend: 1.7     # een EV verbruikt met aanhanger ruwweg 50 tot 100 procent meer
+
+# Laden
+laden:
+  thuis_mogelijk: true            # ONBEKEND: eigen oprit of parkeerplaats?
+  laadpaal_aanwezig: false
+  laadpaal_kosten: 1800           # incl. btw, incl. installatie
+  mix: {thuis: 0.70, publiek: 0.20, snel: 0.10}
+  prijs_per_kwh: {thuis: 0.27, publiek: 0.55, snel: 0.69}   # incl. btw
+  btw_aftrek_thuis: false         # conservatief: btw op thuisladen niet terugvragen
+
+# Eisen (harde filters) en wensen
+eisen:
+  elektrisch: true
+  trekgewicht_geremd_min_kg: 1500 # ONBEKEND: wat moet er achter? aanhanger 750, caravan 1.500, boot of paardentrailer 2.000+
+  zitplaatsen_min: 5
+wensen:
+  ruimte: belangrijk
+  gezin: {kinderen: 2}
+
+huidige_auto: e_klasse_youngtimer

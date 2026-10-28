@@ -1,0 +1,33 @@
+# Welke combinaties zetten we naast elkaar?
+# 'matrix' maakt automatisch een scenario voor elke auto met elke genoemde constructie.
+# 'extra' bevat samengestelde scenario's (bijvoorbeeld twee auto's) en varianten met eigen aannames.
+matrix:
+  autos: alle
+  constructies: [bv_koop, bv_operational_lease, prive_koop_kmvergoeding]
+  uitsluiten:
+    - {auto: e_klasse_youngtimer, constructie: bv_koop}              # staat al als nulscenario onder 'extra'
+    - {auto: e_klasse_youngtimer, constructie: bv_operational_lease}  # een youngtimer lease je niet
+
+extra:
+  - id: nul_eklasse_houden
+    naam: "0. E-klasse houden zoals nu"
+    onderdelen:
+      - {auto: e_klasse_youngtimer, constructie: bv_koop}
+    notities: "Het nulscenario. Elke andere keuze moet zich hiertegen bewijzen."
+
+  - id: g9_zakelijk_eklasse_prive
+    naam: "Xpeng G9 nieuw alleen zakelijk + E-klasse prive"
+    onderdelen:
+      - {auto: xpeng_g9_nieuw, constructie: bv_koop_geen_prive, km: {zakelijk: 1.0, prive: 0.0, trekkend: 0.5}}
+      - {auto: e_klasse_youngtimer, constructie: prive_koop_kmvergoeding, km: {zakelijk: 0.0, prive: 1.0, trekkend: 0.5}}
+    notities: "Fiscaal het scherpst, administratief het zwaarst: rittenregistratie en minder dan 500 km prive met de G9. De E-klasse gaat tegen dagwaarde naar prive."
+
+  - id: g9_nieuw_financial_lease
+    naam: "Xpeng G9 nieuw, BV financial lease"
+    onderdelen:
+      - {auto: xpeng_g9_nieuw, constructie: bv_financial_lease}
+
+  - id: zeekr_7x_private_lease
+    naam: "Zeekr 7X Privilege, private lease + km-vergoeding"
+    onderdelen:
+      - {auto: zeekr_7x_privilege, constructie: prive_lease_kmvergoeding}
