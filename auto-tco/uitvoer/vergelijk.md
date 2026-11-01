@@ -1,4 +1,4 @@
-# Autovergelijk op totale kosten, stand 2026-10-28
+# Autovergelijk op totale kosten, stand 2026-11-01
 
 Horizon 5 jaar vanaf 2026-12; 117 scenario's. Alle bedragen zijn netto prive-euro's per jaar: BV-kosten tellen voor 0.612 (na 19.0% vpb en 24.5% box 2), privekosten een op een. Bijtelling belast tegen een effectief marginaal tarief van 50.3%.
 

@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from datetime import date
 from pathlib import Path
 
 from tco import fiscaal
@@ -29,7 +30,7 @@ def main() -> None:
     gevoelig = {s["id"]: analyseer(inv, next(x for x in inv.scenarios if x["id"] == s["id"]), hoofd) for s in resultaten[hoofd]}
     UIT.mkdir(exist_ok=True)
     bundel = {
-        "gegenereerd": inv.regels["versie"],
+        "gegenereerd": date.today().isoformat(),
         "hoofdhorizon": hoofd,
         "profiel": inv.profiel,
         "regels_versie": inv.regels["versie"],
