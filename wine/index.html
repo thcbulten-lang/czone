@@ -126,6 +126,10 @@ main{padding-block:16px calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 20
 .prose h3:first-child{margin-top:0}
 .prose p{margin:0 0 8px} .prose ul{margin:0 0 8px;padding-left:20px} .prose li{margin:2px 0}
 .prose strong{font-weight:700}
+a{color:var(--accent)}
+.links{margin:6px 0 0;padding-left:18px;font-size:14px}
+.links li{margin:5px 0;overflow-wrap:anywhere}
+.links .d{color:var(--muted);font-size:12.5px}
 .notes{white-space:pre-wrap;overflow-wrap:anywhere}
 .items{display:flex;flex-direction:column;gap:2px}
 .items .sec{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:14px 0 4px}
@@ -409,7 +413,7 @@ async function shrink(file, max = 1600, q = 0.82) {
 // --- mini markdown (veilig): ##/### koppen, -/* lijsten, **vet**, *cursief*, alinea's ---
 function md(text) {
   const lines = String(text || '').split(/\r?\n/); let html = ''; let inUl = false;
-  const inline = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>');
+  const inline = s => esc(s).replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>');
   const closeUl = () => { if (inUl) { html += '</ul>'; inUl = false; } };
   for (const raw of lines) {
     const l = raw.trim();
@@ -670,6 +674,12 @@ function openWineDetail(id) {
   detailId = id; renderWineDetail();
   if ($('#sheetWineDetail').hidden) C.openSheet('sheetWineDetail');
 }
+function linkList(arr, title) {
+  if (!Array.isArray(arr) || !arr.length) return '';
+  const ok = arr.filter(x => x && typeof x.url === 'string' && /^https?:\/\//.test(x.url));
+  if (!ok.length) return '';
+  return `<div style="margin-top:12px"><div class="eyebrow">${title}</div><ul class="links">${ok.map(x => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title || x.name || x.url)}</a>${[x.country, x.vintage, x.price ? fmtPrice(x.price) : null, x.note].filter(Boolean).length ? ` <span class="d">${[x.country, x.vintage, x.price ? fmtPrice(x.price) : null, x.note].filter(Boolean).map(esc).join(' · ')}</span>` : ''}</li>`).join('')}</ul></div>`;
+}
 function renderWineDetail() {
   const w = S.wines.find(x => x.id === detailId); const b = $('#wineDetailBody');
   if (!w) { b.innerHTML = '<p class="muted">Deze wijn bestaat niet meer.</p>'; return; }
@@ -690,6 +700,8 @@ function renderWineDetail() {
       <div id="ficheOut" class="prose">${w.fiche ? md(w.fiche.text) : '<p class="muted small">Domein, terroir, vinificatie, stijl en wat je aan tafel kunt vertellen. Gemaakt met Claude op basis van het etiket; controleer details bij kleine producenten.</p>'}</div>
       ${!w.fiche ? `<button class="btn primary" id="btnFiche" type="button" style="margin-top:10px" ${S.sample ? '' : 'disabled'}>Fiche technique opvragen</button>` : ''}
       ${w.fiche && w.fiche.source ? `<p class="small muted" style="margin-top:10px">${esc(w.fiche.source)}</p>` : ''}
+      ${linkList(w.fiche && w.fiche.sources, 'Bronnen')}
+      ${linkList(w.fiche && w.fiche.shops, 'Te koop bij' + (w.fiche && w.fiche.shopsAt ? ' (gezien ' + esc(fmtDate(w.fiche.shopsAt)) + ')' : ''))}
       <p class="small muted" style="margin-top:10px">Dieper? Vraag Claude in een chat: “verdiep de fiche van ${esc([w.producer, w.name].filter(Boolean).join(' '))} in Carnet de Cave”. Daar kan hij het web doorzoeken en de uitkomst hier neerzetten.</p>
     </div>`;
   const go = () => makeFiche(w);
