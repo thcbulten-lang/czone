@@ -108,6 +108,11 @@ main{padding-block:16px calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 20
 .iconbtn{background:none;border:0;width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--fg)}
 .iconbtn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .photo{width:100%;max-height:300px;object-fit:cover;border-radius:var(--radius);background:var(--surface-2);display:block}
+.photos2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.photo-slot{position:relative;aspect-ratio:3/4;max-width:100%;border-radius:var(--radius);background:var(--surface-2);border:1px dashed var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;padding:0;overflow:hidden;width:100%}
+.photo-slot img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-slot.has{border-style:solid}
+.photo-slot .lbl{position:absolute;left:8px;bottom:8px;background:rgba(29,24,33,.72);color:#fff;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px}
 .photo-ph{width:100%;aspect-ratio:3/2;max-width:100%;border-radius:var(--radius);background:var(--surface-2);border:1px dashed var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
 .thumbs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
 .thumbs img{height:84px;width:auto;border-radius:10px;border:1px solid var(--line);flex:none}
@@ -599,44 +604,53 @@ function renderGeo() {
   $('#fGeo').textContent = g ? `Locatie uit foto: ${g.lat.toFixed(4)}, ${g.lon.toFixed(4)}${t ? ' · genomen ' + new Date(t).toLocaleString('nl-NL', {dateStyle: 'short', timeStyle: 'short'}) : ''}` : (form.photoBlob || form.photo ? 'Geen locatie in de foto gevonden (zet locatie aan in je camera-app).' : '');
 }
 function renderFormPhoto() {
-  const el = $('#wineFormPhoto');
-  if (form.previewUrl) el.innerHTML = `<img class="photo" src="${form.previewUrl}" alt="Etiket">`;
-  else if (form.photo) el.innerHTML = `<img class="photo" src="${C.photoUrl(form.photo)}" alt="Etiket">`;
-  else el.innerHTML = `<button class="photo-ph" id="btnFormPhoto" type="button">Tik om een foto van het etiket te maken</button>`;
+  const slot = (side, url, label, empty) => `<button class="photo-slot ${url ? 'has' : ''}" type="button" data-side="${side}" aria-label="${label}">${url ? `<img src="${url}" alt="${label}"><span class="lbl">${label}</span>` : empty}</button>`;
+  const front = form.previewUrl || (form.photo ? C.photoUrl(form.photo) : null);
+  const back = form.previewBackUrl || (form.photoBack ? C.photoUrl(form.photoBack) : null);
+  $('#wineFormPhoto').innerHTML = `<div class="photos2">${slot('front', front, 'Voorkant', 'Voorkant fotograferen')}${slot('back', back, 'Achterkant', '+ Achterkant (meer data)')}</div>`;
 }
 
-async function openWineForm(existing, file) {
+async function openWineForm(existing, file, side) {
   form = existing ? Object.assign({}, existing, {editing: true}) : {id: uid(), createdAt: new Date().toISOString(), context: 'restaurant', placeName: S.session.place, city: S.session.city, grapes: []};
-  form.photoBlob = null; form.previewUrl = null;
+  form.photoBlob = null; form.photoBackBlob = null; form.previewUrl = null; form.previewBackUrl = null;
   $('#wineFormTitle').textContent = existing ? 'Wijn bewerken' : 'Fles loggen';
   $('#btnDeleteWine').hidden = !existing; $('#wineAi').hidden = true;
   fillForm(form); renderFormPhoto(); C.openSheet('sheetWine');
-  if (file) await attachPhoto(file);
+  if (file) await attachPhoto(file, side || 'front');
 }
-async function attachPhoto(file) {
-  form.previewUrl = URL.createObjectURL(file); renderFormPhoto();
+async function attachPhoto(file, side) {
+  const url = URL.createObjectURL(file);
+  if (side === 'back') form.previewBackUrl = url; else form.previewUrl = url;
+  renderFormPhoto();
   const [exif, blob] = await Promise.all([readExif(file), shrink(file)]);
-  form.photoBlob = blob;
-  if (exif) { if (exif.geo) form.geo = exif.geo; if (exif.takenAt) form.takenAt = exif.takenAt; }
+  if (side === 'back') form.photoBackBlob = blob; else form.photoBlob = blob;
+  if (exif) { if (exif.geo && !form.geo) form.geo = exif.geo; if (exif.takenAt && !form.takenAt) form.takenAt = exif.takenAt; }
   renderGeo();
-  await readLabel(blob);
+  await readLabel();
 }
-async function readLabel(blob) {
+async function readLabel() {
   if (!S.sample || !S.canImages) { $('#wineAi').hidden = false; $('#wineAi').innerHTML = `<span>Etiket lezen is hier niet beschikbaar. Vul de velden zelf in.</span>`; return; }
-  $('#wineAi').hidden = false; $('#wineAi').innerHTML = `<span class="spin"></span><span id="wineAiText">Etiket lezen…</span>`;
-  const prompt = `Je ziet een foto van een wijnetiket of wijnfles. Lees het etiket en geef uitsluitend één JSON-object terug met precies deze velden:
-{"producer": producent/domein/château/maison (string of null), "name": cuvée- of wijnnaam ZONDER de producent (string of null; bij een wijn zonder aparte cuvéenaam: de appellation of het dorp), "appellation": AOC/AOP/DOC(G)/IGP/VDP enz. (string of null), "region": wijnstreek zoals Bourgogne, Loire, Rhône, Piemonte (string of null), "country": land in het Nederlands (string of null), "vintage": jaargang als getal of null, "color": precies één van "rood","wit","rosé","mousserend","oranje","zoet" of null, "grapes": array met druivenrassen (lees van etiket of leid af uit de appellation; mag leeg), "alcohol": percentage als getal of null, "confidence": "hoog"|"middel"|"laag", "note": korte Nederlandse opmerking over wat onzeker of niet leesbaar is, of null}
+  const imgs = []; const parts = [];
+  if (form.photoBlob) { imgs.push(form.photoBlob); parts.push('voorkant'); }
+  if (form.photoBackBlob) { imgs.push(form.photoBackBlob); parts.push('achterkant'); }
+  if (!imgs.length) return;
+  const which = imgs.length === 2 ? 'Foto 1 is de voorkant van het etiket, foto 2 de achterkant.' : parts[0] === 'achterkant' ? 'Je ziet de achterkant van het etiket (het rugetiket).' : 'Je ziet de voorkant van het etiket of de fles.';
+  $('#wineAi').hidden = false; $('#wineAi').innerHTML = `<span class="spin"></span><span id="wineAiText">${imgs.length === 2 ? 'Voor- en achteretiket lezen…' : 'Etiket lezen…'}</span>`;
+  const prompt = `${which} Lees alles wat leesbaar is en geef uitsluitend één JSON-object terug met precies deze velden:
+{"producer": producent/domein/château/maison (string of null), "name": cuvée- of wijnnaam ZONDER de producent (string of null; bij een wijn zonder aparte cuvéenaam: de appellation of het dorp), "appellation": AOC/AOP/DOC(G)/IGP/VDP enz. of "Vin de France" (string of null), "region": wijnstreek zoals Bourgogne, Loire, Rhône, Piemonte (string of null), "country": land in het Nederlands (string of null), "vintage": jaargang als getal of null, "color": precies één van "rood","wit","rosé","mousserend","oranje","zoet" of null, "grapes": array met druivenrassen (van het etiket of af te leiden uit de appellation; mag leeg), "alcohol": percentage als getal of null, "volume_cl": inhoud in cl als getal of null, "importer": importeur/distributeur zoals vermeld (string of null), "bottler": wie bottelt en waar, bv. "mis en bouteille au domaine" (string of null), "certifications": array met certificeringen zoals "AB", "Demeter", "Ecocert", "Vin méthode nature" (mag leeg), "label_text": letterlijke transcriptie van de lopende tekst op het etiket (vooral het rugetiket), max 900 tekens, of null, "label_facts": array met korte feitelijke zinnen die het etiket geeft over percelen, bodem, leeftijd stokken, oogst, gisting, opvoeding, zwavel, filtratie (mag leeg), "confidence": "hoog"|"middel"|"laag", "note": korte Nederlandse opmerking over wat onzeker of onleesbaar is, of null}
 Gebruik je wijnkennis om regio, land, kleur en druiven af te leiden uit de appellation als ze niet op het etiket staan. Verzin geen jaargang of producent als die niet leesbaar is: gebruik dan null. Geen tekst buiten het JSON.`;
   try {
-    const r = await S.sample.json(prompt, {images: [blob], modelTier: 'default', effort: 'low'});
+    const r = await S.sample.json(prompt, {images: imgs, modelTier: 'default', effort: 'low'});
     if (r && typeof r === 'object') {
       const set = (id, v) => { const el = $('#' + id); if (v != null && v !== '' && !el.value.trim()) el.value = v; };
       set('fProducer', r.producer); set('fName', r.name); set('fAppellation', r.appellation); set('fRegion', r.region); set('fCountry', r.country);
       if (r.vintage && !$('#fVintage').value) $('#fVintage').value = r.vintage;
       if (Array.isArray(r.grapes) && r.grapes.length && !$('#fGrapes').value.trim()) $('#fGrapes').value = r.grapes.join(', ');
       if (COLORS.includes(r.color) && !form.color) setColor(r.color);
-      form.alcohol = numOrNull(r.alcohol);
-      $('#wineAi').innerHTML = `<span>Etiket gelezen${r.confidence ? ' (zekerheid: ' + esc(r.confidence) + ')' : ''}.${r.note ? ' ' + esc(r.note) : ''} Controleer en pas aan waar nodig.</span>`;
+      if (numOrNull(r.alcohol)) form.alcohol = numOrNull(r.alcohol);
+      const info = {text: r.label_text || null, facts: Array.isArray(r.label_facts) ? r.label_facts.map(String).slice(0, 12) : [], importer: r.importer || null, bottler: r.bottler || null, volumeCl: numOrNull(r.volume_cl), certifications: Array.isArray(r.certifications) ? r.certifications.map(String).slice(0, 6) : [], sides: parts.slice()};
+      if (!form.labelInfo || imgs.length >= (form.labelInfo.sides || []).length) form.labelInfo = info;
+      $('#wineAi').innerHTML = `<span>${imgs.length === 2 ? 'Beide etiketten gelezen' : 'Etiket gelezen'}${r.confidence ? ' (zekerheid: ' + esc(r.confidence) + ')' : ''}.${info.facts.length ? ' ' + info.facts.length + ' feiten van het etiket bewaard.' : ''}${r.note ? ' ' + esc(r.note) : ''} Controleer en pas aan waar nodig.</span>`;
     } else $('#wineAi').innerHTML = `<span>Etiket niet herkend. Vul de velden zelf in.</span>`;
   } catch (e) {
     console.error(e);
@@ -647,7 +661,7 @@ Gebruik je wijnkennis om regio, land, kleur en druiven af te leiden uit de appel
 
 function collectForm() {
   const w = Object.assign({}, form);
-  delete w.photoBlob; delete w.previewUrl; delete w.editing;
+  delete w.photoBlob; delete w.photoBackBlob; delete w.previewUrl; delete w.previewBackUrl; delete w.editing;
   w.producer = $('#fProducer').value.trim() || null; w.name = $('#fName').value.trim() || null; w.vintage = numOrNull($('#fVintage').value);
   w.appellation = $('#fAppellation').value.trim() || null; w.region = $('#fRegion').value.trim() || null; w.country = $('#fCountry').value.trim() || null;
   w.grapes = $('#fGrapes').value.split(/[,;]/).map(s => s.trim()).filter(Boolean);
@@ -661,6 +675,7 @@ async function saveForm() {
     const w = collectForm();
     if (!w.producer && !w.name && !w.appellation) { toast('Vul minstens producent, wijn of appellation in'); return; }
     if (form.photoBlob) { const id = await C.uploadPhoto(form.photoBlob); if (id) w.photo = id; }
+    if (form.photoBackBlob) { const id = await C.uploadPhoto(form.photoBackBlob); if (id) w.photoBack = id; }
     if (w.placeName && w.placeName !== S.session.place) { S.session = {place: w.placeName, city: w.city || ''}; store.set('session', S.session); $('#placeName').value = S.session.place; $('#placeCity').value = S.session.city; }
     await C.saveWine(w);
     C.closeSheet('sheetWine'); toast(form.editing ? 'Bijgewerkt' : 'Fles bewaard');
@@ -673,6 +688,15 @@ let detailId = null;
 function openWineDetail(id) {
   detailId = id; renderWineDetail();
   if ($('#sheetWineDetail').hidden) C.openSheet('sheetWineDetail');
+}
+function labelCard(w) {
+  const li = w.labelInfo; if (!li) return '';
+  const meta = [li.importer && 'Importeur: ' + li.importer, li.bottler && 'Botteling: ' + li.bottler, li.volumeCl && li.volumeCl + ' cl', (li.certifications || []).length && 'Certificering: ' + li.certifications.join(', ')].filter(Boolean);
+  if (!meta.length && !(li.facts || []).length && !li.text) return '';
+  return `<div class="card flat"><div class="eyebrow" style="margin-bottom:6px">Van het etiket</div>
+    ${(li.facts || []).length ? `<ul class="links" style="padding-left:18px;margin:0 0 6px">${li.facts.map(f => `<li>${esc(f)}</li>`).join('')}</ul>` : ''}
+    ${meta.length ? `<div class="small muted">${meta.map(esc).join(' · ')}</div>` : ''}
+    ${li.text ? `<details style="margin-top:8px"><summary class="small muted" style="cursor:pointer">Volledige etikettekst</summary><div class="notes small" style="margin-top:6px">${esc(li.text)}</div></details>` : ''}</div>`;
 }
 function linkList(arr, title) {
   if (!Array.isArray(arr) || !arr.length) return '';
@@ -689,11 +713,12 @@ function renderWineDetail() {
     ['Prijs', w.price ? fmtPrice(w.price) + (w.context === 'restaurant' ? ' (restaurant)' : '') : null], ['Plek', [w.placeName, w.city].filter(Boolean).join(', ')], ['Datum', fmtDate(w.createdAt)],
     ['Locatie', w.geo ? `<a href="https://www.google.com/maps?q=${w.geo.lat},${w.geo.lon}" target="_blank" rel="noopener">${w.geo.lat.toFixed(4)}, ${w.geo.lon.toFixed(4)}</a>` : null]].filter(x => x[1]);
   b.innerHTML = `
-    ${w.photo ? `<img class="photo" src="${C.photoUrl(w.photo)}" alt="Etiket van ${esc(title)}">` : ''}
+    ${w.photo && w.photoBack ? `<div class="photos2"><a class="photo-slot has" href="${C.photoUrl(w.photo)}" target="_blank" rel="noopener"><img src="${C.photoUrl(w.photo)}" alt="Voorkant etiket"><span class="lbl">Voorkant</span></a><a class="photo-slot has" href="${C.photoUrl(w.photoBack)}" target="_blank" rel="noopener"><img src="${C.photoUrl(w.photoBack)}" alt="Achterkant etiket"><span class="lbl">Achterkant</span></a></div>` : w.photo || w.photoBack ? `<img class="photo" src="${C.photoUrl(w.photo || w.photoBack)}" alt="Etiket van ${esc(title)}">` : ''}
     <div><h2 class="title-xl"><span class="prod">${esc(w.producer || '')}</span>${esc(title)}${w.vintage ? ` <span class="num muted" style="font-weight:400">${esc(w.vintage)}</span>` : ''}</h2>
       <div class="meta" style="margin-top:8px"><span class="badge"><span class="sw ${colorClass(w.color)}"></span>${esc(w.color || 'kleur onbekend')}</span>${w.rating ? `<span class="badge score num">${esc(w.rating)} · ${RATING_WORDS[w.rating]}</span>` : '<span class="badge">nog geen cijfer</span>'}</div></div>
     <dl class="kv">${kv.map(([k, v]) => `<dt>${k}</dt><dd>${k === 'Locatie' ? v : esc(v)}</dd>`).join('')}</dl>
     ${w.notes ? `<div class="card flat"><div class="eyebrow" style="margin-bottom:6px">Notities</div><div class="notes">${esc(w.notes)}</div></div>` : ''}
+    ${labelCard(w)}
     ${onLists.length ? `<div class="card flat"><div class="eyebrow" style="margin-bottom:6px">Op wijnkaarten</div>${onLists.map(({l, its}) => `<div class="small" style="padding:4px 0"><strong>${esc(l.placeName || 'kaart')}</strong> · ${esc(fmtDate(l.createdAt))}: ${its.map(it => [it.vintage, it.price ? fmtPrice(it.price) : null].filter(Boolean).join(' ')).map(esc).join(', ') || 'zonder prijs'}</div>`).join('')}</div>` : ''}
     <div class="card">
       <div class="section-h"><h2>Fiche technique</h2>${w.fiche ? `<button class="btn ghost small" id="btnFicheRefresh" type="button">Vernieuw</button>` : ''}</div>
@@ -712,7 +737,7 @@ async function makeFiche(w) {
   out.innerHTML = `<div class="ai"><span class="spin"></span><span>Fiche schrijven… het sterkste model denkt eerst na; reken op één tot twee minuten.</span></div>`;
   const desc = [w.producer && 'Producent: ' + w.producer, w.name && 'Wijn/cuvée: ' + w.name, w.appellation && 'Appellation: ' + w.appellation, w.region && 'Streek: ' + w.region, w.country && 'Land: ' + w.country, w.vintage && 'Jaargang: ' + w.vintage, w.color && 'Kleur: ' + w.color, w.grapes?.length && 'Druiven: ' + w.grapes.join(', '), w.alcohol && 'Alcohol: ' + w.alcohol + '%'].filter(Boolean).join('\n');
   const prompt = `Schrijf een fiche technique in het Nederlands (wijntermen mogen Frans blijven) voor een ervaren liefhebber van Franse wijn die deze fles nu open op tafel heeft:
-${desc}${w.notes ? '\nMijn eigen proefnotitie: ' + w.notes : ''}
+${desc}${w.notes ? '\nMijn eigen proefnotitie: ' + w.notes : ''}${w.labelInfo && w.labelInfo.facts && w.labelInfo.facts.length ? '\nFeiten op het etiket: ' + w.labelInfo.facts.join(' | ') : ''}${w.labelInfo && w.labelInfo.text ? '\nTekst op het etiket: ' + w.labelInfo.text : ''}${w.labelInfo && w.labelInfo.importer ? '\nImporteur: ' + w.labelInfo.importer : ''}
 
 Haal alles uit je kennis over dit domein, deze cuvée, dit perceel en deze streek: importeursteksten, wijnschrijvers, de website van het domein, streekliteratuur. Wees concreet en stellig waar je kennis redelijk zeker is: oprichtingsjaar, opleiding en loopbaan van de wijnmaker, hectares, percelen met plantjaar en bodem (gesteente, expositie), biologisch of biodynamisch met jaar, oogst, persing, gistvaten, gisting, opvoeding (vaten, maat, duur, droesem), zwavel, filtratie, het karakter van de jaargang in deze streek en wat de cuvéenaam betekent. Noem buren, leermeesters of referenties in het dorp als die relevant zijn.
 Hedge niet na elke zin en schrijf niet "(onzeker)". Wat je niet weet laat je weg; onder het laatste kopje "Zekerheid" zeg je in twee of drie zinnen wat goed gedocumenteerd is en waar je niet zeker van bent.
@@ -737,12 +762,12 @@ $('#btnDeleteWine').addEventListener('click', () => {
   if (b.dataset.armed) { C.deleteWine(form.id); C.closeAllSheets(); toast('Verwijderd'); delete b.dataset.armed; b.textContent = 'Verwijder deze wijn'; }
   else { b.dataset.armed = '1'; b.textContent = 'Zeker? Tik nogmaals om te verwijderen'; setTimeout(() => { delete b.dataset.armed; b.textContent = 'Verwijder deze wijn'; }, 4000); }
 });
-$('#wineFormPhoto').addEventListener('click', e => { if (e.target.closest('#btnFormPhoto')) $('#fileWine').click(); });
+$('#wineFormPhoto').addEventListener('click', e => { const b = e.target.closest('[data-side]'); if (!b) return; $('#fileWine').dataset.side = b.dataset.side; $('#fileWine').click(); });
 $('#fileWine').addEventListener('change', async e => {
-  const f = e.target.files && e.target.files[0]; e.target.value = ''; if (!f) return;
-  if (!$('#sheetWine').hidden && form) await attachPhoto(f); else await openWineForm(null, f);
+  const f = e.target.files && e.target.files[0]; const side = e.target.dataset.side || 'front'; delete e.target.dataset.side; e.target.value = ''; if (!f) return;
+  if (!$('#sheetWine').hidden && form) await attachPhoto(f, side); else await openWineForm(null, f, side);
 });
-$('#btnPhotoWine').addEventListener('click', () => $('#fileWine').click());
+$('#btnPhotoWine').addEventListener('click', () => { $('#fileWine').dataset.side = 'front'; $('#fileWine').click(); });
 $('#btnManualWine').addEventListener('click', () => openWineForm(null, null));
 $('#btnEditWine').addEventListener('click', () => { const w = S.wines.find(x => x.id === detailId); if (w) openWineForm(w, null); });
 

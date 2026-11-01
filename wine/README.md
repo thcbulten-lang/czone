@@ -32,7 +32,8 @@ Publiceren met: `capabilities: {db:{}, user:{}, assets:{}, sample:{images:true},
 - **Advies**: op basis van je drinkgeschiedenis, gemiddelde cijfers per streek/kleur, de kaart,
   wat je al kent en je context (gerecht, budget). Streamt binnen en wordt bij de kaart bewaard.
 - **Kaart raten**: cijfer 1-10 plus notitie.
-- **Fles loggen**: foto van het etiket → velden vooringevuld → cijfer, prijs, notities.
+- **Fles loggen**: foto van voor- én achteretiket → velden vooringevuld, etikettekst en -feiten
+  (importeur, percelen, opvoeding, zwavel, certificering) bewaard en meegegeven aan de fiche → cijfer, prijs, notities.
   Geotag en opnamemoment komen uit de EXIF van de foto (zet locatie aan in je camera-app).
   Vanuit een kaartregel kun je een fles direct loggen (velden overgenomen).
 - **Spraak**: in het notitieveld de microfoon van Gboard gebruiken; de app zelf heeft geen
@@ -47,7 +48,10 @@ Publiceren met: `capabilities: {db:{}, user:{}, assets:{}, sample:{images:true},
 ```
 wines/{id}: { createdAt, producer, name, appellation, region, country, vintage, color,
               grapes[], alcohol, rating (1-10), price, context, placeName, city, notes,
-              photo (asset-id), geo {lat, lon}, takenAt, fiche {text, createdAt}, listId }
+              photo (asset-id voorkant), photoBack (asset-id achterkant),
+              labelInfo {text, facts[], importer, bottler, volumeCl, certifications[], sides[]},
+              geo {lat, lon}, takenAt, listId,
+              fiche {text, createdAt, source, sources[{title,url}], shops[{name,url,country,vintage,price,note}], shopsAt} }
 lists/{id}: { createdAt, placeName, city, geo, photos[asset-id], rating, notes,
               items[{producer, name, appellation, region, country, vintage, color, grapes[],
                      price, glassPrice, size, section, page}],
