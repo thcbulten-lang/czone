@@ -689,21 +689,25 @@ function renderWineDetail() {
       <div class="section-h"><h2>Fiche technique</h2>${w.fiche ? `<button class="btn ghost small" id="btnFicheRefresh" type="button">Vernieuw</button>` : ''}</div>
       <div id="ficheOut" class="prose">${w.fiche ? md(w.fiche.text) : '<p class="muted small">Domein, terroir, vinificatie, stijl en wat je aan tafel kunt vertellen. Gemaakt met Claude op basis van het etiket; controleer details bij kleine producenten.</p>'}</div>
       ${!w.fiche ? `<button class="btn primary" id="btnFiche" type="button" style="margin-top:10px" ${S.sample ? '' : 'disabled'}>Fiche technique opvragen</button>` : ''}
+      ${w.fiche && w.fiche.source ? `<p class="small muted" style="margin-top:10px">${esc(w.fiche.source)}</p>` : ''}
+      <p class="small muted" style="margin-top:10px">Dieper? Vraag Claude in een chat: “verdiep de fiche van ${esc([w.producer, w.name].filter(Boolean).join(' '))} in Carnet de Cave”. Daar kan hij het web doorzoeken en de uitkomst hier neerzetten.</p>
     </div>`;
   const go = () => makeFiche(w);
   $('#btnFiche')?.addEventListener('click', go); $('#btnFicheRefresh')?.addEventListener('click', go);
 }
 async function makeFiche(w) {
   const out = $('#ficheOut'); const btn = $('#btnFiche') || $('#btnFicheRefresh'); if (btn) btn.disabled = true;
-  out.innerHTML = `<div class="ai"><span class="spin"></span><span>Fiche schrijven… (kan een halve minuut duren)</span></div>`;
+  out.innerHTML = `<div class="ai"><span class="spin"></span><span>Fiche schrijven… het sterkste model denkt eerst na; reken op één tot twee minuten.</span></div>`;
   const desc = [w.producer && 'Producent: ' + w.producer, w.name && 'Wijn/cuvée: ' + w.name, w.appellation && 'Appellation: ' + w.appellation, w.region && 'Streek: ' + w.region, w.country && 'Land: ' + w.country, w.vintage && 'Jaargang: ' + w.vintage, w.color && 'Kleur: ' + w.color, w.grapes?.length && 'Druiven: ' + w.grapes.join(', '), w.alcohol && 'Alcohol: ' + w.alcohol + '%'].filter(Boolean).join('\n');
-  const prompt = `Schrijf een compacte fiche technique in het Nederlands (wijntermen mogen Frans blijven) voor een ervaren liefhebber van Franse wijn die deze fles nu open op tafel heeft:
-${desc}
+  const prompt = `Schrijf een fiche technique in het Nederlands (wijntermen mogen Frans blijven) voor een ervaren liefhebber van Franse wijn die deze fles nu open op tafel heeft:
+${desc}${w.notes ? '\nMijn eigen proefnotitie: ' + w.notes : ''}
 
-Gebruik precies deze kopjes, elk op een eigen regel beginnend met "## ": Domein & wijnmaker, Streek & terroir, Druiven & vinificatie, Stijl & smaak, Drinken & serveren, Aan tafel, Weetjes.
-Wees concreet (percelen, bodem, leeftijd stokken, gisting, opvoeding, hout, filosofie, eigenaar/generatie, jaargangkarakter) waar je het weet. Markeer onzekere details met "(onzeker)" in plaats van ze te verzinnen; zeg het als je het domein niet kent. Korte alinea's of streepjeslijsten, maximaal ongeveer 350 woorden, geen inleiding of afsluiting.`;
+Haal alles uit je kennis over dit domein, deze cuvée, dit perceel en deze streek: importeursteksten, wijnschrijvers, de website van het domein, streekliteratuur. Wees concreet en stellig waar je kennis redelijk zeker is: oprichtingsjaar, opleiding en loopbaan van de wijnmaker, hectares, percelen met plantjaar en bodem (gesteente, expositie), biologisch of biodynamisch met jaar, oogst, persing, gistvaten, gisting, opvoeding (vaten, maat, duur, droesem), zwavel, filtratie, het karakter van de jaargang in deze streek en wat de cuvéenaam betekent. Noem buren, leermeesters of referenties in het dorp als die relevant zijn.
+Hedge niet na elke zin en schrijf niet "(onzeker)". Wat je niet weet laat je weg; onder het laatste kopje "Zekerheid" zeg je in twee of drie zinnen wat goed gedocumenteerd is en waar je niet zeker van bent.
+Gebruik precies deze kopjes, elk op een eigen regel beginnend met "## ": Domein & wijnmaker, Streek & terroir, Druiven & vinificatie, Jaargang, Stijl & smaak, Drinken & serveren, Aan tafel, Weetjes, Zekerheid.
+Korte alinea's of streepjeslijsten, 400 tot 550 woorden, geen inleiding of afsluiting.`;
   try {
-    const {text} = await S.sample(prompt, {modelTier: 'default', cache: false, onText: ({text}) => { out.innerHTML = md(text); }});
+    const {text} = await S.sample(prompt, {modelTier: 'complex', effort: 'high', cache: false, onText: ({text}) => { out.innerHTML = md(text); }});
     const fresh = S.wines.find(x => x.id === w.id) || w;
     await C.saveWine(Object.assign({}, fresh, {fiche: {text, createdAt: new Date().toISOString()}}));
     renderWineDetail();
