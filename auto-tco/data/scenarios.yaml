@@ -3,10 +3,11 @@
 # 'extra' bevat samengestelde scenario's (bijvoorbeeld twee auto's) en varianten met eigen aannames.
 matrix:
   autos: alle
-  constructies: [bv_koop, bv_operational_lease, prive_koop_kmvergoeding]
+  constructies: [bv_koop, bv_operational_lease, prive_koop_kmvergoeding, prive_lease_kmvergoeding]
   uitsluiten:
     - {auto: e_klasse_youngtimer, constructie: bv_koop}              # staat al als nulscenario onder 'extra'
     - {auto: e_klasse_youngtimer, constructie: bv_operational_lease}  # een youngtimer lease je niet
+    - {auto: e_klasse_youngtimer, constructie: prive_lease_kmvergoeding}
 
 extra:
   - id: nul_eklasse_houden

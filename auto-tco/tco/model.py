@@ -102,6 +102,8 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
     start = f.maandindex(f.parse_maand(p["startmaand"]))
     salaris = p["salaris_bruto"]
     lease_pm = onderdeel.get("lease_pm")
+    if lease_pm is None and operational:
+        lease_pm = auto.get("lease_pm_zakelijk" if bv else "lease_pm_prive")   # indicatief maandbedrag op de auto
     lease_geschat = operational and lease_pm is None
 
     jaren = []

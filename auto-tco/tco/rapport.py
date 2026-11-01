@@ -200,7 +200,8 @@ const euro = x => EUR.format(Math.round(x));
 const KLEUREN = ['--s1','--s2','--s3','--s4','--s5','--s6','--s7','--s8'];
 const kleur = i => `var(${KLEUREN[i % 8]})`;
 const state = { horizon: String(DATA.hoofdhorizon), constructies: new Set(Object.keys(DATA.constructies)),
-  categorieen: new Set(), alleenVoldoet: false, sort: ['rang', 1], gekozen: [], slots: {}, gevoeligId: null };
+  categorieen: new Set(), alleenVoldoet: false, prijs: 'alle', zoek: '', sort: ['rang', 1], gekozen: [], slots: {}, gevoeligId: null };
+const PRIJSKLASSEN = { alle: [0, 1e9], laag: [0, 40000], midden: [40000, 55000], hoog: [55000, 1e9] };
 const alleCats = new Set(); Object.values(DATA.autos).forEach(a => alleCats.add(a.categorie)); state.categorieen = new Set(alleCats);
 const $ = s => document.querySelector(s);
 const tip = $('#tip');
@@ -210,7 +211,9 @@ function esc(s) { return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&l
 
 function alleScenarios() { return DATA.resultaten[state.horizon]; }
 function zichtbaar() {
-  return alleScenarios().filter(s => state.constructies.has(s.constructie) && state.categorieen.has(s.categorie) && (!state.alleenVoldoet || s.voldoet));
+  const [pmin, pmax] = PRIJSKLASSEN[state.prijs]; const zoek = state.zoek.trim().toLowerCase();
+  return alleScenarios().filter(s => state.constructies.has(s.constructie) && state.categorieen.has(s.categorie) && (!state.alleenVoldoet || s.voldoet)
+    && DATA.autos[s.auto].aanschafprijs >= pmin && DATA.autos[s.auto].aanschafprijs < pmax && (!zoek || s.naam.toLowerCase().includes(zoek)));
 }
 function gekozenScenarios() { const alle = alleScenarios(); return state.gekozen.map(id => alle.find(s => s.id === id)).filter(Boolean); }
 function slotVan(id) { if (!(id in state.slots)) { const bezet = new Set(Object.values(state.slots)); let i = 0; while (bezet.has(i)) i++; state.slots[id] = i; } return state.slots[id]; }
@@ -238,7 +241,10 @@ function renderFilters() {
   const horizons = Object.keys(DATA.resultaten).map(h => `<button class="knop ${h === state.horizon ? 'actief' : ''}" data-h="${h}" type="button">${h} jaar</button>`).join(' ');
   const cons = Object.values(DATA.constructies).map(c => `<label><input type="checkbox" data-con="${c.id}" ${state.constructies.has(c.id) ? 'checked' : ''}> ${esc(c.naam)}</label>`).join('');
   const cats = [...alleCats].map(c => `<label><input type="checkbox" data-cat="${c}" ${state.categorieen.has(c) ? 'checked' : ''}> ${c}</label>`).join('');
-  f.innerHTML = `<span>Horizon: ${horizons}</span><span>Constructie: ${cons}</span><span>Type: ${cats}</span><label><input type="checkbox" id="voldoet" ${state.alleenVoldoet ? 'checked' : ''}> alleen wat aan de eisen voldoet</label>`;
+  const prijs = `<select id="prijs"><option value="alle">alle prijzen</option><option value="laag">tot 40.000</option><option value="midden">40.000 tot 55.000</option><option value="hoog">boven 55.000</option></select>`;
+  f.innerHTML = `<span>Horizon: ${horizons}</span><span>Constructie: ${cons}</span><span>Type: ${cats}</span><span>Aanschafprijs: ${prijs}</span><label><input type="checkbox" id="voldoet" ${state.alleenVoldoet ? 'checked' : ''}> alleen wat aan de eisen voldoet</label><input id="zoek" type="search" placeholder="zoek (bijv. Zeekr)" value="${esc(state.zoek)}" style="font:inherit;padding:4px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)">`;
+  $('#prijs').value = state.prijs; $('#prijs').onchange = e => { state.prijs = e.target.value; renderAlles(); };
+  $('#zoek').oninput = e => { state.zoek = e.target.value; renderTabel(); };
   f.querySelectorAll('[data-h]').forEach(b => b.onclick = () => { state.horizon = b.dataset.h; renderAlles(); });
   f.querySelectorAll('[data-con]').forEach(i => i.onchange = () => { i.checked ? state.constructies.add(i.dataset.con) : state.constructies.delete(i.dataset.con); renderAlles(); });
   f.querySelectorAll('[data-cat]').forEach(i => i.onchange = () => { i.checked ? state.categorieen.add(i.dataset.cat) : state.categorieen.delete(i.dataset.cat); renderAlles(); });

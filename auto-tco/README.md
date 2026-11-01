@@ -8,7 +8,7 @@ Een scenario is een auto maal een constructie bij jouw gebruik. Auto's, construc
 
 ## Waarom deze vorm en niet een spreadsheet
 
-Een spreadsheet werkt goed voor een auto en twee constructies. Bij veertien auto's, zes constructies, drie horizonnen en tien fiscale regels met jaartallen en 60-maandsperiodes wordt elk werkblad onleesbaar en elke formule onbewijsbaar. Hier staan de regels als toetsbare functies in `tco/fiscaal.py`, met vaste gevallen in `tests/`. Verandert het belastingplan, dan verandert een getal in `data/regels.yaml` en rekent alles opnieuw. Een nieuwe auto is tien regels in `data/autos.yaml`; de matrix maakt er vanzelf drie scenario's van.
+Een spreadsheet werkt goed voor een auto en twee constructies. Bij veertien auto's, zes constructies, drie horizonnen en tien fiscale regels met jaartallen en 60-maandsperiodes wordt elk werkblad onleesbaar en elke formule onbewijsbaar. Hier staan de regels als toetsbare functies in `tco/fiscaal.py`, met vaste gevallen in `tests/`. Verandert het belastingplan, dan verandert een getal in `data/regels.yaml` en rekent alles opnieuw. Een nieuwe auto is tien regels in `data/autos.yaml`; de matrix maakt er vanzelf vier scenario's van (BV koop, BV operational lease, prive koop en private lease, elk met kilometervergoeding waar dat hoort).
 
 Notion of een document is prettig voor het logboek, maar te zwak voor de berekening. Daarom staat het logboek hier als tekst naast het model, en toont de HTML-pagina beide. Werken gaat via een gesprek: jij zegt wat je zag of hoorde (proefrit, prijs, trekgewicht, offerte), ik werk de bestanden bij, reken opnieuw en zet een regel in het logboek. De ranglijst verschuift, en de vorige stand blijft in git.
 
@@ -30,7 +30,7 @@ Constructies schuiven kosten tussen de BV en jou prive, dus een eerlijke vergeli
 
 Doorrekenen: `python3 rekenen.py` in deze map (alleen PyYAML nodig). Tests: `python3 -m unittest discover -s tests`. De uitvoer staat in `uitvoer/`: `vergelijk.md` voor in git en de chat, `vergelijk.html` om te openen in een browser (werkt zonder internet), `resultaten.json` met alle details per jaar. In de HTML-pagina kies je de horizon (3, 5 of 7 jaar), filtert op constructie en type, vinkt maximaal zes scenario's aan en ziet dan de kostenopbouw, het verloop per jaar, de gevoeligheid en alle variabelen naast elkaar. Het logboek staat onderaan.
 
-Een nieuwe auto toevoegen is een blok in `data/autos.yaml` met bron, datum en zekerheid. Een leaseofferte gaat als `lease_pm` in een scenario onder `extra` in `data/scenarios.yaml`; zonder offerte schat het model het maandbedrag en markeert dat. Een nieuwe les of een besluit is een alinea in `logboek.md` met de datum erboven.
+Een nieuwe auto toevoegen is een blok in `data/autos.yaml` met bron, datum en zekerheid. Een leaseofferte zet je als `lease_pm_zakelijk` of `lease_pm_prive` (maandbedrag, zakelijk exclusief btw, prive inclusief) bij de auto in `data/autos.yaml`, of als `lease_pm` in een scenario onder `extra` in `data/scenarios.yaml`; zonder offerte schat het model het maandbedrag en markeert dat. In de HTML-pagina filter je op aanschafprijs en zoek je op naam, bijvoorbeeld op een merk. Een nieuwe les of een besluit is een alinea in `logboek.md` met de datum erboven.
 
 ## Wat het model bewust nog niet doet
 

@@ -384,3 +384,415 @@
   bron: "autorai.nl (vanaf 37.900), viabovag"
   zekerheid: laag
   datum: "2026-10-28"
+
+# ---------------------------------------------------------------- Zeekr, het hele Nederlandse aanbod (toegevoegd 2026-11-01)
+- id: zeekr_7x_long_range
+  naam: "Zeekr 7X Long Range RWD 100 kWh (nieuw)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 56990             # verifieren bij Zeekr
+  aanschafprijs: 56990
+  btw_auto: true
+  massa_ledig_kg: 2350
+  accu_kwh: 100
+  actieradius_wltp_km: 615
+  verbruik_praktijk_kwh_100km: 22
+  trekgewicht_geremd_kg: 2000      # verifieren per uitvoering
+  zitplaatsen: 5
+  bagageruimte_l: 539
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 400
+  banden_pj: 600
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1200
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 4, merkrisico: 2, laadsnelheid: 5}
+  bron: "schatting tussen Core en Privilege; verifieren bij de proefrit"
+  zekerheid: laag
+  datum: "2026-11-01"
+
+- id: zeekr_x_long_range
+  naam: "Zeekr X Long Range RWD (nieuw)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 41990             # verifieren: aanbod jonge occasions 2026 ligt op 38.000 tot 40.000
+  aanschafprijs: 41990
+  btw_auto: true
+  massa_ledig_kg: 1830
+  accu_kwh: 69
+  actieradius_wltp_km: 447
+  verbruik_praktijk_kwh_100km: 18.5
+  trekgewicht_geremd_kg: 1600
+  zitplaatsen: 5
+  bagageruimte_l: 362
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 350
+  banden_pj: 450
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1000
+  kwalitatief: {ruimte: 3, comfort: 3, trekervaring: 3, merkrisico: 2, laadsnelheid: 4}
+  notities: "Compacte SUV (4,43 m); kleine bagageruimte voor een gezin met twee kinderen."
+  bron: "ev-database.org (MY24), kentekenrapporten, autouncle.nl"
+  zekerheid: laag
+  datum: "2026-11-01"
+
+- id: zeekr_x_privilege
+  naam: "Zeekr X Privilege AWD (nieuw)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 46990             # verifieren
+  aanschafprijs: 46990
+  btw_auto: true
+  massa_ledig_kg: 1935
+  accu_kwh: 69
+  actieradius_wltp_km: 425
+  verbruik_praktijk_kwh_100km: 19.5
+  trekgewicht_geremd_kg: 1600
+  zitplaatsen: 5
+  bagageruimte_l: 362
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 350
+  banden_pj: 500
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1000
+  kwalitatief: {ruimte: 3, comfort: 4, trekervaring: 3, merkrisico: 2, laadsnelheid: 4}
+  bron: "autotijd.be specificaties, kentekenrapport (1.935 kg)"
+  zekerheid: laag
+  datum: "2026-11-01"
+
+- id: zeekr_x_occasion_2024
+  naam: "Zeekr X Long Range RWD (occasion 2024)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2024-05"
+  catalogusprijs: 44990             # nieuwprijs destijds; verifieren
+  aanschafprijs: 29500              # schatting van het aanbod
+  btw_auto: true
+  km_stand: 35000
+  massa_ledig_kg: 1830
+  accu_kwh: 69
+  actieradius_wltp_km: 447
+  verbruik_praktijk_kwh_100km: 18.5
+  trekgewicht_geremd_kg: 1600
+  zitplaatsen: 5
+  bagageruimte_l: 362
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 350
+  banden_pj: 450
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1000
+  kwalitatief: {ruimte: 3, comfort: 3, trekervaring: 3, merkrisico: 2, laadsnelheid: 4}
+  notities: "Bijtelling 16% over 30.000 tot en met mei 2029."
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-01"
+
+- id: zeekr_001_long_range
+  naam: "Zeekr 001 Long Range RWD (nieuw)"
+  categorie: stationwagen
+  aandrijving: ev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 59490
+  aanschafprijs: 59490
+  btw_auto: true
+  massa_ledig_kg: 2175
+  accu_kwh: 100
+  actieradius_wltp_km: 620
+  verbruik_praktijk_kwh_100km: 20.5
+  trekgewicht_geremd_kg: 1500      # RWD; kentekenrapporten noemen 1.500 voor de ene en 2.000 voor de andere uitvoering
+  zitplaatsen: 5
+  bagageruimte_l: 539
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 400
+  banden_pj: 600
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1200
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 3, merkrisico: 2, laadsnelheid: 5}
+  notities: "Shooting brake van bijna vijf meter: veel ruimte, lage instap, geen SUV."
+  bron: "autotijd.be (vanaf 59.490, 2026), kentekenrapporten"
+  zekerheid: midden
+  datum: "2026-11-01"
+
+- id: zeekr_001_privilege
+  naam: "Zeekr 001 Privilege AWD (nieuw)"
+  categorie: stationwagen
+  aandrijving: ev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 66490             # verifieren
+  aanschafprijs: 66490
+  btw_auto: true
+  massa_ledig_kg: 2310
+  accu_kwh: 100
+  actieradius_wltp_km: 585
+  verbruik_praktijk_kwh_100km: 22
+  trekgewicht_geremd_kg: 2000
+  zitplaatsen: 5
+  bagageruimte_l: 539
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 400
+  banden_pj: 650
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1200
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 4, merkrisico: 2, laadsnelheid: 5}
+  bron: "kentekenrapporten (2.310 kg, 2.000 kg trekgewicht); prijs geschat"
+  zekerheid: laag
+  datum: "2026-11-01"
+
+# ---------------------------------------------------------------- klasse 30.000 tot 40.000 euro (toegevoegd 2026-11-01)
+- id: kia_ev6_occasion_2023
+  naam: "Kia EV6 Plus AWD 77 kWh (occasion 2023)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2023-03"
+  catalogusprijs: 56995
+  aanschafprijs: 33000              # schatting van het aanbod
+  btw_auto: true
+  km_stand: 60000
+  massa_ledig_kg: 2105
+  accu_kwh: 77.4
+  actieradius_wltp_km: 506
+  verbruik_praktijk_kwh_100km: 19.5
+  trekgewicht_geremd_kg: 1600      # Europese uitvoering; verifieren op het kentekenbewijs
+  zitplaatsen: 5
+  bagageruimte_l: 490
+  restwaarde_curve: ev_mainstream
+  onderhoud_pj: 350
+  banden_pj: 450
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1000
+  kwalitatief: {ruimte: 3, comfort: 4, trekervaring: 3, merkrisico: 4, laadsnelheid: 5}
+  notities: "Bijtelling 16% over 30.000 tot en met maart 2028. Snel laden (800 V)."
+  bron: "topgear.nl (nieuwprijs 2023), schatting aanbod"
+  zekerheid: laag
+  datum: "2026-11-01"
+
+- id: hyundai_ioniq5_occasion_2022
+  naam: "Hyundai Ioniq 5 AWD 73 kWh (occasion 2022)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2022-06"
+  catalogusprijs: 57000
+  aanschafprijs: 29500              # schatting van het aanbod
+  btw_auto: true
+  km_stand: 75000
+  massa_ledig_kg: 2150
+  accu_kwh: 72.6
+  actieradius_wltp_km: 460
+  verbruik_praktijk_kwh_100km: 20.5
+  trekgewicht_geremd_kg: 1600      # verifieren op het kentekenbewijs
+  zitplaatsen: 5
+  bagageruimte_l: 527
+  restwaarde_curve: ev_mainstream
+  onderhoud_pj: 350
+  banden_pj: 450
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1000
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 3, merkrisico: 4, laadsnelheid: 5}
+  notities: "Bijtelling 16% over 35.000 tot en met juni 2027, daarna het tarief van dat jaar. Vlakke vloer, veel binnenruimte."
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-01"
+
+- id: mercedes_eqb_occasion_2022
+  naam: "Mercedes EQB 300 4MATIC 7p (occasion 2022)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2022-12"
+  catalogusprijs: 63000
+  aanschafprijs: 36500              # advertentie Nijmegen: 38.000, particulier, 12.000 km
+  btw_auto: false                   # van een particulier: geen btw terug, correctie 1,5%
+  km_stand: 30000
+  massa_ledig_kg: 2175
+  accu_kwh: 66.5
+  actieradius_wltp_km: 420
+  verbruik_praktijk_kwh_100km: 21
+  trekgewicht_geremd_kg: 1700      # advertentie; ev-database zegt geen trekhaak mogelijk, verifieren
+  zitplaatsen: 7
+  bagageruimte_l: 495
+  restwaarde_curve: ev_europees_premium
+  onderhoud_pj: 500
+  banden_pj: 450
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1200
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 3, merkrisico: 5, laadsnelheid: 2}
+  notities: "De enige zevenzitter in deze prijsklasse; derde rij alleen voor kinderen. Laadt traag (100 kW). Bijtelling 16% over 35.000 tot en met december 2027."
+  bron: "autoscout24.nl, ev-database.org (nieuwprijs 61.379 tot 65.483)"
+  zekerheid: laag
+  datum: "2026-11-01"
+
+- id: volvo_xc40_occasion_2022
+  naam: "Volvo XC40 Recharge Twin (occasion 2022)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2022-03"
+  catalogusprijs: 60000
+  aanschafprijs: 30000              # schatting van het aanbod
+  btw_auto: true
+  km_stand: 70000
+  massa_ledig_kg: 2185
+  accu_kwh: 78
+  actieradius_wltp_km: 418
+  verbruik_praktijk_kwh_100km: 22.5
+  trekgewicht_geremd_kg: 1800
+  zitplaatsen: 5
+  bagageruimte_l: 452
+  restwaarde_curve: ev_europees_premium
+  onderhoud_pj: 450
+  banden_pj: 500
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1100
+  kwalitatief: {ruimte: 3, comfort: 4, trekervaring: 4, merkrisico: 5, laadsnelheid: 4}
+  notities: "Trekt 1.800 kg, verbruikt veel. Bijtelling 16% over 35.000 tot en met maart 2027."
+  bron: "greencarscompare (1.800 kg; gebruikt circa 36.000 in Europa), schatting"
+  zekerheid: laag
+  datum: "2026-11-01"
+
+- id: polestar_2_occasion_2023
+  naam: "Polestar 2 Long Range Dual Motor (occasion 2023)"
+  categorie: sedan
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2023-02"
+  catalogusprijs: 58000
+  aanschafprijs: 31000              # schatting van het aanbod
+  btw_auto: true
+  km_stand: 60000
+  massa_ledig_kg: 2100
+  accu_kwh: 82
+  actieradius_wltp_km: 592
+  verbruik_praktijk_kwh_100km: 18.5
+  trekgewicht_geremd_kg: 1500
+  zitplaatsen: 5
+  bagageruimte_l: 405
+  restwaarde_curve: ev_europees_premium
+  onderhoud_pj: 400
+  banden_pj: 450
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1100
+  kwalitatief: {ruimte: 3, comfort: 4, trekervaring: 3, merkrisico: 4, laadsnelheid: 4}
+  notities: "Liftback, geen SUV; krap achterin voor een gezin."
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-01"
+
+- id: xpeng_g6_occasion_2024
+  naam: "Xpeng G6 RWD Long Range (occasion 2024)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2024-06"
+  catalogusprijs: 52990
+  aanschafprijs: 33000              # schatting van het aanbod
+  btw_auto: true
+  km_stand: 40000
+  massa_ledig_kg: 2025
+  accu_kwh: 87.5
+  actieradius_wltp_km: 570
+  verbruik_praktijk_kwh_100km: 19
+  trekgewicht_geremd_kg: 1500      # verifieren bij Xpeng
+  zitplaatsen: 5
+  bagageruimte_l: 571
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 400
+  banden_pj: 500
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1200
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 3, merkrisico: 2, laadsnelheid: 5}
+  notities: "De kleine broer van de G9. Bijtelling 16% over 30.000 tot en met juni 2029."
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-01"
+
+- id: smart_1_premium
+  naam: "Smart #1 Premium (nieuw)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 41990             # verifieren; Europese prijs 44.990, Nederlands kentekenrapport #3: 42.090
+  aanschafprijs: 41990
+  btw_auto: true
+  massa_ledig_kg: 1800
+  accu_kwh: 66
+  actieradius_wltp_km: 440
+  verbruik_praktijk_kwh_100km: 19
+  trekgewicht_geremd_kg: 1600
+  zitplaatsen: 5
+  bagageruimte_l: 323
+  restwaarde_curve: ev_mainstream
+  onderhoud_pj: 350
+  banden_pj: 450
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1000
+  kwalitatief: {ruimte: 2, comfort: 3, trekervaring: 3, merkrisico: 3, laadsnelheid: 4}
+  notities: "Zelfde techniek als de Zeekr X (Geely SEA). Kleine kofferbak."
+  bron: "greencarscompare, kentekenrapport"
+  zekerheid: laag
+  datum: "2026-11-01"
+
+- id: volvo_ex30_er
+  naam: "Volvo EX30 Single Motor Extended Range (nieuw)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 39995             # Essential vanaf 34.995 (modeljaar 2026); Extended Range geschat
+  aanschafprijs: 39995
+  btw_auto: true
+  massa_ledig_kg: 1800
+  accu_kwh: 69
+  actieradius_wltp_km: 476
+  verbruik_praktijk_kwh_100km: 17.5
+  trekgewicht_geremd_kg: 1600      # per uitvoering 1.000 tot 1.600; verifieren
+  zitplaatsen: 5
+  bagageruimte_l: 318
+  restwaarde_curve: ev_europees_premium
+  onderhoud_pj: 350
+  banden_pj: 450
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1100
+  kwalitatief: {ruimte: 2, comfort: 3, trekervaring: 3, merkrisico: 5, laadsnelheid: 4}
+  notities: "Compact; krap voor twee kinderen plus bagage."
+  bron: "autorai.nl (modeljaar 2026), autotijd.be"
+  zekerheid: laag
+  datum: "2026-11-01"
+
+- id: skoda_enyaq_80x_occasion_2022
+  naam: "Skoda Enyaq iV 80x (occasion 2022)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2022-04"
+  catalogusprijs: 52000
+  aanschafprijs: 29000              # schatting van het aanbod
+  btw_auto: true
+  km_stand: 70000
+  massa_ledig_kg: 2180
+  accu_kwh: 82
+  actieradius_wltp_km: 500
+  verbruik_praktijk_kwh_100km: 20
+  trekgewicht_geremd_kg: 1400
+  zitplaatsen: 5
+  bagageruimte_l: 585
+  restwaarde_curve: ev_mainstream
+  onderhoud_pj: 400
+  banden_pj: 450
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1000
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 3, merkrisico: 4, laadsnelheid: 3}
+  notities: "Trekt 1.400 kg en valt dus net buiten de eis van 1.500 kg. Staat erin voor het geval de eis lager blijkt; veel ruimte voor het geld."
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-01"
