@@ -608,7 +608,7 @@ function wireRating(box, get, set) {
 }
 function setRating(v) {
   v = v || null; const same = v === (form.rating || null); form.rating = v;
-  if (!same) $('#fRatingBox').innerHTML = ratingHtml(form.rating);
+  if (!same || !$('#fRatingBox').children.length) $('#fRatingBox').innerHTML = ratingHtml(form.rating);
   $('#fRatingLabel').textContent = ratingLabel(form.rating);
   const n = $('#fRatingNum'); if (document.activeElement !== n) n.value = form.rating ? C.fmtRating(form.rating) : '';
 }
