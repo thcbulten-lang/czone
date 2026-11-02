@@ -100,7 +100,8 @@ main{padding-block:16px calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 20
 .rating.dec{margin-top:6px}
 .rating.dec button{height:34px;font-size:13px;font-weight:600}
 .rating-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
-.rating-num{width:76px;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:6px 10px;min-height:38px;text-align:center;font-weight:600}
+.rating-num,.field .rating-num{width:76px;flex:none;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:6px 10px;min-height:38px;text-align:center;font-weight:600}
+.rating-top .eyebrow{flex:1;min-width:0}
 .rating button.lead{background:color-mix(in srgb,var(--gold) 30%,var(--surface));border-color:transparent}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
