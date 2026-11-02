@@ -97,6 +97,10 @@ main{padding-block:16px calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 20
 .rating{display:grid;grid-template-columns:repeat(10,1fr);gap:5px}
 .rating button{border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:0;height:40px;font-weight:700;font-variant-numeric:tabular-nums}
 .rating button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#1D1821}
+.rating.dec{margin-top:6px}
+.rating.dec button{height:34px;font-size:13px;font-weight:600}
+.rating-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+.rating-num{width:76px;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:6px 10px;min-height:38px;text-align:center;font-weight:600}
 .rating button.lead{background:color-mix(in srgb,var(--gold) 30%,var(--surface));border-color:transparent}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
@@ -272,8 +276,8 @@ a{color:var(--accent)}
         <button type="button" data-v="zoet" aria-pressed="false"><span class="sw zoet"></span>Zoet</button>
       </div>
     </div>
-    <div class="field"><span class="eyebrow" style="margin-bottom:4px">Cijfer <span id="fRatingLabel" class="muted" style="text-transform:none;letter-spacing:0"></span></span>
-      <div class="rating" id="fRating" role="radiogroup" aria-label="Cijfer 1 tot 10"></div>
+    <div class="field"><div class="rating-top"><span class="eyebrow">Cijfer <span id="fRatingLabel" class="muted" style="text-transform:none;letter-spacing:0"></span></span><label for="fRatingNum" class="sr-only">Cijfer met één decimaal</label><input id="fRatingNum" class="rating-num num" inputmode="decimal" placeholder="8,3" autocomplete="off"></div>
+      <div id="fRatingBox" role="group" aria-label="Cijfer 1 tot 10 met tienden"></div>
     </div>
     <div class="grid2">
       <div class="field"><label for="fPrice">Prijs (€)</label><input id="fPrice" inputmode="decimal" placeholder="65"></div>
@@ -332,6 +336,8 @@ const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 
 const COLORS = ['rood','wit','rosé','mousserend','oranje','zoet'];
 const colorClass = c => COLORS.includes(c) ? c : 'overig';
 const fmtPrice = p => (p == null || p === '' || isNaN(p)) ? '' : '€ ' + Number(p).toLocaleString('nl-NL', {maximumFractionDigits: 0});
+const fmtRating = r => (r == null || r === '' || isNaN(r)) ? '' : Number(r).toLocaleString('nl-NL', {minimumFractionDigits: Number(r) % 1 ? 1 : 0, maximumFractionDigits: 1});
+const parseRating = v => { let n = numOrNull(v); if (n == null) return null; n = Math.round(n * 10) / 10; if (n <= 0) return null; return Math.min(10, Math.max(1, n)); };
 const fmtDate = iso => { if (!iso) return ''; const d = new Date(iso); return d.toLocaleDateString('nl-NL', {day:'numeric', month:'short', year: d.getFullYear() === new Date().getFullYear() ? undefined : 'numeric'}); };
 const todayKey = (d = new Date()) => d.toISOString().slice(0, 10);
 const clean = o => JSON.parse(JSON.stringify(o, (k, v) => v === undefined ? null : v));
@@ -438,13 +444,13 @@ const store = {
   set(k, v) { try { localStorage.setItem('cdc:' + k, JSON.stringify(v)); } catch (e) {} }
 };
 
-window.CDC = {$, $$, esc, uid, COLORS, colorClass, fmtPrice, fmtDate, todayKey, clean, numOrNull, toast, norm, tokens, wineKey, wineSim, SAME, readExif, shrink, md, store};
+window.CDC = {$, $$, esc, uid, COLORS, colorClass, fmtPrice, fmtRating, parseRating, fmtDate, todayKey, clean, numOrNull, toast, norm, tokens, wineKey, wineSim, SAME, readExif, shrink, md, store};
 })();
 </script>
 <script>
 (function(){
 'use strict';
-const {$, $$, esc, uid, colorClass, fmtPrice, fmtDate, clean, toast, store, wineSim, SAME} = window.CDC;
+const {$, $$, esc, uid, colorClass, fmtPrice, fmtRating, fmtDate, clean, toast, store, wineSim, SAME} = window.CDC;
 
 const S = window.CDC.S = {
   wines: [], lists: [], db: null, assets: null, sample: null, downloads: null, canImages: false, ready: false,
@@ -502,7 +508,7 @@ function wineRow(w, opts = {}) {
   const sub = [w.appellation && w.appellation !== t ? w.appellation : null, w.vintage, opts.noPlace ? null : w.placeName, fmtDate(w.createdAt)].filter(Boolean).map(esc).join(' · ');
   return `<button class="row" type="button" data-wine="${esc(w.id)}"><span class="sw ${colorClass(w.color)}"></span>
     <span style="min-width:0"><div class="t">${esc(t)}</div><div class="s">${sub}</div></span>
-    <span class="r">${w.rating ? `<span class="badge score num">${esc(w.rating)}</span>` : ''}${w.price ? `<span class="price small">${fmtPrice(w.price)}</span>` : ''}</span></button>`;
+    <span class="r">${w.rating ? `<span class="badge score num">${fmtRating(w.rating)}</span>` : ''}${w.price ? `<span class="price small">${fmtPrice(w.price)}</span>` : ''}</span></button>`;
 }
 function listRow(l) {
   const n = (l.items || []).length;
@@ -510,7 +516,7 @@ function listRow(l) {
   const sub = [l.city, fmtDate(l.createdAt), n ? n + ' wijnen' : 'nog niet gelezen', drunk ? drunk + ' gedronken' : null].filter(Boolean).map(esc).join(' · ');
   return `<button class="row" type="button" data-list="${esc(l.id)}"><span class="sw overig" style="border-radius:3px"></span>
     <span style="min-width:0"><div class="t">${esc(l.placeName || 'Wijnkaart')}</div><div class="s">${sub}</div></span>
-    <span class="r">${l.rating ? `<span class="badge score num">${esc(l.rating)}</span>` : ''}${l.advice ? `<span class="badge gold">advies</span>` : ''}</span></button>`;
+    <span class="r">${l.rating ? `<span class="badge score num">${fmtRating(l.rating)}</span>` : ''}${l.advice ? `<span class="badge gold">advies</span>` : ''}</span></button>`;
 }
 const rows = html => html ? `<div class="rows">${html}</div>` : '';
 
@@ -584,11 +590,31 @@ const C = window.CDC; const {$, $$, esc, uid, COLORS, colorClass, fmtPrice, fmtD
 const RATING_WORDS = {1:'slecht',2:'slecht',3:'zwak',4:'matig',5:'matig',6:'oké',7:'goed',8:'heel goed',9:'uitstekend',10:'onvergetelijk'};
 let form = null;
 
-// rating pills
-(function buildRating(){ $('#fRating').innerHTML = Array.from({length: 10}, (_, i) => `<button type="button" data-v="${i + 1}" aria-pressed="false" class="num">${i + 1}</button>`).join(''); })();
-function setRating(v) { form.rating = v || null; for (const b of $$('#fRating button')) { const n = +b.dataset.v; b.setAttribute('aria-pressed', String(n === v)); b.classList.toggle('lead', !!v && n < v); } $('#fRatingLabel').textContent = v ? `${v} · ${RATING_WORDS[v]}` : ''; }
+// rating component: hele getallen + tienden, gedeeld door wijn en kaart
+const ratingWord = r => RATING_WORDS[Math.min(10, Math.max(1, Math.floor(Number(r))))] || '';
+const ratingLabel = r => r ? `${C.fmtRating(r)} · ${ratingWord(r)}` : '';
+function ratingHtml(v) {
+  const int = v ? Math.floor(v) : 0; const dec = v ? Math.round((v - int) * 10) : 0;
+  return `<div class="rating int">${Array.from({length: 10}, (_, i) => `<button type="button" data-v="${i + 1}" aria-pressed="${String(int === i + 1)}" class="num ${int && i + 1 < int ? 'lead' : ''}">${i + 1}</button>`).join('')}</div>
+    <div class="rating dec" ${int && int < 10 ? '' : 'hidden'}>${Array.from({length: 10}, (_, i) => `<button type="button" data-v="${i}" aria-pressed="${String(dec === i)}" class="num">,${i}</button>`).join('')}</div>`;
+}
+function wireRating(box, get, set) {
+  box.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const cur = get(); const int = cur ? Math.floor(cur) : 0; const dec = cur ? Math.round((cur - int) * 10) : 0;
+    if (b.closest('.rating.dec')) { if (int) set(Math.min(10, int + (+b.dataset.v) / 10)); return; }
+    const n = +b.dataset.v; set(int === n ? null : (n === 10 ? 10 : n + dec / 10));
+  });
+}
+function setRating(v) {
+  v = v || null; const same = v === (form.rating || null); form.rating = v;
+  if (!same) $('#fRatingBox').innerHTML = ratingHtml(form.rating);
+  $('#fRatingLabel').textContent = ratingLabel(form.rating);
+  const n = $('#fRatingNum'); if (document.activeElement !== n) n.value = form.rating ? C.fmtRating(form.rating) : '';
+}
+wireRating($('#fRatingBox'), () => form && form.rating, setRating);
+$('#fRatingNum').addEventListener('change', e => setRating(C.parseRating(e.target.value)));
 function setColor(v) { form.color = v || null; for (const b of $$('#fColor button')) b.setAttribute('aria-pressed', String(b.dataset.v === v)); }
-$('#fRating').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setRating(form.rating === +b.dataset.v ? null : +b.dataset.v); });
 $('#fColor').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setColor(form.color === b.dataset.v ? null : b.dataset.v); });
 
 function fillForm(w) {
@@ -715,7 +741,7 @@ function renderWineDetail() {
   b.innerHTML = `
     ${w.photo && w.photoBack ? `<div class="photos2"><a class="photo-slot has" href="${C.photoUrl(w.photo)}" target="_blank" rel="noopener"><img src="${C.photoUrl(w.photo)}" alt="Voorkant etiket"><span class="lbl">Voorkant</span></a><a class="photo-slot has" href="${C.photoUrl(w.photoBack)}" target="_blank" rel="noopener"><img src="${C.photoUrl(w.photoBack)}" alt="Achterkant etiket"><span class="lbl">Achterkant</span></a></div>` : w.photo || w.photoBack ? `<img class="photo" src="${C.photoUrl(w.photo || w.photoBack)}" alt="Etiket van ${esc(title)}">` : ''}
     <div><h2 class="title-xl"><span class="prod">${esc(w.producer || '')}</span>${esc(title)}${w.vintage ? ` <span class="num muted" style="font-weight:400">${esc(w.vintage)}</span>` : ''}</h2>
-      <div class="meta" style="margin-top:8px"><span class="badge"><span class="sw ${colorClass(w.color)}"></span>${esc(w.color || 'kleur onbekend')}</span>${w.rating ? `<span class="badge score num">${esc(w.rating)} · ${RATING_WORDS[w.rating]}</span>` : '<span class="badge">nog geen cijfer</span>'}</div></div>
+      <div class="meta" style="margin-top:8px"><span class="badge"><span class="sw ${colorClass(w.color)}"></span>${esc(w.color || 'kleur onbekend')}</span>${w.rating ? `<span class="badge score num">${esc(ratingLabel(w.rating))}</span>` : '<span class="badge">nog geen cijfer</span>'}</div></div>
     <dl class="kv">${kv.map(([k, v]) => `<dt>${k}</dt><dd>${k === 'Locatie' ? v : esc(v)}</dd>`).join('')}</dl>
     ${w.notes ? `<div class="card flat"><div class="eyebrow" style="margin-bottom:6px">Notities</div><div class="notes">${esc(w.notes)}</div></div>` : ''}
     ${labelCard(w)}
@@ -771,13 +797,13 @@ $('#btnPhotoWine').addEventListener('click', () => { $('#fileWine').dataset.side
 $('#btnManualWine').addEventListener('click', () => openWineForm(null, null));
 $('#btnEditWine').addEventListener('click', () => { const w = S.wines.find(x => x.id === detailId); if (w) openWineForm(w, null); });
 
-Object.assign(C, {openWineForm, openWineDetail, renderWineDetail, RATING_WORDS});
+Object.assign(C, {openWineForm, openWineDetail, renderWineDetail, RATING_WORDS, ratingWord, ratingLabel, ratingHtml, wireRating});
 })();
 </script>
 <script>
 (function(){
 'use strict';
-const C = window.CDC; const {$, $$, esc, uid, COLORS, colorClass, fmtPrice, fmtDate, numOrNull, toast, store, readExif, shrink, md, S} = C;
+const C = window.CDC; const {$, $$, esc, uid, COLORS, colorClass, fmtPrice, fmtRating, fmtDate, numOrNull, toast, store, readExif, shrink, md, S} = C;
 
 let nl = null; // nieuwe kaart in opbouw
 function startNewList() {
@@ -867,8 +893,8 @@ function renderListDetail() {
     <div class="meta">${l.city ? `<span>${esc(l.city)}</span>` : ''}<span>${esc(fmtDate(l.createdAt))}</span><span class="num">${items.length} wijnen</span>${l.geo ? `<a href="https://www.google.com/maps?q=${l.geo.lat},${l.geo.lon}" target="_blank" rel="noopener">kaartlocatie</a>` : ''}</div>
     ${(l.photos || []).length ? `<div class="thumbs">${l.photos.map((id, i) => `<a href="${C.photoUrl(id)}" target="_blank" rel="noopener"><img src="${C.photoUrl(id)}" alt="Pagina ${i + 1}"></a>`).join('')}</div>` : ''}
     <div class="card">
-      <div class="section-h"><h2>Cijfer voor deze kaart</h2><span class="muted small" id="lRatingLabel">${l.rating ? l.rating + ' · ' + C.RATING_WORDS[l.rating] : ''}</span></div>
-      <div class="rating" id="lRating">${Array.from({length: 10}, (_, i) => `<button type="button" data-v="${i + 1}" aria-pressed="${String(l.rating === i + 1)}" class="num ${l.rating && i + 1 < l.rating ? 'lead' : ''}">${i + 1}</button>`).join('')}</div>
+      <div class="rating-top"><h2 style="font-size:15px">Cijfer voor deze kaart</h2><span class="muted small" id="lRatingLabel" style="margin-left:auto">${esc(C.ratingLabel(l.rating))}</span><input id="lRatingNum" class="rating-num num" inputmode="decimal" placeholder="8,3" value="${l.rating ? C.fmtRating(l.rating) : ''}" aria-label="Cijfer met één decimaal" autocomplete="off"></div>
+      <div id="lRatingBox" role="group" aria-label="Cijfer 1 tot 10 met tienden">${C.ratingHtml(l.rating)}</div>
       <div class="field" style="margin-top:10px"><label for="lNotes">Over de kaart</label><textarea id="lNotes" style="min-height:64px" placeholder="Breedte, prijsniveau, verrassingen, sommelier…">${esc(l.notes || '')}</textarea></div>
     </div>
     <div class="card">
@@ -887,13 +913,15 @@ function renderListDetail() {
 function itemHtml({it, i, drunk, other}) {
   const best = drunk[0];
   const d = [it.appellation && it.appellation !== itemTitle(it) ? it.appellation : null, it.vintage, it.grapes?.length ? it.grapes.join('/') : null, it.size && it.size !== 'fles' ? it.size : null].filter(Boolean).map(esc).join(' · ');
-  const badges = [best ? `<span class="badge ok">gedronken${best.w.rating ? ' · ' + best.w.rating : ''}</span>` : '', ...other.slice(0, 2).map(l => `<span class="badge">ook bij ${esc(l.placeName || 'kaart')}${(l.items || []).find(x => C.wineSim(it, x) >= C.SAME)?.price ? ' ' + fmtPrice((l.items || []).find(x => C.wineSim(it, x) >= C.SAME).price) : ''}</span>`)].join('');
+  const badges = [best ? `<span class="badge ok">gedronken${best.w.rating ? ' · ' + fmtRating(best.w.rating) : ''}</span>` : '', ...other.slice(0, 2).map(l => `<span class="badge">ook bij ${esc(l.placeName || 'kaart')}${(l.items || []).find(x => C.wineSim(it, x) >= C.SAME)?.price ? ' ' + fmtPrice((l.items || []).find(x => C.wineSim(it, x) >= C.SAME).price) : ''}</span>`)].join('');
   return `<button class="item ${best ? 'hit' : ''}" type="button" data-item="${i}" style="text-align:left;background:${best ? '' : 'none'};border-left:0;border-right:0;border-bottom:0;width:100%">
     <span style="min-width:0"><div class="n">${it.color ? `<span class="sw ${colorClass(it.color)}" style="display:inline-block;vertical-align:-1px;margin-right:6px"></span>` : ''}${esc(itemTitle(it))}</div>${d ? `<div class="d">${d}</div>` : ''}${badges ? `<div class="b">${badges}</div>` : ''}</span>
     <span class="p">${it.price ? fmtPrice(it.price) : ''}${it.glassPrice ? `<div class="small muted">glas ${fmtPrice(it.glassPrice)}</div>` : ''}</span></button>`;
 }
 function wireDetail(l) {
-  $('#lRating').addEventListener('click', async e => { const bt = e.target.closest('button'); if (!bt) return; const v = +bt.dataset.v; const fresh = S.lists.find(x => x.id === l.id); await C.saveList(Object.assign({}, fresh, {rating: fresh.rating === v ? null : v})); renderListDetail(); });
+  const setL = async v => { const fresh = S.lists.find(x => x.id === l.id) || l; if ((v || null) === (fresh.rating || null)) return; await C.saveList(Object.assign({}, fresh, {rating: v || null})); renderListDetail(); };
+  C.wireRating($('#lRatingBox'), () => (S.lists.find(x => x.id === l.id) || l).rating, setL);
+  $('#lRatingNum').addEventListener('change', e => setL(C.parseRating(e.target.value)));
   let t; $('#lNotes').addEventListener('input', e => { clearTimeout(t); t = setTimeout(async () => { const fresh = S.lists.find(x => x.id === l.id); await C.saveList(Object.assign({}, fresh, {notes: e.target.value.trim() || null})); }, 800); });
   $('#btnAdvice').addEventListener('click', () => askAdvice(l.id));
   $('#btnAdviceStop').addEventListener('click', () => adviceCtl?.abort());

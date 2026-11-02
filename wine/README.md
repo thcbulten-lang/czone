@@ -31,7 +31,7 @@ Publiceren met: `capabilities: {db:{}, user:{}, assets:{}, sample:{images:true},
   genormaliseerde producent/naam/appellation (`wineSim`, drempel 0,6).
 - **Advies**: op basis van je drinkgeschiedenis, gemiddelde cijfers per streek/kleur, de kaart,
   wat je al kent en je context (gerecht, budget). Streamt binnen en wordt bij de kaart bewaard.
-- **Kaart raten**: cijfer 1-10 plus notitie.
+- **Kaart raten**: cijfer 1-10 met één decimaal (knoppen of intypen) plus notitie; wijnen idem.
 - **Fles loggen**: foto van voor- én achteretiket → velden vooringevuld, etikettekst en -feiten
   (importeur, percelen, opvoeding, zwavel, certificering) bewaard en meegegeven aan de fiche → cijfer, prijs, notities.
   Geotag en opnamemoment komen uit de EXIF van de foto (zet locatie aan in je camera-app).
@@ -47,7 +47,7 @@ Publiceren met: `capabilities: {db:{}, user:{}, assets:{}, sample:{images:true},
 
 ```
 wines/{id}: { createdAt, producer, name, appellation, region, country, vintage, color,
-              grapes[], alcohol, rating (1-10), price, context, placeName, city, notes,
+              grapes[], alcohol, rating (1-10, één decimaal), price, context, placeName, city, notes,
               photo (asset-id voorkant), photoBack (asset-id achterkant),
               labelInfo {text, facts[], importer, bottler, volumeCl, certifications[], sides[]},
               geo {lat, lon}, takenAt, listId,
