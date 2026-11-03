@@ -157,6 +157,15 @@ svg .as line, svg .grid line { stroke: var(--line); }
 .twee { display: grid; grid-template-columns: 1fr; gap: 16px; }
 @media (min-width: 960px) { .twee { grid-template-columns: 1fr 1fr; } }
 .klein { font-size: 12px; color: var(--ink-3); }
+.selectie { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0; }
+.label { display: inline-flex; align-items: center; gap: 6px; background: var(--surface-2); border-radius: 999px; padding: 4px 6px 4px 10px; font-size: 12.5px; max-width: 100%; }
+.label span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 260px; }
+.label button { border: 0; background: transparent; color: var(--ink-2); cursor: pointer; font-size: 15px; line-height: 1; padding: 0 4px; }
+.melding { color: var(--critical); font-size: 13px; margin: 4px 0; min-height: 1.2em; }
+.balk { position: fixed; left: 0; right: 0; bottom: 0; display: none; justify-content: center; padding: 10px 16px; background: var(--surface); border-top: 1px solid var(--line); box-shadow: 0 -4px 14px rgba(0,0,0,.08); z-index: 5; }
+.balk .knop { font-size: 15px; padding: 8px 18px; }
+@media (max-width: 760px) { .balk { display: flex; } main { padding-bottom: 96px; } }
+.terug { font-size: 12.5px; font-weight: 400; margin-left: 10px; }
 select { font: inherit; padding: 3px 6px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
 </style>
 </head>
@@ -172,13 +181,17 @@ select { font: inherit; padding: 3px 6px; border-radius: 6px; border: 1px solid 
   <div class="kaart uitleg" id="uitleg"></div>
 </header>
 
-<h2>Filters</h2>
+<h2 id="filters-kop">Filters</h2>
 <div class="kaart filters" id="filters"></div>
 
-<h2>Ranglijst <span class="klein">(klik een kolomkop om te sorteren; vink maximaal zes scenario's aan om ze hieronder naast elkaar te zetten)</span></h2>
-<div class="kaart tabelwrap"><table id="tabel"></table></div>
+<h2>Ranglijst <span class="klein">(klik een kolomkop om te sorteren; vink maximaal acht scenario's aan om ze naast elkaar te zetten)</span></h2>
+<div class="kaart">
+  <div class="selectie" id="selectie"></div>
+  <div class="melding" id="melding"></div>
+  <div class="tabelwrap"><table id="tabel"></table></div>
+</div>
 
-<h2>Waar zit het geld? <span class="klein">netto prive-euro per jaar, per kostengroep</span></h2>
+<h2 id="vergelijk-kop">Waar zit het geld? <span class="klein">netto prive-euro per jaar, per kostengroep</span><a class="terug" href="#filters-kop">naar de ranglijst</a></h2>
 <div class="kaart" id="opbouw"></div>
 
 <div class="twee">
@@ -192,12 +205,14 @@ select { font: inherit; padding: 3px 6px; border-radius: 6px; border: 1px solid 
 <h2>Logboek van de overwegingen</h2>
 <div class="kaart log" id="logboek"></div>
 </main>
+<div class="balk"><button class="knop actief" type="button" id="balk-knop">Vergelijk</button></div>
 <script>
 const DATA = __DATA__;
 const LOGBOEK = __LOGBOEK__;
 const EUR = new Intl.NumberFormat('nl-NL', {style:'currency', currency:'EUR', maximumFractionDigits:0});
 const euro = x => EUR.format(Math.round(x));
 const KLEUREN = ['--s1','--s2','--s3','--s4','--s5','--s6','--s7','--s8'];
+const MAX_GEKOZEN = 8;
 const kleur = i => `var(${KLEUREN[i % 8]})`;
 const state = { horizon: String(DATA.hoofdhorizon), constructies: new Set(Object.keys(DATA.constructies)),
   categorieen: new Set(), alleenVoldoet: false, prijs: 'alle', zoek: '', sort: ['rang', 1], gekozen: [], slots: {}, gevoeligId: null };
@@ -218,10 +233,27 @@ function zichtbaar() {
 function gekozenScenarios() { const alle = alleScenarios(); return state.gekozen.map(id => alle.find(s => s.id === id)).filter(Boolean); }
 function slotVan(id) { if (!(id in state.slots)) { const bezet = new Set(Object.values(state.slots)); let i = 0; while (bezet.has(i)) i++; state.slots[id] = i; } return state.slots[id]; }
 function kies(id, aan) {
-  if (aan) { if (state.gekozen.length >= 6 || state.gekozen.includes(id)) return; state.gekozen.push(id); slotVan(id); }
-  else { state.gekozen = state.gekozen.filter(x => x !== id); delete state.slots[id]; }
+  state.melding = '';
+  if (aan) {
+    if (state.gekozen.includes(id)) return;
+    if (state.gekozen.length >= MAX_GEKOZEN) { state.melding = `Maximaal ${MAX_GEKOZEN} scenario's naast elkaar: haal er eerst een weg (kruisje in de labels hierboven).`; renderTabel(); renderSelectie(); return; }
+    state.gekozen.push(id); slotVan(id);
+  } else { state.gekozen = state.gekozen.filter(x => x !== id); delete state.slots[id]; }
   if (!state.gevoeligId || !state.gekozen.includes(state.gevoeligId)) state.gevoeligId = state.gekozen[0] || null;
-  renderAlles();
+  renderKeuze();
+}
+function renderKeuze() { renderTabel(); renderSelectie(); renderOpbouw(); renderVerloop(); renderTornado(); renderVariabelen(); }
+function naarVergelijk() { document.getElementById('vergelijk-kop').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+function renderSelectie() {
+  const sc = gekozenScenarios(); const el = $('#selectie');
+  const labels = sc.map(s => `<span class="label"><span class="stip" style="background:${kleur(slotVan(s.id))};margin:0"></span><span title="${esc(s.naam)}">${esc(s.naam)}</span><button type="button" data-weg="${s.id}" title="uit de selectie halen">×</button></span>`).join('');
+  el.innerHTML = (sc.length ? `<b style="font-size:12.5px">Gekozen (${sc.length} van ${MAX_GEKOZEN}):</b> ${labels}` : '<span class="klein">Nog niets gekozen: vink scenario\'s aan in de lijst.</span>')
+    + `<button class="knop actief" type="button" id="spring">Vergelijk</button><button class="knop" type="button" id="wis">Wis selectie</button>`;
+  el.querySelectorAll('[data-weg]').forEach(b => b.onclick = () => kies(b.dataset.weg, false));
+  $('#spring').onclick = naarVergelijk;
+  $('#wis').onclick = () => { state.gekozen = []; state.slots = {}; state.gevoeligId = null; state.melding = ''; renderKeuze(); };
+  $('#melding').textContent = state.melding || '';
+  const bk = $('#balk-knop'); bk.textContent = `Vergelijk (${sc.length})`; bk.onclick = naarVergelijk;
 }
 
 function renderKop() {
@@ -379,11 +411,11 @@ function renderLogboek() {
 }
 
 function koppelTips(el) { el.querySelectorAll('[data-tip]').forEach(n => { n.addEventListener('mousemove', e => toonTip(e, n.dataset.tip)); n.addEventListener('mouseleave', verbergTip); }); }
-function renderAlles() { renderKop(); renderFilters(); renderTabel(); renderOpbouw(); renderVerloop(); renderTornado(); renderVariabelen(); }
+function renderAlles() { renderKop(); renderFilters(); renderTabel(); renderSelectie(); renderOpbouw(); renderVerloop(); renderTornado(); renderVariabelen(); }
 
 (function init() {
   const alle = alleScenarios();
-  const start = [alle.find(s => s.id.startsWith('nul_')), ...alle.filter(s => s.voldoet).slice(0, 4)].filter(Boolean);
+  const start = [alle.find(s => s.id.startsWith('nul_')), ...alle.filter(s => s.voldoet).slice(0, 3)].filter(Boolean);
   start.forEach(s => { if (!state.gekozen.includes(s.id)) { state.gekozen.push(s.id); slotVan(s.id); } });
   state.gevoeligId = state.gekozen[0];
   $('#thema').onclick = () => { const r = document.documentElement; const donker = r.dataset.theme ? r.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches; r.dataset.theme = donker ? 'light' : 'dark'; };
