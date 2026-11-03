@@ -166,6 +166,11 @@ svg .as line, svg .grid line { stroke: var(--line); }
 .balk .knop { font-size: 15px; padding: 8px 18px; }
 @media (max-width: 760px) { .balk { display: flex; } main { padding-bottom: 96px; } }
 .terug { font-size: 12.5px; font-weight: 400; margin-left: 10px; }
+.rij { display: grid; grid-template-columns: 260px 1fr 90px; gap: 10px; align-items: center; margin: 4px 0; }
+.rij .rijnaam { font-size: 12.5px; color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rij .rijtotaal { font-size: 13px; font-weight: 600; text-align: right; }
+.rij svg { display: block; width: 100%; height: 28px; }
+@media (max-width: 760px) { .rij { grid-template-columns: 1fr 80px; } .rij .rijnaam { grid-column: 1 / -1; white-space: normal; } .rij svg { height: 26px; } svg .inbar { display: none; } }
 select { font: inherit; padding: 3px 6px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
 </style>
 </head>
@@ -319,24 +324,24 @@ function renderOpbouw() {
   if (!sc.length) { el.innerHTML = '<p class="klein">Vink scenario\'s aan in de ranglijst.</p>'; return; }
   const groepen = DATA.groepen;
   const legenda = groepen.map(([g, n], i) => `<span style="--k:${kleur(i)}">${n}</span>`).join('');
-  const W = 1000, labelB = 300, rijH = 34, pad = 12;
+  const W = 1000, H = 28;
   let maxPos = 1, maxNeg = 0;
   sc.forEach(s => { let p = 0, n = 0; groepen.forEach(([g]) => { const v = s.groepen_netto_pj[g]; if (v >= 0) p += v; else n += -v; }); maxPos = Math.max(maxPos, p); maxNeg = Math.max(maxNeg, n); });
-  const plotW = W - labelB - 90; const x0 = labelB + plotW * (maxNeg / (maxPos + maxNeg)); const sch = plotW / (maxPos + maxNeg);
-  let svg = `<svg viewBox="0 0 ${W} ${sc.length * rijH + pad * 2}" width="100%" role="img" aria-label="Kostenopbouw per scenario">`;
-  sc.forEach((s, r) => {
-    const y = pad + r * rijH + 4, h = rijH - 10; let xp = x0, xn = x0;
-    svg += `<text x="${labelB - 8}" y="${y + h / 2 + 4}" text-anchor="end">${esc(s.naam.length > 44 ? s.naam.slice(0, 43) + '…' : s.naam)}</text>`;
+  const x0 = W * (maxNeg / (maxPos + maxNeg)); const sch = W / (maxPos + maxNeg);
+  let html = '';
+  sc.forEach(s => {
+    let xp = x0, xn = x0;
+    let svg = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="${esc(s.naam)}">`;
     groepen.forEach(([g, n], i) => {
       const v = s.groepen_netto_pj[g]; if (Math.abs(v) < 1) return; const w = Math.abs(v) * sch; let x;
       if (v >= 0) { x = xp; xp += w; } else { xn -= w; x = xn; }
-      svg += `<rect x="${x + 1}" y="${y}" width="${Math.max(0, w - 2)}" height="${h}" rx="2" fill="${kleur(i)}" data-tip="${esc(s.naam)}\n${n}: ${euro(v)} per jaar"></rect>`;
-      if (w > 64) svg += `<text x="${x + w / 2}" y="${y + h / 2 + 4}" text-anchor="middle" style="fill:#fff;font-size:11px;pointer-events:none">${euro(v)}</text>`;
+      svg += `<rect x="${x + 1}" y="0" width="${Math.max(0, w - 2)}" height="${H}" rx="2" fill="${kleur(i)}" data-tip="${esc(s.naam)}\n${n}: ${euro(v)} per jaar"></rect>`;
+      if (w > 70) svg += `<text class="inbar" x="${x + w / 2}" y="${H / 2 + 4}" text-anchor="middle" textLength="${Math.min(60, w - 12)}" lengthAdjust="spacingAndGlyphs" style="fill:#fff;font-size:11px;pointer-events:none">${euro(v)}</text>`;
     });
-    svg += `<text x="${xp + 6}" y="${y + h / 2 + 4}" style="fill:var(--ink);font-weight:600">${euro(s.per_jaar_gem.netto_prive_euro)}</text>`;
+    svg += `<line x1="${x0}" y1="0" x2="${x0}" y2="${H}" stroke="var(--ink-3)" stroke-width="1.5"/></svg>`;
+    html += `<div class="rij"><div class="rijnaam" title="${esc(s.naam)}"><span class="stip" style="background:${kleur(slotVan(s.id))}"></span>${esc(s.naam)}</div>${svg}<div class="rijtotaal">${euro(s.per_jaar_gem.netto_prive_euro)}</div></div>`;
   });
-  svg += `<line x1="${x0}" y1="${pad}" x2="${x0}" y2="${sc.length * rijH + pad}" stroke="var(--ink-3)"/></svg>`;
-  el.innerHTML = `<div class="legenda">${legenda}</div>${svg}<p class="klein">Segmenten links van de nullijn zijn opbrengsten (kilometervergoeding, salarisruimte). Alles in netto prive-euro's per jaar, gemiddeld over de horizon.</p>`;
+  el.innerHTML = `<div class="legenda">${legenda}</div>${html}<p class="klein">Segmenten links van de nullijn zijn opbrengsten (kilometervergoeding, salarisruimte). Alles in netto prive-euro's per jaar, gemiddeld over de horizon. Houd een segment aan voor het bedrag.</p>`;
   koppelTips(el);
 }
 
@@ -347,7 +352,7 @@ function renderVerloop() {
   const max = Math.max(...sc.flatMap(s => s.per_jaar.map(j => j.netto_prive_euro))) * 1.1; const min = Math.min(0, ...sc.flatMap(s => s.per_jaar.map(j => j.netto_prive_euro)));
   const x = i => l + (i) * (W - l - r) / Math.max(1, H - 1); const y = v => t + (Hh - t - b) * (1 - (v - min) / (max - min));
   let svg = `<svg viewBox="0 0 ${W} ${Hh}" width="100%" role="img" aria-label="Netto kosten per jaar"><g class="grid">`;
-  const stap = Math.pow(10, Math.floor(Math.log10(max))) / 2;
+  const ruw = (max - min) / 5, mag = Math.pow(10, Math.floor(Math.log10(ruw))); const stap = [1, 2, 2.5, 5, 10].map(f => f * mag).find(v => v >= ruw);
   for (let v = Math.ceil(min / stap) * stap; v <= max; v += stap) svg += `<line x1="${l}" x2="${W - r}" y1="${y(v)}" y2="${y(v)}"/><text x="${l - 6}" y="${y(v) + 4}" text-anchor="end">${euro(v)}</text>`;
   svg += '</g>';
   for (let i = 0; i < H; i++) svg += `<text x="${x(i)}" y="${Hh - b + 18}" text-anchor="middle">jaar ${i + 1}</text>`;
@@ -366,16 +371,18 @@ function renderTornado() {
   sel.onchange = () => { state.gevoeligId = sel.value; renderTornado(); };
   const el = $('#tornado'); const g = DATA.gevoeligheid[state.gevoeligId];
   if (!g) { el.innerHTML = '<p class="klein">Geen selectie.</p>'; return; }
-  const W = 600, rijH = 30, labelB = 250, pad = 10; const basis = g[0].basis;
+  const W = 1000, H = 26; const basis = g[0].basis;
   const span = Math.max(1, ...g.map(v => Math.max(Math.abs(v.laag - basis), Math.abs(v.hoog - basis))));
-  const mid = labelB + (W - labelB - 40) / 2, sch = (W - labelB - 40) / 2 / span;
-  let svg = `<svg viewBox="0 0 ${W} ${g.length * rijH + pad * 2 + 20}" width="100%" role="img" aria-label="Gevoeligheid">`;
-  g.forEach((v, i) => { const y = pad + i * rijH;
-    svg += `<text x="${labelB - 8}" y="${y + 18}" text-anchor="end">${esc(v.variabele)}</text>`;
+  const mid = W / 2, sch = (W / 2 - 10) / span;
+  let html = '';
+  g.forEach(v => {
+    let svg = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="${esc(v.variabele)}">`;
     [[v.laag, 'laag'], [v.hoog, 'hoog']].forEach(([w, lbl]) => { const d = w - basis; const x = d < 0 ? mid + d * sch : mid; const wd = Math.abs(d) * sch;
-      svg += `<rect x="${x}" y="${y + 6}" width="${Math.max(1, wd)}" height="16" rx="2" fill="${lbl === 'laag' ? 'var(--s1)' : 'var(--s2)'}" data-tip="${esc(v.variabele)}\n${lbl}: ${euro(w)} per jaar (${d >= 0 ? '+' : ''}${euro(d)})"></rect>`; }); });
-  svg += `<line x1="${mid}" x2="${mid}" y1="${pad}" y2="${g.length * rijH + pad}" stroke="var(--ink-3)"/><text x="${mid}" y="${g.length * rijH + pad + 16}" text-anchor="middle">basis ${euro(basis)} per jaar</text></svg>`;
-  el.innerHTML = svg + `<div class="legenda"><span style="--k:var(--s1)">eerste waarde (laag)</span><span style="--k:var(--s2)">tweede waarde (hoog)</span></div><p class="klein">Hoe langer de balk, hoe meer de aanname ertoe doet. Dit is het antwoord op: welke van de tientallen variabelen verdienen onderzoek?</p>`;
+      svg += `<rect x="${x}" y="4" width="${Math.max(2, wd)}" height="${H - 8}" rx="2" fill="${lbl === 'laag' ? 'var(--s1)' : 'var(--s2)'}" data-tip="${esc(v.variabele)}\n${lbl}: ${euro(w)} per jaar (${d >= 0 ? '+' : ''}${euro(d)})"></rect>`; });
+    svg += `<line x1="${mid}" x2="${mid}" y1="0" y2="${H}" stroke="var(--ink-3)" stroke-width="1.5"/></svg>`;
+    html += `<div class="rij"><div class="rijnaam" title="${esc(v.variabele)}">${esc(v.variabele)}</div>${svg}<div class="rijtotaal" style="font-weight:400;font-size:12px">${euro(Math.abs(v.hoog - v.laag))}</div></div>`;
+  });
+  el.innerHTML = html + `<p class="klein" style="text-align:center">basis ${euro(basis)} per jaar; rechts het verschil tussen de twee waarden</p><div class="legenda"><span style="--k:var(--s1)">eerste waarde (laag)</span><span style="--k:var(--s2)">tweede waarde (hoog)</span></div><p class="klein">Hoe langer de balk, hoe meer de aanname ertoe doet. Dit is het antwoord op: welke van de tientallen variabelen verdienen onderzoek?</p>`;
   koppelTips(el);
 }
 
