@@ -1440,7 +1440,7 @@
   nieuw: false
   eerste_toelating: "2021-06"       # bouwjaar 2021; maand verifieren
   catalogusprijs: 50000
-  aanschafprijs: 23000              # ONBEKEND: prijs stond niet op de schermafdruk; schatting voor 2021 met 113.000 km
+  aanschafprijs: 21000              # vraagprijs Herwers (4-11-2026)
   btw_auto: true                    # verifieren
   km_stand: 113253
   massa_ledig_kg: 1900

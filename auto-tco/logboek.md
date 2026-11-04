@@ -147,4 +147,4 @@ Waar het geld zit: energie 4.371 (de 70% kilometers op benzine vreten de winst v
 
 **Lezing.** Wie de Cayenne wil om het trekgewicht en het comfort, vindt in deze prijsklasse geen auto die hetzelfde biedt met meer elektrisch bereik; de Q7 e-tron komt het dichtst in de buurt en kost netto evenveel. Wie 2.100 kg genoeg vindt, krijgt met de E 300 e Estate meer elektrisch bereik voor minder geld.
 
-**Aanvulling dezelfde dag.** De E 300 e Estate rekent nu met 24.000 euro aanschaf (jouw aanname, 120.000 km). De Outlander is vervangen door een concreet exemplaar: Intense+ uit 2021 met 113.253 km bij Herwers, afneembare trekhaak 1.500 kg; de prijs is nog een schatting van 23.000.
+**Aanvulling dezelfde dag.** De E 300 e Estate rekent nu met 24.000 euro aanschaf (jouw aanname, 120.000 km). De Outlander is vervangen door een concreet exemplaar: Intense+ uit 2021 met 113.253 km bij Herwers, afneembare trekhaak 1.500 kg; vraagprijs 21.000.

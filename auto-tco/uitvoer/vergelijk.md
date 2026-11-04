@@ -19,8 +19,8 @@ Gebruik: 15.000 km zakelijk, 10.000 km prive, 1.500 km trekkend per jaar; eis tr
 | 9 | Wachten 1 jaar: E-klasse, dan Zeekr X Long Range (1 jaar oud) prive voor ± 25.000 | ja | 7.258 | 605 | 0.29 | 5.033 | 4.180 | 525 | 7.500 | laag |
 | 10 | Volvo XC40 Recharge Twin (occasion 2022), Prive koop + km-vergoeding | ja | 7.416 | 618 | 0.30 | 3.750 | 5.122 | 0 | 32.900 | laag |
 | 11 | Kia EV6 Plus AWD 77 kWh (occasion 2023), Prive koop + km-vergoeding | ja | 7.440 | 620 | 0.30 | 3.750 | 5.147 | 0 | 35.800 | laag |
-| 12 | Wachten 2 jaar: E-klasse, dan Xpeng G7 (verwacht model) (2 jaar oud) prive voor ± 22.000 | ja | 7.701 | 642 | 0.31 | 6.298 | 3.849 | 1.008 | 7.500 | laag |
-| 13 | Mitsubishi Outlander 2.4 PHEV Intense+ (occasion 2021, Herwers), Prive koop + km-vergoeding | nee (elektrisch) | 7.840 | 653 | 0.31 | 3.750 | 5.546 | 0 | 24.800 | laag |
+| 12 | Mitsubishi Outlander 2.4 PHEV Intense+ (occasion 2021, Herwers), Prive koop + km-vergoeding | nee (elektrisch) | 7.629 | 636 | 0.31 | 3.750 | 5.336 | 0 | 22.800 | laag |
+| 13 | Wachten 2 jaar: E-klasse, dan Xpeng G7 (verwacht model) (2 jaar oud) prive voor ± 22.000 | ja | 7.701 | 642 | 0.31 | 6.298 | 3.849 | 1.008 | 7.500 | laag |
 | 14 | Xpeng G6 RWD Long Range (occasion 2024), Prive koop + km-vergoeding | ja | 7.856 | 655 | 0.31 | 3.750 | 5.563 | 0 | 36.000 | laag |
 | 15 | Wachten 2 jaar: E-klasse, dan Tesla Model Y Long Range (2 jaar oud) prive voor ± 29.000 | ja | 7.856 | 655 | 0.31 | 6.298 | 4.005 | 1.008 | 7.500 | laag |
 | 16 | Mercedes EQB 300 4MATIC 7p (occasion 2022), Prive koop + km-vergoeding | ja | 7.986 | 666 | 0.32 | 3.750 | 5.693 | 0 | 39.500 | laag |
@@ -44,12 +44,12 @@ Gebruik: 15.000 km zakelijk, 10.000 km prive, 1.500 km trekkend per jaar; eis tr
 | 34 | Wachten 2 jaar: E-klasse, dan VW ID. Buzz LWB Pro (2 jaar oud) prive voor ± 33.000 | ja | 8.808 | 734 | 0.35 | 6.298 | 4.956 | 1.008 | 7.500 | laag |
 | 35 | Jaecoo 5 EV (nieuw), BV financial lease | nee (trekgewicht) | 8.874 | 739 | 0.35 | 9.529 | 3.046 | 6.058 | 12.231 | midden |
 | 36 | Mercedes E 300 e Estate (occasion 2020), Prive koop + km-vergoeding | nee (elektrisch) | 8.897 | 741 | 0.36 | 3.750 | 6.603 | 0 | 25.800 | laag |
-| 37 | Wachten 1 jaar: E-klasse, dan Zeekr 7X Long Range (1 jaar oud) prive voor ± 33.000 | ja | 8.957 | 746 | 0.36 | 5.033 | 5.879 | 525 | 7.500 | laag |
-| 38 | Wachten 1 jaar: E-klasse, dan Zeekr 001 Long Range (1 jaar oud) prive voor ± 34.500 | ja | 8.963 | 747 | 0.36 | 5.033 | 5.885 | 525 | 7.500 | laag |
-| 39 | Jaecoo 5 EV (nieuw), BV koopt | nee (trekgewicht) | 8.999 | 750 | 0.36 | 9.735 | 3.046 | 6.058 | 29.496 | midden |
-| 40 | Volvo XC40 Recharge Twin (occasion 2022), Private lease + km-vergoeding (lease geschat) | ja | 9.061 | 755 | 0.36 | 3.750 | 6.768 | 0 | 2.900 | laag |
-| 41 | Kia EV6 Plus AWD 77 kWh (occasion 2023), Private lease + km-vergoeding (lease geschat) | ja | 9.181 | 765 | 0.37 | 3.750 | 6.888 | 0 | 2.800 | laag |
-| 42 | Mitsubishi Outlander 2.4 PHEV Intense+ (occasion 2021, Herwers), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 9.214 | 768 | 0.37 | 3.750 | 6.921 | 0 | 1.800 | laag |
+| 37 | Mitsubishi Outlander 2.4 PHEV Intense+ (occasion 2021, Herwers), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 8.914 | 743 | 0.36 | 3.750 | 6.621 | 0 | 1.800 | laag |
+| 38 | Wachten 1 jaar: E-klasse, dan Zeekr 7X Long Range (1 jaar oud) prive voor ± 33.000 | ja | 8.957 | 746 | 0.36 | 5.033 | 5.879 | 525 | 7.500 | laag |
+| 39 | Wachten 1 jaar: E-klasse, dan Zeekr 001 Long Range (1 jaar oud) prive voor ± 34.500 | ja | 8.963 | 747 | 0.36 | 5.033 | 5.885 | 525 | 7.500 | laag |
+| 40 | Jaecoo 5 EV (nieuw), BV koopt | nee (trekgewicht) | 8.999 | 750 | 0.36 | 9.735 | 3.046 | 6.058 | 29.496 | midden |
+| 41 | Volvo XC40 Recharge Twin (occasion 2022), Private lease + km-vergoeding (lease geschat) | ja | 9.061 | 755 | 0.36 | 3.750 | 6.768 | 0 | 2.900 | laag |
+| 42 | Kia EV6 Plus AWD 77 kWh (occasion 2023), Private lease + km-vergoeding (lease geschat) | ja | 9.181 | 765 | 0.37 | 3.750 | 6.888 | 0 | 2.800 | laag |
 | 43 | Wachten 1 jaar: E-klasse, dan Xpeng G9 Long Range (1 jaar oud) prive voor ± 36.500 | ja | 9.291 | 774 | 0.37 | 5.033 | 6.213 | 525 | 7.500 | laag |
 | 44 | Xpeng G9 RWD Long Range (occasion 2024), Prive koop + km-vergoeding | ja | 9.313 | 776 | 0.37 | 3.750 | 7.019 | 0 | 43.000 | laag |
 | 45 | Wachten 1 jaar: E-klasse, dan Zeekr 7X Privilege (1 jaar oud) prive voor ± 36.000 | ja | 9.482 | 790 | 0.38 | 5.033 | 6.404 | 525 | 7.500 | laag |
@@ -91,10 +91,10 @@ Gebruik: 15.000 km zakelijk, 10.000 km prive, 1.500 km trekkend per jaar; eis tr
 | 81 | Xpeng G9 RWD Long Range (occasion 2024), Private lease + km-vergoeding (lease geschat) | ja | 11.362 | 947 | 0.45 | 3.750 | 9.068 | 0 | 3.000 | laag |
 | 82 | Smart #1 Premium (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 11.396 | 950 | 0.46 | 3.750 | 9.103 | 0 | 2.800 | laag |
 | 83 | Xpeng G6 RWD Long Range (occasion 2024), BV koopt | ja | 11.416 | 951 | 0.46 | 9.847 | 5.394 | 10.728 | 29.752 | laag |
-| 84 | Jaecoo 7 SHS plug-in hybride (nieuw, referentie), BV financial lease | nee (elektrisch) | 11.479 | 957 | 0.46 | 11.553 | 4.414 | 8.778 | 12.314 | laag |
-| 85 | Volvo XC90 T8 Recharge 7p (occasion 2021), Prive koop + km-vergoeding | nee (elektrisch) | 11.485 | 957 | 0.46 | 3.750 | 9.191 | 0 | 42.800 | laag |
-| 86 | Mitsubishi Outlander 2.4 PHEV Intense+ (occasion 2021, Herwers), BV financial lease | nee (elektrisch) | 11.545 | 962 | 0.46 | 9.833 | 5.531 | 11.000 | 11.488 | laag |
-| 87 | Mitsubishi Outlander 2.4 PHEV Intense+ (occasion 2021, Herwers), BV koopt | nee (elektrisch) | 11.628 | 969 | 0.47 | 9.970 | 5.531 | 11.000 | 20.496 | laag |
+| 84 | Mitsubishi Outlander 2.4 PHEV Intense+ (occasion 2021, Herwers), BV financial lease | nee (elektrisch) | 11.434 | 953 | 0.46 | 9.652 | 5.531 | 11.000 | 11.488 | laag |
+| 85 | Jaecoo 7 SHS plug-in hybride (nieuw, referentie), BV financial lease | nee (elektrisch) | 11.479 | 957 | 0.46 | 11.553 | 4.414 | 8.778 | 12.314 | laag |
+| 86 | Volvo XC90 T8 Recharge 7p (occasion 2021), Prive koop + km-vergoeding | nee (elektrisch) | 11.485 | 957 | 0.46 | 3.750 | 9.191 | 0 | 42.800 | laag |
+| 87 | Mitsubishi Outlander 2.4 PHEV Intense+ (occasion 2021, Herwers), BV koopt | nee (elektrisch) | 11.506 | 959 | 0.46 | 9.770 | 5.531 | 11.000 | 18.843 | laag |
 | 88 | Jaecoo 7 SHS plug-in hybride (nieuw, referentie), BV koopt | nee (elektrisch) | 11.634 | 969 | 0.47 | 11.806 | 4.414 | 8.778 | 35.289 | laag |
 | 89 | Tesla Model Y Long Range AWD (occasion 2023), BV financial lease | ja | 11.667 | 972 | 0.47 | 8.851 | 6.254 | 12.438 | 11.488 | midden |
 | 90 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), Prive koop + km-vergoeding | ja | 11.708 | 976 | 0.47 | 3.750 | 9.415 | 0 | 60.900 | midden |
@@ -117,9 +117,9 @@ Gebruik: 15.000 km zakelijk, 10.000 km prive, 1.500 km trekkend per jaar; eis tr
 | 107 | Zeekr X Privilege AWD (nieuw), BV koopt | ja | 12.101 | 1.008 | 0.48 | 12.274 | 4.595 | 9.138 | 41.149 | laag |
 | 108 | Jaecoo 7 SHS plug-in hybride (nieuw, referentie), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 12.198 | 1.017 | 0.49 | 3.750 | 9.905 | 0 | 2.800 | laag |
 | 109 | BMW X5 xDrive45e (occasion 2020), Prive koop + km-vergoeding | nee (elektrisch) | 12.245 | 1.020 | 0.49 | 3.750 | 9.952 | 0 | 43.800 | laag |
-| 110 | Skoda Enyaq iV 80x (occasion 2022), BV operational lease (lease geschat) | nee (trekgewicht) | 12.277 | 1.023 | 0.49 | 10.879 | 5.624 | 11.185 | 2.314 | laag |
-| 111 | Volvo XC40 Recharge Twin (occasion 2022), BV financial lease | ja | 12.367 | 1.031 | 0.49 | 9.558 | 6.522 | 12.970 | 12.397 | laag |
-| 112 | Mitsubishi Outlander 2.4 PHEV Intense+ (occasion 2021, Herwers), BV operational lease (lease geschat) | nee (elektrisch) | 12.403 | 1.034 | 0.50 | 11.237 | 5.531 | 11.000 | 1.488 | laag |
+| 110 | Mitsubishi Outlander 2.4 PHEV Intense+ (occasion 2021, Herwers), BV operational lease (lease geschat) | nee (elektrisch) | 12.254 | 1.021 | 0.49 | 10.994 | 5.531 | 11.000 | 1.488 | laag |
+| 111 | Skoda Enyaq iV 80x (occasion 2022), BV operational lease (lease geschat) | nee (trekgewicht) | 12.277 | 1.023 | 0.49 | 10.879 | 5.624 | 11.185 | 2.314 | laag |
+| 112 | Volvo XC40 Recharge Twin (occasion 2022), BV financial lease | ja | 12.367 | 1.031 | 0.49 | 9.558 | 6.522 | 12.970 | 12.397 | laag |
 | 113 | Volvo XC40 Recharge Twin (occasion 2022), BV koopt | ja | 12.480 | 1.040 | 0.50 | 9.742 | 6.522 | 12.970 | 27.190 | laag |
 | 114 | Xpeng G6 RWD Long Range (occasion 2024), BV operational lease (lease geschat) | ja | 12.480 | 1.040 | 0.50 | 11.587 | 5.394 | 10.728 | 2.479 | laag |
 | 115 | Zeekr 7X Core RWD 75 kWh (nieuw), Prive koop + km-vergoeding | ja | 12.487 | 1.041 | 0.50 | 3.750 | 10.194 | 0 | 55.990 | midden |
@@ -245,7 +245,7 @@ Gebruik: 15.000 km zakelijk, 10.000 km prive, 1.500 km trekkend per jaar; eis tr
 | 9 | Wachten 1 jaar: E-klasse, dan Zeekr X Long Range (1 jaar oud) prive voor ± 25.000 | 2.952 | 0 | 2.576 | 1.932 | 560 | 264 | 139 | -1.165 | 7.258 |
 | 10 | Volvo XC40 Recharge Twin (occasion 2022), Prive koop + km-vergoeding | 3.131 | 0 | 3.004 | 2.157 | 580 | 0 | 0 | -1.457 | 7.416 |
 | 11 | Kia EV6 Plus AWD 77 kWh (occasion 2023), Prive koop + km-vergoeding | 3.675 | 0 | 2.793 | 1.869 | 560 | 0 | 0 | -1.457 | 7.440 |
-| 12 | Wachten 2 jaar: E-klasse, dan Xpeng G7 (verwacht model) (2 jaar oud) prive voor ± 22.000 | 2.197 | 0 | 2.819 | 2.176 | 600 | 507 | 276 | -874 | 7.701 |
+| 13 | Wachten 2 jaar: E-klasse, dan Xpeng G7 (verwacht model) (2 jaar oud) prive voor ± 22.000 | 2.197 | 0 | 2.819 | 2.176 | 600 | 507 | 276 | -874 | 7.701 |
 | 14 | Xpeng G6 RWD Long Range (occasion 2024), Prive koop + km-vergoeding | 4.066 | 0 | 2.826 | 1.821 | 600 | 0 | 0 | -1.457 | 7.856 |
 | 15 | Wachten 2 jaar: E-klasse, dan Tesla Model Y Long Range (2 jaar oud) prive voor ± 29.000 | 2.630 | 0 | 2.655 | 2.032 | 630 | 507 | 276 | -874 | 7.856 |
 | 16 | Mercedes EQB 300 4MATIC 7p (occasion 2022), Prive koop + km-vergoeding | 3.801 | 0 | 3.028 | 2.013 | 600 | 0 | 0 | -1.457 | 7.986 |
@@ -266,9 +266,9 @@ Gebruik: 15.000 km zakelijk, 10.000 km prive, 1.500 km trekkend per jaar; eis tr
 | 7 | Volvo XC40 Recharge Twin (occasion 2022), Prive koop + km-vergoeding | ja | 7.924 | 660 | 0.32 | 3.750 | 5.630 | 0 | 32.900 | laag |
 | 8 | Wachten 2 jaar: E-klasse, dan Zeekr X Long Range (2 jaar oud) prive voor ± 19.000 | ja | 8.010 | 668 | 0.32 | 7.997 | 3.119 | 1.680 | 7.500 | laag |
 | 9 | Zeekr X Long Range RWD (occasion 2024), Prive koop + km-vergoeding | ja | 8.014 | 668 | 0.32 | 3.750 | 5.721 | 0 | 32.300 | laag |
-| 10 | Kia EV6 Plus AWD 77 kWh (occasion 2023), Prive koop + km-vergoeding | ja | 8.138 | 678 | 0.33 | 3.750 | 5.845 | 0 | 35.800 | laag |
-| 11 | Wachten 1 jaar: E-klasse, dan Zeekr X Long Range (1 jaar oud) prive voor ± 25.000 | ja | 8.189 | 682 | 0.33 | 5.889 | 4.588 | 875 | 7.500 | laag |
-| 12 | Mitsubishi Outlander 2.4 PHEV Intense+ (occasion 2021, Herwers), Prive koop + km-vergoeding | nee (elektrisch) | 8.329 | 694 | 0.33 | 3.750 | 6.036 | 0 | 24.800 | laag |
+| 10 | Mitsubishi Outlander 2.4 PHEV Intense+ (occasion 2021, Herwers), Prive koop + km-vergoeding | nee (elektrisch) | 8.097 | 675 | 0.32 | 3.750 | 5.803 | 0 | 22.800 | laag |
+| 11 | Kia EV6 Plus AWD 77 kWh (occasion 2023), Prive koop + km-vergoeding | ja | 8.138 | 678 | 0.33 | 3.750 | 5.845 | 0 | 35.800 | laag |
+| 12 | Wachten 1 jaar: E-klasse, dan Zeekr X Long Range (1 jaar oud) prive voor ± 25.000 | ja | 8.189 | 682 | 0.33 | 5.889 | 4.588 | 875 | 7.500 | laag |
 
 ## Horizon 4 jaar (top 12)
 
@@ -285,7 +285,7 @@ Gebruik: 15.000 km zakelijk, 10.000 km prive, 1.500 km trekkend per jaar; eis tr
 | 9 | Volvo XC40 Recharge Twin (occasion 2022), Prive koop + km-vergoeding | ja | 7.610 | 634 | 0.30 | 3.750 | 5.316 | 0 | 32.900 | laag |
 | 10 | Wachten 1 jaar: E-klasse, dan Zeekr X Long Range (1 jaar oud) prive voor ± 25.000 | ja | 7.666 | 639 | 0.31 | 5.354 | 4.392 | 656 | 7.500 | laag |
 | 11 | Kia EV6 Plus AWD 77 kWh (occasion 2023), Prive koop + km-vergoeding | ja | 7.730 | 644 | 0.31 | 3.750 | 5.437 | 0 | 35.800 | laag |
-| 12 | Wachten 2 jaar: E-klasse, dan Xpeng G7 (verwacht model) (2 jaar oud) prive voor ± 22.000 | ja | 8.038 | 670 | 0.32 | 6.935 | 3.797 | 1.260 | 7.500 | laag |
+| 12 | Mitsubishi Outlander 2.4 PHEV Intense+ (occasion 2021, Herwers), Prive koop + km-vergoeding | nee (elektrisch) | 7.829 | 652 | 0.31 | 3.750 | 5.536 | 0 | 22.800 | laag |
 
 ## Horizon 7 jaar (top 12)
 
