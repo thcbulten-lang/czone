@@ -1306,3 +1306,160 @@
   bron: "schatting"
   zekerheid: laag
   datum: "2026-11-04"
+
+# ---------------------------------------------------------------- zelfde prijsklasse als de Cayenne uit 2015, meer elektrisch bereik (toegevoegd 2026-11-04)
+- id: audi_q7_etron_occasion_2016
+  naam: "Audi Q7 e-tron 3.0 TDI quattro (occasion 2016)"
+  categorie: suv
+  aandrijving: phev
+  brandstof: diesel
+  nieuw: false
+  eerste_toelating: "2016-09"
+  catalogusprijs: 90000
+  aanschafprijs: 29000              # aanbod 2016 met 150.000 km: 27.000 tot 33.000; SQ7-look met 161.000 km: 28.995 excl. btw
+  btw_auto: true
+  km_stand: 150000
+  massa_ledig_kg: 2445
+  accu_kwh: 17.3
+  actieradius_wltp_km: 45           # 56 km NEDC; 35 km in de praktijk
+  verbruik_praktijk_kwh_100km: 32
+  ev_aandeel_km: 0.45
+  laden_alleen_thuis: true
+  brandstof_l_100km: 7.0            # V6 diesel in hybride-modus
+  trekgewicht_geremd_kg: 2800       # 3.500 kg met luchtvering; per auto controleren
+  zitplaatsen: 5
+  bagageruimte_l: 650
+  restwaarde_jaarlijks_pct: 90
+  onderhoud_pj: 1900
+  banden_pj: 650
+  verzekering_pj: 1000
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 5, merkrisico: 4, laadsnelheid: 1}
+  notities: "De enige uit die jaren met een grote accu (17,3 kWh): 35 km elektrisch, daarna een zuinige V6 diesel. Keerzijde: 2,4 ton diesel, dus dieseltoeslag in de wegenbelasting."
+  bron: "autozine.nl (2.800 kg, 3.500 met luchtvering), elektrischeauto.nl (17,3 kWh, 35 km), viabovag/autoscout24 (aanbod)"
+  zekerheid: laag
+  datum: "2026-11-04"
+
+- id: volvo_xc90_t8_occasion_2016
+  naam: "Volvo XC90 T8 Twin Engine 7p (occasion 2016)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2016-05"
+  catalogusprijs: 85000
+  aanschafprijs: 29000              # aanbod: 2017 met 98.000 km 37.900, 2019 met 191.000 km 34.900; 2016 met 150.000 km geschat
+  btw_auto: true
+  km_stand: 150000
+  massa_ledig_kg: 2300
+  accu_kwh: 9.2
+  actieradius_wltp_km: 35           # 43 km NEDC; 25 tot 28 km in de praktijk
+  verbruik_praktijk_kwh_100km: 28
+  ev_aandeel_km: 0.40
+  laden_alleen_thuis: true
+  brandstof_l_100km: 8.5
+  trekgewicht_geremd_kg: 2400
+  zitplaatsen: 7
+  bagageruimte_l: 640
+  restwaarde_jaarlijks_pct: 90
+  onderhoud_pj: 1500
+  banden_pj: 600
+  verzekering_pj: 950
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 5, comfort: 4, trekervaring: 4, merkrisico: 4, laadsnelheid: 1}
+  notities: "Zeven zitplaatsen, maar de eerste T8 heeft een accu van 9,2 kWh en komt elektrisch nauwelijks verder dan de Cayenne. Vraag naar de accuconditie (SOH)."
+  bron: "autorai.nl (9,2 kWh, 43 km), autoscout24 (aanbod)"
+  zekerheid: laag
+  datum: "2026-11-04"
+
+- id: bmw_x5_40e_occasion_2017
+  naam: "BMW X5 xDrive40e (occasion 2017)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2017-06"
+  catalogusprijs: 85000
+  aanschafprijs: 27000              # aanbod 2017 tot 2018: 25.000 tot 36.000
+  btw_auto: true
+  km_stand: 120000
+  massa_ledig_kg: 2230
+  accu_kwh: 9.0
+  actieradius_wltp_km: 25           # 9 kWh waarvan 7,5 bruikbaar; 20 km in de praktijk
+  verbruik_praktijk_kwh_100km: 28
+  ev_aandeel_km: 0.35
+  laden_alleen_thuis: true
+  brandstof_l_100km: 8.5            # viercilinder
+  trekgewicht_geremd_kg: 2700
+  zitplaatsen: 5
+  bagageruimte_l: 500
+  restwaarde_jaarlijks_pct: 90
+  onderhoud_pj: 1600
+  banden_pj: 600
+  verzekering_pj: 950
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 5, merkrisico: 4, laadsnelheid: 1}
+  notities: "Rijdt goed en trekt 2.700 kg, maar elektrisch niet verder dan de Cayenne; staat erin om dat te laten zien."
+  bron: "elektrischeauto.nl (9 kWh, 7,5 bruikbaar, 20 km), autoscout24 (aanbod)"
+  zekerheid: laag
+  datum: "2026-11-04"
+
+- id: mercedes_e300e_estate_occasion_2020
+  naam: "Mercedes E 300 e Estate (occasion 2020)"
+  categorie: stationwagen
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2020-12"
+  catalogusprijs: 75000
+  aanschafprijs: 31000              # aanbod december 2020 met 80.000 km: 31.890
+  btw_auto: true
+  km_stand: 80000
+  massa_ledig_kg: 2100
+  accu_kwh: 13.5
+  actieradius_wltp_km: 50           # 35 tot 40 km in de praktijk
+  verbruik_praktijk_kwh_100km: 26
+  ev_aandeel_km: 0.50
+  laden_alleen_thuis: true
+  brandstof_l_100km: 7.5
+  trekgewicht_geremd_kg: 2100
+  zitplaatsen: 5
+  bagageruimte_l: 480
+  restwaarde_jaarlijks_pct: 89
+  onderhoud_pj: 1400
+  banden_pj: 550
+  verzekering_pj: 900
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 4, merkrisico: 5, laadsnelheid: 1}
+  notities: "Een E-klasse zoals nu, maar dan met stekker: 35 tot 40 km elektrisch, 2.100 kg trekgewicht, jonger en zuiniger dan de Cayenne. Geen SUV."
+  bron: "autoscout24 (aanbod 31.890, 320 pk)"
+  zekerheid: laag
+  datum: "2026-11-04"
+
+- id: mitsubishi_outlander_phev_occasion_2019
+  naam: "Mitsubishi Outlander 2.4 PHEV (occasion 2019)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2019-05"
+  catalogusprijs: 48000
+  aanschafprijs: 19500              # aanbod 2019: 15.900 (201.000 km) tot 21.600 (97.000 km)
+  btw_auto: true
+  km_stand: 100000
+  massa_ledig_kg: 1900
+  accu_kwh: 13.8
+  actieradius_wltp_km: 45           # 35 tot 40 km in de praktijk
+  verbruik_praktijk_kwh_100km: 24
+  ev_aandeel_km: 0.55
+  laden_alleen_thuis: false         # kan snelladen (CHAdeMO)
+  brandstof_l_100km: 7.5
+  trekgewicht_geremd_kg: 1500
+  zitplaatsen: 5
+  bagageruimte_l: 463
+  restwaarde_jaarlijks_pct: 90
+  onderhoud_pj: 900
+  banden_pj: 450
+  verzekering_pj: 700
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 3, comfort: 3, trekervaring: 2, merkrisico: 4, laadsnelheid: 2}
+  notities: "Goedkoopste manier naar 35 tot 40 km elektrisch, betrouwbaar en eenvoudig, maar trekt 1.500 kg en is geen dikke bak. Let op de accuconditie (SOH)."
+  bron: "viabovag/autowereld (aanbod, 1.500 kg)"
+  zekerheid: laag
+  datum: "2026-11-04"

@@ -134,3 +134,15 @@ Waar het geld zit: energie 4.371 (de 70% kilometers op benzine vreten de winst v
 **Uitkomst (zeven jaar, netto prive-euro per jaar).** Oude Cayenne 10.286, XC90 T8 10.876, X5 45e 11.625, Q7 TFSI e 13.081, GLE 350 de 13.684, Cayenne 2019 14.030. Ter vergelijking: Kia EV9 uit 2024 prive 10.775, G9 uit 2024 prive 8.521, E-klasse houden 7.115.
 
 **Lezing.** Een grotere accu bespaart 900 tot 1.000 euro per jaar aan energie, maar de auto's die hem hebben kosten 41.000 tot 55.000 en dat is 2.500 tot 4.000 euro per jaar meer afschrijving. Daarom wint geen van de alternatieven van de oude Cayenne op kosten. De XC90 T8 komt het dichtst in de buurt (600 euro per jaar meer) en geeft daarvoor 50 km elektrisch, zeven zitplaatsen en zes jaar minder leeftijd; de X5 45e kost 1.300 meer en rijdt 60 tot 70 km elektrisch. Wie echt 3.500 kg moet trekken, zit bij de Q7 of de nieuwere Cayenne, allebei met maar 35 km elektrisch en 3.000 tot 4.000 per jaar duurder dan de oude. En wie met 2.500 kg toe kan, rijdt voor het geld van de oude Cayenne een volledig elektrische EV9 uit 2024 met garantie. Het echte alternatief voor de Cayenne is dus niet een betere hybride, maar de vraag hoeveel kilo er werkelijk achter moet.
+
+## 2026-11-04 Zelfde prijsklasse als de Cayenne, meer elektrisch bereik
+
+**Vraag, scherper gesteld.** Niet een duurdere hybride, maar een auto van 18.000 tot 31.000 euro die elektrisch verder komt dan de 20 km van de Cayenne uit 2015.
+
+**Wat afvalt.** De tijdgenoten die meestal worden genoemd, XC90 T8 (2016 tot 2018) en X5 xDrive40e, hebben een accu van 9 tot 9,2 kWh en komen in de praktijk 20 tot 28 km: nauwelijks beter. Ze staan erin om dat te laten zien. De Lexus RX 450h heeft geen stekker en valt buiten de vraag.
+
+**Wat overblijft.** Audi Q7 e-tron 3.0 TDI 2016 (17,3 kWh, 35 km, 2.800 kg of 3.500 met luchtvering, circa 29.000), Mercedes E 300 e Estate 2020 (13,5 kWh, 35 tot 40 km, 2.100 kg, circa 31.000) en Mitsubishi Outlander PHEV 2019 (13,8 kWh, 35 tot 40 km, 1.500 kg, circa 19.500).
+
+**Uitkomst (zeven jaar, netto prive-euro per jaar).** Cayenne 2015: 10.286. Outlander: 7.184. E 300 e Estate: 9.234. X5 40e: 9.818. XC90 T8 2016: 9.862. Q7 e-tron: 10.750. Bijna alles uit deze klasse is goedkoper dan de Cayenne, omdat die het meest verbruikt (10 liter) en het duurst is in onderhoud. De E 300 e Estate is voor 1.000 euro per jaar minder een vijf jaar jongere auto met 35 tot 40 km elektrisch en 2.100 kg trekgewicht, al is het geen SUV. De Q7 e-tron is de enige met zowel 35 km elektrisch als 2.800 tot 3.500 kg, en betaalt dat met 2.800 euro wegenbelasting per jaar (2,4 ton diesel). De Outlander is de goedkoopste weg naar 35 tot 40 km elektrisch, maar trekt 1.500 kg en is geen dikke bak.
+
+**Lezing.** Wie de Cayenne wil om het trekgewicht en het comfort, vindt in deze prijsklasse geen auto die hetzelfde biedt met meer elektrisch bereik; de Q7 e-tron komt het dichtst in de buurt en kost netto evenveel. Wie 2.100 kg genoeg vindt, krijgt met de E 300 e Estate meer elektrisch bereik voor minder geld.
