@@ -13,6 +13,7 @@ VARIANTEN = [
     ("Bijtelling vult gebruikelijk loon: nee / ja", {"bijtelling_vult_gebruikelijk_loon": False}, {"bijtelling_vult_gebruikelijk_loon": True}),
     ("Winst BV 100.000 / 250.000 (vpb-schijf)", {"winst_bv_verwacht": 100000}, {"winst_bv_verwacht": 250000}),
     ("Box 2 tarief 24,5% / 31%", {"box2_pct": 24.5}, {"box2_pct": 31.0}),
+    ("Occasionprijs in 2028 20% lager / hoger (alleen wacht-scenario's)", {"latere_aankoop_prijsfactor": 0.8}, {"latere_aankoop_prijsfactor": 1.2}),
 ]
 
 

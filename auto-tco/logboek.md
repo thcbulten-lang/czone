@@ -81,3 +81,24 @@ Dezelfde 7X in 2028 op de BV zetten kost 10.382 per jaar: de bijtelling loopt ov
 **Kanttekeningen.** De prijs in 2028 is een gok; 20.000 euro is 38% van de nieuwprijs na twee jaar, dat is een harde val, zelfs voor een Chinees merk. De E-klasse moet twee jaar zonder grote reparatie halen; elke 3.000 euro reparatie kost 1.500 per jaar in dit vergelijk. Vanaf 2030 betaalt een EV volle wegenbelasting (hier al meegerekend). En het model telt geen waarde voor twee jaar eerder elektrisch rijden, of voor het verschil tussen een 7X en een Model Y.
 
 **Besluit.** De wacht-scenario's gaan uit de ranglijst: de prijs in 2028 is niet te onderbouwen en de E-klasse haalt die twee jaar misschien niet. De conclusie blijft staan: als het om de laagste kosten gaat, is 'nu een goedkope elektrische occasion prive' minstens zo goed als wachten, en als het om een 7X of G9 gaat, is wachten op een jonge occasion goedkoper dan nu kopen. De mogelijkheid om zulke scenario's te rekenen blijft in het model.
+
+## 2026-11-04 Wacht-scenario's toch erin, met een geschatte occasionprijs per model
+
+**Besluit teruggedraaid.** De wacht-scenario's staan weer in de ranglijst, nu met per model een onderbouwde gok voor de prijs van een twee jaar oude occasion eind 2028 (bouwjaar 2026, circa 50.000 km, prive gekocht). Het is koffiedik kijken; daarom staat er een bandbreedte bij en een gevoeligheidsknop van 20% omhoog en omlaag op die prijs.
+
+**Hoe geschat.** Vertrekpunt is wat de markt nu doet: een G9 uit 2024 staat na tweeenhalf jaar op 55% van zijn oorspronkelijke nieuwprijs, een Model Y uit 2023 na drieenhalf jaar op 53%, een Zeekr X uit 2024 op ruwweg 65%. Daar gaan drie dingen vanaf richting 2028: een golf ex-leaseauto's uit 2024 tot 2026 die dan tegelijk op de markt komt, nieuwe generaties en prijsverlagingen bij de Chinese merken (de G9 ging al 8.000 euro omlaag, Zeekr geeft inruilpremies), en volle wegenbelasting voor zware EV's vanaf 2030. Chinese nieuwkomers krijgen daarom 43 tot 45% van de nieuwprijs na twee jaar, Tesla 55%, Kia en Volkswagen 56 tot 57%.
+
+- Zeekr X Long Range: nieuw 41.990, eind 2028 circa 19.000 (16.000 tot 22.000)
+- Zeekr 7X Core: nieuw 52.990, circa 24.000 (20.000 tot 28.000)
+- Zeekr 7X Long Range: nieuw 56.990, circa 25.500 (21.000 tot 30.000)
+- Zeekr 7X Privilege: nieuw 62.990, circa 28.000 (23.000 tot 33.000)
+- Zeekr 001 Long Range: nieuw 59.490, circa 27.000 (22.000 tot 32.000)
+- Xpeng G7 (verwacht model, nieuwprijs aangenomen op 49.990): circa 22.000 (18.000 tot 26.000)
+- Xpeng G9 Long Range: nieuw 64.990, circa 28.000 (22.000 tot 33.000)
+- Tesla Model Y Long Range AWD: nieuw 52.990, circa 29.000 (25.000 tot 33.000)
+- VW ID. Buzz LWB Pro: nieuw 58.000, circa 33.000 (28.000 tot 38.000)
+- Kia EV9 AWD: nieuw 72.000, circa 40.000 (34.000 tot 45.000)
+
+**Uitkomst (zeven jaar, netto prive-euro per jaar).** Wachten op een Zeekr X kost 6.404, gelijk aan nu een Model Y uit 2023 prive kopen (6.362). Wachten op een G7 (7.108) of een Model Y uit 2026 (7.200) komt uit op het niveau van de E-klasse houden (7.115). De 7X Core komt op 7.498, de 001 en de 7X Long Range rond 7.700, de G9 op 7.853, de 7X Privilege op 8.082, de ID. Buzz op 8.426 en de EV9 op 9.107. Ter vergelijking: nu een G9 uit 2024 prive kopen kost 8.521, nu een nieuwe 7X Core prive 10.710 en op de BV 12.906. Twintig procent meer of minder voor de occasion scheelt 400 tot 1.000 euro per jaar; de volgorde verschuift er nauwelijks door.
+
+**Lezing.** Voor de klasse 7X en G9 is wachten op een jonge occasion 2.000 tot 3.000 euro per jaar goedkoper dan nu kopen, en dat blijft zo bij een flink duurdere occasion. Tegenover het goedkoopste alternatief van nu, een drie jaar oude Model Y of Zeekr X prive, levert wachten niets op; het verschil is dat je dan in 2028 in een jongere en grotere auto zit. De onzekerheden blijven: de prijs in 2028, de E-klasse die twee jaar moet volhouden, en regels die tegen die tijd anders kunnen zijn.

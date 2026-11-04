@@ -110,6 +110,8 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
     km_totaal = (km["zakelijk"] + km["prive"]) * p.get("km_factor", 1.0)
 
     btw_auto = bool(auto.get("btw_auto"))
+    if offset > 0:
+        auto["aanschafprijs"] = auto["aanschafprijs"] * p.get("latere_aankoop_prijsfactor", 1.0)   # gevoeligheid op de gok
     basis = f.ex_btw(r, auto["aanschafprijs"]) if (bv and btw_auto) else float(auto["aanschafprijs"])
     cat = float(auto["catalogusprijs"])
     trekhaak_nodig = p["eisen"]["trekgewicht_geremd_min_kg"] > 0 and not auto.get("trekhaak_inbegrepen", False)
