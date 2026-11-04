@@ -29,43 +29,45 @@ extra:
     onderdelen:
       - {auto: zeekr_7x_privilege, constructie: prive_lease_kmvergoeding}
 
-  # ---- wachten: twee jaar E-klasse, dan een twee jaar oude occasion (toegevoegd 2026-11-04)
-  - id: wacht_7x_20k_prive
-    naam: "Wachten: 2 jaar E-klasse, dan 7X Core (2026) prive voor 20.000"
-    hoofd_auto: zeekr_7x_core_in_2028
-    onderdelen:
-      - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
-      - {auto: zeekr_7x_core_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2, overrides: {aanschafprijs: 20000}}
-    notities: "Jouw aanname: 20.000 euro voor een twee jaar oude 7X Core, dat is 38% van de nieuwprijs."
+  # ---- wachten: twee jaar E-klasse, dan een twee jaar oude occasion. Op 4-11-2026 uit de ranglijst gehaald:
+  # de prijs in 2028 is een gok en de E-klasse haalt het misschien niet. De conclusie staat in het logboek;
+  # haal de # weg om ze weer mee te rekenen.
+  #- id: wacht_7x_20k_prive
+  #  naam: "Wachten: 2 jaar E-klasse, dan 7X Core (2026) prive voor 20.000"
+  #  hoofd_auto: zeekr_7x_core_in_2028
+  #  onderdelen:
+  #    - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
+  #    - {auto: zeekr_7x_core_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2, overrides: {aanschafprijs: 20000}}
+  #  notities: "Jouw aanname: 20.000 euro voor een twee jaar oude 7X Core, dat is 38% van de nieuwprijs."
 
-  - id: wacht_7x_curve_prive
-    naam: "Wachten: 2 jaar E-klasse, dan 7X Core (2026) prive voor 26.500"
-    hoofd_auto: zeekr_7x_core_in_2028
-    onderdelen:
-      - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
-      - {auto: zeekr_7x_core_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2}
-    notities: "Prijs volgens onze restwaardecurve voor Chinese nieuwkomers: 50% na twee jaar."
+  #- id: wacht_7x_curve_prive
+  #  naam: "Wachten: 2 jaar E-klasse, dan 7X Core (2026) prive voor 26.500"
+  #  hoofd_auto: zeekr_7x_core_in_2028
+  #  onderdelen:
+  #    - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
+  #    - {auto: zeekr_7x_core_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2}
+  #  notities: "Prijs volgens onze restwaardecurve voor Chinese nieuwkomers: 50% na twee jaar."
 
-  - id: wacht_7x_curve_bv
-    naam: "Wachten: 2 jaar E-klasse, dan 7X Core (2026) op de BV voor 26.500"
-    hoofd_auto: zeekr_7x_core_in_2028
-    onderdelen:
-      - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
-      - {auto: zeekr_7x_core_in_2028, constructie: bv_koop, start_jaar: 2}
-    notities: "Dezelfde auto op de BV: bijtelling over de nieuwprijs van 52.990, nog drie jaar met 18% over de eerste 30.000."
+  #- id: wacht_7x_curve_bv
+  #  naam: "Wachten: 2 jaar E-klasse, dan 7X Core (2026) op de BV voor 26.500"
+  #  hoofd_auto: zeekr_7x_core_in_2028
+  #  onderdelen:
+  #    - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
+  #    - {auto: zeekr_7x_core_in_2028, constructie: bv_koop, start_jaar: 2}
+  #  notities: "Dezelfde auto op de BV: bijtelling over de nieuwprijs van 52.990, nog drie jaar met 18% over de eerste 30.000."
 
-  - id: wacht_g9_20k_prive
-    naam: "Wachten: 2 jaar E-klasse, dan G9 (2026) prive voor 20.000"
-    hoofd_auto: xpeng_g9_in_2028
-    onderdelen:
-      - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
-      - {auto: xpeng_g9_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2, overrides: {aanschafprijs: 20000}}
-    notities: "Jouw aanname: 20.000 euro voor een twee jaar oude G9, dat is 31% van de nieuwprijs."
+  #- id: wacht_g9_20k_prive
+  #  naam: "Wachten: 2 jaar E-klasse, dan G9 (2026) prive voor 20.000"
+  #  hoofd_auto: xpeng_g9_in_2028
+  #  onderdelen:
+  #    - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
+  #    - {auto: xpeng_g9_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2, overrides: {aanschafprijs: 20000}}
+  #  notities: "Jouw aanname: 20.000 euro voor een twee jaar oude G9, dat is 31% van de nieuwprijs."
 
-  - id: wacht_g9_curve_prive
-    naam: "Wachten: 2 jaar E-klasse, dan G9 (2026) prive voor 32.500"
-    hoofd_auto: xpeng_g9_in_2028
-    onderdelen:
-      - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
-      - {auto: xpeng_g9_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2}
-    notities: "Prijs volgens onze restwaardecurve: 50% na twee jaar."
+  #- id: wacht_g9_curve_prive
+  #  naam: "Wachten: 2 jaar E-klasse, dan G9 (2026) prive voor 32.500"
+  #  hoofd_auto: xpeng_g9_in_2028
+  #  onderdelen:
+  #    - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
+  #    - {auto: xpeng_g9_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2}
+  #  notities: "Prijs volgens onze restwaardecurve: 50% na twee jaar."
