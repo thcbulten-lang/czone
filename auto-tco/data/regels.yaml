@@ -54,7 +54,7 @@ motorrijtuigenbelasting:
     Drenthe: 92.0
     Zeeland: 82.3
   ev_factor_per_jaar: {2025: 0.25, 2026: 0.70, 2027: 0.70, 2028: 0.70, 2029: 0.75, 2030: 1.00}
-  diesel_toeslag_factor: 2.3      # ruwe benadering: diesel betaalt circa 2,3x het benzinetarief
+  diesel_toeslag_factor: 1.0      # brandstoftoeslag diesel, als deel van de hoofdsom (ruwweg gelijk aan de hoofdsom); opcenten gaan alleen over de hoofdsom
   zekerheid: midden
   bron: "Belastingdienst (70% van het benzinetarief voor EV in 2026); ANWB (30% korting t/m 2028, 25% in 2029, 0% vanaf 2030). Staffel: lineaire benadering geijkt op twee gepubliceerde voorbeelden (Volvo EX30 1.750 kg, Utrecht-voorbeeld); opcenten per provincie: benadering. Beide verifieren met de rekenhulp van de Belastingdienst."
   datum: "2026-10-28"

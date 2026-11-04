@@ -36,7 +36,7 @@ laden:
 
 # Eisen (harde filters) en wensen
 eisen:
-  elektrisch: true
+  elektrisch: true                # true = alleen volledig elektrisch; ev_of_phev = plug-in hybride mag ook; false = geen eis
   trekgewicht_geremd_min_kg: 1500 # ONBEKEND: wat moet er achter? aanhanger 750, caravan 1.500, boot of paardentrailer 2.000+
   zitplaatsen_min: 5
 wensen:

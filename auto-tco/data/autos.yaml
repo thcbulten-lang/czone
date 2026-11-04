@@ -1149,3 +1149,160 @@
   bron: "autoegberts.nl (advertentie 4-11-2026), fabrieksgegevens"
   zekerheid: laag
   datum: "2026-11-04"
+
+# ---------------------------------------------------------------- plug-in hybrides met echt elektrisch bereik en veel trekgewicht (toegevoegd 2026-11-04)
+- id: bmw_x5_45e_occasion_2020
+  naam: "BMW X5 xDrive45e (occasion 2020)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2020-06"
+  catalogusprijs: 95000
+  aanschafprijs: 42000              # schatting van het aanbod (2023 met 130.000 km: 47.500)
+  btw_auto: true
+  km_stand: 110000
+  massa_ledig_kg: 2435
+  accu_kwh: 24
+  actieradius_wltp_km: 75           # 67 tot 87 km WLTP; 60 tot 70 km in de praktijk
+  verbruik_praktijk_kwh_100km: 30
+  ev_aandeel_km: 0.60               # met 60 km bereik en kantoor aan huis: ruim de helft elektrisch
+  laden_alleen_thuis: true
+  brandstof_l_100km: 9.0            # zescilinder in hybride-modus
+  trekgewicht_geremd_kg: 2700
+  zitplaatsen: 5
+  bagageruimte_l: 500
+  restwaarde_jaarlijks_pct: 88
+  onderhoud_pj: 1800
+  banden_pj: 650
+  verzekering_pj: 1000
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 5, merkrisico: 4, laadsnelheid: 1}
+  notities: "De grootste accu van zijn generatie: 24 kWh, 60 tot 70 km echt elektrisch. Laadt met 3,7 kW. Op de BV: 22% over 95.000."
+  bron: "autotijd.be (2.700 kg), electrive (67 tot 87 km WLTP), autoscout24 (aanbod)"
+  zekerheid: laag
+  datum: "2026-11-04"
+
+- id: mercedes_gle_350de_occasion_2021
+  naam: "Mercedes GLE 350 de 4MATIC (occasion 2021)"
+  categorie: suv
+  aandrijving: phev
+  brandstof: diesel
+  nieuw: false
+  eerste_toelating: "2021-03"
+  catalogusprijs: 100000
+  aanschafprijs: 50000              # aanbod 2021 met 115.000 km: 52.500
+  btw_auto: true
+  km_stand: 100000
+  massa_ledig_kg: 2600
+  accu_kwh: 31.2
+  actieradius_wltp_km: 95           # advertentie noemt 85 km; 70 tot 80 km in de praktijk
+  verbruik_praktijk_kwh_100km: 32
+  ev_aandeel_km: 0.65
+  laden_alleen_thuis: false         # kan snelladen (60 kW gelijkstroom)
+  brandstof_l_100km: 6.5            # viercilinder diesel in hybride-modus
+  trekgewicht_geremd_kg: 2700
+  zitplaatsen: 5
+  bagageruimte_l: 490
+  restwaarde_jaarlijks_pct: 88
+  onderhoud_pj: 1800
+  banden_pj: 650
+  verzekering_pj: 1100
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 5, merkrisico: 4, laadsnelheid: 3}
+  notities: "Diesel plug-in hybride met 31 kWh: de grootste elektrische actieradius van deze groep, zuinig op lange ritten, snelladen mogelijk. Keerzijde: dieseltoeslag in de wegenbelasting bij 2,6 ton."
+  bron: "autoscout24.nl (2.700 kg, 85 km, 52.500)"
+  zekerheid: laag
+  datum: "2026-11-04"
+
+- id: volvo_xc90_t8_occasion_2021
+  naam: "Volvo XC90 T8 Recharge 7p (occasion 2021)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2021-08"
+  catalogusprijs: 90000
+  aanschafprijs: 41000              # aanbod augustus 2021 met 92.000 km: 42.900
+  btw_auto: true
+  km_stand: 92000
+  massa_ledig_kg: 2300
+  accu_kwh: 18.8
+  actieradius_wltp_km: 70           # 50 tot 55 km in de praktijk (accu van 18,8 kWh vanaf modeljaar 2021)
+  verbruik_praktijk_kwh_100km: 28
+  ev_aandeel_km: 0.55
+  laden_alleen_thuis: true
+  brandstof_l_100km: 8.5
+  trekgewicht_geremd_kg: 2400
+  zitplaatsen: 7
+  bagageruimte_l: 640
+  restwaarde_jaarlijks_pct: 88
+  onderhoud_pj: 1400
+  banden_pj: 600
+  verzekering_pj: 950
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 5, comfort: 4, trekervaring: 4, merkrisico: 4, laadsnelheid: 1}
+  notities: "Zeven zitplaatsen en 2.400 kg; let op het modeljaar, oudere T8's hebben een accu van 10,4 kWh en halen 30 km."
+  bron: "autowereld.nl (aanbod), Volvo"
+  zekerheid: laag
+  datum: "2026-11-04"
+
+- id: audi_q7_55_tfsie_occasion_2020
+  naam: "Audi Q7 55 TFSI e quattro (occasion 2020)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2020-09"
+  catalogusprijs: 95000
+  aanschafprijs: 48000              # schatting; nieuwprijs destijds vanaf 85.000
+  btw_auto: true
+  km_stand: 100000
+  massa_ledig_kg: 2500
+  accu_kwh: 17.3
+  actieradius_wltp_km: 43           # 35 km in de praktijk
+  verbruik_praktijk_kwh_100km: 30
+  ev_aandeel_km: 0.40
+  laden_alleen_thuis: true
+  brandstof_l_100km: 9.5
+  trekgewicht_geremd_kg: 3500
+  zitplaatsen: 5
+  bagageruimte_l: 650
+  restwaarde_jaarlijks_pct: 88
+  onderhoud_pj: 1800
+  banden_pj: 650
+  verzekering_pj: 1050
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 5, merkrisico: 4, laadsnelheid: 1}
+  notities: "Trekt 3.500 kg, maar elektrisch niet veel verder dan de oude Cayenne. De facelift (2024) heeft 22 kWh netto en 80 km, maar kost het dubbele."
+  bron: "RDW-kentekenrapport (3.500 kg), autozine.nl (17,3 kWh, 43 km)"
+  zekerheid: laag
+  datum: "2026-11-04"
+
+- id: porsche_cayenne_ehybrid_occasion_2019
+  naam: "Porsche Cayenne E-Hybrid (occasion 2019)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2019-06"
+  catalogusprijs: 110000
+  aanschafprijs: 55000              # schatting van het aanbod
+  btw_auto: true
+  km_stand: 110000
+  massa_ledig_kg: 2400
+  accu_kwh: 14.1
+  actieradius_wltp_km: 44           # 30 tot 35 km in de praktijk; vanaf 2021 17,9 kWh
+  verbruik_praktijk_kwh_100km: 30
+  ev_aandeel_km: 0.40
+  laden_alleen_thuis: true
+  brandstof_l_100km: 9.5
+  trekgewicht_geremd_kg: 3500
+  zitplaatsen: 5
+  bagageruimte_l: 645
+  restwaarde_jaarlijks_pct: 88
+  onderhoud_pj: 2000
+  banden_pj: 700
+  verzekering_pj: 1100
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 5, merkrisico: 3, laadsnelheid: 1}
+  notities: "De nieuwere Cayenne: 3.500 kg, iets meer accu dan de 2015, drie keer de prijs."
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-04"

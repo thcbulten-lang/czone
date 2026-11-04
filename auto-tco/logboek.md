@@ -124,3 +124,13 @@ Waar het geld zit: energie 4.371 (de 70% kilometers op benzine vreten de winst v
 **Over de inruil.** De 15.000 netto na inruil is geen korting op de Cayenne: de Benz wordt in elk scenario verkocht, dus het model rekent de volle 17.900. Wat de dealer voor de Benz biedt is wel interessant: wij rekenen met een dagwaarde van 7.500; is het bod veel lager, dan is het nulscenario iets te rooskleurig.
 
 **Lezing.** De Cayenne is de enige auto in de lijst die 3.500 kg trekt, en hij rijdt comfortabel; dat is zijn argument. Goedkoop is hij niet: 3.500 euro per jaar meer dan de Benz houden, en hetzelfde als een jonge EV9. Wie 3.500 kg nodig heeft, heeft weinig keus; wie 2.000 kg nodig heeft, krijgt voor dit geld een jongere en zuinigere auto.
+
+## 2026-11-04 Alternatieven voor de Cayenne met echt elektrisch bereik
+
+**Vraag.** Wat is een alternatief voor de Cayenne uit 2015 met een betere elektrische actieradius?
+
+**Kandidaten (plug-in hybrides, occasion, prive).** BMW X5 xDrive45e 2020 (24 kWh, 60 tot 70 km echt elektrisch, 2.700 kg, circa 42.000), Mercedes GLE 350 de 2021 (31 kWh diesel-hybride, 70 tot 80 km, snelladen, 2.700 kg, circa 50.000), Volvo XC90 T8 Recharge 2021 (18,8 kWh, 50 tot 55 km, 2.400 kg, zeven zitplaatsen, circa 41.000), Audi Q7 55 TFSI e 2020 (17,3 kWh, 35 km, 3.500 kg, circa 48.000) en de nieuwere Porsche Cayenne E-Hybrid 2019 (14,1 kWh, 30 tot 35 km, 3.500 kg, circa 55.000). Het model kent nu een brandstofsoort voor hybrides (de GLE betaalt dieseltoeslag in de wegenbelasting) en de eis 'elektrisch' kan op 'ev_of_phev' worden gezet.
+
+**Uitkomst (zeven jaar, netto prive-euro per jaar).** Oude Cayenne 10.286, XC90 T8 10.876, X5 45e 11.625, Q7 TFSI e 13.081, GLE 350 de 13.684, Cayenne 2019 14.030. Ter vergelijking: Kia EV9 uit 2024 prive 10.775, G9 uit 2024 prive 8.521, E-klasse houden 7.115.
+
+**Lezing.** Een grotere accu bespaart 900 tot 1.000 euro per jaar aan energie, maar de auto's die hem hebben kosten 41.000 tot 55.000 en dat is 2.500 tot 4.000 euro per jaar meer afschrijving. Daarom wint geen van de alternatieven van de oude Cayenne op kosten. De XC90 T8 komt het dichtst in de buurt (600 euro per jaar meer) en geeft daarvoor 50 km elektrisch, zeven zitplaatsen en zes jaar minder leeftijd; de X5 45e kost 1.300 meer en rijdt 60 tot 70 km elektrisch. Wie echt 3.500 kg moet trekken, zit bij de Q7 of de nieuwere Cayenne, allebei met maar 35 km elektrisch en 3.000 tot 4.000 per jaar duurder dan de oude. En wie met 2.500 kg toe kan, rijdt voor het geld van de oude Cayenne een volledig elektrische EV9 uit 2024 met garantie. Het echte alternatief voor de Cayenne is dus niet een betere hybride, maar de vraag hoeveel kilo er werkelijk achter moet.

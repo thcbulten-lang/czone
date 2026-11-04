@@ -55,7 +55,7 @@ def energiekosten(inv, auto: dict, km: dict, betaler: str) -> float:
             if aftrek:
                 btw_afgetrokken += aandeel * kwh * (tarief - tarief / btw)
     if ev_deel < 1.0:
-        soort = "diesel" if aandrijving == "diesel" else "benzine"
+        soort = "diesel" if (aandrijving == "diesel" or auto.get("brandstof") == "diesel") else "benzine"
         liter_prijs = r["energie"]["brandstofprijs_per_liter"][soort] * p.get("energieprijs_factor", 1.0)
         liters = km_gewogen * (1 - ev_deel) * auto["brandstof_l_100km"] / 100 * p.get("verbruik_factor", 1.0)
         if betaler == "bv":
@@ -166,7 +166,7 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
         else:
             eig["vermogenskosten"] = rente * (w_prev + w_t) / 2
         eig["mrb"] = sum(f.mrb_jaar(r, massa_ledig_kg=auto["massa_ledig_kg"], aandrijving=auto["aandrijving"],
-                                    provincie=p["bv_provincie"], kalenderjaar=m[0]) for m in maanden) / 12
+                                    provincie=p["bv_provincie"], kalenderjaar=m[0], brandstof=auto.get("brandstof")) for m in maanden) / 12
         verz = auto.get("verzekering_pj") or max(700.0, 0.022 * w_prev * (1.21 if (bv and btw_auto) else 1.0))
         eig["verzekering"] = verz
         eig["onderhoud"] = f.ex_btw(r, auto["onderhoud_pj"]) if bv else auto["onderhoud_pj"]
@@ -268,7 +268,7 @@ def bereken_scenario(inv, scenario: dict, horizon: int) -> dict:
     hoofd_onderdeel = next(o for o in scenario["onderdelen"] if o["auto"] == hoofd_id)
     eisen = p["eisen"]
     checks = {
-        "elektrisch": (hoofd["aandrijving"] == "ev") or not eisen["elektrisch"],
+        "elektrisch": (hoofd["aandrijving"] in (("ev", "phev") if eisen["elektrisch"] == "ev_of_phev" else ("ev",))) or not eisen["elektrisch"],
         "trekgewicht": hoofd.get("trekgewicht_geremd_kg", 0) >= eisen["trekgewicht_geremd_min_kg"],
         "zitplaatsen": hoofd.get("zitplaatsen", 0) >= eisen["zitplaatsen_min"],
     }

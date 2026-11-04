@@ -60,17 +60,21 @@ def bijtelling_maand(regels: dict, *, maand: tuple[int, int], eerste_toelating: 
 
 
 # ---------------------------------------------------------------------- mrb
-def mrb_jaar(regels: dict, *, massa_ledig_kg: float, aandrijving: str, provincie: str, kalenderjaar: int) -> float:
-    """Motorrijtuigenbelasting per jaar, inclusief provinciale opcenten en EV-korting van dat jaar."""
+def mrb_jaar(regels: dict, *, massa_ledig_kg: float, aandrijving: str, provincie: str, kalenderjaar: int,
+             brandstof: str | None = None) -> float:
+    """Motorrijtuigenbelasting per jaar, inclusief provinciale opcenten en EV-korting van dat jaar.
+
+    Diesel (ook een diesel plug-in hybride) betaalt een brandstoftoeslag over de hoofdsom; de opcenten gaan alleen over de hoofdsom.
+    """
     m = regels["motorrijtuigenbelasting"]
     massa = massa_ledig_kg + (100 if m.get("grondslag") == "rijklaar" else 0)
     st = m["staffel"]
     banden = max(0, math.ceil((massa - st["basis_kg"]) / 100))
-    rijksdeel_kwartaal = st["basis_bedrag_kwartaal"] + banden * st["per_100kg_kwartaal"]
+    hoofdsom_kwartaal = st["basis_bedrag_kwartaal"] + banden * st["per_100kg_kwartaal"]
     opcenten = m["opcenten_pct"].get(provincie, 85.0) / 100
-    jaar = rijksdeel_kwartaal * 4 * (1 + opcenten)
-    if aandrijving == "diesel":
-        jaar *= m["diesel_toeslag_factor"]
+    jaar = hoofdsom_kwartaal * 4 * (1 + opcenten)
+    if aandrijving == "diesel" or brandstof == "diesel":
+        jaar += hoofdsom_kwartaal * 4 * m["diesel_toeslag_factor"]
     if aandrijving == "ev":
         f = m["ev_factor_per_jaar"]
         if kalenderjaar in f:

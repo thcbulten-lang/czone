@@ -62,6 +62,13 @@ class Overig(unittest.TestCase):
         ev30 = f.mrb_jaar(REGELS, massa_ledig_kg=2000, aandrijving="ev", provincie="Noord-Brabant", kalenderjaar=2030)
         self.assertAlmostEqual(ev30, vol, places=2)
 
+    def test_mrb_diesel_toeslag(self):
+        benzine = f.mrb_jaar(REGELS, massa_ledig_kg=2600, aandrijving="benzine", provincie="Noord-Brabant", kalenderjaar=2027)
+        diesel = f.mrb_jaar(REGELS, massa_ledig_kg=2600, aandrijving="phev", provincie="Noord-Brabant", kalenderjaar=2027, brandstof="diesel")
+        opc = REGELS["motorrijtuigenbelasting"]["opcenten_pct"]["Noord-Brabant"] / 100
+        hoofdsom = benzine / (1 + opc)
+        self.assertAlmostEqual(diesel, benzine + hoofdsom * REGELS["motorrijtuigenbelasting"]["diesel_toeslag_factor"], places=2)
+
     def test_btw_correctie(self):
         self.assertAlmostEqual(f.btw_correctie_jaar(REGELS, catalogusprijs=60000, btw_afgetrokken=True, gebruiksjaar=3), 1620.0)
         self.assertAlmostEqual(f.btw_correctie_jaar(REGELS, catalogusprijs=60000, btw_afgetrokken=True, gebruiksjaar=6), 900.0)
