@@ -33,6 +33,8 @@ def bouw_scenarios(spec: dict, autos: dict, constructies: dict) -> list[dict]:
     auto_ids = list(autos) if matrix.get("autos") in (None, "alle") else matrix["autos"]
     uitsluiten = {(u["auto"], u["constructie"]) for u in matrix.get("uitsluiten", [])}
     for aid in auto_ids:
+        if autos[aid].get("alleen_extra"):
+            continue
         for cid in matrix.get("constructies", []):
             if (aid, cid) in uitsluiten:
                 continue

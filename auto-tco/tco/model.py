@@ -90,10 +90,19 @@ def leningschema(basis: float, con: dict) -> dict:
             "rente_totaal": sum(rente)}
 
 
+def _leeg_jaar(t: int, maanden) -> dict:
+    return {"t": t, "kalenderjaren": sorted({m[0] for m in maanden}), "waarde_begin": 0.0, "waarde_eind": 0.0,
+            "bv": _leeg(), "prive": _leeg(), "bijtelling_bruto": 0.0, "regimes": [], "actief": False}
+
+
 def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
     p, r = inv.profiel, inv.regels
-    auto = inv.autos[onderdeel["auto"]]
+    auto = dict(inv.autos[onderdeel["auto"]])
+    auto.update(onderdeel.get("overrides") or {})            # bijvoorbeeld een andere aanschafprijs
     con = inv.constructies[onderdeel["constructie"]]
+    offset = int(onderdeel.get("start_jaar", 0))             # 0 = begint meteen; 2 = begint in jaar 3
+    duur = int(onderdeel.get("jaren") or max(0, horizon - offset))
+    duur = max(0, min(duur, horizon - offset))
     betaler = con["eigenaar"]
     bv = betaler == "bv"
     aandeel = {"zakelijk": 1.0, "prive": 1.0, "trekkend": 1.0} | (onderdeel.get("km") or {})
@@ -125,6 +134,7 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
     rente /= 100
     rw_factor = p.get("restwaarde_factor", 1.0)
     start = f.maandindex(f.parse_maand(p["startmaand"]))
+    startmaand_auto = "%04d-%02d" % f.maand_van_index(start + 12 * offset)
     salaris = p["salaris_bruto"]
     lease_pm = onderdeel.get("lease_pm")
     if lease_pm is None and operational:
@@ -134,15 +144,19 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
     jaren = []
     w_prev = basis
     for t in range(1, horizon + 1):
-        w_t = f.waarde_na(r, auto, basis, p["startmaand"], 12 * t)
+        maanden = [f.maand_van_index(start + 12 * (t - 1) + i) for i in range(12)]
+        u = t - offset                                        # jaar van de auto zelf
+        if u < 1 or u > duur:
+            jaren.append(_leeg_jaar(t, maanden))
+            continue
+        w_t = f.waarde_na(r, auto, basis, startmaand_auto, 12 * u)
         w_t *= rw_factor                                      # gevoeligheid: restwaarde hoger of lager
         bv_l, pr_l = _leeg(), _leeg()
         eig = bv_l if bv else pr_l
-        maanden = [f.maand_van_index(start + 12 * (t - 1) + i) for i in range(12)]
 
         eig["afschrijving"] = w_prev - w_t
         if lening:
-            mnd = [m for m in range(12 * (t - 1), 12 * t) if m < lening["looptijd_maanden"]]
+            mnd = [m for m in range(12 * (u - 1), 12 * u) if m < lening["looptijd_maanden"]]
             rente_lening = sum(lening["rente_per_maand"][m] for m in mnd)
             saldo_gem = sum(lening["saldo_per_maand"][m] for m in mnd) / 12
             eig["vermogenskosten"] = rente_lening + rente * ((w_prev + w_t) / 2 - saldo_gem)
@@ -155,7 +169,7 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
         eig["onderhoud"] = f.ex_btw(r, auto["onderhoud_pj"]) if bv else auto["onderhoud_pj"]
         eig["banden"] = f.ex_btw(r, auto["banden_pj"]) if bv else auto["banden_pj"]
         eig["energie"], btw_energie = energiekosten(inv, auto, km, betaler)
-        eig["eenmalig"] = eenmalig_totaal / horizon
+        eig["eenmalig"] = eenmalig_totaal / duur
 
         if operational:
             inbegrepen = con.get("inbegrepen", [])
@@ -186,11 +200,11 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
             else:
                 pr_l["bijtelling_belasting"] = f.ib_over_extra(r, p, bijtelling)
                 bv_l["zvw"] = f.zvw_werkgever_over_extra(r, salaris, bijtelling)
-            correctie = f.btw_correctie_jaar(r, catalogusprijs=cat, btw_afgetrokken=(btw_auto or operational), gebruiksjaar=t)
+            correctie = f.btw_correctie_jaar(r, catalogusprijs=cat, btw_afgetrokken=(btw_auto or operational), gebruiksjaar=u)
             # de correctie is nooit hoger dan de btw die dat jaar voor de auto is afgetrokken
             btw_pct = r["btw"]["pct"] / 100
             btw_afgetrokken_dit_jaar = btw_pct * (bv_l["onderhoud"] + bv_l["banden"] + bv_l["lease"] + bv_l["eenmalig"]) + btw_energie
-            if t == 1 and btw_auto and not operational:
+            if u == 1 and btw_auto and not operational:
                 btw_afgetrokken_dit_jaar += btw_pct * basis
             bv_l["btw_correctie"] = min(correctie, btw_afgetrokken_dit_jaar)
 
@@ -200,7 +214,7 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
             pr_l["km_vergoeding"] = -vergoeding
 
         jaren.append({"t": t, "kalenderjaren": sorted({m[0] for m in maanden}), "waarde_begin": w_prev, "waarde_eind": w_t,
-                      "bv": bv_l, "prive": pr_l, "bijtelling_bruto": bijtelling, "regimes": sorted(regimes)})
+                      "bv": bv_l, "prive": pr_l, "bijtelling_bruto": bijtelling, "regimes": sorted(regimes), "actief": True})
         w_prev = w_t
 
     if lening:
@@ -210,7 +224,10 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
     else:
         eigen_geld = basis + eenmalig_totaal
     return {"auto": auto["id"], "constructie": con["id"], "betaler": betaler, "jaren": jaren, "km_per_jaar": km_totaal,
-            "basis": basis, "catalogus_bijtelling": cat, "lease_geschat": lease_geschat, "eigen_geld_start": eigen_geld,
+            "basis": basis, "catalogus_bijtelling": cat, "lease_geschat": lease_geschat,
+            "eigen_geld_start": eigen_geld if offset == 0 else 0.0,
+            "eigen_geld_later": {"jaar": offset + 1, "bedrag": eigen_geld} if offset > 0 else None,
+            "start_jaar": offset, "jaren_actief": duur, "aanschafprijs": auto["aanschafprijs"],
             "financiering": {k: v for k, v in lening.items() if not k.endswith("_per_maand")} if lening else None}
 
 
@@ -243,7 +260,9 @@ def bereken_scenario(inv, scenario: dict, horizon: int) -> dict:
     km_pj = onderdelen[0]["km_per_jaar"] if len(onderdelen) == 1 else (p["km_per_jaar"]["zakelijk"] + p["km_per_jaar"]["prive"]) * p.get("km_factor", 1.0)
     groepen = {g: sum(tot_bv[k] * factor + tot_pr[k] for k in ks) / horizon for g, ks in GROEPEN.items()}
 
-    hoofd = inv.autos[scenario["onderdelen"][0]["auto"]]
+    hoofd_id = scenario.get("hoofd_auto") or scenario["onderdelen"][0]["auto"]
+    hoofd = inv.autos[hoofd_id]
+    hoofd_onderdeel = next(o for o in scenario["onderdelen"] if o["auto"] == hoofd_id)
     eisen = p["eisen"]
     checks = {
         "elektrisch": (hoofd["aandrijving"] == "ev") or not eisen["elektrisch"],
@@ -255,8 +274,8 @@ def bereken_scenario(inv, scenario: dict, horizon: int) -> dict:
         "id": scenario["id"], "naam": scenario["naam"], "automatisch": scenario.get("automatisch", False),
         "notities": scenario.get("notities", ""), "horizon": horizon,
         "auto": hoofd["id"], "auto_naam": hoofd["naam"], "categorie": hoofd["categorie"],
-        "constructie": scenario["onderdelen"][0]["constructie"],
-        "constructie_naam": inv.constructies[scenario["onderdelen"][0]["constructie"]]["naam"],
+        "constructie": hoofd_onderdeel["constructie"],
+        "constructie_naam": inv.constructies[hoofd_onderdeel["constructie"]]["naam"],
         "onderdelen": onderdelen,
         "voldoet": all(checks.values()), "checks": checks, "zekerheid": zekerheid,
         "lease_geschat": any(o["lease_geschat"] for o in onderdelen),
@@ -271,6 +290,7 @@ def bereken_scenario(inv, scenario: dict, horizon: int) -> dict:
         "per_jaar": per_jaar,
         "bijtelling_bruto_pj": sum(j["bijtelling_bruto"] for j in per_jaar) / horizon,
         "eigen_geld_start": sum(o["eigen_geld_start"] for o in onderdelen),
+        "eigen_geld_later": [o["eigen_geld_later"] for o in onderdelen if o["eigen_geld_later"]],
         "km_per_jaar": km_pj,
         "factor_bv_naar_prive": factor,
         "vpb_pct_effectief": vpb,

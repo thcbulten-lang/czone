@@ -145,6 +145,23 @@ class Model(unittest.TestCase):
         self.assertGreater(r["lijnen_prive"]["bijtelling_belasting"], 0)
         self.assertEqual(r["lijnen_prive"]["km_vergoeding"], 0)
 
+    def test_later_beginnend_onderdeel(self):
+        inv = Invoer()
+        nul = bereken_scenario(inv, {"id": "n", "naam": "n", "onderdelen": [{"auto": "e_klasse_youngtimer", "constructie": "bv_koop"}]}, 7)
+        wacht = bereken_scenario(inv, {"id": "w", "naam": "w", "hoofd_auto": "zeekr_7x_core_in_2028", "onderdelen": [
+            {"auto": "e_klasse_youngtimer", "constructie": "bv_koop", "start_jaar": 0, "jaren": 2},
+            {"auto": "zeekr_7x_core_in_2028", "constructie": "prive_koop_kmvergoeding", "start_jaar": 2, "overrides": {"aanschafprijs": 20000}}]}, 7)
+        # de eerste twee jaar zijn gelijk aan het nulscenario, daarna rijdt alleen de 7X
+        for t in range(2):
+            self.assertAlmostEqual(wacht["per_jaar"][t]["netto_prive_euro"], nul["per_jaar"][t]["netto_prive_euro"], places=6)
+        ev = wacht["onderdelen"][1]
+        self.assertFalse(ev["jaren"][0]["actief"]); self.assertFalse(ev["jaren"][1]["actief"]); self.assertTrue(ev["jaren"][2]["actief"])
+        self.assertEqual(wacht["onderdelen"][0]["jaren"][2]["bv"]["energie"], 0.0)
+        self.assertEqual(ev["jaren"][2]["waarde_begin"], 20000)
+        self.assertEqual(wacht["auto"], "zeekr_7x_core_in_2028")
+        self.assertTrue(wacht["voldoet"])
+        self.assertEqual(wacht["eigen_geld_later"][0]["jaar"], 3)
+
     def test_filters(self):
         inv = Invoer()
         s = {"id": "t", "naam": "t", "onderdelen": [{"auto": "jaecoo_7_shs", "constructie": "bv_koop"}]}

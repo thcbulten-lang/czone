@@ -67,3 +67,17 @@ Wat wel verandert is de hoogte van de winst. Boven 200.000 euro bespaart elke eu
 **Aanpassing.** Het profiel heeft nu 'winst_bv_verwacht' (150.000); het model rekent de vpb-besparing per jaar exact per schijf, ook als de aftrek door de schijfgrens heen steekt. De gevoeligheidsanalyse toont voortaan ook winst 100.000 tegenover 250.000 en box 2 op 24,5% tegenover 31%.
 
 **Besluit.** Geen. De winst van de BV verandert de volgorde van de auto's niet; wel wordt de BV-route bij een hogere winst of een hoger dividend wat aantrekkelijker tegenover prive.
+
+## 2026-11-04 Wachten of nu kopen?
+
+**Vraag.** Twee jaar wachten, dan een twee jaar oude 7X of G9 prive oppikken voor 20.000 euro; is dat niet slimmer?
+
+**Opzet.** Het model kan nu scenario's rekenen waarin een auto pas later begint: twee jaar E-klasse, daarna vijf jaar een in 2026 gebouwde 7X Core of G9, prive gekocht met kilometervergoeding. Alles over dezelfde zeven jaar, zodat nu kopen en wachten eerlijk naast elkaar staan. Jouw 20.000 euro staat erin, en de prijs volgens onze restwaardecurve (50% na twee jaar: 26.500 voor de 7X Core, 32.500 voor de G9).
+
+**Uitkomst (zeven jaar, netto prive-euro per jaar).** Wachten en dan een 7X voor 20.000 kost 7.143, vrijwel gelijk aan de E-klasse houden (7.115). Tegen de curveprijs wordt het 7.720, en met de G9 voor 32.500 wordt het 8.255. Nu een G9 occasion uit 2024 prive kopen kost 8.521, nu een nieuwe 7X Core prive 10.710 en op de BV 12.906. Wachten verslaat dus elk scenario waarin je nu een 7X of G9 koopt, ook als de occasion in 2028 duurder is dan je hoopt. Maar wachten verslaat niet het goedkope alternatief van nu: een drie jaar oude Model Y (6.362) of Zeekr X (6.481) prive, nu gekocht. De reden is dat de E-klasse niet goedkoop rijdt: ruim 7.000 euro per jaar aan benzine, onderhoud, wegenbelasting en bijtelling, meer dan een goedkope elektrische occasion prive kost. Het kapitaal is laag, de exploitatie niet.
+
+Dezelfde 7X in 2028 op de BV zetten kost 10.382 per jaar: de bijtelling loopt over de nieuwprijs van 52.990, wat je er ook voor betaalt. Een goedkoop gekochte dure auto hoort prive.
+
+**Kanttekeningen.** De prijs in 2028 is een gok; 20.000 euro is 38% van de nieuwprijs na twee jaar, dat is een harde val, zelfs voor een Chinees merk. De E-klasse moet twee jaar zonder grote reparatie halen; elke 3.000 euro reparatie kost 1.500 per jaar in dit vergelijk. Vanaf 2030 betaalt een EV volle wegenbelasting (hier al meegerekend). En het model telt geen waarde voor twee jaar eerder elektrisch rijden, of voor het verschil tussen een 7X en een Model Y.
+
+**Besluit.** Geen. Wel een conclusie: als het om de laagste kosten gaat, is 'nu een goedkope elektrische occasion prive' minstens zo goed als wachten, en als het om een 7X of G9 gaat, is wachten op een jonge occasion duidelijk goedkoper dan nu kopen.

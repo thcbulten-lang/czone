@@ -796,3 +796,62 @@
   bron: "schatting"
   zekerheid: laag
   datum: "2026-11-01"
+
+# ---------------------------------------------------------------- over twee jaar kopen (toegevoegd 2026-11-04)
+# Deze auto's bestaan alleen in scenario's onder 'extra': ze worden pas in jaar 3 gekocht, als twee jaar oude occasion.
+- id: zeekr_7x_core_in_2028
+  naam: "Zeekr 7X Core RWD (bouwjaar 2026), gekocht eind 2028"
+  alleen_extra: true
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2026-10"
+  catalogusprijs: 52990
+  aanschafprijs: 26500              # volgens onze curve (50% na twee jaar); scenario's overschrijven dit
+  btw_auto: true
+  km_stand: 50000
+  massa_ledig_kg: 2295
+  accu_kwh: 75
+  actieradius_wltp_km: 480
+  verbruik_praktijk_kwh_100km: 21.5
+  trekgewicht_geremd_kg: 2000
+  zitplaatsen: 5
+  bagageruimte_l: 539
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 450
+  banden_pj: 550
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1200
+  kwalitatief: {ruimte: 4, comfort: 3, trekervaring: 3, merkrisico: 2, laadsnelheid: 5}
+  notities: "Bijtelling 18% over 30.000 tot en met oktober 2031 (60 maanden na de eerste toelating in 2026), daarna 22%."
+  bron: "aanname"
+  zekerheid: laag
+  datum: "2026-11-04"
+
+- id: xpeng_g9_in_2028
+  naam: "Xpeng G9 RWD Long Range (bouwjaar 2026), gekocht eind 2028"
+  alleen_extra: true
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2026-10"
+  catalogusprijs: 64990
+  aanschafprijs: 32500              # volgens onze curve (50% na twee jaar); scenario's overschrijven dit
+  btw_auto: true
+  km_stand: 50000
+  massa_ledig_kg: 2320
+  accu_kwh: 93.1
+  actieradius_wltp_km: 570
+  verbruik_praktijk_kwh_100km: 21.5
+  trekgewicht_geremd_kg: 1500
+  zitplaatsen: 5
+  bagageruimte_l: 660
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 450
+  banden_pj: 550
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1200
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 3, merkrisico: 2, laadsnelheid: 5}
+  bron: "aanname"
+  zekerheid: laag
+  datum: "2026-11-04"

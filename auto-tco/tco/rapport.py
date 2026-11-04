@@ -64,16 +64,20 @@ def schrijf_markdown(bundel: dict, pad: Path) -> None:
 
 def _slank(s: dict) -> dict:
     """Alleen wat het dashboard nodig heeft."""
-    o = s["onderdelen"][0]
-    j1 = o["jaren"][0]
+    o = next((x for x in s["onderdelen"] if x["auto"] == s["auto"]), s["onderdelen"][0])
+    actief = [j for j in o["jaren"] if j.get("actief", True)] or o["jaren"]
+    j1, jl = actief[0], actief[-1]
     return {k: s[k] for k in ("id", "naam", "rang", "automatisch", "notities", "auto", "auto_naam", "categorie", "constructie",
                               "constructie_naam", "voldoet", "checks", "zekerheid", "lease_geschat", "kwalitatief", "totaal",
                               "per_jaar_gem", "groepen_netto_pj", "per_jaar", "bijtelling_bruto_pj", "eigen_geld_start",
-                              "km_per_jaar", "lijnen_bv", "lijnen_prive", "vpb_pct_effectief", "vpb_besparing_pj")} | {
+                              "km_per_jaar", "lijnen_bv", "lijnen_prive", "vpb_pct_effectief", "vpb_besparing_pj", "eigen_geld_later")} | {
         "onderdelen": [{"auto": x["auto"], "constructie": x["constructie"]} for x in s["onderdelen"]],
         "mrb_pj": j1["bv"]["mrb"] + j1["prive"]["mrb"],
         "energie_pj": j1["bv"]["energie"] + j1["prive"]["energie"],
-        "restwaarde_eind": o["jaren"][-1]["waarde_eind"],
+        "restwaarde_eind": jl["waarde_eind"],
+        "eigen_geld_later": s.get("eigen_geld_later", []),
+        "aanschafprijs_hoofd": o.get("aanschafprijs"),
+        "start_jaar": o.get("start_jaar", 0),
         "basis": o["basis"],
         "catalogus_bijtelling": o["catalogus_bijtelling"],
         "regimes": sorted({r for j in o["jaren"] for r in j["regimes"]}),
@@ -234,7 +238,7 @@ function alleScenarios() { return DATA.resultaten[state.horizon]; }
 function zichtbaar() {
   const [pmin, pmax] = PRIJSKLASSEN[state.prijs]; const zoek = state.zoek.trim().toLowerCase();
   return alleScenarios().filter(s => state.constructies.has(s.constructie) && state.categorieen.has(s.categorie) && (!state.alleenVoldoet || s.voldoet)
-    && DATA.autos[s.auto].aanschafprijs >= pmin && DATA.autos[s.auto].aanschafprijs < pmax && (!zoek || s.naam.toLowerCase().includes(zoek)));
+    && (s.aanschafprijs_hoofd ?? DATA.autos[s.auto].aanschafprijs) >= pmin && (s.aanschafprijs_hoofd ?? DATA.autos[s.auto].aanschafprijs) < pmax && (!zoek || s.naam.toLowerCase().includes(zoek)));
 }
 function gekozenScenarios() { const alle = alleScenarios(); return state.gekozen.map(id => alle.find(s => s.id === id)).filter(Boolean); }
 function slotVan(id) { if (!(id in state.slots)) { const bezet = new Set(Object.values(state.slots)); let i = 0; while (bezet.has(i)) i++; state.slots[id] = i; } return state.slots[id]; }
@@ -395,13 +399,13 @@ function renderVariabelen() {
   const rijen = [
     ['Auto', s => A(s).naam], ['Constructie', s => C(s).naam + (s.onderdelen.length > 1 ? ' + tweede auto' : '')], ['Type', s => `${A(s).categorie}, ${A(s).aandrijving}`],
     ['Nieuw of occasion', s => A(s).nieuw ? 'nieuw' : `occasion, ${(A(s).km_stand || 0).toLocaleString('nl-NL')} km`], ['Eerste toelating', s => A(s).eerste_toelating],
-    ['Cataloguswaarde (basis bijtelling)', s => euro(s.catalogus_bijtelling)], ['Aanschafprijs incl. btw', s => euro(A(s).aanschafprijs)], ['Btw-auto', s => ja(A(s).btw_auto)],
+    ['Cataloguswaarde (basis bijtelling)', s => euro(s.catalogus_bijtelling)], ['Aanschafprijs incl. btw', s => euro(s.aanschafprijs_hoofd ?? A(s).aanschafprijs) + (s.start_jaar ? ` (gekocht in jaar ${s.start_jaar + 1})` : '')], ['Btw-auto', s => ja(A(s).btw_auto)],
     ['Bijtellingsregime', s => s.regimes.join(', ')], ['Bijtelling bruto per jaar', s => euro(s.bijtelling_bruto_pj)],
     ['Massa ledig', s => `${A(s).massa_ledig_kg} kg`], ['MRB per jaar (jaar 1)', s => euro(s.mrb_pj)], ['Accu', s => A(s).accu_kwh ? `${A(s).accu_kwh} kWh` : '-'],
     ['Actieradius WLTP', s => A(s).actieradius_wltp_km ? `${A(s).actieradius_wltp_km} km` : '-'], ['Verbruik praktijk', s => A(s).verbruik_praktijk_kwh_100km ? `${A(s).verbruik_praktijk_kwh_100km} kWh/100 km` : `${A(s).brandstof_l_100km} l/100 km`],
     ['Energie per jaar', s => euro(s.energie_pj)], ['Trekgewicht geremd', s => `${A(s).trekgewicht_geremd_kg} kg`], ['Zitplaatsen', s => A(s).zitplaatsen], ['Bagageruimte', s => A(s).bagageruimte_l ? `${A(s).bagageruimte_l} l` : '-'],
     ['Restwaardecurve', s => A(s).restwaarde_curve || `${A(s).restwaarde_jaarlijks_pct}% per jaar`], ['Waarde aan het eind', s => euro(s.restwaarde_eind)],
-    ['Onderhoud + banden per jaar', s => euro(A(s).onderhoud_pj + A(s).banden_pj)], ['Eigen geld bij start', s => euro(s.eigen_geld_start)],
+    ['Onderhoud + banden per jaar', s => euro(A(s).onderhoud_pj + A(s).banden_pj)], ['Eigen geld bij start', s => euro(s.eigen_geld_start) + (s.eigen_geld_later && s.eigen_geld_later.length ? s.eigen_geld_later.map(e => `, ${euro(e.bedrag)} in jaar ${e.jaar}`).join('') : '')],
     ['Vpb-besparing per jaar (aftrek BV-kosten)', s => `${euro(s.vpb_besparing_pj)} (${(100 * s.vpb_pct_effectief).toFixed(1)}%)`],
     ['Financiering', s => s.financiering ? `${s.financiering.rente_pct}% rente, inleg ${euro(s.financiering.aanbetaling)}, ${euro(s.financiering.maandbedrag)} per maand, slottermijn ${euro(s.financiering.slottermijn)}, ${s.financiering.looptijd_maanden} maanden` : '-'],
     ['Ruimte (1-5)', s => s.kwalitatief.ruimte], ['Comfort (1-5)', s => s.kwalitatief.comfort], ['Trekervaring (1-5)', s => s.kwalitatief.trekervaring], ['Merkrisico (5 = laag)', s => s.kwalitatief.merkrisico], ['Laadsnelheid (1-5)', s => s.kwalitatief.laadsnelheid],
