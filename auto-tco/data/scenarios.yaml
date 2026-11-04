@@ -29,64 +29,124 @@ extra:
     onderdelen:
       - {auto: zeekr_7x_privilege, constructie: prive_lease_kmvergoeding}
 
-  # ---- wachten: twee jaar E-klasse, dan eind 2028 een twee jaar oude occasion prive kopen (schattingen van 4-11-2026, zie logboek)
-  - id: wacht_zeekr_x
-    naam: "Wachten: 2 jaar E-klasse, dan Zeekr X Long Range (2026) prive voor ± 19.000"
-    hoofd_auto: zeekr_x_in_2028
+  # ---- wachten: eerst de E-klasse, dan een jonge occasion (bouwjaar 2026) prive kopen. Prijzen zijn schattingen, zie logboek 4 en 4-11-2026.
+  - id: wacht1_zeekr_x
+    naam: "Wachten 1 jaar: E-klasse, dan Zeekr X Long Range (1 jaar oud) prive voor ± 25.000"
+    hoofd_auto: zeekr_x_occasion_2026
+    onderdelen:
+      - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 1}
+      - {auto: zeekr_x_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 1, overrides: {aanschafprijs: 25000, km_stand: 25000}}
+  - id: wacht2_zeekr_x
+    naam: "Wachten 2 jaar: E-klasse, dan Zeekr X Long Range (2 jaar oud) prive voor ± 19.000"
+    hoofd_auto: zeekr_x_occasion_2026
     onderdelen:
       - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
-      - {auto: zeekr_x_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2}
-  - id: wacht_zeekr_7x_core
-    naam: "Wachten: 2 jaar E-klasse, dan Zeekr 7X Core (2026) prive voor ± 24.000"
-    hoofd_auto: zeekr_7x_core_in_2028
+      - {auto: zeekr_x_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 2, overrides: {aanschafprijs: 19000, km_stand: 50000}}
+  - id: wacht1_zeekr_7x_core
+    naam: "Wachten 1 jaar: E-klasse, dan Zeekr 7X Core (1 jaar oud) prive voor ± 31.000"
+    hoofd_auto: zeekr_7x_core_occasion_2026
+    onderdelen:
+      - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 1}
+      - {auto: zeekr_7x_core_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 1, overrides: {aanschafprijs: 31000, km_stand: 25000}}
+  - id: wacht2_zeekr_7x_core
+    naam: "Wachten 2 jaar: E-klasse, dan Zeekr 7X Core (2 jaar oud) prive voor ± 24.000"
+    hoofd_auto: zeekr_7x_core_occasion_2026
     onderdelen:
       - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
-      - {auto: zeekr_7x_core_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2}
-  - id: wacht_zeekr_7x_long_range
-    naam: "Wachten: 2 jaar E-klasse, dan Zeekr 7X Long Range (2026) prive voor ± 25.500"
-    hoofd_auto: zeekr_7x_long_range_in_2028
+      - {auto: zeekr_7x_core_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 2, overrides: {aanschafprijs: 24000, km_stand: 50000}}
+  - id: wacht1_zeekr_7x_long_range
+    naam: "Wachten 1 jaar: E-klasse, dan Zeekr 7X Long Range (1 jaar oud) prive voor ± 33.000"
+    hoofd_auto: zeekr_7x_long_range_occasion_2026
+    onderdelen:
+      - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 1}
+      - {auto: zeekr_7x_long_range_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 1, overrides: {aanschafprijs: 33000, km_stand: 25000}}
+  - id: wacht2_zeekr_7x_long_range
+    naam: "Wachten 2 jaar: E-klasse, dan Zeekr 7X Long Range (2 jaar oud) prive voor ± 25.500"
+    hoofd_auto: zeekr_7x_long_range_occasion_2026
     onderdelen:
       - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
-      - {auto: zeekr_7x_long_range_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2}
-  - id: wacht_zeekr_7x_privilege
-    naam: "Wachten: 2 jaar E-klasse, dan Zeekr 7X Privilege (2026) prive voor ± 28.000"
-    hoofd_auto: zeekr_7x_privilege_in_2028
+      - {auto: zeekr_7x_long_range_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 2, overrides: {aanschafprijs: 25500, km_stand: 50000}}
+  - id: wacht1_zeekr_7x_privilege
+    naam: "Wachten 1 jaar: E-klasse, dan Zeekr 7X Privilege (1 jaar oud) prive voor ± 36.000"
+    hoofd_auto: zeekr_7x_privilege_occasion_2026
+    onderdelen:
+      - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 1}
+      - {auto: zeekr_7x_privilege_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 1, overrides: {aanschafprijs: 36000, km_stand: 25000}}
+  - id: wacht2_zeekr_7x_privilege
+    naam: "Wachten 2 jaar: E-klasse, dan Zeekr 7X Privilege (2 jaar oud) prive voor ± 28.000"
+    hoofd_auto: zeekr_7x_privilege_occasion_2026
     onderdelen:
       - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
-      - {auto: zeekr_7x_privilege_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2}
-  - id: wacht_zeekr_001
-    naam: "Wachten: 2 jaar E-klasse, dan Zeekr 001 Long Range (2026) prive voor ± 27.000"
-    hoofd_auto: zeekr_001_in_2028
+      - {auto: zeekr_7x_privilege_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 2, overrides: {aanschafprijs: 28000, km_stand: 50000}}
+  - id: wacht1_zeekr_001
+    naam: "Wachten 1 jaar: E-klasse, dan Zeekr 001 Long Range (1 jaar oud) prive voor ± 34.500"
+    hoofd_auto: zeekr_001_occasion_2026
+    onderdelen:
+      - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 1}
+      - {auto: zeekr_001_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 1, overrides: {aanschafprijs: 34500, km_stand: 25000}}
+  - id: wacht2_zeekr_001
+    naam: "Wachten 2 jaar: E-klasse, dan Zeekr 001 Long Range (2 jaar oud) prive voor ± 27.000"
+    hoofd_auto: zeekr_001_occasion_2026
     onderdelen:
       - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
-      - {auto: zeekr_001_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2}
-  - id: wacht_xpeng_g7
-    naam: "Wachten: 2 jaar E-klasse, dan Xpeng G7 (2026, verwacht model) prive voor ± 22.000"
-    hoofd_auto: xpeng_g7_in_2028
+      - {auto: zeekr_001_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 2, overrides: {aanschafprijs: 27000, km_stand: 50000}}
+  - id: wacht1_xpeng_g7
+    naam: "Wachten 1 jaar: E-klasse, dan Xpeng G7 (verwacht model) (1 jaar oud) prive voor ± 28.500"
+    hoofd_auto: xpeng_g7_occasion_2026
+    onderdelen:
+      - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 1}
+      - {auto: xpeng_g7_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 1, overrides: {aanschafprijs: 28500, km_stand: 25000}}
+  - id: wacht2_xpeng_g7
+    naam: "Wachten 2 jaar: E-klasse, dan Xpeng G7 (verwacht model) (2 jaar oud) prive voor ± 22.000"
+    hoofd_auto: xpeng_g7_occasion_2026
     onderdelen:
       - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
-      - {auto: xpeng_g7_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2}
-  - id: wacht_xpeng_g9
-    naam: "Wachten: 2 jaar E-klasse, dan Xpeng G9 Long Range (2026) prive voor ± 28.000"
-    hoofd_auto: xpeng_g9_in_2028
+      - {auto: xpeng_g7_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 2, overrides: {aanschafprijs: 22000, km_stand: 50000}}
+  - id: wacht1_xpeng_g9
+    naam: "Wachten 1 jaar: E-klasse, dan Xpeng G9 Long Range (1 jaar oud) prive voor ± 36.500"
+    hoofd_auto: xpeng_g9_occasion_2026
+    onderdelen:
+      - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 1}
+      - {auto: xpeng_g9_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 1, overrides: {aanschafprijs: 36500, km_stand: 25000}}
+  - id: wacht2_xpeng_g9
+    naam: "Wachten 2 jaar: E-klasse, dan Xpeng G9 Long Range (2 jaar oud) prive voor ± 28.000"
+    hoofd_auto: xpeng_g9_occasion_2026
     onderdelen:
       - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
-      - {auto: xpeng_g9_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2}
-  - id: wacht_tesla_model_y
-    naam: "Wachten: 2 jaar E-klasse, dan Tesla Model Y Long Range (2026) prive voor ± 29.000"
-    hoofd_auto: tesla_model_y_in_2028
+      - {auto: xpeng_g9_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 2, overrides: {aanschafprijs: 28000, km_stand: 50000}}
+  - id: wacht1_tesla_model_y
+    naam: "Wachten 1 jaar: E-klasse, dan Tesla Model Y Long Range (1 jaar oud) prive voor ± 36.000"
+    hoofd_auto: tesla_model_y_occasion_2026
+    onderdelen:
+      - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 1}
+      - {auto: tesla_model_y_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 1, overrides: {aanschafprijs: 36000, km_stand: 25000}}
+  - id: wacht2_tesla_model_y
+    naam: "Wachten 2 jaar: E-klasse, dan Tesla Model Y Long Range (2 jaar oud) prive voor ± 29.000"
+    hoofd_auto: tesla_model_y_occasion_2026
     onderdelen:
       - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
-      - {auto: tesla_model_y_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2}
-  - id: wacht_id_buzz
-    naam: "Wachten: 2 jaar E-klasse, dan VW ID. Buzz LWB Pro (2026) prive voor ± 33.000"
-    hoofd_auto: id_buzz_in_2028
+      - {auto: tesla_model_y_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 2, overrides: {aanschafprijs: 29000, km_stand: 50000}}
+  - id: wacht1_id_buzz
+    naam: "Wachten 1 jaar: E-klasse, dan VW ID. Buzz LWB Pro (1 jaar oud) prive voor ± 42.000"
+    hoofd_auto: id_buzz_occasion_2026
+    onderdelen:
+      - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 1}
+      - {auto: id_buzz_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 1, overrides: {aanschafprijs: 42000, km_stand: 25000}}
+  - id: wacht2_id_buzz
+    naam: "Wachten 2 jaar: E-klasse, dan VW ID. Buzz LWB Pro (2 jaar oud) prive voor ± 33.000"
+    hoofd_auto: id_buzz_occasion_2026
     onderdelen:
       - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
-      - {auto: id_buzz_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2}
-  - id: wacht_kia_ev9
-    naam: "Wachten: 2 jaar E-klasse, dan Kia EV9 AWD (2026) prive voor ± 40.000"
-    hoofd_auto: kia_ev9_in_2028
+      - {auto: id_buzz_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 2, overrides: {aanschafprijs: 33000, km_stand: 50000}}
+  - id: wacht1_kia_ev9
+    naam: "Wachten 1 jaar: E-klasse, dan Kia EV9 AWD (1 jaar oud) prive voor ± 50.500"
+    hoofd_auto: kia_ev9_occasion_2026
+    onderdelen:
+      - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 1}
+      - {auto: kia_ev9_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 1, overrides: {aanschafprijs: 50500, km_stand: 25000}}
+  - id: wacht2_kia_ev9
+    naam: "Wachten 2 jaar: E-klasse, dan Kia EV9 AWD (2 jaar oud) prive voor ± 40.000"
+    hoofd_auto: kia_ev9_occasion_2026
     onderdelen:
       - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
-      - {auto: kia_ev9_in_2028, constructie: prive_koop_kmvergoeding, start_jaar: 2}
+      - {auto: kia_ev9_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 2, overrides: {aanschafprijs: 40000, km_stand: 50000}}

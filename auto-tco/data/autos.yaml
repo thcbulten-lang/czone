@@ -798,9 +798,10 @@
   datum: "2026-11-01"
 
 # ---------------------------------------------------------------- over twee jaar kopen (toegevoegd 2026-11-04)
-# Deze auto's bestaan alleen in scenario's onder 'extra': ze worden pas in jaar 3 gekocht, als twee jaar oude occasion.
-- id: zeekr_7x_core_in_2028
-  naam: "Zeekr 7X Core RWD (bouwjaar 2026), gekocht eind 2028"
+# Deze auto's bestaan alleen in scenario's onder 'extra': ze worden pas in jaar 2 of 3 gekocht, als jonge occasion.
+# De aanschafprijs hier is de schatting voor eind 2028 (twee jaar oud); de scenario's zetten per wachttijd hun eigen prijs en kilometerstand.
+- id: zeekr_7x_core_occasion_2026
+  naam: "Zeekr 7X Core RWD (bouwjaar 2026), jonge occasion"
   alleen_extra: true
   categorie: suv
   aandrijving: ev
@@ -828,8 +829,8 @@
   zekerheid: laag
   datum: "2026-11-04"
 
-- id: xpeng_g9_in_2028
-  naam: "Xpeng G9 RWD Long Range (bouwjaar 2026), gekocht eind 2028"
+- id: xpeng_g9_occasion_2026
+  naam: "Xpeng G9 RWD Long Range (bouwjaar 2026), jonge occasion"
   alleen_extra: true
   categorie: suv
   aandrijving: ev
@@ -856,8 +857,8 @@
   zekerheid: laag
   datum: "2026-11-04"
 
-- id: zeekr_x_in_2028
-  naam: "Zeekr X Long Range RWD (bouwjaar 2026), gekocht eind 2028"
+- id: zeekr_x_occasion_2026
+  naam: "Zeekr X Long Range RWD (bouwjaar 2026), jonge occasion"
   alleen_extra: true
   categorie: suv
   aandrijving: ev
@@ -885,8 +886,8 @@
   zekerheid: laag
   datum: "2026-11-04"
 
-- id: zeekr_7x_long_range_in_2028
-  naam: "Zeekr 7X Long Range RWD 100 kWh (bouwjaar 2026), gekocht eind 2028"
+- id: zeekr_7x_long_range_occasion_2026
+  naam: "Zeekr 7X Long Range RWD 100 kWh (bouwjaar 2026), jonge occasion"
   alleen_extra: true
   categorie: suv
   aandrijving: ev
@@ -914,8 +915,8 @@
   zekerheid: laag
   datum: "2026-11-04"
 
-- id: zeekr_7x_privilege_in_2028
-  naam: "Zeekr 7X Privilege AWD 100 kWh (bouwjaar 2026), gekocht eind 2028"
+- id: zeekr_7x_privilege_occasion_2026
+  naam: "Zeekr 7X Privilege AWD 100 kWh (bouwjaar 2026), jonge occasion"
   alleen_extra: true
   categorie: suv
   aandrijving: ev
@@ -943,8 +944,8 @@
   zekerheid: laag
   datum: "2026-11-04"
 
-- id: zeekr_001_in_2028
-  naam: "Zeekr 001 Long Range RWD (bouwjaar 2026), gekocht eind 2028"
+- id: zeekr_001_occasion_2026
+  naam: "Zeekr 001 Long Range RWD (bouwjaar 2026), jonge occasion"
   alleen_extra: true
   categorie: stationwagen
   aandrijving: ev
@@ -972,8 +973,8 @@
   zekerheid: laag
   datum: "2026-11-04"
 
-- id: xpeng_g7_in_2028
-  naam: "Xpeng G7 (bouwjaar 2026, verwacht model), gekocht eind 2028"
+- id: xpeng_g7_occasion_2026
+  naam: "Xpeng G7 (bouwjaar 2026, verwacht model), jonge occasion"
   alleen_extra: true
   categorie: suv
   aandrijving: ev
@@ -1001,8 +1002,8 @@
   zekerheid: laag
   datum: "2026-11-04"
 
-- id: tesla_model_y_in_2028
-  naam: "Tesla Model Y Long Range AWD (bouwjaar 2026), gekocht eind 2028"
+- id: tesla_model_y_occasion_2026
+  naam: "Tesla Model Y Long Range AWD (bouwjaar 2026), jonge occasion"
   alleen_extra: true
   categorie: suv
   aandrijving: ev
@@ -1030,8 +1031,8 @@
   zekerheid: laag
   datum: "2026-11-04"
 
-- id: id_buzz_in_2028
-  naam: "VW ID. Buzz LWB Pro 86 kWh 7p (bouwjaar 2026), gekocht eind 2028"
+- id: id_buzz_occasion_2026
+  naam: "VW ID. Buzz LWB Pro 86 kWh 7p (bouwjaar 2026), jonge occasion"
   alleen_extra: true
   categorie: personenbus
   aandrijving: ev
@@ -1059,8 +1060,8 @@
   zekerheid: laag
   datum: "2026-11-04"
 
-- id: kia_ev9_in_2028
-  naam: "Kia EV9 AWD 99,8 kWh 7p (bouwjaar 2026), gekocht eind 2028"
+- id: kia_ev9_occasion_2026
+  naam: "Kia EV9 AWD 99,8 kWh 7p (bouwjaar 2026), jonge occasion"
   alleen_extra: true
   categorie: suv
   aandrijving: ev
@@ -1085,5 +1086,34 @@
   kwalitatief: {ruimte: 5, comfort: 4, trekervaring: 5, merkrisico: 4, laadsnelheid: 5}
   notities: ""
   bron: "schatting, zie logboek 4-11-2026"
+  zekerheid: laag
+  datum: "2026-11-04"
+
+# ---------------------------------------------------------------- nu te koop rond 20.000 euro (toegevoegd 2026-11-04)
+- id: jaguar_ipace_occasion_2020
+  naam: "Jaguar I-Pace EV400 (occasion 2020)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2020-03"       # verifieren met de advertentie
+  catalogusprijs: 88000             # nieuwprijs destijds; bepaalt de bijtelling op de BV (22% zonder korting)
+  aanschafprijs: 19950              # advertentie Gaspedaal, verifieren
+  btw_auto: false                   # aanname: marge-auto; verifieren
+  km_stand: 95000
+  massa_ledig_kg: 2133
+  accu_kwh: 90
+  actieradius_wltp_km: 470
+  verbruik_praktijk_kwh_100km: 24
+  trekgewicht_geremd_kg: 750        # de I-Pace mag maar 750 kg trekken
+  zitplaatsen: 5
+  bagageruimte_l: 656
+  restwaarde_curve: ev_europees_premium
+  onderhoud_pj: 800
+  banden_pj: 550
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1100
+  kwalitatief: {ruimte: 3, comfort: 4, trekervaring: 1, merkrisico: 2, laadsnelheid: 2}
+  notities: "Voorbeeld van wat er nu voor 20.000 euro elektrisch te koop staat. Trekt maar 750 kg. Laadt traag (100 kW), verbruikt veel, en de accu van bouwjaren 2018 tot 2021 viel onder een terugroepactie; Jaguar bouwt het dealernet af. Op de BV onbetaalbaar door de bijtelling over 88.000."
+  bron: "gaspedaal.nl (advertentie, 4-11-2026), ev-database.org"
   zekerheid: laag
   datum: "2026-11-04"
