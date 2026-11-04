@@ -90,6 +90,31 @@ class Overig(unittest.TestCase):
         self.assertAlmostEqual(f.waarde_na(REGELS, nieuw, 50000, "2026-12", 12), 50000 * 0.68, places=2)
 
 
+class Lening(unittest.TestCase):
+    def test_saldo_eindigt_op_slottermijn(self):
+        from tco.model import leningschema
+        con = {"rente_pct": 3.0, "aanbetaling": 10000, "slottermijn": 8000, "looptijd_maanden": 48}
+        l = leningschema(50000, con)
+        i = 0.03 / 12
+        laatste = l["saldo_per_maand"][-1]
+        self.assertAlmostEqual(laatste * (1 + i) - l["maandbedrag"], 8000, places=2)
+        self.assertEqual(l["hoofdsom"], 40000)
+        self.assertTrue(0 < l["rente_totaal"] < 0.03 * 40000 * 4)
+
+    def test_zonder_rente(self):
+        from tco.model import leningschema
+        l = leningschema(30000, {"rente_pct": 0.0, "aanbetaling": 10000, "slottermijn": 0, "looptijd_maanden": 48})
+        self.assertAlmostEqual(l["maandbedrag"], 20000 / 48, places=6)
+        self.assertAlmostEqual(l["rente_totaal"], 0.0)
+
+    def test_financial_lease_goedkoper_dan_koop_bij_lage_rente(self):
+        inv = Invoer()
+        koop = bereken_scenario(inv, {"id": "a", "naam": "a", "onderdelen": [{"auto": "zeekr_7x_core", "constructie": "bv_koop"}]}, 4)
+        fin = bereken_scenario(inv, {"id": "b", "naam": "b", "onderdelen": [{"auto": "zeekr_7x_core", "constructie": "bv_financial_lease"}]}, 4)
+        self.assertLess(fin["totaal"]["netto_prive_euro"], koop["totaal"]["netto_prive_euro"])
+        self.assertAlmostEqual(fin["eigen_geld_start"] - koop["eigen_geld_start"], 10000 - koop["onderdelen"][0]["basis"], places=2)
+
+
 class Model(unittest.TestCase):
     def test_prive_constructie_zonder_bijtelling(self):
         inv = Invoer()

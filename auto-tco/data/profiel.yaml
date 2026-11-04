@@ -14,7 +14,7 @@ rendementseis_prive_pct: 3.0      # idem voor privegeld, na belasting
 
 # Horizon
 horizon_jaren: 5                  # hoofdhorizon; het rapport rekent ook 3 en 7 door
-horizonnen_rapport: [3, 5, 7]
+horizonnen_rapport: [3, 4, 5, 7]
 startmaand: "2026-12"             # maand waarin de nieuwe auto op naam komt
 
 # Gebruik (ONBEKEND: eerste aannames)

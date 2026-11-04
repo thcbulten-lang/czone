@@ -12,9 +12,11 @@
   eigenaar: bv
   financiering: financial_lease
   prive_gebruik: true
-  rente_pct: 6.5
-  aanbetaling_pct: 10
-  toelichting: "Economisch gelijk aan kopen met een lening; de auto staat op de balans van de BV."
+  rente_pct: 3.0
+  aanbetaling: 10000          # eigen inleg bij het begin (euro, exclusief btw)
+  slottermijn: 8000           # restbetaling aan het eind van de looptijd (euro)
+  looptijd_maanden: 48
+  toelichting: "Kopen met een lening: annuiteit over de aanschafprijs min de inleg, met een slottermijn; rente op het saldo, de rendementseis van de BV op het eigen geld in de auto. De auto staat op de balans van de BV; verder gelden dezelfde regels als bij kopen."
 
 - id: bv_operational_lease
   naam: "BV operational lease"

@@ -45,3 +45,11 @@ Wat ertegen pleit. De klasse van 30 tot 40 duizend die 1.500 kg trekt bestaat ui
 **Open vragen.** Dezelfde als op 28 oktober, nu met een extra: hoe zwaar weegt ruimte tegenover 4.000 tot 7.000 euro per jaar?
 
 **Besluit.** Nog geen. De proefrit bij Zeekr en de antwoorden op de open vragen gaan voor.
+
+## 2026-11-04 Financial lease met echte voorwaarden
+
+**Toegevoegd.** BV financial lease staat nu voor elke auto in de matrix, met jouw voorwaarden: 3% rente, 10.000 euro eigen inleg bij het begin, 8.000 euro slottermijn, 48 maanden. Het model rekent de lening maand voor maand door (annuiteit met slottermijn): rente over het saldo, en de rendementseis van de BV over het eigen geld dat in de auto zit. De horizon van vier jaar staat erbij, zodat de lease en de kijkperiode gelijk lopen.
+
+**Wat het laat zien.** Financial lease tegen 3% is 150 tot 325 euro per jaar goedkoper dan contant kopen, omdat de lening goedkoper is dan de 5% die we voor geld in de BV rekenen. Dat voordeel is klein tegenover de afschrijving en de bijtelling, die niet veranderen. Zou de BV het geld anders tegen 3% of minder laten staan, dan is het verschil weg. Het echte argument voor financial lease is dus liquiditeit: 12.000 tot 12.600 euro eigen geld bij de start in plaats van 45.000 tot 55.000, en de rest van het geld blijft beschikbaar voor de zaak. Maandbedragen lopen van 160 euro (Zeekr X occasion) tot 810 euro (G9 nieuw), exclusief btw.
+
+**Besluit.** Geen. Financial lease is een financieringskeuze, geen autokeuze; de volgorde tussen de auto's verandert er niet door.

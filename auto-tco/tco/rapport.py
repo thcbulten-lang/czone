@@ -77,6 +77,7 @@ def _slank(s: dict) -> dict:
         "basis": o["basis"],
         "catalogus_bijtelling": o["catalogus_bijtelling"],
         "regimes": sorted({r for j in o["jaren"] for r in j["regimes"]}),
+        "financiering": o.get("financiering"),
     }
 
 
@@ -401,6 +402,7 @@ function renderVariabelen() {
     ['Energie per jaar', s => euro(s.energie_pj)], ['Trekgewicht geremd', s => `${A(s).trekgewicht_geremd_kg} kg`], ['Zitplaatsen', s => A(s).zitplaatsen], ['Bagageruimte', s => A(s).bagageruimte_l ? `${A(s).bagageruimte_l} l` : '-'],
     ['Restwaardecurve', s => A(s).restwaarde_curve || `${A(s).restwaarde_jaarlijks_pct}% per jaar`], ['Waarde aan het eind', s => euro(s.restwaarde_eind)],
     ['Onderhoud + banden per jaar', s => euro(A(s).onderhoud_pj + A(s).banden_pj)], ['Eigen geld bij start', s => euro(s.eigen_geld_start)],
+    ['Financiering', s => s.financiering ? `${s.financiering.rente_pct}% rente, inleg ${euro(s.financiering.aanbetaling)}, ${euro(s.financiering.maandbedrag)} per maand, slottermijn ${euro(s.financiering.slottermijn)}, ${s.financiering.looptijd_maanden} maanden` : '-'],
     ['Ruimte (1-5)', s => s.kwalitatief.ruimte], ['Comfort (1-5)', s => s.kwalitatief.comfort], ['Trekervaring (1-5)', s => s.kwalitatief.trekervaring], ['Merkrisico (5 = laag)', s => s.kwalitatief.merkrisico], ['Laadsnelheid (1-5)', s => s.kwalitatief.laadsnelheid],
     ['Zekerheid', s => s.zekerheid], ['Bron', s => A(s).bron || ''], ['Notities', s => (A(s).notities || '') + (s.notities ? ' ' + s.notities : '')],
   ];

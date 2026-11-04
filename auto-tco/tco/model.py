@@ -65,6 +65,31 @@ def energiekosten(inv, auto: dict, km: dict, betaler: str) -> float:
     return kosten, btw_afgetrokken
 
 
+def leningschema(basis: float, con: dict) -> dict:
+    """Annuiteit met inleg en slottermijn. Saldo en rente per maand, over de looptijd."""
+    i = con["rente_pct"] / 100 / 12
+    n = int(con.get("looptijd_maanden", 48))
+    aanbet = con["aanbetaling"] if con.get("aanbetaling") is not None else basis * con.get("aanbetaling_pct", 0) / 100
+    aanbet = min(aanbet, basis)
+    hoofdsom = basis - aanbet
+    slot = con["slottermijn"] if con.get("slottermijn") is not None else basis * con.get("slottermijn_pct", 0) / 100
+    slot = min(slot, hoofdsom)
+    if i > 0:
+        maandbedrag = (hoofdsom - slot / (1 + i) ** n) * i / (1 - (1 + i) ** -n)
+    else:
+        maandbedrag = (hoofdsom - slot) / n
+    saldo, rente = [], []
+    b = hoofdsom
+    for _ in range(n):
+        saldo.append(b)
+        r = b * i
+        rente.append(r)
+        b = b + r - maandbedrag
+    return {"aanbetaling": aanbet, "hoofdsom": hoofdsom, "slottermijn": slot, "maandbedrag": maandbedrag,
+            "looptijd_maanden": n, "rente_pct": con["rente_pct"], "saldo_per_maand": saldo, "rente_per_maand": rente,
+            "rente_totaal": sum(rente)}
+
+
 def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
     p, r = inv.profiel, inv.regels
     auto = inv.autos[onderdeel["auto"]]
@@ -90,9 +115,9 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
         eenmalig_totaal = f.ex_btw(r, eenmalig_totaal)
 
     operational = con.get("financiering") == "operational_lease"
-    if con.get("financiering") == "financial_lease":
-        a = con.get("aanbetaling_pct", 0) / 100
-        rente = a * p["rendementseis_bv_pct"] + (1 - a) * con["rente_pct"]
+    lening = leningschema(basis, con) if con.get("financiering") == "financial_lease" else None
+    if lening:
+        rente = p["rendementseis_bv_pct"]                      # over het eigen geld dat in de auto zit
     elif con.get("rente_pct") is not None:
         rente = con["rente_pct"]
     else:
@@ -116,7 +141,13 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
         maanden = [f.maand_van_index(start + 12 * (t - 1) + i) for i in range(12)]
 
         eig["afschrijving"] = w_prev - w_t
-        eig["vermogenskosten"] = rente * (w_prev + w_t) / 2
+        if lening:
+            mnd = [m for m in range(12 * (t - 1), 12 * t) if m < lening["looptijd_maanden"]]
+            rente_lening = sum(lening["rente_per_maand"][m] for m in mnd)
+            saldo_gem = sum(lening["saldo_per_maand"][m] for m in mnd) / 12
+            eig["vermogenskosten"] = rente_lening + rente * ((w_prev + w_t) / 2 - saldo_gem)
+        else:
+            eig["vermogenskosten"] = rente * (w_prev + w_t) / 2
         eig["mrb"] = sum(f.mrb_jaar(r, massa_ledig_kg=auto["massa_ledig_kg"], aandrijving=auto["aandrijving"],
                                     provincie=p["bv_provincie"], kalenderjaar=m[0]) for m in maanden) / 12
         verz = auto.get("verzekering_pj") or max(700.0, 0.022 * w_prev * (1.21 if (bv and btw_auto) else 1.0))
@@ -172,14 +203,15 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
                       "bv": bv_l, "prive": pr_l, "bijtelling_bruto": bijtelling, "regimes": sorted(regimes)})
         w_prev = w_t
 
-    if con.get("financiering") == "financial_lease":
-        eigen_geld = basis * con.get("aanbetaling_pct", 0) / 100 + eenmalig_totaal
+    if lening:
+        eigen_geld = lening["aanbetaling"] + eenmalig_totaal
     elif operational:
         eigen_geld = eenmalig_totaal
     else:
         eigen_geld = basis + eenmalig_totaal
     return {"auto": auto["id"], "constructie": con["id"], "betaler": betaler, "jaren": jaren, "km_per_jaar": km_totaal,
-            "basis": basis, "catalogus_bijtelling": cat, "lease_geschat": lease_geschat, "eigen_geld_start": eigen_geld}
+            "basis": basis, "catalogus_bijtelling": cat, "lease_geschat": lease_geschat, "eigen_geld_start": eigen_geld,
+            "financiering": {k: v for k, v in lening.items() if not k.endswith("_per_maand")} if lening else None}
 
 
 def bereken_scenario(inv, scenario: dict, horizon: int) -> dict:
