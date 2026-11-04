@@ -19,16 +19,21 @@ def _rij(s: dict) -> str:
     g = s["per_jaar_gem"]
     eisen = "ja" if s["voldoet"] else "nee (" + ", ".join(k for k, v in s["checks"].items() if not v) + ")"
     lease = " (lease geschat)" if s["lease_geschat"] else ""
+    o = next((x for x in s["onderdelen"] if x["auto"] == s["auto"]), s["onderdelen"][0])
+    actief = [j for j in o["jaren"] if j.get("actief", True)] or o["jaren"]
+    markt = actief[-1]["waarde_eind"] * (1.21 if (o["betaler"] == "bv" and auto_btw(s, o)) else 1.0)
+    afschr = (actief[0]["waarde_begin"] - actief[-1]["waarde_eind"]) / max(1, len(actief))
     return (f"| {s['rang']} | {s['naam']}{lease} | {eisen} | {euro(g['netto_prive_euro'])} | {euro(g['per_maand'])} | "
             f"{g['per_km']:.2f} | {euro(g['bv'])} | {euro(g['prive'])} | {euro(s['bijtelling_bruto_pj'])} | "
-            f"{euro(s['eigen_geld_start'])} | {s['zekerheid']} |")
+            f"{euro(o.get('aanschafprijs', 0))} | {euro(markt)} | {euro(afschr)} | {euro(s['eigen_geld_start'])} | {s['zekerheid']} |")
 
 
-KOP = ("| # | Scenario | Voldoet | Netto/jr | /mnd | /km | BV/jr voor vpb | Prive/jr | Bijtelling bruto/jr | Eigen geld start | Zekerheid |\n"
-       "|---|---|---|---:|---:|---:|---:|---:|---:|---:|---|")
+KOP = ("| # | Scenario | Voldoet | Netto/jr | /mnd | /km | BV/jr voor vpb | Prive/jr | Bijtelling bruto/jr | Aanschaf | Restwaarde eind | Afschrijving/jr | Eigen geld start | Zekerheid |\n"
+       "|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|")
 
 
 def schrijf_markdown(bundel: dict, pad: Path) -> None:
+    _AUTOS.clear(); _AUTOS.update(bundel["autos"])
     p = bundel["profiel"]
     h = bundel["hoofdhorizon"]
     res = bundel["resultaten"][str(h)]
@@ -62,6 +67,13 @@ def schrijf_markdown(bundel: dict, pad: Path) -> None:
     pad.write_text("\n".join(r), encoding="utf-8")
 
 
+def auto_btw(s: dict, o: dict) -> bool:
+    return bool(_AUTOS.get(o["auto"], {}).get("btw_auto"))
+
+
+_AUTOS: dict = {}
+
+
 def _slank(s: dict) -> dict:
     """Alleen wat het dashboard nodig heeft."""
     o = next((x for x in s["onderdelen"] if x["auto"] == s["auto"]), s["onderdelen"][0])
@@ -75,6 +87,8 @@ def _slank(s: dict) -> dict:
         "mrb_pj": j1["bv"]["mrb"] + j1["prive"]["mrb"],
         "energie_pj": j1["bv"]["energie"] + j1["prive"]["energie"],
         "restwaarde_eind": jl["waarde_eind"],
+        "restwaarde_eind_markt": jl["waarde_eind"] * (1.21 if (o["betaler"] == "bv" and auto_btw(s, o)) else 1.0),
+        "afschrijving_pj": (j1["waarde_begin"] - jl["waarde_eind"]) / max(1, len(actief)),
         "eigen_geld_later": s.get("eigen_geld_later", []),
         "aanschafprijs_hoofd": o.get("aanschafprijs"),
         "start_jaar": o.get("start_jaar", 0),
@@ -86,6 +100,7 @@ def _slank(s: dict) -> dict:
 
 
 def schrijf_html(bundel: dict, pad: Path) -> None:
+    _AUTOS.clear(); _AUTOS.update(bundel["autos"])
     data = {
         "gegenereerd": bundel["gegenereerd"], "hoofdhorizon": bundel["hoofdhorizon"], "profiel": bundel["profiel"],
         "marginaal_tarief": bundel["marginaal_tarief"], "factor_bv_naar_prive": bundel["factor_bv_naar_prive"], "vpb_pct_marginaal": bundel["vpb_pct_marginaal"],
@@ -275,7 +290,7 @@ function renderKop() {
     `Marginaal tarief <b>${(100*DATA.marginaal_tarief).toFixed(1)}%</b>`, `Winst BV <b>${euro(p.winst_bv_verwacht || 0)}</b>, vpb <b>${(100*DATA.vpb_pct_marginaal).toFixed(1)}%</b>`, `1 BV-euro = <b>${DATA.factor_bv_naar_prive.toFixed(3)}</b> prive-euro`,
     `Rendementseis BV <b>${p.rendementseis_bv_pct}%</b>`, `Bijtelling vult gebruikelijk loon <b>${p.bijtelling_vult_gebruikelijk_loon ? 'ja' : 'nee'}</b>`,
   ].map(t => `<span class="chip">${t}</span>`).join('');
-  $('#uitleg').innerHTML = `<b>Hoe lees je dit.</b> Elk scenario is een auto maal een financiele constructie bij jouw gebruik. Alle kosten staan in een munt: <b>netto prive-euro's per jaar</b>. Wat de BV betaalt telt voor ${DATA.factor_bv_naar_prive.toFixed(3)} (na vpb en box 2), wat jij prive betaalt telt een op een, en de belasting over de bijtelling is wat je werkelijk extra afdraagt bij jouw salaris. Het nulscenario is de E-klasse houden. Harde eisen (elektrisch, trekgewicht, zitplaatsen) staan los van de kosten: een scenario dat er niet aan voldoet staat grijs. Lage zekerheid betekent: eerst het cijfer verifieren, dan pas concluderen.`;
+  $('#uitleg').innerHTML = `<b>Hoe lees je dit.</b> Elk scenario is een auto maal een financiele constructie bij jouw gebruik. Alle kosten staan in een munt: <b>netto prive-euro's per jaar</b>. Wat de BV betaalt telt voor ${DATA.factor_bv_naar_prive.toFixed(3)} (na vpb en box 2), wat jij prive betaalt telt een op een, en de belasting over de bijtelling is wat je werkelijk extra afdraagt bij jouw salaris. Het nulscenario is de E-klasse houden. Harde eisen (elektrisch, trekgewicht, zitplaatsen) staan los van de kosten: een scenario dat er niet aan voldoet staat grijs. Lage zekerheid betekent: eerst het cijfer verifieren, dan pas concluderen. <b>Afschrijving</b> is aanschafprijs min de verwachte restwaarde aan het eind van de gekozen horizon, verdeeld over de jaren; beide staan als kolom in de ranglijst (bij een BV-auto met btw-aftrek rekent het model met bedragen zonder btw, de kolom toont de marktwaarde met btw).`;
 }
 
 function renderFilters() {
@@ -299,6 +314,8 @@ const KOLOMMEN = [
   ['netto', 'Netto / jaar', s => s.per_jaar_gem.netto_prive_euro, true], ['maand', '/ maand', s => s.per_jaar_gem.per_maand, true],
   ['km', '/ km', s => s.per_jaar_gem.per_km, true], ['bv', 'BV / jaar (voor vpb)', s => s.per_jaar_gem.bv, true],
   ['prive', 'Prive / jaar', s => s.per_jaar_gem.prive, true], ['bijt', 'Bijtelling bruto / jaar', s => s.bijtelling_bruto_pj, true],
+  ['aanschaf', 'Aanschaf', s => s.aanschafprijs_hoofd ?? 0, true], ['rest', 'Restwaarde eind', s => s.restwaarde_eind_markt ?? 0, true],
+  ['afschr', 'Afschrijving / jaar', s => s.afschrijving_pj ?? 0, true],
   ['start', 'Eigen geld bij start', s => s.eigen_geld_start, true],
 ];
 function renderTabel() {
@@ -317,7 +334,8 @@ function renderTabel() {
       <td class="n">${s.rang}</td><td>${stip}${esc(s.naam)}${s.lease_geschat ? ' <span class="klein" title="geen offerte: maandbedrag geschat">(lease geschat)</span>' : ''}</td>
       <td>${eisen}</td><td><span class="zek ${s.zekerheid}">${s.zekerheid}</span></td>
       <td class="n"><b>${euro(g.netto_prive_euro)}</b></td><td class="n">${euro(g.per_maand)}</td><td class="n">${g.per_km.toFixed(2)}</td>
-      <td class="n">${euro(g.bv)}</td><td class="n">${euro(g.prive)}</td><td class="n">${euro(s.bijtelling_bruto_pj)}</td><td class="n">${euro(s.eigen_geld_start)}</td></tr>`;
+      <td class="n">${euro(g.bv)}</td><td class="n">${euro(g.prive)}</td><td class="n">${euro(s.bijtelling_bruto_pj)}</td>
+      <td class="n">${euro(s.aanschafprijs_hoofd ?? 0)}</td><td class="n" title="verwachte marktwaarde aan het eind van de horizon, incl. btw">${euro(s.restwaarde_eind_markt ?? 0)}</td><td class="n">${euro(s.afschrijving_pj ?? 0)}</td><td class="n">${euro(s.eigen_geld_start)}</td></tr>`;
   }).join('');
   const t = $('#tabel'); t.innerHTML = kop + body;
   t.querySelectorAll('th[data-k]').forEach(th => th.onclick = () => { const k = th.dataset.k; state.sort = state.sort[0] === k ? [k, -state.sort[1]] : [k, 1]; renderTabel(); });
