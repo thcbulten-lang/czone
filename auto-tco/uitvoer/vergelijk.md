@@ -1,6 +1,6 @@
 # Autovergelijk op totale kosten, stand 2026-11-04
 
-Horizon 5 jaar vanaf 2026-12; 169 scenario's. Alle bedragen zijn netto prive-euro's per jaar: BV-kosten tellen voor 0.612 (na 19.0% vpb bij een winst van 150.000 en 24.5% box 2), privekosten een op een. Bijtelling belast tegen een effectief marginaal tarief van 50.3%.
+Horizon 5 jaar vanaf 2026-12; 174 scenario's. Alle bedragen zijn netto prive-euro's per jaar: BV-kosten tellen voor 0.612 (na 19.0% vpb bij een winst van 150.000 en 24.5% box 2), privekosten een op een. Bijtelling belast tegen een effectief marginaal tarief van 50.3%.
 
 Gebruik: 15.000 km zakelijk, 10.000 km prive, 1.500 km trekkend per jaar; eis trekgewicht 1.500 kg.
 
@@ -69,114 +69,119 @@ Gebruik: 15.000 km zakelijk, 10.000 km prive, 1.500 km trekkend per jaar; eis tr
 | 59 | Smart #1 Premium (nieuw), BV koopt | ja | 10.736 | 895 | 0.43 | 10.947 | 4.042 | 8.038 | 37.017 | laag |
 | 60 | Zeekr X Long Range RWD (nieuw), BV financial lease | ja | 10.772 | 898 | 0.43 | 11.006 | 4.042 | 8.038 | 12.314 | laag |
 | 61 | Kia PV5 Passenger 71,2 kWh (nieuw), BV financial lease | nee (trekgewicht) | 10.801 | 900 | 0.43 | 11.052 | 4.043 | 8.040 | 12.231 | laag |
-| 62 | Zeekr X Long Range RWD (occasion 2024), BV operational lease (lease geschat) | ja | 10.927 | 911 | 0.44 | 10.470 | 4.524 | 8.998 | 2.314 | laag |
-| 63 | Zeekr X Long Range RWD (nieuw), BV koopt | ja | 10.936 | 911 | 0.44 | 11.273 | 4.042 | 8.038 | 37.017 | laag |
-| 64 | Zeekr X Privilege AWD (nieuw), Prive koop + km-vergoeding | ja | 10.942 | 912 | 0.44 | 3.750 | 8.649 | 0 | 49.790 | laag |
-| 65 | Kia PV5 Passenger 71,2 kWh (nieuw), BV koopt | nee (trekgewicht) | 10.965 | 914 | 0.44 | 11.319 | 4.043 | 8.040 | 36.942 | laag |
-| 66 | Wachten 1 jaar: E-klasse, dan Kia EV9 AWD (1 jaar oud) prive voor ± 50.500 | ja | 11.008 | 917 | 0.44 | 5.033 | 7.930 | 525 | 7.500 | laag |
-| 67 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), Prive koop + km-vergoeding | ja | 11.080 | 923 | 0.44 | 3.750 | 8.786 | 0 | 54.900 | midden |
-| 68 | Volvo EX30 Single Motor Extended Range (nieuw), BV operational lease (lease geschat) | ja | 11.099 | 925 | 0.44 | 11.901 | 3.821 | 7.599 | 2.397 | laag |
-| 69 | Skoda Enyaq iV 80x (occasion 2022), BV financial lease | nee (trekgewicht) | 11.160 | 930 | 0.45 | 9.051 | 5.624 | 11.185 | 12.314 | laag |
-| 70 | Skoda Enyaq iV 80x (occasion 2022), BV koopt | nee (trekgewicht) | 11.268 | 939 | 0.45 | 9.229 | 5.624 | 11.185 | 26.281 | laag |
-| 71 | Tesla Model Y Long Range AWD (nieuw), Prive koop + km-vergoeding | ja | 11.286 | 941 | 0.45 | 3.750 | 8.993 | 0 | 56.140 | midden |
-| 72 | Xpeng G6 RWD Long Range (occasion 2024), BV financial lease | ja | 11.291 | 941 | 0.45 | 9.642 | 5.394 | 10.728 | 12.479 | laag |
-| 73 | Xpeng G9 RWD Long Range (occasion 2024), Private lease + km-vergoeding (lease geschat) | ja | 11.362 | 947 | 0.45 | 3.750 | 9.068 | 0 | 3.000 | laag |
-| 74 | Smart #1 Premium (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 11.396 | 950 | 0.46 | 3.750 | 9.103 | 0 | 2.800 | laag |
-| 75 | Xpeng G6 RWD Long Range (occasion 2024), BV koopt | ja | 11.416 | 951 | 0.46 | 9.847 | 5.394 | 10.728 | 29.752 | laag |
-| 76 | Jaecoo 7 SHS plug-in hybride (nieuw, referentie), BV financial lease | nee (elektrisch) | 11.479 | 957 | 0.46 | 11.553 | 4.414 | 8.778 | 12.314 | laag |
-| 77 | Jaecoo 7 SHS plug-in hybride (nieuw, referentie), BV koopt | nee (elektrisch) | 11.634 | 969 | 0.47 | 11.806 | 4.414 | 8.778 | 35.289 | laag |
-| 78 | Tesla Model Y Long Range AWD (occasion 2023), BV financial lease | ja | 11.667 | 972 | 0.47 | 8.851 | 6.254 | 12.438 | 11.488 | midden |
-| 79 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), Prive koop + km-vergoeding | ja | 11.708 | 976 | 0.47 | 3.750 | 9.415 | 0 | 60.900 | midden |
-| 80 | Polestar 2 Long Range Dual Motor (occasion 2023), BV financial lease | ja | 11.729 | 977 | 0.47 | 9.058 | 6.190 | 12.310 | 12.397 | laag |
-| 81 | Hyundai Ioniq 5 AWD 73 kWh (occasion 2022), BV financial lease | ja | 11.740 | 978 | 0.47 | 9.138 | 6.152 | 12.235 | 12.314 | laag |
-| 82 | Smart #1 Premium (nieuw), BV operational lease (lease geschat) | ja | 11.744 | 979 | 0.47 | 12.594 | 4.042 | 8.038 | 2.314 | laag |
-| 83 | Tesla Model Y Long Range AWD (occasion 2023), BV koopt | ja | 11.784 | 982 | 0.47 | 9.042 | 6.254 | 12.438 | 27.107 | midden |
-| 84 | Zeekr X Long Range RWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 11.784 | 982 | 0.47 | 3.750 | 9.491 | 0 | 2.800 | laag |
-| 85 | Kia PV5 Passenger 71,2 kWh (nieuw), Private lease + km-vergoeding (lease geschat) | nee (trekgewicht) | 11.791 | 983 | 0.47 | 3.750 | 9.497 | 0 | 2.700 | laag |
-| 86 | Kia EV6 Plus AWD 77 kWh (occasion 2023), BV financial lease | ja | 11.830 | 986 | 0.47 | 9.429 | 6.064 | 12.059 | 12.314 | laag |
-| 87 | Polestar 2 Long Range Dual Motor (occasion 2023), BV koopt | ja | 11.846 | 987 | 0.47 | 9.249 | 6.190 | 12.310 | 28.017 | laag |
-| 88 | Hyundai Ioniq 5 AWD 73 kWh (occasion 2022), BV koopt | ja | 11.851 | 988 | 0.47 | 9.319 | 6.152 | 12.235 | 26.694 | laag |
-| 89 | Zeekr X Privilege AWD (nieuw), BV financial lease | ja | 11.916 | 993 | 0.48 | 11.972 | 4.595 | 9.138 | 12.314 | laag |
-| 90 | Zeekr X Long Range RWD (nieuw), BV operational lease (lease geschat) | ja | 11.933 | 994 | 0.48 | 12.905 | 4.042 | 8.038 | 2.314 | laag |
-| 91 | Kia EV6 Plus AWD 77 kWh (occasion 2023), BV koopt | ja | 11.956 | 996 | 0.48 | 9.635 | 6.064 | 12.059 | 29.587 | laag |
-| 92 | Kia PV5 Passenger 71,2 kWh (nieuw), BV operational lease (lease geschat) | nee (trekgewicht) | 11.976 | 998 | 0.48 | 12.972 | 4.043 | 8.040 | 2.231 | laag |
-| 93 | Zeekr X Privilege AWD (nieuw), BV koopt | ja | 12.101 | 1.008 | 0.48 | 12.274 | 4.595 | 9.138 | 41.149 | laag |
-| 94 | Jaecoo 7 SHS plug-in hybride (nieuw, referentie), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 12.198 | 1.017 | 0.49 | 3.750 | 9.905 | 0 | 2.800 | laag |
-| 95 | Skoda Enyaq iV 80x (occasion 2022), BV operational lease (lease geschat) | nee (trekgewicht) | 12.277 | 1.023 | 0.49 | 10.879 | 5.624 | 11.185 | 2.314 | laag |
-| 96 | Volvo XC40 Recharge Twin (occasion 2022), BV financial lease | ja | 12.367 | 1.031 | 0.49 | 9.558 | 6.522 | 12.970 | 12.397 | laag |
-| 97 | Volvo XC40 Recharge Twin (occasion 2022), BV koopt | ja | 12.480 | 1.040 | 0.50 | 9.742 | 6.522 | 12.970 | 27.190 | laag |
-| 98 | Xpeng G6 RWD Long Range (occasion 2024), BV operational lease (lease geschat) | ja | 12.480 | 1.040 | 0.50 | 11.587 | 5.394 | 10.728 | 2.479 | laag |
-| 99 | Zeekr 7X Core RWD 75 kWh (nieuw), Prive koop + km-vergoeding | ja | 12.487 | 1.041 | 0.50 | 3.750 | 10.194 | 0 | 55.990 | midden |
-| 100 | Jaecoo 7 SHS plug-in hybride (nieuw, referentie), BV operational lease (lease geschat) | nee (elektrisch) | 12.498 | 1.041 | 0.50 | 13.219 | 4.414 | 8.778 | 2.314 | laag |
-| 101 | Tesla Model Y Long Range AWD (occasion 2023), BV operational lease (lease geschat) | ja | 12.901 | 1.075 | 0.52 | 10.869 | 6.254 | 12.438 | 1.488 | midden |
-| 102 | Hyundai Ioniq 5 AWD 73 kWh (occasion 2022), BV operational lease (lease geschat) | ja | 12.925 | 1.077 | 0.52 | 11.075 | 6.152 | 12.235 | 2.314 | laag |
-| 103 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), Prive koop + km-vergoeding | ja | 12.942 | 1.078 | 0.52 | 3.750 | 10.649 | 0 | 60.900 | laag |
-| 104 | Polestar 2 Long Range Dual Motor (occasion 2023), BV operational lease (lease geschat) | ja | 12.959 | 1.080 | 0.52 | 11.068 | 6.190 | 12.310 | 2.397 | laag |
-| 105 | Zeekr X Privilege AWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 12.987 | 1.082 | 0.52 | 3.750 | 10.694 | 0 | 2.800 | laag |
-| 106 | Tesla Model Y Long Range AWD (nieuw), BV financial lease | ja | 13.008 | 1.084 | 0.52 | 12.427 | 5.408 | 10.755 | 12.603 | midden |
-| 107 | Kia EV6 Plus AWD 77 kWh (occasion 2023), BV operational lease (lease geschat) | ja | 13.086 | 1.090 | 0.52 | 11.483 | 6.064 | 12.059 | 2.314 | laag |
-| 108 | Mercedes EQB 300 4MATIC 7p (occasion 2022), BV financial lease | ja | 13.190 | 1.099 | 0.53 | 10.546 | 6.740 | 13.405 | 12.479 | laag |
-| 109 | Tesla Model Y Long Range AWD (nieuw), BV koopt | ja | 13.217 | 1.101 | 0.53 | 12.770 | 5.408 | 10.755 | 46.397 | midden |
-| 110 | Zeekr X Privilege AWD (nieuw), BV operational lease (lease geschat) | ja | 13.223 | 1.102 | 0.53 | 14.109 | 4.595 | 9.138 | 2.314 | laag |
-| 111 | Zeekr 7X Long Range RWD 100 kWh (nieuw), Prive koop + km-vergoeding | ja | 13.226 | 1.102 | 0.53 | 3.750 | 10.933 | 0 | 59.990 | laag |
-| 112 | Mercedes EQB 300 4MATIC 7p (occasion 2022), BV koopt | ja | 13.362 | 1.114 | 0.53 | 10.828 | 6.740 | 13.405 | 38.979 | laag |
-| 113 | Zeekr 001 Long Range RWD (nieuw), Prive koop + km-vergoeding | ja | 13.416 | 1.118 | 0.54 | 3.750 | 11.123 | 0 | 62.490 | midden |
-| 114 | Zeekr 7X Core RWD 75 kWh (nieuw), BV financial lease | ja | 13.497 | 1.125 | 0.54 | 13.472 | 5.258 | 10.458 | 12.479 | midden |
-| 115 | Volvo XC40 Recharge Twin (occasion 2022), BV operational lease (lease geschat) | ja | 13.594 | 1.133 | 0.54 | 11.564 | 6.522 | 12.970 | 2.397 | laag |
-| 116 | Tesla Model Y Long Range AWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 13.617 | 1.135 | 0.54 | 3.750 | 11.324 | 0 | 3.150 | midden |
-| 117 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), Private lease + km-vergoeding (lease geschat) | ja | 13.693 | 1.141 | 0.55 | 3.750 | 11.400 | 0 | 2.900 | midden |
-| 118 | Zeekr 7X Core RWD 75 kWh (nieuw), BV koopt | ja | 13.707 | 1.142 | 0.55 | 13.815 | 5.258 | 10.458 | 46.273 | midden |
-| 119 | Zeekr 7X Privilege AWD 100 kWh (nieuw), Prive koop + km-vergoeding | ja | 14.351 | 1.196 | 0.57 | 3.750 | 12.057 | 0 | 65.990 | midden |
-| 120 | Zeekr 7X Long Range RWD 100 kWh (nieuw), BV financial lease | ja | 14.375 | 1.198 | 0.57 | 14.183 | 5.701 | 11.338 | 12.479 | laag |
-| 121 | Xpeng G9 RWD Long Range (nieuw), Prive koop + km-vergoeding | ja | 14.413 | 1.201 | 0.58 | 3.750 | 12.120 | 0 | 67.990 | midden |
-| 122 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), BV financial lease | ja | 14.464 | 1.205 | 0.58 | 14.147 | 5.813 | 11.560 | 12.397 | laag |
-| 123 | Tesla Model Y Long Range AWD (nieuw), BV operational lease (lease geschat) | ja | 14.531 | 1.211 | 0.58 | 14.918 | 5.408 | 10.755 | 2.603 | midden |
-| 124 | Zeekr 7X Long Range RWD 100 kWh (nieuw), BV koopt | ja | 14.601 | 1.217 | 0.58 | 14.553 | 5.701 | 11.338 | 49.579 | laag |
-| 125 | Xpeng G9 RWD Long Range (occasion 2024), BV financial lease | ja | 14.602 | 1.217 | 0.58 | 11.365 | 7.652 | 15.218 | 12.479 | laag |
-| 126 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), Private lease + km-vergoeding (lease geschat) | ja | 14.634 | 1.219 | 0.59 | 3.750 | 12.341 | 0 | 2.900 | midden |
-| 127 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), BV financial lease | ja | 14.693 | 1.224 | 0.59 | 12.874 | 6.820 | 13.563 | 12.397 | midden |
-| 128 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), BV koopt | ja | 14.695 | 1.225 | 0.59 | 14.524 | 5.813 | 11.560 | 50.331 | laag |
-| 129 | Xpeng G9 RWD Long Range (occasion 2024), BV koopt | ja | 14.757 | 1.230 | 0.59 | 11.618 | 7.652 | 15.218 | 35.537 | laag |
-| 130 | Zeekr 001 Long Range RWD (nieuw), BV financial lease | ja | 14.759 | 1.230 | 0.59 | 14.360 | 5.978 | 11.888 | 12.479 | midden |
-| 131 | Zeekr 7X Core RWD 75 kWh (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 14.798 | 1.233 | 0.59 | 3.750 | 12.505 | 0 | 3.000 | midden |
-| 132 | Zeekr 001 Privilege AWD (nieuw), Prive koop + km-vergoeding | ja | 14.805 | 1.234 | 0.59 | 3.750 | 12.512 | 0 | 69.490 | laag |
-| 133 | Mercedes EQB 300 4MATIC 7p (occasion 2022), BV operational lease (lease geschat) | ja | 14.862 | 1.239 | 0.59 | 13.281 | 6.740 | 13.405 | 2.479 | laag |
-| 134 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), BV koopt | ja | 14.898 | 1.242 | 0.60 | 13.210 | 6.820 | 13.563 | 45.372 | midden |
-| 135 | Zeekr 7X Core RWD 75 kWh (nieuw), BV operational lease (lease geschat) | ja | 14.980 | 1.248 | 0.60 | 15.897 | 5.258 | 10.458 | 2.479 | midden |
-| 136 | Zeekr 001 Long Range RWD (nieuw), BV koopt | ja | 14.996 | 1.250 | 0.60 | 14.747 | 5.978 | 11.888 | 51.645 | midden |
-| 137 | Ford E-Tourneo Custom L2 (nieuw), Prive koop + km-vergoeding | ja | 15.151 | 1.263 | 0.61 | 3.750 | 12.857 | 0 | 72.800 | laag |
-| 138 | Xpeng G9 nieuw alleen zakelijk + E-klasse prive | ja | 15.275 | 1.273 | 0.61 | 13.481 | 7.031 | 0 | 63.690 | laag |
-| 139 | Jaguar I-Pace EV400 (occasion 2020), BV financial lease | nee (trekgewicht) | 15.511 | 1.293 | 0.62 | 9.560 | 9.664 | 19.220 | 12.397 | laag |
-| 140 | Jaguar I-Pace EV400 (occasion 2020), BV koopt | nee (trekgewicht) | 15.599 | 1.300 | 0.62 | 9.704 | 9.664 | 19.220 | 22.347 | laag |
-| 141 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 15.608 | 1.301 | 0.62 | 3.750 | 13.314 | 0 | 2.900 | laag |
-| 142 | Zeekr 7X Long Range RWD 100 kWh (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 15.695 | 1.308 | 0.63 | 3.750 | 13.402 | 0 | 3.000 | laag |
-| 143 | Zeekr 7X Privilege AWD 100 kWh (nieuw), BV financial lease | ja | 15.702 | 1.308 | 0.63 | 15.268 | 6.365 | 12.658 | 12.479 | midden |
-| 144 | Zeekr 7X Privilege AWD 100 kWh (nieuw), BV koopt | ja | 15.954 | 1.329 | 0.64 | 15.680 | 6.365 | 12.658 | 54.537 | midden |
-| 145 | Xpeng G9 RWD Long Range (nieuw), BV financial lease | ja | 15.956 | 1.330 | 0.64 | 15.323 | 6.586 | 13.098 | 12.479 | midden |
-| 146 | Zeekr 7X Long Range RWD 100 kWh (nieuw), BV operational lease (lease geschat) | ja | 15.973 | 1.331 | 0.64 | 16.797 | 5.701 | 11.338 | 2.479 | laag |
-| 147 | Zeekr 001 Long Range RWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 15.974 | 1.331 | 0.64 | 3.750 | 13.681 | 0 | 3.000 | midden |
-| 148 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), BV operational lease (lease geschat) | ja | 16.113 | 1.343 | 0.64 | 16.842 | 5.813 | 11.560 | 2.397 | laag |
-| 149 | Xpeng G9 RWD Long Range (occasion 2024), BV operational lease (lease geschat) | ja | 16.143 | 1.345 | 0.65 | 13.884 | 7.652 | 15.218 | 2.479 | laag |
-| 150 | Xpeng G9 RWD Long Range (nieuw), BV koopt | ja | 16.217 | 1.351 | 0.65 | 15.748 | 6.586 | 13.098 | 56.190 | midden |
-| 151 | Zeekr 001 Privilege AWD (nieuw), BV financial lease | ja | 16.354 | 1.363 | 0.65 | 15.700 | 6.752 | 13.428 | 12.479 | laag |
-| 152 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), BV operational lease (lease geschat) | ja | 16.395 | 1.366 | 0.66 | 15.658 | 6.820 | 13.563 | 2.397 | midden |
-| 153 | Zeekr 001 Long Range RWD (nieuw), BV operational lease (lease geschat) | ja | 16.435 | 1.370 | 0.66 | 17.100 | 5.978 | 11.888 | 2.479 | midden |
-| 154 | Zeekr 001 Privilege AWD (nieuw), BV koopt | ja | 16.620 | 1.385 | 0.66 | 16.136 | 6.752 | 13.428 | 57.430 | laag |
-| 155 | Jaguar I-Pace EV400 (occasion 2020), BV operational lease (lease geschat) | nee (trekgewicht) | 16.724 | 1.394 | 0.67 | 11.543 | 9.664 | 19.220 | 2.397 | laag |
-| 156 | Zeekr 7X Privilege AWD 100 kWh (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 17.056 | 1.421 | 0.68 | 3.750 | 14.763 | 0 | 3.000 | midden |
-| 157 | Zeekr 7X Privilege, private lease + km-vergoeding (lease geschat) | ja | 17.056 | 1.421 | 0.68 | 3.750 | 14.763 | 0 | 3.000 | midden |
-| 158 | Ford E-Tourneo Custom L2 (nieuw), BV financial lease | ja | 17.125 | 1.427 | 0.68 | 16.327 | 7.140 | 14.200 | 12.314 | laag |
-| 159 | Xpeng G9 RWD Long Range (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 17.184 | 1.432 | 0.69 | 3.750 | 14.891 | 0 | 3.000 | midden |
-| 160 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), BV financial lease | ja | 17.323 | 1.444 | 0.69 | 13.797 | 8.885 | 17.670 | 12.397 | midden |
-| 161 | Ford E-Tourneo Custom L2 (nieuw), BV koopt | ja | 17.406 | 1.450 | 0.70 | 16.786 | 7.140 | 14.200 | 60.165 | laag |
-| 162 | Zeekr 7X Privilege AWD 100 kWh (nieuw), BV operational lease (lease geschat) | ja | 17.479 | 1.457 | 0.70 | 18.174 | 6.365 | 12.658 | 2.479 | midden |
-| 163 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), BV koopt | ja | 17.553 | 1.463 | 0.70 | 14.174 | 8.885 | 17.670 | 50.331 | midden |
-| 164 | Zeekr 001 Privilege AWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 17.643 | 1.470 | 0.71 | 3.750 | 15.350 | 0 | 3.000 | laag |
-| 165 | Xpeng G9 RWD Long Range (nieuw), BV operational lease (lease geschat) | ja | 17.798 | 1.483 | 0.71 | 18.334 | 6.586 | 13.098 | 2.479 | midden |
-| 166 | Zeekr 001 Privilege AWD (nieuw), BV operational lease (lease geschat) | ja | 18.234 | 1.519 | 0.73 | 18.775 | 6.752 | 13.428 | 2.479 | laag |
-| 167 | Ford E-Tourneo Custom L2 (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 18.326 | 1.527 | 0.73 | 3.750 | 16.032 | 0 | 2.800 | laag |
-| 168 | Ford E-Tourneo Custom L2 (nieuw), BV operational lease (lease geschat) | ja | 19.128 | 1.594 | 0.77 | 19.602 | 7.140 | 14.200 | 2.314 | laag |
-| 169 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), BV operational lease (lease geschat) | ja | 19.366 | 1.614 | 0.77 | 17.139 | 8.885 | 17.670 | 2.397 | midden |
+| 62 | Porsche Cayenne S E-Hybrid (occasion 2015, 257.000 km), Prive koop + km-vergoeding | nee (elektrisch) | 10.881 | 907 | 0.44 | 3.750 | 8.588 | 0 | 19.700 | laag |
+| 63 | Zeekr X Long Range RWD (occasion 2024), BV operational lease (lease geschat) | ja | 10.927 | 911 | 0.44 | 10.470 | 4.524 | 8.998 | 2.314 | laag |
+| 64 | Zeekr X Long Range RWD (nieuw), BV koopt | ja | 10.936 | 911 | 0.44 | 11.273 | 4.042 | 8.038 | 37.017 | laag |
+| 65 | Zeekr X Privilege AWD (nieuw), Prive koop + km-vergoeding | ja | 10.942 | 912 | 0.44 | 3.750 | 8.649 | 0 | 49.790 | laag |
+| 66 | Kia PV5 Passenger 71,2 kWh (nieuw), BV koopt | nee (trekgewicht) | 10.965 | 914 | 0.44 | 11.319 | 4.043 | 8.040 | 36.942 | laag |
+| 67 | Wachten 1 jaar: E-klasse, dan Kia EV9 AWD (1 jaar oud) prive voor ± 50.500 | ja | 11.008 | 917 | 0.44 | 5.033 | 7.930 | 525 | 7.500 | laag |
+| 68 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), Prive koop + km-vergoeding | ja | 11.080 | 923 | 0.44 | 3.750 | 8.786 | 0 | 54.900 | midden |
+| 69 | Volvo EX30 Single Motor Extended Range (nieuw), BV operational lease (lease geschat) | ja | 11.099 | 925 | 0.44 | 11.901 | 3.821 | 7.599 | 2.397 | laag |
+| 70 | Skoda Enyaq iV 80x (occasion 2022), BV financial lease | nee (trekgewicht) | 11.160 | 930 | 0.45 | 9.051 | 5.624 | 11.185 | 12.314 | laag |
+| 71 | Skoda Enyaq iV 80x (occasion 2022), BV koopt | nee (trekgewicht) | 11.268 | 939 | 0.45 | 9.229 | 5.624 | 11.185 | 26.281 | laag |
+| 72 | Tesla Model Y Long Range AWD (nieuw), Prive koop + km-vergoeding | ja | 11.286 | 941 | 0.45 | 3.750 | 8.993 | 0 | 56.140 | midden |
+| 73 | Xpeng G6 RWD Long Range (occasion 2024), BV financial lease | ja | 11.291 | 941 | 0.45 | 9.642 | 5.394 | 10.728 | 12.479 | laag |
+| 74 | Xpeng G9 RWD Long Range (occasion 2024), Private lease + km-vergoeding (lease geschat) | ja | 11.362 | 947 | 0.45 | 3.750 | 9.068 | 0 | 3.000 | laag |
+| 75 | Smart #1 Premium (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 11.396 | 950 | 0.46 | 3.750 | 9.103 | 0 | 2.800 | laag |
+| 76 | Xpeng G6 RWD Long Range (occasion 2024), BV koopt | ja | 11.416 | 951 | 0.46 | 9.847 | 5.394 | 10.728 | 29.752 | laag |
+| 77 | Jaecoo 7 SHS plug-in hybride (nieuw, referentie), BV financial lease | nee (elektrisch) | 11.479 | 957 | 0.46 | 11.553 | 4.414 | 8.778 | 12.314 | laag |
+| 78 | Jaecoo 7 SHS plug-in hybride (nieuw, referentie), BV koopt | nee (elektrisch) | 11.634 | 969 | 0.47 | 11.806 | 4.414 | 8.778 | 35.289 | laag |
+| 79 | Tesla Model Y Long Range AWD (occasion 2023), BV financial lease | ja | 11.667 | 972 | 0.47 | 8.851 | 6.254 | 12.438 | 11.488 | midden |
+| 80 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), Prive koop + km-vergoeding | ja | 11.708 | 976 | 0.47 | 3.750 | 9.415 | 0 | 60.900 | midden |
+| 81 | Polestar 2 Long Range Dual Motor (occasion 2023), BV financial lease | ja | 11.729 | 977 | 0.47 | 9.058 | 6.190 | 12.310 | 12.397 | laag |
+| 82 | Hyundai Ioniq 5 AWD 73 kWh (occasion 2022), BV financial lease | ja | 11.740 | 978 | 0.47 | 9.138 | 6.152 | 12.235 | 12.314 | laag |
+| 83 | Smart #1 Premium (nieuw), BV operational lease (lease geschat) | ja | 11.744 | 979 | 0.47 | 12.594 | 4.042 | 8.038 | 2.314 | laag |
+| 84 | Tesla Model Y Long Range AWD (occasion 2023), BV koopt | ja | 11.784 | 982 | 0.47 | 9.042 | 6.254 | 12.438 | 27.107 | midden |
+| 85 | Zeekr X Long Range RWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 11.784 | 982 | 0.47 | 3.750 | 9.491 | 0 | 2.800 | laag |
+| 86 | Kia PV5 Passenger 71,2 kWh (nieuw), Private lease + km-vergoeding (lease geschat) | nee (trekgewicht) | 11.791 | 983 | 0.47 | 3.750 | 9.497 | 0 | 2.700 | laag |
+| 87 | Kia EV6 Plus AWD 77 kWh (occasion 2023), BV financial lease | ja | 11.830 | 986 | 0.47 | 9.429 | 6.064 | 12.059 | 12.314 | laag |
+| 88 | Polestar 2 Long Range Dual Motor (occasion 2023), BV koopt | ja | 11.846 | 987 | 0.47 | 9.249 | 6.190 | 12.310 | 28.017 | laag |
+| 89 | Hyundai Ioniq 5 AWD 73 kWh (occasion 2022), BV koopt | ja | 11.851 | 988 | 0.47 | 9.319 | 6.152 | 12.235 | 26.694 | laag |
+| 90 | Zeekr X Privilege AWD (nieuw), BV financial lease | ja | 11.916 | 993 | 0.48 | 11.972 | 4.595 | 9.138 | 12.314 | laag |
+| 91 | Zeekr X Long Range RWD (nieuw), BV operational lease (lease geschat) | ja | 11.933 | 994 | 0.48 | 12.905 | 4.042 | 8.038 | 2.314 | laag |
+| 92 | Kia EV6 Plus AWD 77 kWh (occasion 2023), BV koopt | ja | 11.956 | 996 | 0.48 | 9.635 | 6.064 | 12.059 | 29.587 | laag |
+| 93 | Kia PV5 Passenger 71,2 kWh (nieuw), BV operational lease (lease geschat) | nee (trekgewicht) | 11.976 | 998 | 0.48 | 12.972 | 4.043 | 8.040 | 2.231 | laag |
+| 94 | Zeekr X Privilege AWD (nieuw), BV koopt | ja | 12.101 | 1.008 | 0.48 | 12.274 | 4.595 | 9.138 | 41.149 | laag |
+| 95 | Jaecoo 7 SHS plug-in hybride (nieuw, referentie), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 12.198 | 1.017 | 0.49 | 3.750 | 9.905 | 0 | 2.800 | laag |
+| 96 | Porsche Cayenne S E-Hybrid (occasion 2015, 257.000 km), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 12.255 | 1.021 | 0.49 | 3.750 | 9.961 | 0 | 1.800 | laag |
+| 97 | Skoda Enyaq iV 80x (occasion 2022), BV operational lease (lease geschat) | nee (trekgewicht) | 12.277 | 1.023 | 0.49 | 10.879 | 5.624 | 11.185 | 2.314 | laag |
+| 98 | Volvo XC40 Recharge Twin (occasion 2022), BV financial lease | ja | 12.367 | 1.031 | 0.49 | 9.558 | 6.522 | 12.970 | 12.397 | laag |
+| 99 | Volvo XC40 Recharge Twin (occasion 2022), BV koopt | ja | 12.480 | 1.040 | 0.50 | 9.742 | 6.522 | 12.970 | 27.190 | laag |
+| 100 | Xpeng G6 RWD Long Range (occasion 2024), BV operational lease (lease geschat) | ja | 12.480 | 1.040 | 0.50 | 11.587 | 5.394 | 10.728 | 2.479 | laag |
+| 101 | Zeekr 7X Core RWD 75 kWh (nieuw), Prive koop + km-vergoeding | ja | 12.487 | 1.041 | 0.50 | 3.750 | 10.194 | 0 | 55.990 | midden |
+| 102 | Jaecoo 7 SHS plug-in hybride (nieuw, referentie), BV operational lease (lease geschat) | nee (elektrisch) | 12.498 | 1.041 | 0.50 | 13.219 | 4.414 | 8.778 | 2.314 | laag |
+| 103 | Tesla Model Y Long Range AWD (occasion 2023), BV operational lease (lease geschat) | ja | 12.901 | 1.075 | 0.52 | 10.869 | 6.254 | 12.438 | 1.488 | midden |
+| 104 | Hyundai Ioniq 5 AWD 73 kWh (occasion 2022), BV operational lease (lease geschat) | ja | 12.925 | 1.077 | 0.52 | 11.075 | 6.152 | 12.235 | 2.314 | laag |
+| 105 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), Prive koop + km-vergoeding | ja | 12.942 | 1.078 | 0.52 | 3.750 | 10.649 | 0 | 60.900 | laag |
+| 106 | Polestar 2 Long Range Dual Motor (occasion 2023), BV operational lease (lease geschat) | ja | 12.959 | 1.080 | 0.52 | 11.068 | 6.190 | 12.310 | 2.397 | laag |
+| 107 | Zeekr X Privilege AWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 12.987 | 1.082 | 0.52 | 3.750 | 10.694 | 0 | 2.800 | laag |
+| 108 | Tesla Model Y Long Range AWD (nieuw), BV financial lease | ja | 13.008 | 1.084 | 0.52 | 12.427 | 5.408 | 10.755 | 12.603 | midden |
+| 109 | Kia EV6 Plus AWD 77 kWh (occasion 2023), BV operational lease (lease geschat) | ja | 13.086 | 1.090 | 0.52 | 11.483 | 6.064 | 12.059 | 2.314 | laag |
+| 110 | Mercedes EQB 300 4MATIC 7p (occasion 2022), BV financial lease | ja | 13.190 | 1.099 | 0.53 | 10.546 | 6.740 | 13.405 | 12.479 | laag |
+| 111 | Tesla Model Y Long Range AWD (nieuw), BV koopt | ja | 13.217 | 1.101 | 0.53 | 12.770 | 5.408 | 10.755 | 46.397 | midden |
+| 112 | Zeekr X Privilege AWD (nieuw), BV operational lease (lease geschat) | ja | 13.223 | 1.102 | 0.53 | 14.109 | 4.595 | 9.138 | 2.314 | laag |
+| 113 | Zeekr 7X Long Range RWD 100 kWh (nieuw), Prive koop + km-vergoeding | ja | 13.226 | 1.102 | 0.53 | 3.750 | 10.933 | 0 | 59.990 | laag |
+| 114 | Mercedes EQB 300 4MATIC 7p (occasion 2022), BV koopt | ja | 13.362 | 1.114 | 0.53 | 10.828 | 6.740 | 13.405 | 38.979 | laag |
+| 115 | Zeekr 001 Long Range RWD (nieuw), Prive koop + km-vergoeding | ja | 13.416 | 1.118 | 0.54 | 3.750 | 11.123 | 0 | 62.490 | midden |
+| 116 | Zeekr 7X Core RWD 75 kWh (nieuw), BV financial lease | ja | 13.497 | 1.125 | 0.54 | 13.472 | 5.258 | 10.458 | 12.479 | midden |
+| 117 | Volvo XC40 Recharge Twin (occasion 2022), BV operational lease (lease geschat) | ja | 13.594 | 1.133 | 0.54 | 11.564 | 6.522 | 12.970 | 2.397 | laag |
+| 118 | Tesla Model Y Long Range AWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 13.617 | 1.135 | 0.54 | 3.750 | 11.324 | 0 | 3.150 | midden |
+| 119 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), Private lease + km-vergoeding (lease geschat) | ja | 13.693 | 1.141 | 0.55 | 3.750 | 11.400 | 0 | 2.900 | midden |
+| 120 | Zeekr 7X Core RWD 75 kWh (nieuw), BV koopt | ja | 13.707 | 1.142 | 0.55 | 13.815 | 5.258 | 10.458 | 46.273 | midden |
+| 121 | Zeekr 7X Privilege AWD 100 kWh (nieuw), Prive koop + km-vergoeding | ja | 14.351 | 1.196 | 0.57 | 3.750 | 12.057 | 0 | 65.990 | midden |
+| 122 | Zeekr 7X Long Range RWD 100 kWh (nieuw), BV financial lease | ja | 14.375 | 1.198 | 0.57 | 14.183 | 5.701 | 11.338 | 12.479 | laag |
+| 123 | Xpeng G9 RWD Long Range (nieuw), Prive koop + km-vergoeding | ja | 14.413 | 1.201 | 0.58 | 3.750 | 12.120 | 0 | 67.990 | midden |
+| 124 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), BV financial lease | ja | 14.464 | 1.205 | 0.58 | 14.147 | 5.813 | 11.560 | 12.397 | laag |
+| 125 | Tesla Model Y Long Range AWD (nieuw), BV operational lease (lease geschat) | ja | 14.531 | 1.211 | 0.58 | 14.918 | 5.408 | 10.755 | 2.603 | midden |
+| 126 | Zeekr 7X Long Range RWD 100 kWh (nieuw), BV koopt | ja | 14.601 | 1.217 | 0.58 | 14.553 | 5.701 | 11.338 | 49.579 | laag |
+| 127 | Xpeng G9 RWD Long Range (occasion 2024), BV financial lease | ja | 14.602 | 1.217 | 0.58 | 11.365 | 7.652 | 15.218 | 12.479 | laag |
+| 128 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), Private lease + km-vergoeding (lease geschat) | ja | 14.634 | 1.219 | 0.59 | 3.750 | 12.341 | 0 | 2.900 | midden |
+| 129 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), BV financial lease | ja | 14.693 | 1.224 | 0.59 | 12.874 | 6.820 | 13.563 | 12.397 | midden |
+| 130 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), BV koopt | ja | 14.695 | 1.225 | 0.59 | 14.524 | 5.813 | 11.560 | 50.331 | laag |
+| 131 | Xpeng G9 RWD Long Range (occasion 2024), BV koopt | ja | 14.757 | 1.230 | 0.59 | 11.618 | 7.652 | 15.218 | 35.537 | laag |
+| 132 | Zeekr 001 Long Range RWD (nieuw), BV financial lease | ja | 14.759 | 1.230 | 0.59 | 14.360 | 5.978 | 11.888 | 12.479 | midden |
+| 133 | Zeekr 7X Core RWD 75 kWh (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 14.798 | 1.233 | 0.59 | 3.750 | 12.505 | 0 | 3.000 | midden |
+| 134 | Zeekr 001 Privilege AWD (nieuw), Prive koop + km-vergoeding | ja | 14.805 | 1.234 | 0.59 | 3.750 | 12.512 | 0 | 69.490 | laag |
+| 135 | Mercedes EQB 300 4MATIC 7p (occasion 2022), BV operational lease (lease geschat) | ja | 14.862 | 1.239 | 0.59 | 13.281 | 6.740 | 13.405 | 2.479 | laag |
+| 136 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), BV koopt | ja | 14.898 | 1.242 | 0.60 | 13.210 | 6.820 | 13.563 | 45.372 | midden |
+| 137 | Zeekr 7X Core RWD 75 kWh (nieuw), BV operational lease (lease geschat) | ja | 14.980 | 1.248 | 0.60 | 15.897 | 5.258 | 10.458 | 2.479 | midden |
+| 138 | Zeekr 001 Long Range RWD (nieuw), BV koopt | ja | 14.996 | 1.250 | 0.60 | 14.747 | 5.978 | 11.888 | 51.645 | midden |
+| 139 | Ford E-Tourneo Custom L2 (nieuw), Prive koop + km-vergoeding | ja | 15.151 | 1.263 | 0.61 | 3.750 | 12.857 | 0 | 72.800 | laag |
+| 140 | Xpeng G9 nieuw alleen zakelijk + E-klasse prive | ja | 15.275 | 1.273 | 0.61 | 13.481 | 7.031 | 0 | 63.690 | laag |
+| 141 | Jaguar I-Pace EV400 (occasion 2020), BV financial lease | nee (trekgewicht) | 15.511 | 1.293 | 0.62 | 9.560 | 9.664 | 19.220 | 12.397 | laag |
+| 142 | Jaguar I-Pace EV400 (occasion 2020), BV koopt | nee (trekgewicht) | 15.599 | 1.300 | 0.62 | 9.704 | 9.664 | 19.220 | 22.347 | laag |
+| 143 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 15.608 | 1.301 | 0.62 | 3.750 | 13.314 | 0 | 2.900 | laag |
+| 144 | Zeekr 7X Long Range RWD 100 kWh (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 15.695 | 1.308 | 0.63 | 3.750 | 13.402 | 0 | 3.000 | laag |
+| 145 | Zeekr 7X Privilege AWD 100 kWh (nieuw), BV financial lease | ja | 15.702 | 1.308 | 0.63 | 15.268 | 6.365 | 12.658 | 12.479 | midden |
+| 146 | Zeekr 7X Privilege AWD 100 kWh (nieuw), BV koopt | ja | 15.954 | 1.329 | 0.64 | 15.680 | 6.365 | 12.658 | 54.537 | midden |
+| 147 | Xpeng G9 RWD Long Range (nieuw), BV financial lease | ja | 15.956 | 1.330 | 0.64 | 15.323 | 6.586 | 13.098 | 12.479 | midden |
+| 148 | Zeekr 7X Long Range RWD 100 kWh (nieuw), BV operational lease (lease geschat) | ja | 15.973 | 1.331 | 0.64 | 16.797 | 5.701 | 11.338 | 2.479 | laag |
+| 149 | Zeekr 001 Long Range RWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 15.974 | 1.331 | 0.64 | 3.750 | 13.681 | 0 | 3.000 | midden |
+| 150 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), BV operational lease (lease geschat) | ja | 16.113 | 1.343 | 0.64 | 16.842 | 5.813 | 11.560 | 2.397 | laag |
+| 151 | Xpeng G9 RWD Long Range (occasion 2024), BV operational lease (lease geschat) | ja | 16.143 | 1.345 | 0.65 | 13.884 | 7.652 | 15.218 | 2.479 | laag |
+| 152 | Xpeng G9 RWD Long Range (nieuw), BV koopt | ja | 16.217 | 1.351 | 0.65 | 15.748 | 6.586 | 13.098 | 56.190 | midden |
+| 153 | Zeekr 001 Privilege AWD (nieuw), BV financial lease | ja | 16.354 | 1.363 | 0.65 | 15.700 | 6.752 | 13.428 | 12.479 | laag |
+| 154 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), BV operational lease (lease geschat) | ja | 16.395 | 1.366 | 0.66 | 15.658 | 6.820 | 13.563 | 2.397 | midden |
+| 155 | Zeekr 001 Long Range RWD (nieuw), BV operational lease (lease geschat) | ja | 16.435 | 1.370 | 0.66 | 17.100 | 5.978 | 11.888 | 2.479 | midden |
+| 156 | Zeekr 001 Privilege AWD (nieuw), BV koopt | ja | 16.620 | 1.385 | 0.66 | 16.136 | 6.752 | 13.428 | 57.430 | laag |
+| 157 | Jaguar I-Pace EV400 (occasion 2020), BV operational lease (lease geschat) | nee (trekgewicht) | 16.724 | 1.394 | 0.67 | 11.543 | 9.664 | 19.220 | 2.397 | laag |
+| 158 | Zeekr 7X Privilege AWD 100 kWh (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 17.056 | 1.421 | 0.68 | 3.750 | 14.763 | 0 | 3.000 | midden |
+| 159 | Zeekr 7X Privilege, private lease + km-vergoeding (lease geschat) | ja | 17.056 | 1.421 | 0.68 | 3.750 | 14.763 | 0 | 3.000 | midden |
+| 160 | Ford E-Tourneo Custom L2 (nieuw), BV financial lease | ja | 17.125 | 1.427 | 0.68 | 16.327 | 7.140 | 14.200 | 12.314 | laag |
+| 161 | Xpeng G9 RWD Long Range (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 17.184 | 1.432 | 0.69 | 3.750 | 14.891 | 0 | 3.000 | midden |
+| 162 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), BV financial lease | ja | 17.323 | 1.444 | 0.69 | 13.797 | 8.885 | 17.670 | 12.397 | midden |
+| 163 | Ford E-Tourneo Custom L2 (nieuw), BV koopt | ja | 17.406 | 1.450 | 0.70 | 16.786 | 7.140 | 14.200 | 60.165 | laag |
+| 164 | Zeekr 7X Privilege AWD 100 kWh (nieuw), BV operational lease (lease geschat) | ja | 17.479 | 1.457 | 0.70 | 18.174 | 6.365 | 12.658 | 2.479 | midden |
+| 165 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), BV koopt | ja | 17.553 | 1.463 | 0.70 | 14.174 | 8.885 | 17.670 | 50.331 | midden |
+| 166 | Zeekr 001 Privilege AWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 17.643 | 1.470 | 0.71 | 3.750 | 15.350 | 0 | 3.000 | laag |
+| 167 | Xpeng G9 RWD Long Range (nieuw), BV operational lease (lease geschat) | ja | 17.798 | 1.483 | 0.71 | 18.334 | 6.586 | 13.098 | 2.479 | midden |
+| 168 | Porsche Cayenne S E-Hybrid (occasion 2015, 257.000 km), BV financial lease | nee (elektrisch) | 17.834 | 1.486 | 0.71 | 13.504 | 9.575 | 18.779 | 11.488 | laag |
+| 169 | Porsche Cayenne S E-Hybrid (occasion 2015, 257.000 km), BV koopt | nee (elektrisch) | 17.911 | 1.493 | 0.72 | 13.631 | 9.575 | 18.779 | 19.388 | laag |
+| 170 | Zeekr 001 Privilege AWD (nieuw), BV operational lease (lease geschat) | ja | 18.234 | 1.519 | 0.73 | 18.775 | 6.752 | 13.428 | 2.479 | laag |
+| 171 | Ford E-Tourneo Custom L2 (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 18.326 | 1.527 | 0.73 | 3.750 | 16.032 | 0 | 2.800 | laag |
+| 172 | Ford E-Tourneo Custom L2 (nieuw), BV operational lease (lease geschat) | ja | 19.128 | 1.594 | 0.77 | 19.602 | 7.140 | 14.200 | 2.314 | laag |
+| 173 | Porsche Cayenne S E-Hybrid (occasion 2015, 257.000 km), BV operational lease (lease geschat) | nee (elektrisch) | 19.183 | 1.599 | 0.77 | 15.711 | 9.575 | 18.779 | 1.488 | laag |
+| 174 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), BV operational lease (lease geschat) | ja | 19.366 | 1.614 | 0.77 | 17.139 | 8.885 | 17.670 | 2.397 | midden |
 
 ## Opbouw per jaar (netto prive-euro) voor scenario's die aan de eisen voldoen
 

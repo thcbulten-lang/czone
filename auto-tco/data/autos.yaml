@@ -1117,3 +1117,35 @@
   bron: "gaspedaal.nl (advertentie, 4-11-2026), ev-database.org"
   zekerheid: laag
   datum: "2026-11-04"
+
+# ---------------------------------------------------------------- de dikke hybride (toegevoegd 2026-11-04)
+- id: porsche_cayenne_s_ehybrid_2015
+  naam: "Porsche Cayenne S E-Hybrid (occasion 2015, 257.000 km)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2015-06"       # bouwjaar 2015; maand verifieren
+  catalogusprijs: 100000            # nieuwprijs destijds incl. opties, schatting; alleen relevant op de BV
+  aanschafprijs: 17900              # autoegberts.nl; de inruil van de E-klasse is geen korting maar de verkoop van de Benz, die in elk scenario gebeurt
+  btw_auto: false                   # aanname: marge-auto
+  km_stand: 257287
+  massa_ledig_kg: 2350
+  accu_kwh: 10.8
+  actieradius_wltp_km: 25           # fabriek 36 km (NEDC); in de praktijk 20 tot 25 km elektrisch
+  verbruik_praktijk_kwh_100km: 30   # elektrisch rijden met 2,4 ton
+  ev_aandeel_km: 0.30               # deel van alle kilometers elektrisch; met dagelijks laden en veel korte ritten hoger, met lange ritten lager
+  laden_alleen_thuis: true          # geen snelladen; elektrische kilometers komen van de thuislader
+  brandstof_l_100km: 10.0           # in hybride-modus op langere ritten
+  trekgewicht_geremd_kg: 3500
+  zitplaatsen: 5
+  bagageruimte_l: 580
+  restwaarde_jaarlijks_pct: 90      # verliest circa 10 procent per jaar
+  onderhoud_pj: 2500                # elf jaar oud, 257.000 km, Porsche-tarieven; grote posten (hybride-accu, luchtvering) niet inbegrepen
+  banden_pj: 600
+  verzekering_pj: 900
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 5, merkrisico: 3, laadsnelheid: 1}
+  notities: "Voldoet niet aan 'elektrisch' (plug-in hybride met 20 tot 25 km elektrisch bereik). Vanaf 2026 betaalt een plug-in hybride de volle wegenbelasting over het volle gewicht. Laadt alleen met 3,6 kW. Risico's: hybride-accu van elf jaar (vervanging 8.000 tot 12.000), 257.000 km, dure reparaties. Op de BV: 25% bijtelling over de nieuwprijs (auto van voor 2017), dus onbetaalbaar."
+  bron: "autoegberts.nl (advertentie 4-11-2026), fabrieksgegevens"
+  zekerheid: laag
+  datum: "2026-11-04"

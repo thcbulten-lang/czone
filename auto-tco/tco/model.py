@@ -47,7 +47,8 @@ def energiekosten(inv, auto: dict, km: dict, betaler: str) -> float:
     if ev_deel > 0:
         laden = p["laden"]
         kwh = km_gewogen * ev_deel * auto["verbruik_praktijk_kwh_100km"] / 100 * p.get("verbruik_factor", 1.0)
-        for bron, aandeel in laden["mix"].items():
+        mix = {"thuis": 1.0} if auto.get("laden_alleen_thuis") else laden["mix"]   # een plug-in hybride laadt alleen thuis
+        for bron, aandeel in mix.items():
             tarief = laden["prijs_per_kwh"][bron] * p.get("energieprijs_factor", 1.0)
             aftrek = betaler == "bv" and (bron != "thuis" or laden.get("btw_aftrek_thuis", False))
             kosten += aandeel * kwh * (tarief / btw if aftrek else tarief)
