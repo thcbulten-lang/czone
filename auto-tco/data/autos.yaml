@@ -1409,9 +1409,9 @@
   nieuw: false
   eerste_toelating: "2020-12"
   catalogusprijs: 75000
-  aanschafprijs: 31000              # aanbod december 2020 met 80.000 km: 31.890
+  aanschafprijs: 24000              # jouw aanname (4-11-2026); aanbod december 2020 met 80.000 km stond op 31.890
   btw_auto: true
-  km_stand: 80000
+  km_stand: 120000
   massa_ledig_kg: 2100
   accu_kwh: 13.5
   actieradius_wltp_km: 50           # 35 tot 40 km in de praktijk
@@ -1433,16 +1433,16 @@
   zekerheid: laag
   datum: "2026-11-04"
 
-- id: mitsubishi_outlander_phev_occasion_2019
-  naam: "Mitsubishi Outlander 2.4 PHEV (occasion 2019)"
+- id: mitsubishi_outlander_phev_2021_herwers
+  naam: "Mitsubishi Outlander 2.4 PHEV Intense+ (occasion 2021, Herwers)"
   categorie: suv
   aandrijving: phev
   nieuw: false
-  eerste_toelating: "2019-05"
-  catalogusprijs: 48000
-  aanschafprijs: 19500              # aanbod 2019: 15.900 (201.000 km) tot 21.600 (97.000 km)
-  btw_auto: true
-  km_stand: 100000
+  eerste_toelating: "2021-06"       # bouwjaar 2021; maand verifieren
+  catalogusprijs: 50000
+  aanschafprijs: 23000              # ONBEKEND: prijs stond niet op de schermafdruk; schatting voor 2021 met 113.000 km
+  btw_auto: true                    # verifieren
+  km_stand: 113253
   massa_ledig_kg: 1900
   accu_kwh: 13.8
   actieradius_wltp_km: 45           # 35 tot 40 km in de praktijk
@@ -1457,9 +1457,9 @@
   onderhoud_pj: 900
   banden_pj: 450
   verzekering_pj: 700
-  trekhaak_inbegrepen: true
+  trekhaak_inbegrepen: true         # afneembare trekhaak, 1.500 kg
   kwalitatief: {ruimte: 3, comfort: 3, trekervaring: 2, merkrisico: 4, laadsnelheid: 2}
-  notities: "Goedkoopste manier naar 35 tot 40 km elektrisch, betrouwbaar en eenvoudig, maar trekt 1.500 kg en is geen dikke bak. Let op de accuconditie (SOH)."
-  bron: "viabovag/autowereld (aanbod, 1.500 kg)"
+  notities: "Herwers Groep, kenteken Z-564-BZ: Intense+, afneembare trekhaak 1.500 kg, all-season banden, rondomzichtcamera. Goedkoopste weg naar 35 tot 40 km elektrisch, betrouwbaar en eenvoudig; trekt 1.500 kg. Vraag naar de accuconditie (SOH)."
+  bron: "herwers.nl (advertentie 4-11-2026)"
   zekerheid: laag
   datum: "2026-11-04"
