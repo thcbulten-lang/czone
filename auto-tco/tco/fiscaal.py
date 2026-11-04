@@ -137,10 +137,34 @@ def ex_btw(regels: dict, bedrag: float) -> float:
     return bedrag / (1 + regels["btw"]["pct"] / 100)
 
 
+# ----------------------------------------------------------- vennootschapsbelasting
+def vpb_bedrag(regels: dict, winst: float) -> float:
+    """Vennootschapsbelasting over een belastbare winst, per schijf."""
+    v = regels["vennootschapsbelasting"]
+    if winst <= 0:
+        return 0.0
+    laag = min(winst, v["schijf1_tot"])
+    return laag * v["pct1"] / 100 + max(0.0, winst - v["schijf1_tot"]) * v["pct2"] / 100
+
+
+def vpb_effectief_over(regels: dict, profiel: dict, kosten: float) -> float:
+    """Welk deel van een aftrekpost de BV terugziet als minder vpb, als fractie.
+
+    Met 'winst_bv_verwacht' in het profiel wordt dit exact per schijf berekend: de aftrek verlaagt de winst,
+    en wat boven de eerste schijf uitsteekt bespaart het hoge tarief. Zonder winst geldt het vaste vpb_pct.
+    """
+    winst = profiel.get("winst_bv_verwacht")
+    if winst is None or kosten <= 0:
+        return profiel["vpb_pct"] / 100
+    besparing = vpb_bedrag(regels, winst) - vpb_bedrag(regels, winst - kosten)
+    return besparing / kosten
+
+
 # ----------------------------------------------------------- omrekenfactor
-def factor_bv_naar_prive(profiel: dict) -> float:
+def factor_bv_naar_prive(profiel: dict, regels: dict | None = None, kosten: float = 10000.0) -> float:
     """Wat 1 euro aftrekbare kosten in de BV de aandeelhouder uiteindelijk netto kost."""
-    return (1 - profiel["vpb_pct"] / 100) * (1 - profiel["box2_pct"] / 100)
+    vpb = vpb_effectief_over(regels, profiel, kosten) if regels is not None else profiel["vpb_pct"] / 100
+    return (1 - vpb) * (1 - profiel["box2_pct"] / 100)
 
 
 # -------------------------------------------------------------- restwaarde

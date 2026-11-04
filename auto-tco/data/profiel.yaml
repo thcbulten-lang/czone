@@ -6,7 +6,8 @@ bv_provincie: Noord-Brabant
 # Inkomen en tarieven
 salaris_bruto: 58000              # gebruikelijk loon 2026; vervang door het werkelijke DGA-loon
 ib_marginaal_effectief_pct: null  # null = berekenen uit box 1 inclusief afbouw heffingskortingen; anders vast, bijv. 50.0
-vpb_pct: 19.0                     # aanname: BV-winst onder de 200.000 euro
+winst_bv_verwacht: 150000         # verwachte belastbare winst van de BV voor de autokosten; het model rekent de vpb-schijf dan exact uit
+vpb_pct: 19.0                     # vast tarief, alleen gebruikt als winst_bv_verwacht leeg is
 box2_pct: 24.5                    # aanname: uitkeringen onder de 68.843 euro per jaar
 bijtelling_vult_gebruikelijk_loon: false  # zit je op het minimum gebruikelijk loon, dan mag de bijtelling dat opvullen en kan het cash-salaris omlaag
 rendementseis_bv_pct: 5.0         # wat geld in de BV anders opbrengt, of de rente die de BV betaalt

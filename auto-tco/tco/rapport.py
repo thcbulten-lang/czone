@@ -34,7 +34,7 @@ def schrijf_markdown(bundel: dict, pad: Path) -> None:
     res = bundel["resultaten"][str(h)]
     r = [f"# Autovergelijk op totale kosten, stand {bundel['gegenereerd']}", "",
          f"Horizon {h} jaar vanaf {p['startmaand']}; {len(res)} scenario's. Alle bedragen zijn netto prive-euro's per jaar: "
-         f"BV-kosten tellen voor {bundel['factor_bv_naar_prive']:.3f} (na {p['vpb_pct']}% vpb en {p['box2_pct']}% box 2), "
+         f"BV-kosten tellen voor {bundel['factor_bv_naar_prive']:.3f} (na {100 * bundel['vpb_pct_marginaal']:.1f}% vpb bij een winst van {euro(p.get('winst_bv_verwacht') or 0)} en {p['box2_pct']}% box 2), "
          f"privekosten een op een. Bijtelling belast tegen een effectief marginaal tarief van {100 * bundel['marginaal_tarief']:.1f}%.",
          "",
          f"Gebruik: {euro(p['km_per_jaar']['zakelijk'])} km zakelijk, {euro(p['km_per_jaar']['prive'])} km prive, "
@@ -69,7 +69,7 @@ def _slank(s: dict) -> dict:
     return {k: s[k] for k in ("id", "naam", "rang", "automatisch", "notities", "auto", "auto_naam", "categorie", "constructie",
                               "constructie_naam", "voldoet", "checks", "zekerheid", "lease_geschat", "kwalitatief", "totaal",
                               "per_jaar_gem", "groepen_netto_pj", "per_jaar", "bijtelling_bruto_pj", "eigen_geld_start",
-                              "km_per_jaar", "lijnen_bv", "lijnen_prive")} | {
+                              "km_per_jaar", "lijnen_bv", "lijnen_prive", "vpb_pct_effectief", "vpb_besparing_pj")} | {
         "onderdelen": [{"auto": x["auto"], "constructie": x["constructie"]} for x in s["onderdelen"]],
         "mrb_pj": j1["bv"]["mrb"] + j1["prive"]["mrb"],
         "energie_pj": j1["bv"]["energie"] + j1["prive"]["energie"],
@@ -84,7 +84,7 @@ def _slank(s: dict) -> dict:
 def schrijf_html(bundel: dict, pad: Path) -> None:
     data = {
         "gegenereerd": bundel["gegenereerd"], "hoofdhorizon": bundel["hoofdhorizon"], "profiel": bundel["profiel"],
-        "marginaal_tarief": bundel["marginaal_tarief"], "factor_bv_naar_prive": bundel["factor_bv_naar_prive"],
+        "marginaal_tarief": bundel["marginaal_tarief"], "factor_bv_naar_prive": bundel["factor_bv_naar_prive"], "vpb_pct_marginaal": bundel["vpb_pct_marginaal"],
         "autos": bundel["autos"], "constructies": bundel["constructies"],
         "resultaten": {h: [_slank(s) for s in rr] for h, rr in bundel["resultaten"].items()},
         "gevoeligheid": bundel["gevoeligheid"],
@@ -268,7 +268,7 @@ function renderKop() {
   $('#chips').innerHTML = [
     `Zakelijk <b>${p.km_per_jaar.zakelijk.toLocaleString('nl-NL')} km</b>`, `Prive <b>${p.km_per_jaar.prive.toLocaleString('nl-NL')} km</b>`,
     `Trekkend <b>${p.km_per_jaar.trekkend.toLocaleString('nl-NL')} km</b>`, `Eis trekgewicht <b>${p.eisen.trekgewicht_geremd_min_kg.toLocaleString('nl-NL')} kg</b>`,
-    `Marginaal tarief <b>${(100*DATA.marginaal_tarief).toFixed(1)}%</b>`, `1 BV-euro = <b>${DATA.factor_bv_naar_prive.toFixed(3)}</b> prive-euro`,
+    `Marginaal tarief <b>${(100*DATA.marginaal_tarief).toFixed(1)}%</b>`, `Winst BV <b>${euro(p.winst_bv_verwacht || 0)}</b>, vpb <b>${(100*DATA.vpb_pct_marginaal).toFixed(1)}%</b>`, `1 BV-euro = <b>${DATA.factor_bv_naar_prive.toFixed(3)}</b> prive-euro`,
     `Rendementseis BV <b>${p.rendementseis_bv_pct}%</b>`, `Bijtelling vult gebruikelijk loon <b>${p.bijtelling_vult_gebruikelijk_loon ? 'ja' : 'nee'}</b>`,
   ].map(t => `<span class="chip">${t}</span>`).join('');
   $('#uitleg').innerHTML = `<b>Hoe lees je dit.</b> Elk scenario is een auto maal een financiele constructie bij jouw gebruik. Alle kosten staan in een munt: <b>netto prive-euro's per jaar</b>. Wat de BV betaalt telt voor ${DATA.factor_bv_naar_prive.toFixed(3)} (na vpb en box 2), wat jij prive betaalt telt een op een, en de belasting over de bijtelling is wat je werkelijk extra afdraagt bij jouw salaris. Het nulscenario is de E-klasse houden. Harde eisen (elektrisch, trekgewicht, zitplaatsen) staan los van de kosten: een scenario dat er niet aan voldoet staat grijs. Lage zekerheid betekent: eerst het cijfer verifieren, dan pas concluderen.`;
@@ -402,6 +402,7 @@ function renderVariabelen() {
     ['Energie per jaar', s => euro(s.energie_pj)], ['Trekgewicht geremd', s => `${A(s).trekgewicht_geremd_kg} kg`], ['Zitplaatsen', s => A(s).zitplaatsen], ['Bagageruimte', s => A(s).bagageruimte_l ? `${A(s).bagageruimte_l} l` : '-'],
     ['Restwaardecurve', s => A(s).restwaarde_curve || `${A(s).restwaarde_jaarlijks_pct}% per jaar`], ['Waarde aan het eind', s => euro(s.restwaarde_eind)],
     ['Onderhoud + banden per jaar', s => euro(A(s).onderhoud_pj + A(s).banden_pj)], ['Eigen geld bij start', s => euro(s.eigen_geld_start)],
+    ['Vpb-besparing per jaar (aftrek BV-kosten)', s => `${euro(s.vpb_besparing_pj)} (${(100 * s.vpb_pct_effectief).toFixed(1)}%)`],
     ['Financiering', s => s.financiering ? `${s.financiering.rente_pct}% rente, inleg ${euro(s.financiering.aanbetaling)}, ${euro(s.financiering.maandbedrag)} per maand, slottermijn ${euro(s.financiering.slottermijn)}, ${s.financiering.looptijd_maanden} maanden` : '-'],
     ['Ruimte (1-5)', s => s.kwalitatief.ruimte], ['Comfort (1-5)', s => s.kwalitatief.comfort], ['Trekervaring (1-5)', s => s.kwalitatief.trekervaring], ['Merkrisico (5 = laag)', s => s.kwalitatief.merkrisico], ['Laadsnelheid (1-5)', s => s.kwalitatief.laadsnelheid],
     ['Zekerheid', s => s.zekerheid], ['Bron', s => A(s).bron || ''], ['Notities', s => (A(s).notities || '') + (s.notities ? ' ' + s.notities : '')],

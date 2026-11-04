@@ -11,6 +11,8 @@ VARIANTEN = [
     ("Marginaal IB-tarief 37,6% / 56%", {"ib_marginaal_effectief_pct": 37.56}, {"ib_marginaal_effectief_pct": 56.0}),
     ("Rendementseis BV 3% / 7%", {"rendementseis_bv_pct": 3.0}, {"rendementseis_bv_pct": 7.0}),
     ("Bijtelling vult gebruikelijk loon: nee / ja", {"bijtelling_vult_gebruikelijk_loon": False}, {"bijtelling_vult_gebruikelijk_loon": True}),
+    ("Winst BV 100.000 / 250.000 (vpb-schijf)", {"winst_bv_verwacht": 100000}, {"winst_bv_verwacht": 250000}),
+    ("Box 2 tarief 24,5% / 31%", {"box2_pct": 24.5}, {"box2_pct": 31.0}),
 ]
 
 

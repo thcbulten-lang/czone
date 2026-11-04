@@ -24,7 +24,7 @@ Notion of een document is prettig voor het logboek, maar te zwak voor de bereken
 
 ## Een munt: netto prive-euro's
 
-Constructies schuiven kosten tussen de BV en jou prive, dus een eerlijke vergelijking heeft een gemeenschappelijke munt nodig. Een euro aftrekbare kosten in de BV kost jou als aandeelhouder uiteindelijk (1 - 19% vpb) x (1 - 24,5% box 2) = 0,61 euro netto. Een euro die je prive betaalt kost een euro. De belasting over de bijtelling is wat je werkelijk extra afdraagt bovenop je salaris: bij een DGA-loon van 58.000 euro is dat rond de 50%, omdat naast het schijftarief ook de heffingskortingen afbouwen. De kilometervergoeding is in deze munt een onbelaste uitkering uit de BV, en dat verklaart waarom prive kopen bij 15.000 zakelijke kilometers zo goed scoort. Zit het salaris op het minimum gebruikelijk loon, dan mag de bijtelling dat opvullen en kan het cash-salaris omlaag; die schakelaar staat in het profiel en in de gevoeligheidsanalyse.
+Constructies schuiven kosten tussen de BV en jou prive, dus een eerlijke vergelijking heeft een gemeenschappelijke munt nodig. Een euro aftrekbare kosten in de BV kost jou als aandeelhouder uiteindelijk (1 - vpb) x (1 - 24,5% box 2) netto; bij een winst van 150.000 euro is de vpb-schijf 19% en de factor 0,61. Het model leest de verwachte winst uit het profiel en rekent de besparing per jaar exact per schijf; boven 200.000 euro wordt de factor 0,56. Een euro die je prive betaalt kost een euro. De belasting over de bijtelling is wat je werkelijk extra afdraagt bovenop je salaris: bij een DGA-loon van 58.000 euro is dat rond de 50%, omdat naast het schijftarief ook de heffingskortingen afbouwen. De kilometervergoeding is in deze munt een onbelaste uitkering uit de BV, en dat verklaart waarom prive kopen bij 15.000 zakelijke kilometers zo goed scoort. Zit het salaris op het minimum gebruikelijk loon, dan mag de bijtelling dat opvullen en kan het cash-salaris omlaag; die schakelaar staat in het profiel en in de gevoeligheidsanalyse.
 
 ## Hoe je het gebruikt
 
@@ -41,6 +41,7 @@ Dit is versie 0.1. De volgende punten zijn vereenvoudigd of ontbreken, in volgor
 - Alle bedragen staan in euro's van vandaag, zonder indexatie van energieprijzen, tarieven of premies.
 - Box 2 wordt als latente claim gerekend, ongeacht wanneer je uitkeert; de timing van dividend en de 31%-schijf blijven buiten beeld.
 - Geen eigen bijdrage voor privegebruik, geen bpm, geen investeringsaftrek (KIA en MIA gelden niet voor personenauto's; een bestelauto met grijs kenteken en twee kinderen erin verliest zijn fiscale voordeel toch zodra je prive rijdt).
+- De afschrijving is economisch (werkelijk waardeverlies), niet fiscaal: de BV mag maximaal 20% per jaar afschrijven en haalt het verschil pas bij verkoop in; dat timingeffect blijft buiten beeld.
 - Verzekering is een formule op de waarde, onderhoud en banden zijn vaste bedragen per auto.
 - Laden thuis wordt zonder btw-aftrek gerekend; onderweg met aftrek voor de BV.
 - Het youngtimerscenario rekent met geschatte cijfers voor de E-klasse; vul type, bouwjaar, dagwaarde, verbruik en werkelijk onderhoud in.

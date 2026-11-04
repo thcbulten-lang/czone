@@ -78,6 +78,18 @@ class Overig(unittest.TestCase):
     def test_factor(self):
         self.assertAlmostEqual(f.factor_bv_naar_prive(PROFIEL), 0.81 * 0.755, places=6)
 
+    def test_vpb_schijven(self):
+        self.assertAlmostEqual(f.vpb_bedrag(REGELS, 150000), 28500.0)
+        self.assertAlmostEqual(f.vpb_bedrag(REGELS, 250000), 38000 + 0.258 * 50000)
+        p = dict(PROFIEL, winst_bv_verwacht=150000)
+        self.assertAlmostEqual(f.vpb_effectief_over(REGELS, p, 15000), 0.19, places=6)
+        p = dict(PROFIEL, winst_bv_verwacht=250000)
+        self.assertAlmostEqual(f.vpb_effectief_over(REGELS, p, 15000), 0.258, places=6)
+        p = dict(PROFIEL, winst_bv_verwacht=205000)          # aftrek steekt door de schijfgrens
+        self.assertAlmostEqual(f.vpb_effectief_over(REGELS, p, 15000), (5000 * 0.258 + 10000 * 0.19) / 15000, places=6)
+        p = dict(PROFIEL, winst_bv_verwacht=None)
+        self.assertAlmostEqual(f.vpb_effectief_over(REGELS, p, 15000), PROFIEL["vpb_pct"] / 100, places=6)
+
     def test_zvw(self):
         self.assertAlmostEqual(f.zvw_werkgever_over_extra(REGELS, 58000, 10000), 610.0)
         self.assertAlmostEqual(f.zvw_werkgever_over_extra(REGELS, 75000, 10000), 0.061 * (79409 - 75000))

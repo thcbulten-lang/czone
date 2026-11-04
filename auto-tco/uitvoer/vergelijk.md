@@ -1,6 +1,6 @@
 # Autovergelijk op totale kosten, stand 2026-11-04
 
-Horizon 5 jaar vanaf 2026-12; 144 scenario's. Alle bedragen zijn netto prive-euro's per jaar: BV-kosten tellen voor 0.612 (na 19.0% vpb en 24.5% box 2), privekosten een op een. Bijtelling belast tegen een effectief marginaal tarief van 50.3%.
+Horizon 5 jaar vanaf 2026-12; 144 scenario's. Alle bedragen zijn netto prive-euro's per jaar: BV-kosten tellen voor 0.612 (na 19.0% vpb bij een winst van 150.000 en 24.5% box 2), privekosten een op een. Bijtelling belast tegen een effectief marginaal tarief van 50.3%.
 
 Gebruik: 15.000 km zakelijk, 10.000 km prive, 1.500 km trekkend per jaar; eis trekgewicht 1.500 kg.
 
@@ -233,6 +233,8 @@ Gebruik: 15.000 km zakelijk, 10.000 km prive, 1.500 km trekkend per jaar; eis tr
 | Restwaarde 20% lager / hoger | 7.361 | 6.223 | 1.137 |
 | Energieprijs 30% lager / hoger | 6.273 | 7.308 | 1.035 |
 | Verbruik 15% lager / hoger (winter, trekken) | 6.532 | 7.049 | 518 |
+| Box 2 tarief 24,5% / 31% | 6.790 | 6.593 | 197 |
+| Winst BV 100.000 / 250.000 (vpb-schijf) | 6.790 | 6.598 | 193 |
 | Kilometers 25% minder / meer | 6.723 | 6.858 | 134 |
 | Marginaal IB-tarief 37,6% / 56% | 6.790 | 6.790 | 0 |
 | Rendementseis BV 3% / 7% | 6.790 | 6.790 | 0 |
@@ -245,6 +247,8 @@ Gebruik: 15.000 km zakelijk, 10.000 km prive, 1.500 km trekkend per jaar; eis tr
 | Restwaarde 20% lager / hoger | 7.584 | 6.369 | 1.215 |
 | Energieprijs 30% lager / hoger | 6.441 | 7.505 | 1.064 |
 | Verbruik 15% lager / hoger (winter, trekken) | 6.707 | 7.239 | 532 |
+| Box 2 tarief 24,5% / 31% | 6.973 | 6.776 | 197 |
+| Winst BV 100.000 / 250.000 (vpb-schijf) | 6.973 | 6.781 | 193 |
 | Kilometers 25% minder / meer | 6.894 | 7.053 | 158 |
 | Marginaal IB-tarief 37,6% / 56% | 6.973 | 6.973 | 0 |
 | Rendementseis BV 3% / 7% | 6.973 | 6.973 | 0 |
@@ -258,6 +262,8 @@ Gebruik: 15.000 km zakelijk, 10.000 km prive, 1.500 km trekkend per jaar; eis tr
 | Restwaarde 20% lager / hoger | 7.631 | 6.524 | 1.107 |
 | Verbruik 15% lager / hoger (winter, trekken) | 6.782 | 7.372 | 590 |
 | Kilometers 25% minder / meer | 6.950 | 7.204 | 254 |
+| Box 2 tarief 24,5% / 31% | 7.077 | 6.880 | 197 |
+| Winst BV 100.000 / 250.000 (vpb-schijf) | 7.077 | 6.885 | 193 |
 | Marginaal IB-tarief 37,6% / 56% | 7.077 | 7.077 | 0 |
 | Rendementseis BV 3% / 7% | 7.077 | 7.077 | 0 |
 | Bijtelling vult gebruikelijk loon: nee / ja | 7.077 | 7.077 | 0 |

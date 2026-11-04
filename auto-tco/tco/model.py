@@ -215,12 +215,12 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
 
 
 def bereken_scenario(inv, scenario: dict, horizon: int) -> dict:
-    p = inv.profiel
-    factor = f.factor_bv_naar_prive(p)
-    vpb = p["vpb_pct"] / 100
+    p, r = inv.profiel, inv.regels
+    box2 = 1 - p["box2_pct"] / 100
     onderdelen = [bereken_onderdeel(inv, o, horizon) for o in scenario["onderdelen"]]
     tot_bv, tot_pr = _leeg(), _leeg()
     per_jaar = []
+    vpb_besparing_totaal = 0.0
     for t in range(horizon):
         bv_j, pr_j = _leeg(), _leeg()
         for o in onderdelen:
@@ -231,9 +231,14 @@ def bereken_scenario(inv, scenario: dict, horizon: int) -> dict:
             tot_bv[k] += bv_j[k]
             tot_pr[k] += pr_j[k]
         bv_som, pr_som = sum(bv_j.values()), sum(pr_j.values())
-        per_jaar.append({"t": t + 1, "bv": bv_som, "prive": pr_som, "netto_prive_euro": bv_som * factor + pr_som,
+        vpb_j = f.vpb_effectief_over(r, p, bv_som)            # werkelijke schijf: de autokosten verlagen de winst
+        vpb_besparing_totaal += bv_som * vpb_j
+        per_jaar.append({"t": t + 1, "bv": bv_som, "prive": pr_som, "vpb_pct": vpb_j,
+                         "netto_prive_euro": bv_som * (1 - vpb_j) * box2 + pr_som,
                          "bijtelling_bruto": sum(o["jaren"][t]["bijtelling_bruto"] for o in onderdelen)})
     bv_som, pr_som = sum(tot_bv.values()), sum(tot_pr.values())
+    vpb = vpb_besparing_totaal / bv_som if bv_som else p["vpb_pct"] / 100
+    factor = (1 - vpb) * box2
     netto = bv_som * factor + pr_som
     km_pj = onderdelen[0]["km_per_jaar"] if len(onderdelen) == 1 else (p["km_per_jaar"]["zakelijk"] + p["km_per_jaar"]["prive"]) * p.get("km_factor", 1.0)
     groepen = {g: sum(tot_bv[k] * factor + tot_pr[k] for k in ks) / horizon for g, ks in GROEPEN.items()}
@@ -268,6 +273,8 @@ def bereken_scenario(inv, scenario: dict, horizon: int) -> dict:
         "eigen_geld_start": sum(o["eigen_geld_start"] for o in onderdelen),
         "km_per_jaar": km_pj,
         "factor_bv_naar_prive": factor,
+        "vpb_pct_effectief": vpb,
+        "vpb_besparing_pj": vpb_besparing_totaal / horizon,
     }
 
 

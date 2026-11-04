@@ -53,3 +53,17 @@ Wat ertegen pleit. De klasse van 30 tot 40 duizend die 1.500 kg trekt bestaat ui
 **Wat het laat zien.** Financial lease tegen 3% is 150 tot 325 euro per jaar goedkoper dan contant kopen, omdat de lening goedkoper is dan de 5% die we voor geld in de BV rekenen. Dat voordeel is klein tegenover de afschrijving en de bijtelling, die niet veranderen. Zou de BV het geld anders tegen 3% of minder laten staan, dan is het verschil weg. Het echte argument voor financial lease is dus liquiditeit: 12.000 tot 12.600 euro eigen geld bij de start in plaats van 45.000 tot 55.000, en de rest van het geld blijft beschikbaar voor de zaak. Maandbedragen lopen van 160 euro (Zeekr X occasion) tot 810 euro (G9 nieuw), exclusief btw.
 
 **Besluit.** Geen. Financial lease is een financieringskeuze, geen autokeuze; de volgorde tussen de auto's verandert er niet door.
+
+## 2026-11-04 Winst van de BV en het voordeel van de afschrijving
+
+**Vraag.** Zit er bij een winst van 150.000 euro nog voordeel in de afschrijving bij kopen en financial lease?
+
+**Antwoord.** De afschrijving is een gewone aftrekpost: elke euro autokosten in de BV (afschrijving, rente, MRB, verzekering, energie) verlaagt de winst en bespaart vpb tegen het tarief van de schijf waarin die euro valt. Bij 150.000 euro winst is dat 19%; het model rekende daar al mee. Voor een Zeekr 7X Core op de BV is de besparing 2.625 euro per jaar op 13.800 euro kosten, waarvan 1.360 euro door afschrijving en kapitaal. Een extra regeling bovenop die aftrek is er niet: KIA geldt niet voor personenauto's, MIA en Vamil niet meer voor elektrische personenauto's, en de eenmalige willekeurige afschrijving van 2023 is voorbij. Fiscaal mag de BV bovendien maximaal 20% per jaar afschrijven, terwijl een EV in het eerste jaar ruim 30% verliest; dat verschil komt bij verkoop alsnog in aftrek, het is alleen later.
+
+Kopen en financial lease zijn fiscaal gelijk: in beide gevallen staat de auto op de balans en zijn afschrijving en rente aftrekbaar. Bij operational lease vervangt het leasebedrag die posten, tegen hetzelfde tarief. Prive kopen kent geen aftrek, behalve de kilometervergoeding die de BV betaalt.
+
+Wat wel verandert is de hoogte van de winst. Boven 200.000 euro bespaart elke euro autokosten 25,8% in plaats van 19%, en wie meer dan 68.843 euro dividend per jaar uitkeert zit in box 2 op 31% in plaats van 24,5%. Beide maken BV-kosten in netto prive-euro's goedkoper: de 7X Core op de BV zakt van 13.707 naar 12.998 (winst 250.000) of 12.331 (winst 250.000 en box 2 op 31%), terwijl prive kopen nauwelijks beweegt (12.487 naar 12.114). Bij een winst van 150.000 en een dividend onder de grens verandert er niets.
+
+**Aanpassing.** Het profiel heeft nu 'winst_bv_verwacht' (150.000); het model rekent de vpb-besparing per jaar exact per schijf, ook als de aftrek door de schijfgrens heen steekt. De gevoeligheidsanalyse toont voortaan ook winst 100.000 tegenover 250.000 en box 2 op 24,5% tegenover 31%.
+
+**Besluit.** Geen. De winst van de BV verandert de volgorde van de auto's niet; wel wordt de BV-route bij een hogere winst of een hoger dividend wat aantrekkelijker tegenover prive.
