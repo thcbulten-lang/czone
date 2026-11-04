@@ -1133,7 +1133,7 @@
   accu_kwh: 10.8
   actieradius_wltp_km: 25           # fabriek 36 km (NEDC); in de praktijk 20 tot 25 km elektrisch
   verbruik_praktijk_kwh_100km: 30   # elektrisch rijden met 2,4 ton
-  ev_aandeel_km: 0.30               # deel van alle kilometers elektrisch; met dagelijks laden en veel korte ritten hoger, met lange ritten lager
+  ev_aandeel_km: 0.40               # kantoor aan huis, altijd aan de lader: elke rit begint vol, maar na 20 km is het benzine; 40% is het middenpad
   laden_alleen_thuis: true          # geen snelladen; elektrische kilometers komen van de thuislader
   brandstof_l_100km: 10.0           # in hybride-modus op langere ritten
   trekgewicht_geremd_kg: 3500
