@@ -1942,3 +1942,150 @@
   bron: "autoscout24.nl (advertentie 5-11-2026)"
   zekerheid: laag
   datum: "2026-11-05"
+
+# ---------------------------------------------------------------- de dikke bakken boven 40.000: nieuwere Cayenne en wat ermee te vergelijken is (toegevoegd 2026-11-05)
+- id: porsche_cayenne_ehybrid_occasion_2021
+  naam: "Porsche Cayenne E-Hybrid 17,9 kWh (occasion 2021)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2021-06"
+  catalogusprijs: 115000
+  aanschafprijs: 68000              # schatting van het aanbod (2021 tot 2022: 65.000 tot 80.000)
+  btw_auto: true
+  km_stand: 70000
+  massa_ledig_kg: 2400
+  accu_kwh: 17.9
+  actieradius_wltp_km: 48           # 38 tot 40 km in de praktijk
+  verbruik_praktijk_kwh_100km: 30
+  ev_aandeel_km: 0.45
+  laden_alleen_thuis: true
+  brandstof_l_100km: 9.5
+  trekgewicht_geremd_kg: 3500       # met de optionele trekhaak
+  zitplaatsen: 5
+  bagageruimte_l: 645
+  restwaarde_jaarlijks_pct: 88
+  onderhoud_pj: 1800
+  banden_pj: 700
+  verzekering_pj: 1200
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 5, merkrisico: 4, laadsnelheid: 1}
+  notities: "De nieuwere generatie met de grotere accu (vanaf modeljaar 2021: 17,9 kWh, 48 km WLTP); 2018 tot 2020 heeft 14,1 kWh en 35 km."
+  bron: "autozeitung.de (14,1 naar 17,9 kWh), autozine.nl (3,5 ton met trekhaak); prijs geschat"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: bmw_ix_xdrive40_occasion_2022
+  naam: "BMW iX xDrive40 (occasion 2022)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2022-06"
+  catalogusprijs: 95000
+  aanschafprijs: 44000              # aanbod: 43.900 tot 44.880
+  btw_auto: true
+  km_stand: 80000
+  massa_ledig_kg: 2365
+  accu_kwh: 76.6
+  actieradius_wltp_km: 420
+  verbruik_praktijk_kwh_100km: 21.5
+  trekgewicht_geremd_kg: 2500
+  zitplaatsen: 5
+  bagageruimte_l: 500
+  restwaarde_curve: ev_europees_premium
+  onderhoud_pj: 450
+  banden_pj: 700
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 5, merkrisico: 4, laadsnelheid: 4}
+  notities: "Volledig elektrisch, 2.500 kg, een van de meest comfortabele EV's; op de BV 16% over 35.000 tot en met juni 2027."
+  bron: "viabovag/autowereld (aanbod); trekgewicht uit fabrieksgegevens, verifieren"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: tesla_model_x_lr_occasion_2022
+  naam: "Tesla Model X Long Range 7p (occasion 2022)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2022-09"
+  catalogusprijs: 115000
+  aanschafprijs: 62000              # schatting
+  btw_auto: true
+  km_stand: 60000
+  massa_ledig_kg: 2350
+  accu_kwh: 100
+  actieradius_wltp_km: 576
+  verbruik_praktijk_kwh_100km: 21
+  trekgewicht_geremd_kg: 2250
+  zitplaatsen: 7
+  bagageruimte_l: 1050
+  restwaarde_curve: ev_tesla
+  onderhoud_pj: 400
+  banden_pj: 700
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 5, comfort: 4, trekervaring: 4, merkrisico: 4, laadsnelheid: 5}
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: vw_touareg_ehybrid_occasion_2021
+  naam: "VW Touareg eHybrid (occasion 2021)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2021-06"
+  catalogusprijs: 85000
+  aanschafprijs: 50000              # schatting; nieuw model vanaf 89.990
+  btw_auto: true
+  km_stand: 90000
+  massa_ledig_kg: 2350
+  accu_kwh: 14.3
+  actieradius_wltp_km: 45           # 35 km in de praktijk
+  verbruik_praktijk_kwh_100km: 30
+  ev_aandeel_km: 0.45
+  laden_alleen_thuis: true
+  brandstof_l_100km: 9.5
+  trekgewicht_geremd_kg: 3500
+  zitplaatsen: 5
+  bagageruimte_l: 665
+  restwaarde_jaarlijks_pct: 88
+  onderhoud_pj: 1500
+  banden_pj: 650
+  verzekering_pj: 1050
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 5, merkrisico: 4, laadsnelheid: 1}
+  notities: "Dezelfde techniek als de Cayenne E-Hybrid (zelfde platform), 3.500 kg, zonder het Porsche-prijskaartje."
+  bron: "ames.nl brochure (3.500 kg), volkswagen.nl; prijs geschat"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: range_rover_sport_p400e_occasion_2019
+  naam: "Range Rover Sport P400e (occasion 2019)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2019-06"
+  catalogusprijs: 100000
+  aanschafprijs: 47000              # schatting
+  btw_auto: true
+  km_stand: 100000
+  massa_ledig_kg: 2500
+  accu_kwh: 13.1
+  actieradius_wltp_km: 41           # 30 km in de praktijk
+  verbruik_praktijk_kwh_100km: 32
+  ev_aandeel_km: 0.40
+  laden_alleen_thuis: true
+  brandstof_l_100km: 10.0
+  trekgewicht_geremd_kg: 2500
+  zitplaatsen: 5
+  bagageruimte_l: 780
+  restwaarde_jaarlijks_pct: 87
+  onderhoud_pj: 2200
+  banden_pj: 700
+  verzekering_pj: 1100
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 5, merkrisico: 2, laadsnelheid: 1}
+  notities: "Vet, maar de betrouwbaarheid van Land Rover uit die jaren is het risico; onderhoud hoog ingeschat."
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-05"
