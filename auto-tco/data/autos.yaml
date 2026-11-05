@@ -2089,3 +2089,92 @@
   bron: "schatting"
   zekerheid: laag
   datum: "2026-11-05"
+
+# ---------------------------------------------------------------- Chinese alternatieven voor de iX (toegevoegd 2026-11-05)
+- id: lynk_co_08_phev_occasion_2025
+  naam: "Lynk & Co 08 PHEV 39,6 kWh (occasion 2025)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2025-06"
+  catalogusprijs: 57490
+  aanschafprijs: 45000              # aanbod: 47.900; nieuw 57.490
+  btw_auto: true
+  km_stand: 30000
+  massa_ledig_kg: 2150
+  accu_kwh: 39.6
+  actieradius_wltp_km: 200          # 150 tot 170 km in de praktijk: bijna alles elektrisch, benzine alleen op reis
+  verbruik_praktijk_kwh_100km: 23
+  ev_aandeel_km: 0.85
+  laden_alleen_thuis: false         # snelladen tot 85 kW
+  brandstof_l_100km: 7.0
+  trekgewicht_geremd_kg: 1600
+  zitplaatsen: 5
+  bagageruimte_l: 500
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 700
+  banden_pj: 550
+  verzekering_pj: 950
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1100
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 3, merkrisico: 3, laadsnelheid: 3}
+  notities: "De plug-in hybride met de grootste accu op de markt: 200 km WLTP elektrisch, dus door de week een EV en op vakantie een benzineauto. Trekt 1.600 kg."
+  bron: "ANWB (1.600 kg), carnewschina (39,6 kWh), viabovag/autowereld (aanbod)"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: nio_el7_occasion_2023
+  naam: "Nio EL7 100 kWh (occasion 2023)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2023-06"
+  catalogusprijs: 90000
+  aanschafprijs: 46000              # schatting; weinig aanbod
+  btw_auto: true
+  km_stand: 60000
+  massa_ledig_kg: 2450
+  accu_kwh: 100
+  actieradius_wltp_km: 500
+  verbruik_praktijk_kwh_100km: 23
+  trekgewicht_geremd_kg: 2000
+  zitplaatsen: 5
+  bagageruimte_l: 570
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 450
+  banden_pj: 700
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1300
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 4, merkrisico: 1, laadsnelheid: 4}
+  notities: "Luxe en comfortabel, accuwissel mogelijk, maar de toekomst van Nio in Europa is onzeker; merkrisico hoog. Trekt 2.000 kg."
+  bron: "schatting; trekgewicht uit fabrieksgegevens, verifieren"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: polestar_3_occasion_2024
+  naam: "Polestar 3 Long Range Dual Motor (occasion 2024)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2024-06"
+  catalogusprijs: 92000
+  aanschafprijs: 58000              # schatting
+  btw_auto: true
+  km_stand: 40000
+  massa_ledig_kg: 2580
+  accu_kwh: 111
+  actieradius_wltp_km: 610
+  verbruik_praktijk_kwh_100km: 23
+  trekgewicht_geremd_kg: 2200
+  zitplaatsen: 5
+  bagageruimte_l: 484
+  restwaarde_curve: ev_europees_premium
+  onderhoud_pj: 450
+  banden_pj: 750
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1300
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 4, merkrisico: 3, laadsnelheid: 4}
+  notities: "Geely-groep, gebouwd in China en de VS; 2.200 kg, grote accu, Volvo-techniek. Bijtelling 16% over 30.000 tot en met juni 2029 op de BV."
+  bron: "schatting; trekgewicht uit fabrieksgegevens, verifieren"
+  zekerheid: laag
+  datum: "2026-11-05"
