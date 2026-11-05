@@ -1731,3 +1731,183 @@
   bron: "webwoordenboek (2.000 kg); prijs geschat"
   zekerheid: laag
   datum: "2026-11-05"
+
+# ---------------------------------------------------------------- benzine zonder stekker, rond 30.000 euro, prive (toegevoegd 2026-11-05)
+- id: skoda_kodiaq_tsi_occasion_2020
+  naam: "Skoda Kodiaq 2.0 TSI 4x4 7p, benzine (occasion 2020)"
+  categorie: suv
+  aandrijving: benzine
+  nieuw: false
+  eerste_toelating: "2020-06"
+  catalogusprijs: 52000
+  aanschafprijs: 29000              # schatting
+  btw_auto: true
+  km_stand: 110000
+  massa_ledig_kg: 1750
+  brandstof_l_100km: 8.5
+  trekgewicht_geremd_kg: 2500       # 4x4 met 190 pk; verifieren
+  zitplaatsen: 7
+  bagageruimte_l: 630
+  restwaarde_jaarlijks_pct: 89
+  onderhoud_pj: 900
+  banden_pj: 500
+  verzekering_pj: 800
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 5, comfort: 3, trekervaring: 4, merkrisico: 4, laadsnelheid: 1}
+  notities: "Zeven zitplaatsen, veel ruimte, trekt 2.500 kg met 4x4."
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: volvo_xc60_t5_occasion_2019
+  naam: "Volvo XC60 T5 AWD, benzine (occasion 2019)"
+  categorie: suv
+  aandrijving: benzine
+  nieuw: false
+  eerste_toelating: "2019-06"
+  catalogusprijs: 62000
+  aanschafprijs: 30000              # schatting
+  btw_auto: true
+  km_stand: 100000
+  massa_ledig_kg: 1900
+  brandstof_l_100km: 9.0
+  trekgewicht_geremd_kg: 2400
+  zitplaatsen: 5
+  bagageruimte_l: 505
+  restwaarde_jaarlijks_pct: 89
+  onderhoud_pj: 1100
+  banden_pj: 550
+  verzekering_pj: 900
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 3, comfort: 4, trekervaring: 4, merkrisico: 4, laadsnelheid: 1}
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: mercedes_e200_estate_occasion_2020
+  naam: "Mercedes E 200 Estate, benzine (occasion 2020)"
+  categorie: stationwagen
+  aandrijving: benzine
+  nieuw: false
+  eerste_toelating: "2020-06"
+  catalogusprijs: 62000
+  aanschafprijs: 30000              # schatting
+  btw_auto: true
+  km_stand: 100000
+  massa_ledig_kg: 1800
+  brandstof_l_100km: 8.0
+  trekgewicht_geremd_kg: 2100
+  zitplaatsen: 5
+  bagageruimte_l: 640
+  restwaarde_jaarlijks_pct: 89
+  onderhoud_pj: 1200
+  banden_pj: 550
+  verzekering_pj: 900
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 4, merkrisico: 5, laadsnelheid: 1}
+  notities: "Dezelfde auto als nu, twaalf jaar jonger: 2.100 kg, grote bak, comfort."
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: bmw_x3_30i_occasion_2019
+  naam: "BMW X3 xDrive30i, benzine (occasion 2019)"
+  categorie: suv
+  aandrijving: benzine
+  nieuw: false
+  eerste_toelating: "2019-06"
+  catalogusprijs: 65000
+  aanschafprijs: 31000              # schatting
+  btw_auto: true
+  km_stand: 100000
+  massa_ledig_kg: 1800
+  brandstof_l_100km: 8.5
+  trekgewicht_geremd_kg: 2400
+  zitplaatsen: 5
+  bagageruimte_l: 550
+  restwaarde_jaarlijks_pct: 89
+  onderhoud_pj: 1200
+  banden_pj: 600
+  verzekering_pj: 950
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 3, comfort: 4, trekervaring: 4, merkrisico: 4, laadsnelheid: 1}
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: mazda_cx5_25_occasion_2020
+  naam: "Mazda CX-5 2.5 Skyactiv-G AWD, benzine (occasion 2020)"
+  categorie: suv
+  aandrijving: benzine
+  nieuw: false
+  eerste_toelating: "2020-06"
+  catalogusprijs: 45000
+  aanschafprijs: 26000              # schatting
+  btw_auto: true
+  km_stand: 90000
+  massa_ledig_kg: 1650
+  brandstof_l_100km: 8.5
+  trekgewicht_geremd_kg: 2000
+  zitplaatsen: 5
+  bagageruimte_l: 506
+  restwaarde_jaarlijks_pct: 90
+  onderhoud_pj: 800
+  banden_pj: 450
+  verzekering_pj: 750
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 3, comfort: 3, trekervaring: 3, merkrisico: 5, laadsnelheid: 1}
+  notities: "Betrouwbaar, eenvoudig, 2.000 kg met AWD."
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: jeep_grand_cherokee_v6_occasion_2018
+  naam: "Jeep Grand Cherokee 3.6 V6, benzine (occasion 2018)"
+  categorie: suv
+  aandrijving: benzine
+  nieuw: false
+  eerste_toelating: "2018-06"
+  catalogusprijs: 75000
+  aanschafprijs: 29000              # schatting
+  btw_auto: true
+  km_stand: 110000
+  massa_ledig_kg: 2250
+  brandstof_l_100km: 11.5
+  trekgewicht_geremd_kg: 3500
+  zitplaatsen: 5
+  bagageruimte_l: 782
+  restwaarde_jaarlijks_pct: 88
+  onderhoud_pj: 1500
+  banden_pj: 650
+  verzekering_pj: 950
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 5, merkrisico: 3, laadsnelheid: 1}
+  notities: "De dikke bak op benzine: 3.500 kg en een V6, maar 11 tot 12 liter en Jeep-betrouwbaarheid."
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: volvo_xc90_t6_occasion_2016
+  naam: "Volvo XC90 T6 AWD 7p, benzine (occasion 2016)"
+  categorie: suv
+  aandrijving: benzine
+  nieuw: false
+  eerste_toelating: "2016-06"
+  catalogusprijs: 80000
+  aanschafprijs: 29000              # schatting
+  btw_auto: true
+  km_stand: 150000
+  massa_ledig_kg: 2050
+  brandstof_l_100km: 9.8
+  trekgewicht_geremd_kg: 2400
+  zitplaatsen: 7
+  bagageruimte_l: 640
+  restwaarde_jaarlijks_pct: 89
+  onderhoud_pj: 1300
+  banden_pj: 600
+  verzekering_pj: 900
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 5, comfort: 4, trekervaring: 4, merkrisico: 4, laadsnelheid: 1}
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-05"
