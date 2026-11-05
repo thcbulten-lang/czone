@@ -1,6 +1,6 @@
 # Autovergelijk op totale kosten, stand 2026-11-05
 
-Horizon 5 jaar vanaf 2026-12; 304 scenario's. Alle bedragen zijn netto prive-euro's per jaar: BV-kosten tellen voor 0.612 (na 19.0% vpb bij een winst van 150.000 en 24.5% box 2), privekosten een op een. Bijtelling belast tegen een effectief marginaal tarief van 50.3%.
+Horizon 5 jaar vanaf 2026-12; 309 scenario's. Alle bedragen zijn netto prive-euro's per jaar: BV-kosten tellen voor 0.612 (na 19.0% vpb bij een winst van 150.000 en 24.5% box 2), privekosten een op een. Bijtelling belast tegen een effectief marginaal tarief van 50.3%.
 
 Gebruik: 15.000 km zakelijk, 10.000 km prive, 1.500 km trekkend per jaar; eis trekgewicht 1.500 kg.
 
@@ -166,152 +166,157 @@ Gebruik: 15.000 km zakelijk, 10.000 km prive, 1.500 km trekkend per jaar; eis tr
 | 156 | Xpeng G6 RWD Long Range (occasion 2024), BV operational lease (lease geschat) | ja | 12.480 | 1.040 | 0.50 | 11.587 | 5.394 | 10.728 | 33.000 | 16.141 | 2.787 | 2.479 | laag |
 | 157 | Zeekr 7X Core RWD 75 kWh (nieuw), Prive koop + km-vergoeding | ja | 12.487 | 1.041 | 0.50 | 3.750 | 10.194 | 0 | 52.990 | 16.427 | 7.313 | 55.990 | midden |
 | 158 | Jaecoo 7 SHS plug-in hybride (nieuw, referentie), BV operational lease (lease geschat) | nee (elektrisch) | 12.498 | 1.041 | 0.50 | 13.219 | 4.414 | 8.778 | 39.900 | 15.162 | 4.089 | 2.314 | laag |
-| 159 | Jeep Grand Cherokee 3.6 V6, benzine (occasion 2018), Prive koop + km-vergoeding | nee (elektrisch) | 12.809 | 1.067 | 0.51 | 3.750 | 10.516 | 0 | 29.000 | 15.304 | 2.739 | 29.000 | laag |
-| 160 | Skoda Kodiaq 2.0 TSI 4x4 7p, benzine (occasion 2020), BV financial lease | nee (elektrisch) | 12.844 | 1.070 | 0.51 | 11.596 | 5.752 | 11.440 | 29.000 | 16.194 | 2.117 | 10.000 | laag |
-| 161 | Tesla Model Y Long Range AWD (occasion 2023), BV operational lease (lease geschat) | ja | 12.901 | 1.075 | 0.52 | 10.869 | 6.254 | 12.438 | 31.000 | 17.282 | 2.268 | 1.488 | midden |
-| 162 | Hyundai Ioniq 5 AWD 73 kWh (occasion 2022), BV operational lease (lease geschat) | ja | 12.925 | 1.077 | 0.52 | 11.075 | 6.152 | 12.235 | 29.500 | 16.753 | 2.107 | 2.314 | laag |
-| 163 | VW Tiguan eHybrid (occasion 2021), BV operational lease (lease geschat) | nee (elektrisch) | 12.933 | 1.078 | 0.52 | 12.104 | 5.531 | 11.000 | 29.000 | 16.194 | 2.117 | 1.488 | laag |
-| 164 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), Prive koop + km-vergoeding | ja | 12.942 | 1.078 | 0.52 | 3.750 | 10.649 | 0 | 58.000 | 23.780 | 6.844 | 60.900 | laag |
-| 165 | Skoda Kodiaq 2.0 TSI 4x4 7p, benzine (occasion 2020), BV koopt | nee (elektrisch) | 12.952 | 1.079 | 0.52 | 11.773 | 5.752 | 11.440 | 29.000 | 16.194 | 2.117 | 23.967 | laag |
-| 166 | Polestar 2 Long Range Dual Motor (occasion 2023), BV operational lease (lease geschat) | ja | 12.959 | 1.080 | 0.52 | 11.068 | 6.190 | 12.310 | 31.000 | 18.406 | 2.082 | 2.397 | laag |
-| 167 | Zeekr X Privilege AWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 12.987 | 1.082 | 0.52 | 3.750 | 10.694 | 0 | 46.990 | 14.567 | 6.485 | 2.800 | laag |
-| 168 | Volvo XC90 T6 AWD 7p, benzine (occasion 2016), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 12.996 | 1.083 | 0.52 | 3.750 | 10.702 | 0 | 29.000 | 16.194 | 2.561 | 0 | laag |
-| 169 | Tesla Model Y Long Range AWD (nieuw), BV financial lease | ja | 13.008 | 1.084 | 0.52 | 12.427 | 5.408 | 10.755 | 52.990 | 19.076 | 5.606 | 12.603 | midden |
-| 170 | Audi Q7 e-tron 3.0 TDI quattro (occasion 2016), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 13.061 | 1.088 | 0.52 | 3.750 | 10.768 | 0 | 29.000 | 17.124 | 2.375 | 1.800 | laag |
-| 171 | Kia EV6 Plus AWD 77 kWh (occasion 2023), BV operational lease (lease geschat) | ja | 13.086 | 1.090 | 0.52 | 11.483 | 6.064 | 12.059 | 33.000 | 18.354 | 2.421 | 2.314 | laag |
-| 172 | Mercedes EQB 300 4MATIC 7p (occasion 2022), BV financial lease | ja | 13.190 | 1.099 | 0.53 | 10.546 | 6.740 | 13.405 | 36.500 | 21.745 | 2.951 | 12.479 | laag |
-| 173 | Tesla Model Y Long Range AWD (nieuw), BV koopt | ja | 13.217 | 1.101 | 0.53 | 12.770 | 5.408 | 10.755 | 52.990 | 19.076 | 5.606 | 46.397 | midden |
-| 174 | Zeekr X Privilege AWD (nieuw), BV operational lease (lease geschat) | ja | 13.223 | 1.102 | 0.53 | 14.109 | 4.595 | 9.138 | 46.990 | 14.567 | 5.359 | 2.314 | laag |
-| 175 | Zeekr 7X Long Range RWD 100 kWh (nieuw), Prive koop + km-vergoeding | ja | 13.226 | 1.102 | 0.53 | 3.750 | 10.933 | 0 | 56.990 | 17.667 | 7.865 | 59.990 | laag |
-| 176 | Mercedes EQB 300 4MATIC 7p (occasion 2022), BV koopt | ja | 13.362 | 1.114 | 0.53 | 10.828 | 6.740 | 13.405 | 36.500 | 21.745 | 2.951 | 38.979 | laag |
-| 177 | Toyota RAV4 Plug-in Hybrid AWD (occasion 2021), BV operational lease (lease geschat) | nee (elektrisch) | 13.375 | 1.115 | 0.53 | 11.922 | 6.084 | 12.100 | 34.000 | 21.217 | 2.113 | 1.488 | laag |
-| 178 | Zeekr 001 Long Range RWD (nieuw), Prive koop + km-vergoeding | ja | 13.416 | 1.118 | 0.54 | 3.750 | 11.123 | 0 | 59.490 | 18.442 | 8.210 | 62.490 | midden |
-| 179 | Zeekr 7X Core RWD 75 kWh (nieuw), BV financial lease | ja | 13.497 | 1.125 | 0.54 | 13.472 | 5.258 | 10.458 | 52.990 | 16.427 | 6.043 | 12.479 | midden |
-| 180 | Kia Sorento PHEV 7p (occasion 2021), BV financial lease | nee (elektrisch) | 13.558 | 1.130 | 0.54 | 11.317 | 6.637 | 13.200 | 34.000 | 20.077 | 2.301 | 11.488 | laag |
-| 181 | Volvo XC40 Recharge Twin (occasion 2022), BV operational lease (lease geschat) | ja | 13.594 | 1.133 | 0.54 | 11.564 | 6.522 | 12.970 | 30.000 | 17.861 | 2.006 | 2.397 | laag |
-| 182 | Tesla Model Y Long Range AWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 13.617 | 1.135 | 0.54 | 3.750 | 11.324 | 0 | 52.990 | 19.076 | 6.783 | 3.150 | midden |
-| 183 | Skoda Kodiaq 2.0 TSI 4x4 7p, benzine (occasion 2020), BV operational lease (lease geschat) | nee (elektrisch) | 13.679 | 1.140 | 0.55 | 12.962 | 5.752 | 11.440 | 29.000 | 16.194 | 2.117 | 0 | laag |
-| 184 | Kia Sorento PHEV 7p (occasion 2021), BV koopt | nee (elektrisch) | 13.688 | 1.141 | 0.55 | 11.529 | 6.637 | 13.200 | 34.000 | 20.077 | 2.301 | 29.587 | laag |
-| 185 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), Private lease + km-vergoeding (lease geschat) | ja | 13.693 | 1.141 | 0.55 | 3.750 | 11.400 | 0 | 52.000 | 27.649 | 4.870 | 2.900 | midden |
-| 186 | Zeekr 7X Core RWD 75 kWh (nieuw), BV koopt | ja | 13.707 | 1.142 | 0.55 | 13.815 | 5.258 | 10.458 | 52.990 | 16.427 | 6.043 | 46.273 | midden |
-| 187 | Volvo XC90 T8 Recharge 7p (occasion 2021), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 13.765 | 1.147 | 0.55 | 3.750 | 11.472 | 0 | 41.000 | 21.637 | 3.873 | 1.800 | laag |
-| 188 | Audi Q7 55 TFSI e quattro (occasion 2020), Prive koop + km-vergoeding | nee (elektrisch) | 13.776 | 1.148 | 0.55 | 3.750 | 11.482 | 0 | 48.000 | 25.331 | 4.534 | 49.800 | laag |
-| 189 | Mercedes E 200 Estate, benzine (occasion 2020), BV financial lease | nee (elektrisch) | 14.284 | 1.190 | 0.57 | 12.143 | 6.859 | 13.640 | 30.000 | 16.752 | 2.190 | 10.000 | laag |
-| 190 | Zeekr 7X Privilege AWD 100 kWh (nieuw), Prive koop + km-vergoeding | ja | 14.351 | 1.196 | 0.57 | 3.750 | 12.057 | 0 | 62.990 | 19.527 | 8.693 | 65.990 | midden |
-| 191 | Zeekr 7X Long Range RWD 100 kWh (nieuw), BV financial lease | ja | 14.375 | 1.198 | 0.57 | 14.183 | 5.701 | 11.338 | 56.990 | 17.667 | 6.500 | 12.479 | laag |
-| 192 | Mercedes E 200 Estate, benzine (occasion 2020), BV koopt | nee (elektrisch) | 14.397 | 1.200 | 0.58 | 12.327 | 6.859 | 13.640 | 30.000 | 16.752 | 2.190 | 24.793 | laag |
-| 193 | Mercedes GLE 350 de 4MATIC (occasion 2021), Prive koop + km-vergoeding | nee (elektrisch) | 14.403 | 1.200 | 0.58 | 3.750 | 12.110 | 0 | 50.000 | 26.387 | 4.723 | 51.800 | laag |
-| 194 | Xpeng G9 RWD Long Range (nieuw), Prive koop + km-vergoeding | ja | 14.413 | 1.201 | 0.58 | 3.750 | 12.120 | 0 | 64.990 | 20.147 | 8.969 | 67.990 | midden |
-| 195 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), BV financial lease | ja | 14.464 | 1.205 | 0.58 | 14.147 | 5.813 | 11.560 | 58.000 | 23.780 | 5.656 | 12.397 | laag |
-| 196 | Tesla Model Y Long Range AWD (nieuw), BV operational lease (lease geschat) | ja | 14.531 | 1.211 | 0.58 | 14.918 | 5.408 | 10.755 | 52.990 | 19.076 | 5.606 | 2.603 | midden |
-| 197 | Jeep Grand Cherokee 3.6 V6, benzine (occasion 2018), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 14.566 | 1.214 | 0.58 | 3.750 | 12.272 | 0 | 29.000 | 15.304 | 2.739 | 0 | laag |
-| 198 | Volvo XC60 T5 AWD, benzine (occasion 2019), BV financial lease | nee (elektrisch) | 14.590 | 1.216 | 0.58 | 12.643 | 6.859 | 13.640 | 30.000 | 16.752 | 2.190 | 10.000 | laag |
-| 199 | Zeekr 7X Long Range RWD 100 kWh (nieuw), BV koopt | ja | 14.601 | 1.217 | 0.58 | 14.553 | 5.701 | 11.338 | 56.990 | 17.667 | 6.500 | 49.579 | laag |
-| 200 | Xpeng G9 RWD Long Range (occasion 2024), BV financial lease | ja | 14.602 | 1.217 | 0.58 | 11.365 | 7.652 | 15.218 | 40.000 | 19.773 | 3.343 | 12.479 | laag |
-| 201 | BMW X5 xDrive45e (occasion 2020), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 14.628 | 1.219 | 0.59 | 3.750 | 12.334 | 0 | 42.000 | 22.165 | 3.967 | 1.800 | laag |
-| 202 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), Private lease + km-vergoeding (lease geschat) | ja | 14.634 | 1.219 | 0.59 | 3.750 | 12.341 | 0 | 58.000 | 31.689 | 5.262 | 2.900 | midden |
-| 203 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), BV financial lease | ja | 14.693 | 1.224 | 0.59 | 12.874 | 6.820 | 13.563 | 52.000 | 27.649 | 4.025 | 12.397 | midden |
-| 204 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), BV koopt | ja | 14.695 | 1.225 | 0.59 | 14.524 | 5.813 | 11.560 | 58.000 | 23.780 | 5.656 | 50.331 | laag |
-| 205 | Volvo XC60 T5 AWD, benzine (occasion 2019), BV koopt | nee (elektrisch) | 14.703 | 1.225 | 0.59 | 12.827 | 6.859 | 13.640 | 30.000 | 16.752 | 2.190 | 24.793 | laag |
-| 206 | Xpeng G9 RWD Long Range (occasion 2024), BV koopt | ja | 14.757 | 1.230 | 0.59 | 11.618 | 7.652 | 15.218 | 40.000 | 19.773 | 3.343 | 35.537 | laag |
-| 207 | Zeekr 001 Long Range RWD (nieuw), BV financial lease | ja | 14.759 | 1.230 | 0.59 | 14.360 | 5.978 | 11.888 | 59.490 | 18.442 | 6.785 | 12.479 | midden |
-| 208 | Kia Sorento PHEV 7p (occasion 2021), BV operational lease (lease geschat) | nee (elektrisch) | 14.788 | 1.232 | 0.59 | 13.328 | 6.637 | 13.200 | 34.000 | 20.077 | 2.301 | 1.488 | laag |
-| 209 | Zeekr 7X Core RWD 75 kWh (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 14.798 | 1.233 | 0.59 | 3.750 | 12.505 | 0 | 52.990 | 16.427 | 7.313 | 3.000 | midden |
-| 210 | Zeekr 001 Privilege AWD (nieuw), Prive koop + km-vergoeding | ja | 14.805 | 1.234 | 0.59 | 3.750 | 12.512 | 0 | 66.490 | 20.612 | 9.176 | 69.490 | laag |
-| 211 | Porsche Cayenne E-Hybrid (occasion 2019), Prive koop + km-vergoeding | nee (elektrisch) | 14.811 | 1.234 | 0.59 | 3.750 | 12.518 | 0 | 55.000 | 29.025 | 5.195 | 56.800 | laag |
-| 212 | Mercedes EQB 300 4MATIC 7p (occasion 2022), BV operational lease (lease geschat) | ja | 14.862 | 1.239 | 0.59 | 13.281 | 6.740 | 13.405 | 36.500 | 21.745 | 2.951 | 2.479 | laag |
-| 213 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), BV koopt | ja | 14.898 | 1.242 | 0.60 | 13.210 | 6.820 | 13.563 | 52.000 | 27.649 | 4.025 | 45.372 | midden |
-| 214 | BMW X3 xDrive30i, benzine (occasion 2019), BV financial lease | nee (elektrisch) | 14.928 | 1.244 | 0.60 | 12.653 | 7.190 | 14.300 | 31.000 | 17.311 | 2.263 | 10.000 | laag |
-| 215 | Zeekr 7X Core RWD 75 kWh (nieuw), BV operational lease (lease geschat) | ja | 14.980 | 1.248 | 0.60 | 15.897 | 5.258 | 10.458 | 52.990 | 16.427 | 6.043 | 2.479 | midden |
-| 216 | Zeekr 001 Long Range RWD (nieuw), BV koopt | ja | 14.996 | 1.250 | 0.60 | 14.747 | 5.978 | 11.888 | 59.490 | 18.442 | 6.785 | 51.645 | midden |
-| 217 | BMW X3 xDrive30i, benzine (occasion 2019), BV koopt | nee (elektrisch) | 15.045 | 1.254 | 0.60 | 12.844 | 7.190 | 14.300 | 31.000 | 17.311 | 2.263 | 25.620 | laag |
-| 218 | Ford E-Tourneo Custom L2 (nieuw), Prive koop + km-vergoeding | ja | 15.151 | 1.263 | 0.61 | 3.750 | 12.857 | 0 | 70.000 | 28.700 | 8.260 | 72.800 | laag |
-| 219 | Mercedes E 300 e Estate (occasion 2020), BV financial lease | nee (elektrisch) | 15.213 | 1.268 | 0.61 | 11.310 | 8.297 | 16.500 | 24.000 | 13.402 | 1.752 | 11.488 | laag |
-| 220 | Volvo V90 T8 AWD (occasion 2019), BV financial lease | nee (elektrisch) | 15.218 | 1.268 | 0.61 | 11.860 | 7.965 | 15.840 | 29.000 | 16.194 | 2.117 | 11.488 | laag |
-| 221 | BMW X3 xDrive30e (occasion 2020), BV financial lease | nee (elektrisch) | 15.219 | 1.268 | 0.61 | 12.223 | 7.744 | 15.400 | 32.000 | 17.869 | 2.336 | 11.488 | laag |
-| 222 | Xpeng G9 nieuw alleen zakelijk + E-klasse prive | ja | 15.275 | 1.273 | 0.61 | 13.481 | 7.031 | 0 | 64.990 | 20.147 | 7.412 | 63.690 | laag |
-| 223 | Mercedes E 200 Estate, benzine (occasion 2020), BV operational lease (lease geschat) | nee (elektrisch) | 15.286 | 1.274 | 0.61 | 13.780 | 6.859 | 13.640 | 30.000 | 16.752 | 2.190 | 0 | laag |
-| 224 | Mercedes E 300 e Estate (occasion 2020), BV koopt | nee (elektrisch) | 15.301 | 1.275 | 0.61 | 11.453 | 8.297 | 16.500 | 24.000 | 13.402 | 1.752 | 21.322 | laag |
-| 225 | Volvo V90 T8 AWD (occasion 2019), BV koopt | nee (elektrisch) | 15.326 | 1.277 | 0.61 | 12.038 | 7.965 | 15.840 | 29.000 | 16.194 | 2.117 | 25.455 | laag |
-| 226 | BMW X3 xDrive30e (occasion 2020), BV koopt | nee (elektrisch) | 15.340 | 1.278 | 0.61 | 12.421 | 7.744 | 15.400 | 32.000 | 17.869 | 2.336 | 27.934 | laag |
-| 227 | Volvo XC60 T8 Recharge (occasion 2020), BV financial lease | nee (elektrisch) | 15.493 | 1.291 | 0.62 | 12.310 | 7.965 | 15.840 | 33.000 | 18.427 | 2.409 | 11.488 | laag |
-| 228 | Jaguar I-Pace EV400 (occasion 2020), BV financial lease | nee (trekgewicht) | 15.511 | 1.293 | 0.62 | 9.560 | 9.664 | 19.220 | 19.950 | 12.315 | 1.527 | 12.397 | laag |
-| 229 | Volvo XC60 T5 AWD, benzine (occasion 2019), BV operational lease (lease geschat) | nee (elektrisch) | 15.555 | 1.296 | 0.62 | 14.220 | 6.859 | 13.640 | 30.000 | 16.752 | 2.190 | 0 | laag |
-| 230 | Jaguar I-Pace EV400 (occasion 2020), BV koopt | nee (trekgewicht) | 15.599 | 1.300 | 0.62 | 9.704 | 9.664 | 19.220 | 19.950 | 12.315 | 1.527 | 22.347 | laag |
-| 231 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 15.608 | 1.301 | 0.62 | 3.750 | 13.314 | 0 | 58.000 | 23.780 | 6.844 | 2.900 | laag |
-| 232 | Volvo XC60 T8 Recharge (occasion 2020), BV koopt | nee (elektrisch) | 15.618 | 1.302 | 0.62 | 12.515 | 7.965 | 15.840 | 33.000 | 18.427 | 2.409 | 28.760 | laag |
-| 233 | Zeekr 7X Long Range RWD 100 kWh (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 15.695 | 1.308 | 0.63 | 3.750 | 13.402 | 0 | 56.990 | 17.667 | 7.865 | 3.000 | laag |
-| 234 | Zeekr 7X Privilege AWD 100 kWh (nieuw), BV financial lease | ja | 15.702 | 1.308 | 0.63 | 15.268 | 6.365 | 12.658 | 62.990 | 19.527 | 7.184 | 12.479 | midden |
-| 235 | Zeekr 7X Privilege AWD 100 kWh (nieuw), BV koopt | ja | 15.954 | 1.329 | 0.64 | 15.680 | 6.365 | 12.658 | 62.990 | 19.527 | 7.184 | 54.537 | midden |
-| 236 | Xpeng G9 RWD Long Range (nieuw), BV financial lease | ja | 15.956 | 1.330 | 0.64 | 15.323 | 6.586 | 13.098 | 64.990 | 20.147 | 7.412 | 12.479 | midden |
-| 237 | BMW X3 xDrive30i, benzine (occasion 2019), BV operational lease (lease geschat) | nee (elektrisch) | 15.964 | 1.330 | 0.64 | 14.347 | 7.190 | 14.300 | 31.000 | 17.311 | 2.263 | 0 | laag |
-| 238 | Zeekr 7X Long Range RWD 100 kWh (nieuw), BV operational lease (lease geschat) | ja | 15.973 | 1.331 | 0.64 | 16.797 | 5.701 | 11.338 | 56.990 | 17.667 | 6.500 | 2.479 | laag |
-| 239 | Zeekr 001 Long Range RWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 15.974 | 1.331 | 0.64 | 3.750 | 13.681 | 0 | 59.490 | 18.442 | 8.210 | 3.000 | midden |
-| 240 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), BV operational lease (lease geschat) | ja | 16.113 | 1.343 | 0.64 | 16.842 | 5.813 | 11.560 | 58.000 | 23.780 | 5.656 | 2.397 | laag |
-| 241 | Xpeng G9 RWD Long Range (occasion 2024), BV operational lease (lease geschat) | ja | 16.143 | 1.345 | 0.65 | 13.884 | 7.652 | 15.218 | 40.000 | 19.773 | 3.343 | 2.479 | laag |
-| 242 | Xpeng G9 RWD Long Range (nieuw), BV koopt | ja | 16.217 | 1.351 | 0.65 | 15.748 | 6.586 | 13.098 | 64.990 | 20.147 | 7.412 | 56.190 | midden |
-| 243 | Zeekr 001 Privilege AWD (nieuw), BV financial lease | ja | 16.354 | 1.363 | 0.65 | 15.700 | 6.752 | 13.428 | 66.490 | 20.612 | 7.583 | 12.479 | laag |
-| 244 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), BV operational lease (lease geschat) | ja | 16.395 | 1.366 | 0.66 | 15.658 | 6.820 | 13.563 | 52.000 | 27.649 | 4.025 | 2.397 | midden |
-| 245 | Mercedes E 300 e Estate (occasion 2020), BV operational lease (lease geschat) | nee (elektrisch) | 16.398 | 1.367 | 0.66 | 13.248 | 8.297 | 16.500 | 24.000 | 13.402 | 1.752 | 1.488 | laag |
-| 246 | Zeekr 001 Long Range RWD (nieuw), BV operational lease (lease geschat) | ja | 16.435 | 1.370 | 0.66 | 17.100 | 5.978 | 11.888 | 59.490 | 18.442 | 6.785 | 2.479 | midden |
-| 247 | Audi Q7 55 TFSI e quattro (occasion 2020), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 16.437 | 1.370 | 0.66 | 3.750 | 14.143 | 0 | 48.000 | 25.331 | 4.534 | 1.800 | laag |
-| 248 | Volvo V90 T8 AWD (occasion 2019), BV operational lease (lease geschat) | nee (elektrisch) | 16.457 | 1.371 | 0.66 | 13.886 | 7.965 | 15.840 | 29.000 | 16.194 | 2.117 | 1.488 | laag |
-| 249 | BMW X3 xDrive30e (occasion 2020), BV operational lease (lease geschat) | nee (elektrisch) | 16.515 | 1.376 | 0.66 | 14.343 | 7.744 | 15.400 | 32.000 | 17.869 | 2.336 | 1.488 | laag |
-| 250 | Zeekr 001 Privilege AWD (nieuw), BV koopt | ja | 16.620 | 1.385 | 0.66 | 16.136 | 6.752 | 13.428 | 66.490 | 20.612 | 7.583 | 57.430 | laag |
-| 251 | Jaguar I-Pace EV400 (occasion 2020), BV operational lease (lease geschat) | nee (trekgewicht) | 16.724 | 1.394 | 0.67 | 11.543 | 9.664 | 19.220 | 19.950 | 12.315 | 1.527 | 2.397 | laag |
-| 252 | Volvo XC60 T8 Recharge (occasion 2020), BV operational lease (lease geschat) | nee (elektrisch) | 16.819 | 1.402 | 0.67 | 14.479 | 7.965 | 15.840 | 33.000 | 18.427 | 2.409 | 1.488 | laag |
-| 253 | Lexus RX 450h, full hybrid zonder stekker (occasion 2018), BV financial lease | nee (elektrisch) | 16.942 | 1.412 | 0.68 | 12.328 | 9.403 | 18.700 | 31.000 | 18.305 | 2.098 | 10.000 | laag |
-| 254 | Zeekr 7X Privilege AWD 100 kWh (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 17.056 | 1.421 | 0.68 | 3.750 | 14.763 | 0 | 62.990 | 19.527 | 8.693 | 3.000 | midden |
-| 255 | Zeekr 7X Privilege, private lease + km-vergoeding (lease geschat) | ja | 17.056 | 1.421 | 0.68 | 3.750 | 14.763 | 0 | 62.990 | 19.527 | 8.693 | 3.000 | midden |
-| 256 | Lexus RX 450h, full hybrid zonder stekker (occasion 2018), BV koopt | nee (elektrisch) | 17.059 | 1.422 | 0.68 | 12.519 | 9.403 | 18.700 | 31.000 | 18.305 | 2.098 | 25.620 | laag |
-| 257 | Ford E-Tourneo Custom L2 (nieuw), BV financial lease | ja | 17.125 | 1.427 | 0.68 | 16.327 | 7.140 | 14.200 | 70.000 | 28.700 | 6.826 | 12.314 | laag |
-| 258 | Xpeng G9 RWD Long Range (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 17.184 | 1.432 | 0.69 | 3.750 | 14.891 | 0 | 64.990 | 20.147 | 8.969 | 3.000 | midden |
-| 259 | BMW X5 xDrive40e (occasion 2017), BV financial lease | nee (elektrisch) | 17.189 | 1.432 | 0.69 | 12.732 | 9.403 | 18.700 | 27.000 | 15.943 | 1.828 | 11.488 | laag |
-| 260 | Mercedes GLE 350 de 4MATIC (occasion 2021), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 17.275 | 1.440 | 0.69 | 3.750 | 14.981 | 0 | 50.000 | 26.387 | 4.723 | 1.800 | laag |
-| 261 | BMW X5 xDrive40e (occasion 2017), BV koopt | nee (elektrisch) | 17.289 | 1.441 | 0.69 | 12.895 | 9.403 | 18.700 | 27.000 | 15.943 | 1.828 | 23.802 | laag |
-| 262 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), BV financial lease | ja | 17.323 | 1.444 | 0.69 | 13.797 | 8.885 | 17.670 | 58.000 | 31.689 | 4.349 | 12.397 | midden |
-| 263 | Ford E-Tourneo Custom L2 (nieuw), BV koopt | ja | 17.406 | 1.450 | 0.70 | 16.786 | 7.140 | 14.200 | 70.000 | 28.700 | 6.826 | 60.165 | laag |
-| 264 | Jeep Grand Cherokee 3.6 V6, benzine (occasion 2018), BV financial lease | nee (elektrisch) | 17.457 | 1.455 | 0.70 | 14.979 | 8.297 | 16.500 | 29.000 | 15.304 | 2.264 | 10.000 | laag |
-| 265 | Zeekr 7X Privilege AWD 100 kWh (nieuw), BV operational lease (lease geschat) | ja | 17.479 | 1.457 | 0.70 | 18.174 | 6.365 | 12.658 | 62.990 | 19.527 | 7.184 | 2.479 | midden |
-| 266 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), BV koopt | ja | 17.553 | 1.463 | 0.70 | 14.174 | 8.885 | 17.670 | 58.000 | 31.689 | 4.349 | 50.331 | midden |
-| 267 | Jeep Grand Cherokee 3.6 V6, benzine (occasion 2018), BV koopt | nee (elektrisch) | 17.566 | 1.464 | 0.70 | 15.157 | 8.297 | 16.500 | 29.000 | 15.304 | 2.264 | 23.967 | laag |
-| 268 | Porsche Cayenne S E-Hybrid (occasion 2015, 257.000 km), BV financial lease | nee (elektrisch) | 17.636 | 1.470 | 0.71 | 13.181 | 9.575 | 18.779 | 17.900 | 10.570 | 1.466 | 11.488 | laag |
-| 269 | Zeekr 001 Privilege AWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 17.643 | 1.470 | 0.71 | 3.750 | 15.350 | 0 | 66.490 | 20.612 | 9.176 | 3.000 | laag |
-| 270 | Volvo XC90 T8 Twin Engine 7p (occasion 2016), BV financial lease | nee (elektrisch) | 17.683 | 1.474 | 0.71 | 12.833 | 9.834 | 19.548 | 29.000 | 17.124 | 1.963 | 11.488 | laag |
-| 271 | Porsche Cayenne S E-Hybrid (occasion 2015, 257.000 km), BV koopt | nee (elektrisch) | 17.713 | 1.476 | 0.71 | 13.307 | 9.575 | 18.779 | 17.900 | 10.570 | 1.466 | 19.388 | laag |
-| 272 | Volvo XC90 T6 AWD 7p, benzine (occasion 2016), BV financial lease | nee (elektrisch) | 17.739 | 1.478 | 0.71 | 13.682 | 9.371 | 18.637 | 29.000 | 16.194 | 2.117 | 10.000 | laag |
-| 273 | Volvo XC90 T8 Twin Engine 7p (occasion 2016), BV koopt | nee (elektrisch) | 17.791 | 1.483 | 0.71 | 13.011 | 9.834 | 19.548 | 29.000 | 17.124 | 1.963 | 25.455 | laag |
-| 274 | Xpeng G9 RWD Long Range (nieuw), BV operational lease (lease geschat) | ja | 17.798 | 1.483 | 0.71 | 18.334 | 6.586 | 13.098 | 64.990 | 20.147 | 7.412 | 2.479 | midden |
-| 275 | Porsche Cayenne E-Hybrid (occasion 2019), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 17.804 | 1.484 | 0.71 | 3.750 | 15.510 | 0 | 55.000 | 29.025 | 5.195 | 1.800 | laag |
-| 276 | Volvo XC90 T6 AWD 7p, benzine (occasion 2016), BV koopt | nee (elektrisch) | 17.847 | 1.487 | 0.71 | 13.860 | 9.371 | 18.637 | 29.000 | 16.194 | 2.117 | 23.967 | laag |
-| 277 | Zeekr 001 Privilege AWD (nieuw), BV operational lease (lease geschat) | ja | 18.234 | 1.519 | 0.73 | 18.775 | 6.752 | 13.428 | 66.490 | 20.612 | 7.583 | 2.479 | laag |
-| 278 | Lexus RX 450h, full hybrid zonder stekker (occasion 2018), BV operational lease (lease geschat) | nee (elektrisch) | 18.293 | 1.524 | 0.73 | 14.537 | 9.403 | 18.700 | 31.000 | 18.305 | 2.098 | 0 | laag |
-| 279 | Ford E-Tourneo Custom L2 (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 18.326 | 1.527 | 0.73 | 3.750 | 16.032 | 0 | 70.000 | 28.700 | 8.260 | 2.800 | laag |
-| 280 | Volvo XC90 T8 Recharge 7p (occasion 2021), BV financial lease | nee (elektrisch) | 18.453 | 1.538 | 0.74 | 13.893 | 9.956 | 19.800 | 41.000 | 21.637 | 3.200 | 11.488 | laag |
-| 281 | Jeep Grand Cherokee 3.6 V6, benzine (occasion 2018), BV operational lease (lease geschat) | nee (elektrisch) | 18.455 | 1.538 | 0.74 | 16.610 | 8.297 | 16.500 | 29.000 | 15.304 | 2.264 | 0 | laag |
-| 282 | BMW X5 xDrive40e (occasion 2017), BV operational lease (lease geschat) | nee (elektrisch) | 18.483 | 1.540 | 0.74 | 14.848 | 9.403 | 18.700 | 27.000 | 15.943 | 1.828 | 1.488 | laag |
-| 283 | Volvo XC90 T8 Recharge 7p (occasion 2021), BV koopt | nee (elektrisch) | 18.612 | 1.551 | 0.74 | 14.154 | 9.956 | 19.800 | 41.000 | 21.637 | 3.200 | 35.372 | laag |
-| 284 | Volvo XC90 T6 AWD 7p, benzine (occasion 2016), BV operational lease (lease geschat) | nee (elektrisch) | 18.880 | 1.573 | 0.76 | 15.548 | 9.371 | 18.637 | 29.000 | 16.194 | 2.117 | 0 | laag |
-| 285 | Porsche Cayenne S E-Hybrid (occasion 2015, 257.000 km), BV operational lease (lease geschat) | nee (elektrisch) | 18.986 | 1.582 | 0.76 | 15.388 | 9.575 | 18.779 | 17.900 | 10.570 | 1.466 | 1.488 | laag |
-| 286 | Volvo XC90 T8 Twin Engine 7p (occasion 2016), BV operational lease (lease geschat) | nee (elektrisch) | 19.042 | 1.587 | 0.76 | 15.056 | 9.834 | 19.548 | 29.000 | 17.124 | 1.963 | 1.488 | laag |
-| 287 | Ford E-Tourneo Custom L2 (nieuw), BV operational lease (lease geschat) | ja | 19.128 | 1.594 | 0.77 | 19.602 | 7.140 | 14.200 | 70.000 | 28.700 | 6.826 | 2.314 | laag |
-| 288 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), BV operational lease (lease geschat) | ja | 19.366 | 1.614 | 0.77 | 17.139 | 8.885 | 17.670 | 58.000 | 31.689 | 4.349 | 2.397 | midden |
-| 289 | Audi Q7 e-tron 3.0 TDI quattro (occasion 2016), BV financial lease | nee (elektrisch) | 19.444 | 1.620 | 0.78 | 13.843 | 10.978 | 21.708 | 29.000 | 17.124 | 1.963 | 11.488 | laag |
-| 290 | BMW X5 xDrive45e (occasion 2020), BV financial lease | nee (elektrisch) | 19.512 | 1.626 | 0.78 | 14.722 | 10.509 | 20.900 | 42.000 | 22.165 | 3.279 | 11.488 | laag |
-| 291 | Audi Q7 e-tron 3.0 TDI quattro (occasion 2016), BV koopt | nee (elektrisch) | 19.552 | 1.629 | 0.78 | 14.021 | 10.978 | 21.708 | 29.000 | 17.124 | 1.963 | 25.455 | laag |
-| 292 | BMW X5 xDrive45e (occasion 2020), BV koopt | nee (elektrisch) | 19.676 | 1.640 | 0.79 | 14.989 | 10.509 | 20.900 | 42.000 | 22.165 | 3.279 | 36.198 | laag |
-| 293 | Volvo XC90 T8 Recharge 7p (occasion 2021), BV operational lease (lease geschat) | nee (elektrisch) | 20.159 | 1.680 | 0.81 | 16.683 | 9.956 | 19.800 | 41.000 | 21.637 | 3.200 | 1.488 | laag |
-| 294 | Audi Q7 55 TFSI e quattro (occasion 2020), BV financial lease | nee (elektrisch) | 20.370 | 1.697 | 0.81 | 16.124 | 10.509 | 20.900 | 48.000 | 25.331 | 3.747 | 11.488 | laag |
-| 295 | Audi Q7 55 TFSI e quattro (occasion 2020), BV koopt | nee (elektrisch) | 20.558 | 1.713 | 0.82 | 16.432 | 10.509 | 20.900 | 48.000 | 25.331 | 3.747 | 41.157 | laag |
-| 296 | Audi Q7 e-tron 3.0 TDI quattro (occasion 2016), BV operational lease (lease geschat) | nee (elektrisch) | 20.997 | 1.750 | 0.84 | 16.383 | 10.978 | 21.708 | 29.000 | 17.124 | 1.963 | 1.488 | laag |
-| 297 | BMW X5 xDrive45e (occasion 2020), BV operational lease (lease geschat) | nee (elektrisch) | 21.294 | 1.774 | 0.85 | 17.635 | 10.509 | 20.900 | 42.000 | 22.165 | 3.279 | 1.488 | laag |
-| 298 | Mercedes GLE 350 de 4MATIC (occasion 2021), BV financial lease | nee (elektrisch) | 21.394 | 1.783 | 0.86 | 16.814 | 11.112 | 22.000 | 50.000 | 26.387 | 3.903 | 11.488 | laag |
-| 299 | Mercedes GLE 350 de 4MATIC (occasion 2021), BV koopt | nee (elektrisch) | 21.592 | 1.799 | 0.86 | 17.137 | 11.112 | 22.000 | 50.000 | 26.387 | 3.903 | 42.810 | laag |
-| 300 | Audi Q7 55 TFSI e quattro (occasion 2020), BV operational lease (lease geschat) | nee (elektrisch) | 22.202 | 1.850 | 0.89 | 19.119 | 10.509 | 20.900 | 48.000 | 25.331 | 3.747 | 1.488 | laag |
-| 301 | Porsche Cayenne E-Hybrid (occasion 2019), BV financial lease | nee (elektrisch) | 22.837 | 1.903 | 0.91 | 17.158 | 12.344 | 24.200 | 55.000 | 29.025 | 4.293 | 11.488 | laag |
-| 302 | Porsche Cayenne E-Hybrid (occasion 2019), BV koopt | nee (elektrisch) | 23.055 | 1.921 | 0.92 | 17.515 | 12.344 | 24.200 | 55.000 | 29.025 | 4.293 | 46.942 | laag |
-| 303 | Mercedes GLE 350 de 4MATIC (occasion 2021), BV operational lease (lease geschat) | nee (elektrisch) | 23.473 | 1.956 | 0.94 | 20.213 | 11.112 | 22.000 | 50.000 | 26.387 | 3.903 | 1.488 | laag |
-| 304 | Porsche Cayenne E-Hybrid (occasion 2019), BV operational lease (lease geschat) | nee (elektrisch) | 24.970 | 2.081 | 1.00 | 20.646 | 12.344 | 24.200 | 55.000 | 29.025 | 4.293 | 1.488 | laag |
+| 159 | Porsche Cayenne S E-Hybrid Platinum Edition (occasion 2017, 105.000 km, Lelystad), Prive koop + km-vergoeding | nee (elektrisch) | 12.512 | 1.043 | 0.50 | 3.750 | 10.219 | 0 | 39.950 | 22.308 | 3.528 | 41.750 | laag |
+| 160 | Jeep Grand Cherokee 3.6 V6, benzine (occasion 2018), Prive koop + km-vergoeding | nee (elektrisch) | 12.809 | 1.067 | 0.51 | 3.750 | 10.516 | 0 | 29.000 | 15.304 | 2.739 | 29.000 | laag |
+| 161 | Skoda Kodiaq 2.0 TSI 4x4 7p, benzine (occasion 2020), BV financial lease | nee (elektrisch) | 12.844 | 1.070 | 0.51 | 11.596 | 5.752 | 11.440 | 29.000 | 16.194 | 2.117 | 10.000 | laag |
+| 162 | Tesla Model Y Long Range AWD (occasion 2023), BV operational lease (lease geschat) | ja | 12.901 | 1.075 | 0.52 | 10.869 | 6.254 | 12.438 | 31.000 | 17.282 | 2.268 | 1.488 | midden |
+| 163 | Hyundai Ioniq 5 AWD 73 kWh (occasion 2022), BV operational lease (lease geschat) | ja | 12.925 | 1.077 | 0.52 | 11.075 | 6.152 | 12.235 | 29.500 | 16.753 | 2.107 | 2.314 | laag |
+| 164 | VW Tiguan eHybrid (occasion 2021), BV operational lease (lease geschat) | nee (elektrisch) | 12.933 | 1.078 | 0.52 | 12.104 | 5.531 | 11.000 | 29.000 | 16.194 | 2.117 | 1.488 | laag |
+| 165 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), Prive koop + km-vergoeding | ja | 12.942 | 1.078 | 0.52 | 3.750 | 10.649 | 0 | 58.000 | 23.780 | 6.844 | 60.900 | laag |
+| 166 | Skoda Kodiaq 2.0 TSI 4x4 7p, benzine (occasion 2020), BV koopt | nee (elektrisch) | 12.952 | 1.079 | 0.52 | 11.773 | 5.752 | 11.440 | 29.000 | 16.194 | 2.117 | 23.967 | laag |
+| 167 | Polestar 2 Long Range Dual Motor (occasion 2023), BV operational lease (lease geschat) | ja | 12.959 | 1.080 | 0.52 | 11.068 | 6.190 | 12.310 | 31.000 | 18.406 | 2.082 | 2.397 | laag |
+| 168 | Zeekr X Privilege AWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 12.987 | 1.082 | 0.52 | 3.750 | 10.694 | 0 | 46.990 | 14.567 | 6.485 | 2.800 | laag |
+| 169 | Volvo XC90 T6 AWD 7p, benzine (occasion 2016), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 12.996 | 1.083 | 0.52 | 3.750 | 10.702 | 0 | 29.000 | 16.194 | 2.561 | 0 | laag |
+| 170 | Tesla Model Y Long Range AWD (nieuw), BV financial lease | ja | 13.008 | 1.084 | 0.52 | 12.427 | 5.408 | 10.755 | 52.990 | 19.076 | 5.606 | 12.603 | midden |
+| 171 | Audi Q7 e-tron 3.0 TDI quattro (occasion 2016), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 13.061 | 1.088 | 0.52 | 3.750 | 10.768 | 0 | 29.000 | 17.124 | 2.375 | 1.800 | laag |
+| 172 | Kia EV6 Plus AWD 77 kWh (occasion 2023), BV operational lease (lease geschat) | ja | 13.086 | 1.090 | 0.52 | 11.483 | 6.064 | 12.059 | 33.000 | 18.354 | 2.421 | 2.314 | laag |
+| 173 | Mercedes EQB 300 4MATIC 7p (occasion 2022), BV financial lease | ja | 13.190 | 1.099 | 0.53 | 10.546 | 6.740 | 13.405 | 36.500 | 21.745 | 2.951 | 12.479 | laag |
+| 174 | Tesla Model Y Long Range AWD (nieuw), BV koopt | ja | 13.217 | 1.101 | 0.53 | 12.770 | 5.408 | 10.755 | 52.990 | 19.076 | 5.606 | 46.397 | midden |
+| 175 | Zeekr X Privilege AWD (nieuw), BV operational lease (lease geschat) | ja | 13.223 | 1.102 | 0.53 | 14.109 | 4.595 | 9.138 | 46.990 | 14.567 | 5.359 | 2.314 | laag |
+| 176 | Zeekr 7X Long Range RWD 100 kWh (nieuw), Prive koop + km-vergoeding | ja | 13.226 | 1.102 | 0.53 | 3.750 | 10.933 | 0 | 56.990 | 17.667 | 7.865 | 59.990 | laag |
+| 177 | Mercedes EQB 300 4MATIC 7p (occasion 2022), BV koopt | ja | 13.362 | 1.114 | 0.53 | 10.828 | 6.740 | 13.405 | 36.500 | 21.745 | 2.951 | 38.979 | laag |
+| 178 | Toyota RAV4 Plug-in Hybrid AWD (occasion 2021), BV operational lease (lease geschat) | nee (elektrisch) | 13.375 | 1.115 | 0.53 | 11.922 | 6.084 | 12.100 | 34.000 | 21.217 | 2.113 | 1.488 | laag |
+| 179 | Zeekr 001 Long Range RWD (nieuw), Prive koop + km-vergoeding | ja | 13.416 | 1.118 | 0.54 | 3.750 | 11.123 | 0 | 59.490 | 18.442 | 8.210 | 62.490 | midden |
+| 180 | Zeekr 7X Core RWD 75 kWh (nieuw), BV financial lease | ja | 13.497 | 1.125 | 0.54 | 13.472 | 5.258 | 10.458 | 52.990 | 16.427 | 6.043 | 12.479 | midden |
+| 181 | Kia Sorento PHEV 7p (occasion 2021), BV financial lease | nee (elektrisch) | 13.558 | 1.130 | 0.54 | 11.317 | 6.637 | 13.200 | 34.000 | 20.077 | 2.301 | 11.488 | laag |
+| 182 | Volvo XC40 Recharge Twin (occasion 2022), BV operational lease (lease geschat) | ja | 13.594 | 1.133 | 0.54 | 11.564 | 6.522 | 12.970 | 30.000 | 17.861 | 2.006 | 2.397 | laag |
+| 183 | Tesla Model Y Long Range AWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 13.617 | 1.135 | 0.54 | 3.750 | 11.324 | 0 | 52.990 | 19.076 | 6.783 | 3.150 | midden |
+| 184 | Skoda Kodiaq 2.0 TSI 4x4 7p, benzine (occasion 2020), BV operational lease (lease geschat) | nee (elektrisch) | 13.679 | 1.140 | 0.55 | 12.962 | 5.752 | 11.440 | 29.000 | 16.194 | 2.117 | 0 | laag |
+| 185 | Kia Sorento PHEV 7p (occasion 2021), BV koopt | nee (elektrisch) | 13.688 | 1.141 | 0.55 | 11.529 | 6.637 | 13.200 | 34.000 | 20.077 | 2.301 | 29.587 | laag |
+| 186 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), Private lease + km-vergoeding (lease geschat) | ja | 13.693 | 1.141 | 0.55 | 3.750 | 11.400 | 0 | 52.000 | 27.649 | 4.870 | 2.900 | midden |
+| 187 | Zeekr 7X Core RWD 75 kWh (nieuw), BV koopt | ja | 13.707 | 1.142 | 0.55 | 13.815 | 5.258 | 10.458 | 52.990 | 16.427 | 6.043 | 46.273 | midden |
+| 188 | Volvo XC90 T8 Recharge 7p (occasion 2021), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 13.765 | 1.147 | 0.55 | 3.750 | 11.472 | 0 | 41.000 | 21.637 | 3.873 | 1.800 | laag |
+| 189 | Audi Q7 55 TFSI e quattro (occasion 2020), Prive koop + km-vergoeding | nee (elektrisch) | 13.776 | 1.148 | 0.55 | 3.750 | 11.482 | 0 | 48.000 | 25.331 | 4.534 | 49.800 | laag |
+| 190 | Mercedes E 200 Estate, benzine (occasion 2020), BV financial lease | nee (elektrisch) | 14.284 | 1.190 | 0.57 | 12.143 | 6.859 | 13.640 | 30.000 | 16.752 | 2.190 | 10.000 | laag |
+| 191 | Zeekr 7X Privilege AWD 100 kWh (nieuw), Prive koop + km-vergoeding | ja | 14.351 | 1.196 | 0.57 | 3.750 | 12.057 | 0 | 62.990 | 19.527 | 8.693 | 65.990 | midden |
+| 192 | Zeekr 7X Long Range RWD 100 kWh (nieuw), BV financial lease | ja | 14.375 | 1.198 | 0.57 | 14.183 | 5.701 | 11.338 | 56.990 | 17.667 | 6.500 | 12.479 | laag |
+| 193 | Mercedes E 200 Estate, benzine (occasion 2020), BV koopt | nee (elektrisch) | 14.397 | 1.200 | 0.58 | 12.327 | 6.859 | 13.640 | 30.000 | 16.752 | 2.190 | 24.793 | laag |
+| 194 | Mercedes GLE 350 de 4MATIC (occasion 2021), Prive koop + km-vergoeding | nee (elektrisch) | 14.403 | 1.200 | 0.58 | 3.750 | 12.110 | 0 | 50.000 | 26.387 | 4.723 | 51.800 | laag |
+| 195 | Xpeng G9 RWD Long Range (nieuw), Prive koop + km-vergoeding | ja | 14.413 | 1.201 | 0.58 | 3.750 | 12.120 | 0 | 64.990 | 20.147 | 8.969 | 67.990 | midden |
+| 196 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), BV financial lease | ja | 14.464 | 1.205 | 0.58 | 14.147 | 5.813 | 11.560 | 58.000 | 23.780 | 5.656 | 12.397 | laag |
+| 197 | Tesla Model Y Long Range AWD (nieuw), BV operational lease (lease geschat) | ja | 14.531 | 1.211 | 0.58 | 14.918 | 5.408 | 10.755 | 52.990 | 19.076 | 5.606 | 2.603 | midden |
+| 198 | Jeep Grand Cherokee 3.6 V6, benzine (occasion 2018), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 14.566 | 1.214 | 0.58 | 3.750 | 12.272 | 0 | 29.000 | 15.304 | 2.739 | 0 | laag |
+| 199 | Volvo XC60 T5 AWD, benzine (occasion 2019), BV financial lease | nee (elektrisch) | 14.590 | 1.216 | 0.58 | 12.643 | 6.859 | 13.640 | 30.000 | 16.752 | 2.190 | 10.000 | laag |
+| 200 | Zeekr 7X Long Range RWD 100 kWh (nieuw), BV koopt | ja | 14.601 | 1.217 | 0.58 | 14.553 | 5.701 | 11.338 | 56.990 | 17.667 | 6.500 | 49.579 | laag |
+| 201 | Xpeng G9 RWD Long Range (occasion 2024), BV financial lease | ja | 14.602 | 1.217 | 0.58 | 11.365 | 7.652 | 15.218 | 40.000 | 19.773 | 3.343 | 12.479 | laag |
+| 202 | BMW X5 xDrive45e (occasion 2020), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 14.628 | 1.219 | 0.59 | 3.750 | 12.334 | 0 | 42.000 | 22.165 | 3.967 | 1.800 | laag |
+| 203 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), Private lease + km-vergoeding (lease geschat) | ja | 14.634 | 1.219 | 0.59 | 3.750 | 12.341 | 0 | 58.000 | 31.689 | 5.262 | 2.900 | midden |
+| 204 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), BV financial lease | ja | 14.693 | 1.224 | 0.59 | 12.874 | 6.820 | 13.563 | 52.000 | 27.649 | 4.025 | 12.397 | midden |
+| 205 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), BV koopt | ja | 14.695 | 1.225 | 0.59 | 14.524 | 5.813 | 11.560 | 58.000 | 23.780 | 5.656 | 50.331 | laag |
+| 206 | Volvo XC60 T5 AWD, benzine (occasion 2019), BV koopt | nee (elektrisch) | 14.703 | 1.225 | 0.59 | 12.827 | 6.859 | 13.640 | 30.000 | 16.752 | 2.190 | 24.793 | laag |
+| 207 | Xpeng G9 RWD Long Range (occasion 2024), BV koopt | ja | 14.757 | 1.230 | 0.59 | 11.618 | 7.652 | 15.218 | 40.000 | 19.773 | 3.343 | 35.537 | laag |
+| 208 | Zeekr 001 Long Range RWD (nieuw), BV financial lease | ja | 14.759 | 1.230 | 0.59 | 14.360 | 5.978 | 11.888 | 59.490 | 18.442 | 6.785 | 12.479 | midden |
+| 209 | Kia Sorento PHEV 7p (occasion 2021), BV operational lease (lease geschat) | nee (elektrisch) | 14.788 | 1.232 | 0.59 | 13.328 | 6.637 | 13.200 | 34.000 | 20.077 | 2.301 | 1.488 | laag |
+| 210 | Zeekr 7X Core RWD 75 kWh (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 14.798 | 1.233 | 0.59 | 3.750 | 12.505 | 0 | 52.990 | 16.427 | 7.313 | 3.000 | midden |
+| 211 | Porsche Cayenne S E-Hybrid Platinum Edition (occasion 2017, 105.000 km, Lelystad), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 14.802 | 1.233 | 0.59 | 3.750 | 12.508 | 0 | 39.950 | 22.308 | 3.528 | 1.800 | laag |
+| 212 | Zeekr 001 Privilege AWD (nieuw), Prive koop + km-vergoeding | ja | 14.805 | 1.234 | 0.59 | 3.750 | 12.512 | 0 | 66.490 | 20.612 | 9.176 | 69.490 | laag |
+| 213 | Porsche Cayenne E-Hybrid (occasion 2019), Prive koop + km-vergoeding | nee (elektrisch) | 14.811 | 1.234 | 0.59 | 3.750 | 12.518 | 0 | 55.000 | 29.025 | 5.195 | 56.800 | laag |
+| 214 | Mercedes EQB 300 4MATIC 7p (occasion 2022), BV operational lease (lease geschat) | ja | 14.862 | 1.239 | 0.59 | 13.281 | 6.740 | 13.405 | 36.500 | 21.745 | 2.951 | 2.479 | laag |
+| 215 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), BV koopt | ja | 14.898 | 1.242 | 0.60 | 13.210 | 6.820 | 13.563 | 52.000 | 27.649 | 4.025 | 45.372 | midden |
+| 216 | BMW X3 xDrive30i, benzine (occasion 2019), BV financial lease | nee (elektrisch) | 14.928 | 1.244 | 0.60 | 12.653 | 7.190 | 14.300 | 31.000 | 17.311 | 2.263 | 10.000 | laag |
+| 217 | Zeekr 7X Core RWD 75 kWh (nieuw), BV operational lease (lease geschat) | ja | 14.980 | 1.248 | 0.60 | 15.897 | 5.258 | 10.458 | 52.990 | 16.427 | 6.043 | 2.479 | midden |
+| 218 | Zeekr 001 Long Range RWD (nieuw), BV koopt | ja | 14.996 | 1.250 | 0.60 | 14.747 | 5.978 | 11.888 | 59.490 | 18.442 | 6.785 | 51.645 | midden |
+| 219 | BMW X3 xDrive30i, benzine (occasion 2019), BV koopt | nee (elektrisch) | 15.045 | 1.254 | 0.60 | 12.844 | 7.190 | 14.300 | 31.000 | 17.311 | 2.263 | 25.620 | laag |
+| 220 | Ford E-Tourneo Custom L2 (nieuw), Prive koop + km-vergoeding | ja | 15.151 | 1.263 | 0.61 | 3.750 | 12.857 | 0 | 70.000 | 28.700 | 8.260 | 72.800 | laag |
+| 221 | Mercedes E 300 e Estate (occasion 2020), BV financial lease | nee (elektrisch) | 15.213 | 1.268 | 0.61 | 11.310 | 8.297 | 16.500 | 24.000 | 13.402 | 1.752 | 11.488 | laag |
+| 222 | Volvo V90 T8 AWD (occasion 2019), BV financial lease | nee (elektrisch) | 15.218 | 1.268 | 0.61 | 11.860 | 7.965 | 15.840 | 29.000 | 16.194 | 2.117 | 11.488 | laag |
+| 223 | BMW X3 xDrive30e (occasion 2020), BV financial lease | nee (elektrisch) | 15.219 | 1.268 | 0.61 | 12.223 | 7.744 | 15.400 | 32.000 | 17.869 | 2.336 | 11.488 | laag |
+| 224 | Xpeng G9 nieuw alleen zakelijk + E-klasse prive | ja | 15.275 | 1.273 | 0.61 | 13.481 | 7.031 | 0 | 64.990 | 20.147 | 7.412 | 63.690 | laag |
+| 225 | Mercedes E 200 Estate, benzine (occasion 2020), BV operational lease (lease geschat) | nee (elektrisch) | 15.286 | 1.274 | 0.61 | 13.780 | 6.859 | 13.640 | 30.000 | 16.752 | 2.190 | 0 | laag |
+| 226 | Mercedes E 300 e Estate (occasion 2020), BV koopt | nee (elektrisch) | 15.301 | 1.275 | 0.61 | 11.453 | 8.297 | 16.500 | 24.000 | 13.402 | 1.752 | 21.322 | laag |
+| 227 | Volvo V90 T8 AWD (occasion 2019), BV koopt | nee (elektrisch) | 15.326 | 1.277 | 0.61 | 12.038 | 7.965 | 15.840 | 29.000 | 16.194 | 2.117 | 25.455 | laag |
+| 228 | BMW X3 xDrive30e (occasion 2020), BV koopt | nee (elektrisch) | 15.340 | 1.278 | 0.61 | 12.421 | 7.744 | 15.400 | 32.000 | 17.869 | 2.336 | 27.934 | laag |
+| 229 | Volvo XC60 T8 Recharge (occasion 2020), BV financial lease | nee (elektrisch) | 15.493 | 1.291 | 0.62 | 12.310 | 7.965 | 15.840 | 33.000 | 18.427 | 2.409 | 11.488 | laag |
+| 230 | Jaguar I-Pace EV400 (occasion 2020), BV financial lease | nee (trekgewicht) | 15.511 | 1.293 | 0.62 | 9.560 | 9.664 | 19.220 | 19.950 | 12.315 | 1.527 | 12.397 | laag |
+| 231 | Volvo XC60 T5 AWD, benzine (occasion 2019), BV operational lease (lease geschat) | nee (elektrisch) | 15.555 | 1.296 | 0.62 | 14.220 | 6.859 | 13.640 | 30.000 | 16.752 | 2.190 | 0 | laag |
+| 232 | Jaguar I-Pace EV400 (occasion 2020), BV koopt | nee (trekgewicht) | 15.599 | 1.300 | 0.62 | 9.704 | 9.664 | 19.220 | 19.950 | 12.315 | 1.527 | 22.347 | laag |
+| 233 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 15.608 | 1.301 | 0.62 | 3.750 | 13.314 | 0 | 58.000 | 23.780 | 6.844 | 2.900 | laag |
+| 234 | Volvo XC60 T8 Recharge (occasion 2020), BV koopt | nee (elektrisch) | 15.618 | 1.302 | 0.62 | 12.515 | 7.965 | 15.840 | 33.000 | 18.427 | 2.409 | 28.760 | laag |
+| 235 | Zeekr 7X Long Range RWD 100 kWh (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 15.695 | 1.308 | 0.63 | 3.750 | 13.402 | 0 | 56.990 | 17.667 | 7.865 | 3.000 | laag |
+| 236 | Zeekr 7X Privilege AWD 100 kWh (nieuw), BV financial lease | ja | 15.702 | 1.308 | 0.63 | 15.268 | 6.365 | 12.658 | 62.990 | 19.527 | 7.184 | 12.479 | midden |
+| 237 | Zeekr 7X Privilege AWD 100 kWh (nieuw), BV koopt | ja | 15.954 | 1.329 | 0.64 | 15.680 | 6.365 | 12.658 | 62.990 | 19.527 | 7.184 | 54.537 | midden |
+| 238 | Xpeng G9 RWD Long Range (nieuw), BV financial lease | ja | 15.956 | 1.330 | 0.64 | 15.323 | 6.586 | 13.098 | 64.990 | 20.147 | 7.412 | 12.479 | midden |
+| 239 | BMW X3 xDrive30i, benzine (occasion 2019), BV operational lease (lease geschat) | nee (elektrisch) | 15.964 | 1.330 | 0.64 | 14.347 | 7.190 | 14.300 | 31.000 | 17.311 | 2.263 | 0 | laag |
+| 240 | Zeekr 7X Long Range RWD 100 kWh (nieuw), BV operational lease (lease geschat) | ja | 15.973 | 1.331 | 0.64 | 16.797 | 5.701 | 11.338 | 56.990 | 17.667 | 6.500 | 2.479 | laag |
+| 241 | Zeekr 001 Long Range RWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 15.974 | 1.331 | 0.64 | 3.750 | 13.681 | 0 | 59.490 | 18.442 | 8.210 | 3.000 | midden |
+| 242 | VW ID. Buzz LWB Pro 86 kWh 7p (nieuw), BV operational lease (lease geschat) | ja | 16.113 | 1.343 | 0.64 | 16.842 | 5.813 | 11.560 | 58.000 | 23.780 | 5.656 | 2.397 | laag |
+| 243 | Xpeng G9 RWD Long Range (occasion 2024), BV operational lease (lease geschat) | ja | 16.143 | 1.345 | 0.65 | 13.884 | 7.652 | 15.218 | 40.000 | 19.773 | 3.343 | 2.479 | laag |
+| 244 | Xpeng G9 RWD Long Range (nieuw), BV koopt | ja | 16.217 | 1.351 | 0.65 | 15.748 | 6.586 | 13.098 | 64.990 | 20.147 | 7.412 | 56.190 | midden |
+| 245 | Zeekr 001 Privilege AWD (nieuw), BV financial lease | ja | 16.354 | 1.363 | 0.65 | 15.700 | 6.752 | 13.428 | 66.490 | 20.612 | 7.583 | 12.479 | laag |
+| 246 | VW ID. Buzz LWB Pro 86 kWh (occasion 2025), BV operational lease (lease geschat) | ja | 16.395 | 1.366 | 0.66 | 15.658 | 6.820 | 13.563 | 52.000 | 27.649 | 4.025 | 2.397 | midden |
+| 247 | Mercedes E 300 e Estate (occasion 2020), BV operational lease (lease geschat) | nee (elektrisch) | 16.398 | 1.367 | 0.66 | 13.248 | 8.297 | 16.500 | 24.000 | 13.402 | 1.752 | 1.488 | laag |
+| 248 | Zeekr 001 Long Range RWD (nieuw), BV operational lease (lease geschat) | ja | 16.435 | 1.370 | 0.66 | 17.100 | 5.978 | 11.888 | 59.490 | 18.442 | 6.785 | 2.479 | midden |
+| 249 | Audi Q7 55 TFSI e quattro (occasion 2020), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 16.437 | 1.370 | 0.66 | 3.750 | 14.143 | 0 | 48.000 | 25.331 | 4.534 | 1.800 | laag |
+| 250 | Volvo V90 T8 AWD (occasion 2019), BV operational lease (lease geschat) | nee (elektrisch) | 16.457 | 1.371 | 0.66 | 13.886 | 7.965 | 15.840 | 29.000 | 16.194 | 2.117 | 1.488 | laag |
+| 251 | BMW X3 xDrive30e (occasion 2020), BV operational lease (lease geschat) | nee (elektrisch) | 16.515 | 1.376 | 0.66 | 14.343 | 7.744 | 15.400 | 32.000 | 17.869 | 2.336 | 1.488 | laag |
+| 252 | Zeekr 001 Privilege AWD (nieuw), BV koopt | ja | 16.620 | 1.385 | 0.66 | 16.136 | 6.752 | 13.428 | 66.490 | 20.612 | 7.583 | 57.430 | laag |
+| 253 | Jaguar I-Pace EV400 (occasion 2020), BV operational lease (lease geschat) | nee (trekgewicht) | 16.724 | 1.394 | 0.67 | 11.543 | 9.664 | 19.220 | 19.950 | 12.315 | 1.527 | 2.397 | laag |
+| 254 | Volvo XC60 T8 Recharge (occasion 2020), BV operational lease (lease geschat) | nee (elektrisch) | 16.819 | 1.402 | 0.67 | 14.479 | 7.965 | 15.840 | 33.000 | 18.427 | 2.409 | 1.488 | laag |
+| 255 | Lexus RX 450h, full hybrid zonder stekker (occasion 2018), BV financial lease | nee (elektrisch) | 16.942 | 1.412 | 0.68 | 12.328 | 9.403 | 18.700 | 31.000 | 18.305 | 2.098 | 10.000 | laag |
+| 256 | Zeekr 7X Privilege AWD 100 kWh (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 17.056 | 1.421 | 0.68 | 3.750 | 14.763 | 0 | 62.990 | 19.527 | 8.693 | 3.000 | midden |
+| 257 | Zeekr 7X Privilege, private lease + km-vergoeding (lease geschat) | ja | 17.056 | 1.421 | 0.68 | 3.750 | 14.763 | 0 | 62.990 | 19.527 | 8.693 | 3.000 | midden |
+| 258 | Lexus RX 450h, full hybrid zonder stekker (occasion 2018), BV koopt | nee (elektrisch) | 17.059 | 1.422 | 0.68 | 12.519 | 9.403 | 18.700 | 31.000 | 18.305 | 2.098 | 25.620 | laag |
+| 259 | Ford E-Tourneo Custom L2 (nieuw), BV financial lease | ja | 17.125 | 1.427 | 0.68 | 16.327 | 7.140 | 14.200 | 70.000 | 28.700 | 6.826 | 12.314 | laag |
+| 260 | Xpeng G9 RWD Long Range (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 17.184 | 1.432 | 0.69 | 3.750 | 14.891 | 0 | 64.990 | 20.147 | 8.969 | 3.000 | midden |
+| 261 | BMW X5 xDrive40e (occasion 2017), BV financial lease | nee (elektrisch) | 17.189 | 1.432 | 0.69 | 12.732 | 9.403 | 18.700 | 27.000 | 15.943 | 1.828 | 11.488 | laag |
+| 262 | Mercedes GLE 350 de 4MATIC (occasion 2021), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 17.275 | 1.440 | 0.69 | 3.750 | 14.981 | 0 | 50.000 | 26.387 | 4.723 | 1.800 | laag |
+| 263 | BMW X5 xDrive40e (occasion 2017), BV koopt | nee (elektrisch) | 17.289 | 1.441 | 0.69 | 12.895 | 9.403 | 18.700 | 27.000 | 15.943 | 1.828 | 23.802 | laag |
+| 264 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), BV financial lease | ja | 17.323 | 1.444 | 0.69 | 13.797 | 8.885 | 17.670 | 58.000 | 31.689 | 4.349 | 12.397 | midden |
+| 265 | Ford E-Tourneo Custom L2 (nieuw), BV koopt | ja | 17.406 | 1.450 | 0.70 | 16.786 | 7.140 | 14.200 | 70.000 | 28.700 | 6.826 | 60.165 | laag |
+| 266 | Jeep Grand Cherokee 3.6 V6, benzine (occasion 2018), BV financial lease | nee (elektrisch) | 17.457 | 1.455 | 0.70 | 14.979 | 8.297 | 16.500 | 29.000 | 15.304 | 2.264 | 10.000 | laag |
+| 267 | Zeekr 7X Privilege AWD 100 kWh (nieuw), BV operational lease (lease geschat) | ja | 17.479 | 1.457 | 0.70 | 18.174 | 6.365 | 12.658 | 62.990 | 19.527 | 7.184 | 2.479 | midden |
+| 268 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), BV koopt | ja | 17.553 | 1.463 | 0.70 | 14.174 | 8.885 | 17.670 | 58.000 | 31.689 | 4.349 | 50.331 | midden |
+| 269 | Jeep Grand Cherokee 3.6 V6, benzine (occasion 2018), BV koopt | nee (elektrisch) | 17.566 | 1.464 | 0.70 | 15.157 | 8.297 | 16.500 | 29.000 | 15.304 | 2.264 | 23.967 | laag |
+| 270 | Porsche Cayenne S E-Hybrid (occasion 2015, 257.000 km), BV financial lease | nee (elektrisch) | 17.636 | 1.470 | 0.71 | 13.181 | 9.575 | 18.779 | 17.900 | 10.570 | 1.466 | 11.488 | laag |
+| 271 | Zeekr 001 Privilege AWD (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 17.643 | 1.470 | 0.71 | 3.750 | 15.350 | 0 | 66.490 | 20.612 | 9.176 | 3.000 | laag |
+| 272 | Volvo XC90 T8 Twin Engine 7p (occasion 2016), BV financial lease | nee (elektrisch) | 17.683 | 1.474 | 0.71 | 12.833 | 9.834 | 19.548 | 29.000 | 17.124 | 1.963 | 11.488 | laag |
+| 273 | Porsche Cayenne S E-Hybrid (occasion 2015, 257.000 km), BV koopt | nee (elektrisch) | 17.713 | 1.476 | 0.71 | 13.307 | 9.575 | 18.779 | 17.900 | 10.570 | 1.466 | 19.388 | laag |
+| 274 | Volvo XC90 T6 AWD 7p, benzine (occasion 2016), BV financial lease | nee (elektrisch) | 17.739 | 1.478 | 0.71 | 13.682 | 9.371 | 18.637 | 29.000 | 16.194 | 2.117 | 10.000 | laag |
+| 275 | Volvo XC90 T8 Twin Engine 7p (occasion 2016), BV koopt | nee (elektrisch) | 17.791 | 1.483 | 0.71 | 13.011 | 9.834 | 19.548 | 29.000 | 17.124 | 1.963 | 25.455 | laag |
+| 276 | Xpeng G9 RWD Long Range (nieuw), BV operational lease (lease geschat) | ja | 17.798 | 1.483 | 0.71 | 18.334 | 6.586 | 13.098 | 64.990 | 20.147 | 7.412 | 2.479 | midden |
+| 277 | Porsche Cayenne E-Hybrid (occasion 2019), Private lease + km-vergoeding (lease geschat) | nee (elektrisch) | 17.804 | 1.484 | 0.71 | 3.750 | 15.510 | 0 | 55.000 | 29.025 | 5.195 | 1.800 | laag |
+| 278 | Volvo XC90 T6 AWD 7p, benzine (occasion 2016), BV koopt | nee (elektrisch) | 17.847 | 1.487 | 0.71 | 13.860 | 9.371 | 18.637 | 29.000 | 16.194 | 2.117 | 23.967 | laag |
+| 279 | Zeekr 001 Privilege AWD (nieuw), BV operational lease (lease geschat) | ja | 18.234 | 1.519 | 0.73 | 18.775 | 6.752 | 13.428 | 66.490 | 20.612 | 7.583 | 2.479 | laag |
+| 280 | Lexus RX 450h, full hybrid zonder stekker (occasion 2018), BV operational lease (lease geschat) | nee (elektrisch) | 18.293 | 1.524 | 0.73 | 14.537 | 9.403 | 18.700 | 31.000 | 18.305 | 2.098 | 0 | laag |
+| 281 | Ford E-Tourneo Custom L2 (nieuw), Private lease + km-vergoeding (lease geschat) | ja | 18.326 | 1.527 | 0.73 | 3.750 | 16.032 | 0 | 70.000 | 28.700 | 8.260 | 2.800 | laag |
+| 282 | Volvo XC90 T8 Recharge 7p (occasion 2021), BV financial lease | nee (elektrisch) | 18.453 | 1.538 | 0.74 | 13.893 | 9.956 | 19.800 | 41.000 | 21.637 | 3.200 | 11.488 | laag |
+| 283 | Jeep Grand Cherokee 3.6 V6, benzine (occasion 2018), BV operational lease (lease geschat) | nee (elektrisch) | 18.455 | 1.538 | 0.74 | 16.610 | 8.297 | 16.500 | 29.000 | 15.304 | 2.264 | 0 | laag |
+| 284 | BMW X5 xDrive40e (occasion 2017), BV operational lease (lease geschat) | nee (elektrisch) | 18.483 | 1.540 | 0.74 | 14.848 | 9.403 | 18.700 | 27.000 | 15.943 | 1.828 | 1.488 | laag |
+| 285 | Volvo XC90 T8 Recharge 7p (occasion 2021), BV koopt | nee (elektrisch) | 18.612 | 1.551 | 0.74 | 14.154 | 9.956 | 19.800 | 41.000 | 21.637 | 3.200 | 35.372 | laag |
+| 286 | Volvo XC90 T6 AWD 7p, benzine (occasion 2016), BV operational lease (lease geschat) | nee (elektrisch) | 18.880 | 1.573 | 0.76 | 15.548 | 9.371 | 18.637 | 29.000 | 16.194 | 2.117 | 0 | laag |
+| 287 | Porsche Cayenne S E-Hybrid (occasion 2015, 257.000 km), BV operational lease (lease geschat) | nee (elektrisch) | 18.986 | 1.582 | 0.76 | 15.388 | 9.575 | 18.779 | 17.900 | 10.570 | 1.466 | 1.488 | laag |
+| 288 | Volvo XC90 T8 Twin Engine 7p (occasion 2016), BV operational lease (lease geschat) | nee (elektrisch) | 19.042 | 1.587 | 0.76 | 15.056 | 9.834 | 19.548 | 29.000 | 17.124 | 1.963 | 1.488 | laag |
+| 289 | Ford E-Tourneo Custom L2 (nieuw), BV operational lease (lease geschat) | ja | 19.128 | 1.594 | 0.77 | 19.602 | 7.140 | 14.200 | 70.000 | 28.700 | 6.826 | 2.314 | laag |
+| 290 | Kia EV9 AWD 99,8 kWh 7p (occasion 2024), BV operational lease (lease geschat) | ja | 19.366 | 1.614 | 0.77 | 17.139 | 8.885 | 17.670 | 58.000 | 31.689 | 4.349 | 2.397 | midden |
+| 291 | Audi Q7 e-tron 3.0 TDI quattro (occasion 2016), BV financial lease | nee (elektrisch) | 19.444 | 1.620 | 0.78 | 13.843 | 10.978 | 21.708 | 29.000 | 17.124 | 1.963 | 11.488 | laag |
+| 292 | BMW X5 xDrive45e (occasion 2020), BV financial lease | nee (elektrisch) | 19.512 | 1.626 | 0.78 | 14.722 | 10.509 | 20.900 | 42.000 | 22.165 | 3.279 | 11.488 | laag |
+| 293 | Audi Q7 e-tron 3.0 TDI quattro (occasion 2016), BV koopt | nee (elektrisch) | 19.552 | 1.629 | 0.78 | 14.021 | 10.978 | 21.708 | 29.000 | 17.124 | 1.963 | 25.455 | laag |
+| 294 | BMW X5 xDrive45e (occasion 2020), BV koopt | nee (elektrisch) | 19.676 | 1.640 | 0.79 | 14.989 | 10.509 | 20.900 | 42.000 | 22.165 | 3.279 | 36.198 | laag |
+| 295 | Volvo XC90 T8 Recharge 7p (occasion 2021), BV operational lease (lease geschat) | nee (elektrisch) | 20.159 | 1.680 | 0.81 | 16.683 | 9.956 | 19.800 | 41.000 | 21.637 | 3.200 | 1.488 | laag |
+| 296 | Audi Q7 55 TFSI e quattro (occasion 2020), BV financial lease | nee (elektrisch) | 20.370 | 1.697 | 0.81 | 16.124 | 10.509 | 20.900 | 48.000 | 25.331 | 3.747 | 11.488 | laag |
+| 297 | Audi Q7 55 TFSI e quattro (occasion 2020), BV koopt | nee (elektrisch) | 20.558 | 1.713 | 0.82 | 16.432 | 10.509 | 20.900 | 48.000 | 25.331 | 3.747 | 41.157 | laag |
+| 298 | Porsche Cayenne S E-Hybrid Platinum Edition (occasion 2017, 105.000 km, Lelystad), BV financial lease | nee (elektrisch) | 20.970 | 1.747 | 0.84 | 15.112 | 11.728 | 23.100 | 39.950 | 22.308 | 2.916 | 11.488 | laag |
+| 299 | Audi Q7 e-tron 3.0 TDI quattro (occasion 2016), BV operational lease (lease geschat) | nee (elektrisch) | 20.997 | 1.750 | 0.84 | 16.383 | 10.978 | 21.708 | 29.000 | 17.124 | 1.963 | 1.488 | laag |
+| 300 | Porsche Cayenne S E-Hybrid Platinum Edition (occasion 2017, 105.000 km, Lelystad), BV koopt | nee (elektrisch) | 21.125 | 1.760 | 0.84 | 15.365 | 11.728 | 23.100 | 39.950 | 22.308 | 2.916 | 34.504 | laag |
+| 301 | BMW X5 xDrive45e (occasion 2020), BV operational lease (lease geschat) | nee (elektrisch) | 21.294 | 1.774 | 0.85 | 17.635 | 10.509 | 20.900 | 42.000 | 22.165 | 3.279 | 1.488 | laag |
+| 302 | Mercedes GLE 350 de 4MATIC (occasion 2021), BV financial lease | nee (elektrisch) | 21.394 | 1.783 | 0.86 | 16.814 | 11.112 | 22.000 | 50.000 | 26.387 | 3.903 | 11.488 | laag |
+| 303 | Mercedes GLE 350 de 4MATIC (occasion 2021), BV koopt | nee (elektrisch) | 21.592 | 1.799 | 0.86 | 17.137 | 11.112 | 22.000 | 50.000 | 26.387 | 3.903 | 42.810 | laag |
+| 304 | Audi Q7 55 TFSI e quattro (occasion 2020), BV operational lease (lease geschat) | nee (elektrisch) | 22.202 | 1.850 | 0.89 | 19.119 | 10.509 | 20.900 | 48.000 | 25.331 | 3.747 | 1.488 | laag |
+| 305 | Porsche Cayenne S E-Hybrid Platinum Edition (occasion 2017, 105.000 km, Lelystad), BV operational lease (lease geschat) | nee (elektrisch) | 22.691 | 1.891 | 0.91 | 17.927 | 11.728 | 23.100 | 39.950 | 22.308 | 2.916 | 1.488 | laag |
+| 306 | Porsche Cayenne E-Hybrid (occasion 2019), BV financial lease | nee (elektrisch) | 22.837 | 1.903 | 0.91 | 17.158 | 12.344 | 24.200 | 55.000 | 29.025 | 4.293 | 11.488 | laag |
+| 307 | Porsche Cayenne E-Hybrid (occasion 2019), BV koopt | nee (elektrisch) | 23.055 | 1.921 | 0.92 | 17.515 | 12.344 | 24.200 | 55.000 | 29.025 | 4.293 | 46.942 | laag |
+| 308 | Mercedes GLE 350 de 4MATIC (occasion 2021), BV operational lease (lease geschat) | nee (elektrisch) | 23.473 | 1.956 | 0.94 | 20.213 | 11.112 | 22.000 | 50.000 | 26.387 | 3.903 | 1.488 | laag |
+| 309 | Porsche Cayenne E-Hybrid (occasion 2019), BV operational lease (lease geschat) | nee (elektrisch) | 24.970 | 2.081 | 1.00 | 20.646 | 12.344 | 24.200 | 55.000 | 29.025 | 4.293 | 1.488 | laag |
 
 ## Opbouw per jaar (netto prive-euro) voor scenario's die aan de eisen voldoen
 

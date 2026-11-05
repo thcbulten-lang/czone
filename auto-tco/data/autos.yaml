@@ -1911,3 +1911,34 @@
   bron: "schatting"
   zekerheid: laag
   datum: "2026-11-05"
+
+- id: porsche_cayenne_s_ehybrid_2017_lelystad
+  naam: "Porsche Cayenne S E-Hybrid Platinum Edition (occasion 2017, 105.000 km, Lelystad)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2017-11"
+  catalogusprijs: 105000            # nieuwprijs destijds incl. opties, schatting; op de BV 22% bijtelling
+  aanschafprijs: 39950              # autoscout24.nl, autobedrijf Lelystad (5-11-2026)
+  btw_auto: true                    # verifieren
+  km_stand: 105380
+  massa_ledig_kg: 2350
+  accu_kwh: 10.8
+  actieradius_wltp_km: 25           # zelfde accu als de 2015: 20 tot 25 km in de praktijk
+  verbruik_praktijk_kwh_100km: 30
+  ev_aandeel_km: 0.40
+  laden_alleen_thuis: true
+  brandstof_l_100km: 10.0
+  trekgewicht_geremd_kg: 3500
+  zitplaatsen: 5
+  bagageruimte_l: 580
+  restwaarde_jaarlijks_pct: 89
+  onderhoud_pj: 1800                # negen jaar oud, 105.000 km: minder risico dan de 2015, wel Porsche-tarieven
+  banden_pj: 600
+  verzekering_pj: 1000
+  trekhaak_inbegrepen: true         # verifieren
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 5, merkrisico: 3, laadsnelheid: 1}
+  notities: "Dezelfde generatie als de 2015 (zelfde accu van 10,8 kWh, 20 tot 25 km elektrisch), maar twee jaar jonger en 150.000 km minder: minder risico, 22.000 euro duurder."
+  bron: "autoscout24.nl (advertentie 5-11-2026)"
+  zekerheid: laag
+  datum: "2026-11-05"
