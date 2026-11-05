@@ -1463,3 +1463,271 @@
   bron: "herwers.nl (advertentie 4-11-2026)"
   zekerheid: laag
   datum: "2026-11-04"
+
+# ---------------------------------------------------------------- goede hybrides rond 30.000 euro, prive (toegevoegd 2026-11-05)
+- id: volvo_xc60_t8_occasion_2020
+  naam: "Volvo XC60 T8 Recharge (occasion 2020)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2020-06"
+  catalogusprijs: 72000
+  aanschafprijs: 33000              # aanbod 2020: 32.950 (130.000 km) tot 36.950 (83.000 km)
+  btw_auto: true
+  km_stand: 110000
+  massa_ledig_kg: 2150
+  accu_kwh: 11.6
+  actieradius_wltp_km: 50           # 35 tot 40 km in de praktijk
+  verbruik_praktijk_kwh_100km: 27
+  ev_aandeel_km: 0.45
+  laden_alleen_thuis: true
+  brandstof_l_100km: 8.0
+  trekgewicht_geremd_kg: 2100       # als de V90 T8; verifieren op het kentekenbewijs
+  zitplaatsen: 5
+  bagageruimte_l: 468
+  restwaarde_jaarlijks_pct: 89
+  onderhoud_pj: 1300
+  banden_pj: 550
+  verzekering_pj: 900
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 3, comfort: 4, trekervaring: 4, merkrisico: 4, laadsnelheid: 1}
+  notities: "Degelijk en comfortabel; vanaf modeljaar 2022 een accu van 18,8 kWh (70 km), maar dan 40.000 plus."
+  bron: "viabovag (aanbod)"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: volvo_v90_t8_occasion_2019
+  naam: "Volvo V90 T8 AWD (occasion 2019)"
+  categorie: stationwagen
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2019-06"
+  catalogusprijs: 72000
+  aanschafprijs: 29000              # aanbod 2019: 27.000 (138.000 km) tot 33.000 (84.000 km)
+  btw_auto: true
+  km_stand: 140000
+  massa_ledig_kg: 2050
+  accu_kwh: 11.6
+  actieradius_wltp_km: 48           # 30 tot 35 km in de praktijk
+  verbruik_praktijk_kwh_100km: 26
+  ev_aandeel_km: 0.40
+  laden_alleen_thuis: true
+  brandstof_l_100km: 7.8
+  trekgewicht_geremd_kg: 2100
+  zitplaatsen: 5
+  bagageruimte_l: 560
+  restwaarde_jaarlijks_pct: 89
+  onderhoud_pj: 1300
+  banden_pj: 550
+  verzekering_pj: 900
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 4, merkrisico: 4, laadsnelheid: 1}
+  notities: "Grote stationwagen, 2.100 kg, scherper geprijsd dan de XC60 met dezelfde techniek."
+  bron: "viabovag/autoscout24 (2.100 kg, aanbod)"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: bmw_x3_30e_occasion_2020
+  naam: "BMW X3 xDrive30e (occasion 2020)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2020-06"
+  catalogusprijs: 70000
+  aanschafprijs: 32000              # schatting
+  btw_auto: true
+  km_stand: 100000
+  massa_ledig_kg: 2065
+  accu_kwh: 12
+  actieradius_wltp_km: 50           # 40 km in de praktijk
+  verbruik_praktijk_kwh_100km: 26
+  ev_aandeel_km: 0.50
+  laden_alleen_thuis: true
+  brandstof_l_100km: 8.0
+  trekgewicht_geremd_kg: 2000
+  zitplaatsen: 5
+  bagageruimte_l: 450
+  restwaarde_jaarlijks_pct: 89
+  onderhoud_pj: 1400
+  banden_pj: 600
+  verzekering_pj: 950
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 3, comfort: 4, trekervaring: 4, merkrisico: 4, laadsnelheid: 1}
+  bron: "autotijd.be (2.000 kg); prijs geschat"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: toyota_rav4_phev_occasion_2021
+  naam: "Toyota RAV4 Plug-in Hybrid AWD (occasion 2021)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2021-06"
+  catalogusprijs: 55000
+  aanschafprijs: 34000              # schatting; 2022 met 49.000 km: 38.949
+  btw_auto: true
+  km_stand: 90000
+  massa_ledig_kg: 1950
+  accu_kwh: 18.1
+  actieradius_wltp_km: 75           # 60 tot 65 km in de praktijk
+  verbruik_praktijk_kwh_100km: 22
+  ev_aandeel_km: 0.70
+  laden_alleen_thuis: true
+  brandstof_l_100km: 6.5
+  trekgewicht_geremd_kg: 1500       # sommige advertenties noemen 1.650
+  zitplaatsen: 5
+  bagageruimte_l: 520
+  restwaarde_jaarlijks_pct: 91
+  onderhoud_pj: 800
+  banden_pj: 500
+  verzekering_pj: 750
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 3, comfort: 3, trekervaring: 3, merkrisico: 5, laadsnelheid: 1}
+  notities: "Het grootste elektrische bereik in deze prijsklasse en de beste betrouwbaarheid; trekt 1.500 kg."
+  bron: "viabovag (1.500 kg, aanbod 2022)"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: kia_sorento_phev_occasion_2021
+  naam: "Kia Sorento PHEV 7p (occasion 2021)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2021-06"
+  catalogusprijs: 60000
+  aanschafprijs: 34000              # schatting
+  btw_auto: true
+  km_stand: 90000
+  massa_ledig_kg: 2100
+  accu_kwh: 13.8
+  actieradius_wltp_km: 57           # 40 km in de praktijk
+  verbruik_praktijk_kwh_100km: 26
+  ev_aandeel_km: 0.50
+  laden_alleen_thuis: true
+  brandstof_l_100km: 7.5
+  trekgewicht_geremd_kg: 1500
+  zitplaatsen: 7
+  bagageruimte_l: 604
+  restwaarde_jaarlijks_pct: 90
+  onderhoud_pj: 900
+  banden_pj: 550
+  verzekering_pj: 850
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 5, comfort: 4, trekervaring: 3, merkrisico: 5, laadsnelheid: 1}
+  notities: "Zeven zitplaatsen en fabrieksgarantie tot 2028; trekt 1.500 kg."
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: vw_tiguan_ehybrid_occasion_2021
+  naam: "VW Tiguan eHybrid (occasion 2021)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2021-06"
+  catalogusprijs: 50000
+  aanschafprijs: 29000              # schatting
+  btw_auto: true
+  km_stand: 90000
+  massa_ledig_kg: 1850
+  accu_kwh: 13
+  actieradius_wltp_km: 50           # 40 km in de praktijk
+  verbruik_praktijk_kwh_100km: 24
+  ev_aandeel_km: 0.50
+  laden_alleen_thuis: true
+  brandstof_l_100km: 7.5
+  trekgewicht_geremd_kg: 1800       # verifieren
+  zitplaatsen: 5
+  bagageruimte_l: 476
+  restwaarde_jaarlijks_pct: 89
+  onderhoud_pj: 1000
+  banden_pj: 500
+  verzekering_pj: 800
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 3, comfort: 3, trekervaring: 3, merkrisico: 4, laadsnelheid: 1}
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: skoda_superb_iv_combi_occasion_2020
+  naam: "Skoda Superb iV Combi (occasion 2020)"
+  categorie: stationwagen
+  aandrijving: phev
+  nieuw: false
+  eerste_toelating: "2020-06"
+  catalogusprijs: 48000
+  aanschafprijs: 25000              # schatting
+  btw_auto: true
+  km_stand: 110000
+  massa_ledig_kg: 1800
+  accu_kwh: 13
+  actieradius_wltp_km: 55           # 40 tot 45 km in de praktijk
+  verbruik_praktijk_kwh_100km: 22
+  ev_aandeel_km: 0.50
+  laden_alleen_thuis: true
+  brandstof_l_100km: 7.0
+  trekgewicht_geremd_kg: 1600
+  zitplaatsen: 5
+  bagageruimte_l: 510
+  restwaarde_jaarlijks_pct: 89
+  onderhoud_pj: 900
+  banden_pj: 450
+  verzekering_pj: 750
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 3, merkrisico: 4, laadsnelheid: 1}
+  notities: "Veel ruimte voor weinig geld; dezelfde techniek als de Passat GTE."
+  bron: "schatting"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: toyota_rav4_hybrid_awd_occasion_2020
+  naam: "Toyota RAV4 Hybrid AWD, full hybrid zonder stekker (occasion 2020)"
+  categorie: suv
+  aandrijving: benzine
+  nieuw: false
+  eerste_toelating: "2020-01"
+  catalogusprijs: 48000
+  aanschafprijs: 28000              # aanbod januari 2020 met 172.000 km: 27.745
+  btw_auto: true
+  km_stand: 120000
+  massa_ledig_kg: 1750
+  brandstof_l_100km: 6.0
+  trekgewicht_geremd_kg: 1650
+  zitplaatsen: 5
+  bagageruimte_l: 580
+  restwaarde_jaarlijks_pct: 91
+  onderhoud_pj: 700
+  banden_pj: 450
+  verzekering_pj: 700
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 3, comfort: 3, trekervaring: 3, merkrisico: 5, laadsnelheid: 1}
+  notities: "Geen stekker, dus geen elektrische kilometers, wel 6 liter en Toyota-betrouwbaarheid; trekt 1.650 kg."
+  bron: "viabovag (1.650 kg, aanbod), caravantrekker.nl"
+  zekerheid: laag
+  datum: "2026-11-05"
+
+- id: lexus_rx450h_occasion_2018
+  naam: "Lexus RX 450h, full hybrid zonder stekker (occasion 2018)"
+  categorie: suv
+  aandrijving: benzine
+  nieuw: false
+  eerste_toelating: "2018-06"
+  catalogusprijs: 85000
+  aanschafprijs: 31000              # schatting
+  btw_auto: true
+  km_stand: 110000
+  massa_ledig_kg: 2100
+  brandstof_l_100km: 7.5
+  trekgewicht_geremd_kg: 2000
+  zitplaatsen: 5
+  bagageruimte_l: 453
+  restwaarde_jaarlijks_pct: 90
+  onderhoud_pj: 900
+  banden_pj: 600
+  verzekering_pj: 950
+  trekhaak_inbegrepen: true
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 4, merkrisico: 5, laadsnelheid: 1}
+  notities: "V6 full hybrid, zeer betrouwbaar, trekt 2.000 kg; geen stekker."
+  bron: "webwoordenboek (2.000 kg); prijs geschat"
+  zekerheid: laag
+  datum: "2026-11-05"

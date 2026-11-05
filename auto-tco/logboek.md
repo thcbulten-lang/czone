@@ -148,3 +148,13 @@ Waar het geld zit: energie 4.371 (de 70% kilometers op benzine vreten de winst v
 **Lezing.** Wie de Cayenne wil om het trekgewicht en het comfort, vindt in deze prijsklasse geen auto die hetzelfde biedt met meer elektrisch bereik; de Q7 e-tron komt het dichtst in de buurt en kost netto evenveel. Wie 2.100 kg genoeg vindt, krijgt met de E 300 e Estate meer elektrisch bereik voor minder geld.
 
 **Aanvulling dezelfde dag.** De E 300 e Estate rekent nu met 24.000 euro aanschaf (jouw aanname, 120.000 km). De Outlander is vervangen door een concreet exemplaar: Intense+ uit 2021 met 113.253 km bij Herwers, afneembare trekhaak 1.500 kg; vraagprijs 21.000.
+
+## 2026-11-05 Cayenne naar de reservebank; een goede hybride voor zo'n 30.000 prive
+
+**Besluit.** De Cayenne uit 2015 is te onzeker (elf jaar, 257.000 km, hybride-accu, Porsche-onderhoud). De vraag wordt: wat koop je voor ongeveer 30.000 euro prive aan een goede, betrouwbare hybride die trekt?
+
+**Toegevoegd.** Negen kandidaten: Toyota RAV4 Plug-in 2021 (18,1 kWh, 60 km, 1.500 kg), Kia Sorento PHEV 2021 (zeven zitplaatsen, garantie tot 2028, 1.500 kg), Skoda Superb iV Combi 2020 (1.600 kg), VW Tiguan eHybrid 2021 (1.800 kg), Volvo V90 T8 2019 en XC60 T8 2020 (2.100 kg), BMW X3 30e 2020 (2.000 kg), en twee full hybrids zonder stekker: Toyota RAV4 Hybrid AWD 2020 (1.650 kg) en Lexus RX 450h 2018 (2.000 kg). Prijzen uit het aanbod waar gevonden, anders geschat; alles met zekerheid laag.
+
+**Uitkomst (zeven jaar, prive met kilometervergoeding, netto per jaar).** Superb iV 7.365, RAV4 Hybrid 7.381, RAV4 Plug-in 7.467, Outlander 7.327, Tiguan eHybrid 8.170, E 300 e Estate 8.533, Sorento PHEV 8.834, V90 T8 9.166, RX 450h 9.528, X3 30e 9.568, XC60 T8 9.622. Ter vergelijking de volledig elektrische occasions van hetzelfde geld: Model Y 2023 6.362, EV6 2023 6.900, G6 2024 7.180; en de E-klasse houden 7.115.
+
+**Lezing.** Drie dingen vallen op. Ten eerste: voor 30.000 euro is een drie jaar oude EV goedkoper dan elke hybride, omdat hij geen benzine drinkt en minder onderhoud vraagt; een hybride kies je dus om het trekgewicht of om de zekerheid van een tank, niet om het geld. Ten tweede: binnen de hybrides is de RAV4 Plug-in de beste combinatie van elektrisch bereik (60 km), betrouwbaarheid en kosten, met als enige beperking 1.500 kg. Ten derde: wie 2.000 kg of meer wil trekken, komt bij de E 300 e Estate (8.533), de V90 T8 (9.166), de X3 30e, de XC60 T8 of de RX 450h, en betaalt daarvoor 1.000 tot 2.200 euro per jaar meer dan de RAV4. De Sorento is de enige zevenzitter.
