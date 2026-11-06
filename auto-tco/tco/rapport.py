@@ -425,7 +425,7 @@ function renderVariabelen() {
     ['Restwaardecurve', s => A(s).restwaarde_curve || `${A(s).restwaarde_jaarlijks_pct}% per jaar`], ['Waarde aan het eind', s => euro(s.restwaarde_eind)],
     ['Onderhoud + banden per jaar', s => euro(A(s).onderhoud_pj + A(s).banden_pj)], ['Eigen geld bij start', s => euro(s.eigen_geld_start) + (s.eigen_geld_later && s.eigen_geld_later.length ? s.eigen_geld_later.map(e => `, ${euro(e.bedrag)} in jaar ${e.jaar}`).join('') : '')],
     ['Vpb-besparing per jaar (aftrek BV-kosten)', s => `${euro(s.vpb_besparing_pj)} (${(100 * s.vpb_pct_effectief).toFixed(1)}%)`],
-    ['Financiering', s => s.financiering ? `${s.financiering.rente_pct}% rente, inleg ${euro(s.financiering.aanbetaling)}, ${euro(s.financiering.maandbedrag)} per maand, slottermijn ${euro(s.financiering.slottermijn)}, ${s.financiering.looptijd_maanden} maanden` : '-'],
+    ['Financiering', s => !s.financiering ? '-' : s.financiering.type === 'lening_bv' ? `lening van de BV van ${euro(s.financiering.bedrag)} tegen ${s.financiering.rente_pct}%` : `${s.financiering.rente_pct}% rente, inleg ${euro(s.financiering.aanbetaling)}, ${euro(s.financiering.maandbedrag)} per maand, slottermijn ${euro(s.financiering.slottermijn)}, ${s.financiering.looptijd_maanden} maanden`],
     ['Ruimte (1-5)', s => s.kwalitatief.ruimte], ['Comfort (1-5)', s => s.kwalitatief.comfort], ['Trekervaring (1-5)', s => s.kwalitatief.trekervaring], ['Merkrisico (5 = laag)', s => s.kwalitatief.merkrisico], ['Laadsnelheid (1-5)', s => s.kwalitatief.laadsnelheid],
     ['Zekerheid', s => s.zekerheid], ['Bron', s => A(s).bron || ''], ['Notities', s => (A(s).notities || '') + (s.notities ? ' ' + s.notities : '')],
   ];

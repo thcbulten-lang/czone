@@ -196,3 +196,15 @@ Waar het geld zit: energie 4.371 (de 70% kilometers op benzine vreten de winst v
 **Uitkomst (prive, zeven jaar).** Zie het vergelijk; hij voldoet aan alle eisen (elektrisch, 1.800 kg, vijf zitplaatsen) en staat bij de goedkoopste scenario's, in de buurt van de Model Y uit 2023. Op de BV is hij onbetaalbaar: de korting van 2019 is na 60 maanden verlopen, dus 18% over 30.000 en 22% over de rest van een nieuwprijs van rond de 95.000.
 
 **Kanttekeningen.** 143.000 km, en de accugarantie van Audi (acht jaar of 160.000 km) loopt binnen een jaar of 17.000 km af. '100% SoH' na zeven jaar en 143.000 km is niet geloofwaardig zonder een onafhankelijk accurapport; vraag dat op voor je gaat kijken. Verbruik rond 26 kWh per 100 km, dus 300 km echt bereik en met aanhanger de helft. Vanaf 2030 betaalt 2,5 ton volle wegenbelasting, in het model meegerekend.
+
+## 2026-11-06 Btw-auto kopen met de zaak, aan jezelf verkopen voor het bedrag zonder btw, en het als lening boeken?
+
+**Het idee.** De BV koopt een btw-auto (Nio EL7, 45.900 incl. btw, 37.934 excl.), trekt de btw af, verkoopt de auto aan jou prive voor 37.934 en zet dat bedrag als lening van de BV aan prive op de balans.
+
+**Wat niet werkt: de btw.** De verkoop van de BV aan jou is een btw-belaste levering. De BV moet btw afdragen over de verkoop, en omdat jij een verbonden partij bent zonder aftrekrecht, geldt als grondslag de normale waarde (de marktwaarde), niet een lagere afgesproken prijs. De BV trekt 7.966 af bij aankoop en draagt bij verkoop ongeveer hetzelfde weer af. Verkoopt de BV onder de marktwaarde, dan is het verschil een verkapte winstuitdeling: box 2 bij jou, niet aftrekbaar bij de BV, en de inspecteur kijkt bij DGA-transacties juist hier naar. Netto btw-voordeel: nul.
+
+**Wat wel werkt: de lening.** De BV mag je geld lenen om prive een auto te kopen. Voorwaarden: schriftelijke overeenkomst, zakelijke rente (ruwweg 5%, wat een bank voor zo'n lening zou vragen), een aflossingsschema, en onder de grens van 500.000 euro voor excessief lenen. De rente is prive niet aftrekbaar, maar komt als winst in de BV terug; in netto prive-euro's kost die rente dus maar ongeveer 39% van het bedrag. Koop de auto dan gewoon zelf bij de dealer, dat scheelt een overdracht en een discussie over de waarde.
+
+**In het model.** Nieuwe constructie 'Prive koop met lening van de BV + km-vergoeding' tegen 5%, voor alle auto's in de matrix. Over zeven jaar is die 180 tot 330 euro per jaar goedkoper dan prive kopen met eigen geld tegen 3%, en het eigen geld bij de start is alleen laadpaal en trekhaak. Nio EL7 uit Breukelen (2023, 29.900 km, 45.900): op de BV 15.637 (bijtelling over een nieuwprijs van rond 78.000), prive met eigen geld 9.459, prive met lening van de BV 9.147. Ter vergelijking met lening: iX 2022 8.144, e-tron 2019 6.898, Model Y 2023 6.139.
+
+**Lezing.** De constructie die je zoekt is: lening van de BV, prive kopen, kilometervergoeding. Niet: btw-truc. De Nio zelf blijft een gok op een merk met een onzekere toekomst in Europa; voor 1.400 euro per jaar minder rijd je een iX met meer trekgewicht.

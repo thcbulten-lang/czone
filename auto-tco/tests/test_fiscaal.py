@@ -169,6 +169,16 @@ class Model(unittest.TestCase):
         self.assertTrue(wacht["voldoet"])
         self.assertEqual(wacht["eigen_geld_later"][0]["jaar"], 3)
 
+    def test_prive_koop_met_lening_van_de_bv(self):
+        inv = Invoer()
+        eigen = bereken_scenario(inv, {"id": "a", "naam": "a", "onderdelen": [{"auto": "tesla_model_y_nieuw", "constructie": "prive_koop_kmvergoeding"}]}, 5)
+        lening = bereken_scenario(inv, {"id": "b", "naam": "b", "onderdelen": [{"auto": "tesla_model_y_nieuw", "constructie": "prive_koop_lening_bv"}]}, 5)
+        self.assertEqual(lening["bijtelling_bruto_pj"], 0)
+        # rente 5% in plaats van 3% prive, en diezelfde rente komt als opbrengst bij de BV binnen
+        self.assertAlmostEqual(lening["lijnen_prive"]["vermogenskosten"], eigen["lijnen_prive"]["vermogenskosten"] * 5 / 3, places=2)
+        self.assertAlmostEqual(lening["lijnen_bv"]["rente_lening"], -lening["lijnen_prive"]["vermogenskosten"], places=6)
+        self.assertLess(lening["eigen_geld_start"], eigen["eigen_geld_start"])
+
     def test_filters(self):
         inv = Invoer()
         s = {"id": "t", "naam": "t", "onderdelen": [{"auto": "jaecoo_7_shs", "constructie": "bv_koop"}]}

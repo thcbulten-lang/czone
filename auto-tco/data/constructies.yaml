@@ -49,3 +49,11 @@
   inbegrepen: [afschrijving, vermogenskosten, verzekering, onderhoud, banden, mrb]
   lease_opslag_pct: 10
   toelichting: "Private lease uit netto inkomen, plus de onbelaste vergoeding voor zakelijke kilometers."
+
+- id: prive_koop_lening_bv
+  naam: "Prive koop met lening van de BV + km-vergoeding"
+  eigenaar: prive
+  financiering: lening_bv
+  km_vergoeding: true
+  rente_pct: 5.0                  # zakelijke rente die de BV jou moet rekenen (schriftelijke overeenkomst, aflossing)
+  toelichting: "Jij koopt prive, de BV leent je het geld tegen een zakelijke rente. Geen bijtelling; de rente betaal je prive en komt als winst terug in de BV. Blijf onder de grens van 500.000 euro voor excessief lenen; de rente is prive niet aftrekbaar."

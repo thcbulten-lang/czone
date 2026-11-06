@@ -2123,21 +2123,21 @@
   zekerheid: laag
   datum: "2026-11-05"
 
-- id: nio_el7_occasion_2023
-  naam: "Nio EL7 100 kWh (occasion 2023)"
+- id: nio_el7_sr_2023_breukelen
+  naam: "Nio EL7 Standard Range 75 kWh (occasion 2023, 29.900 km, Breukelen)"
   categorie: suv
   aandrijving: ev
   nieuw: false
-  eerste_toelating: "2023-06"
-  catalogusprijs: 90000
-  aanschafprijs: 46000              # schatting; weinig aanbod
+  eerste_toelating: "2023-08"
+  catalogusprijs: 78000             # nieuwprijs incl. accu, schatting; op de BV 16% over 35.000 tot en met augustus 2028
+  aanschafprijs: 45900              # autoscout24.nl, Nio Certified, 37.934 excl. btw (6-11-2026)
   btw_auto: true
-  km_stand: 60000
-  massa_ledig_kg: 2450
-  accu_kwh: 100
-  actieradius_wltp_km: 500
+  km_stand: 29900
+  massa_ledig_kg: 2380
+  accu_kwh: 75
+  actieradius_wltp_km: 391
   verbruik_praktijk_kwh_100km: 23
-  trekgewicht_geremd_kg: 2000
+  trekgewicht_geremd_kg: 2000       # verifieren op het kentekenbewijs
   zitplaatsen: 5
   bagageruimte_l: 570
   restwaarde_curve: ev_chinees_nieuw_merk
@@ -2146,10 +2146,10 @@
   trekhaak_inbegrepen: false
   trekhaak_kosten: 1300
   kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 4, merkrisico: 1, laadsnelheid: 4}
-  notities: "Luxe en comfortabel, accuwissel mogelijk, maar de toekomst van Nio in Europa is onzeker; merkrisico hoog. Trekt 2.000 kg."
-  bron: "schatting; trekgewicht uit fabrieksgegevens, verifieren"
+  notities: "653 pk, luxe, Nio Certified met garantie, accuwissel mogelijk. Merkrisico hoog: de toekomst van Nio in Europa is onzeker, en dat drukt de restwaarde. Trekt 2.000 kg."
+  bron: "autoscout24.nl (advertentie 6-11-2026)"
   zekerheid: laag
-  datum: "2026-11-05"
+  datum: "2026-11-06"
 
 - id: polestar_3_occasion_2024
   naam: "Polestar 3 Long Range Dual Motor (occasion 2024)"

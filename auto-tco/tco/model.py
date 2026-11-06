@@ -8,10 +8,10 @@ from __future__ import annotations
 from . import fiscaal as f
 
 LIJNEN = ["afschrijving", "vermogenskosten", "lease", "mrb", "verzekering", "onderhoud", "banden",
-          "energie", "eenmalig", "btw_correctie", "zvw", "bijtelling_belasting", "salaris_besparing", "km_vergoeding"]
+          "energie", "eenmalig", "btw_correctie", "zvw", "bijtelling_belasting", "salaris_besparing", "km_vergoeding", "rente_lening"]
 
 GROEPEN = {
-    "kapitaal": ["afschrijving", "vermogenskosten"],
+    "kapitaal": ["afschrijving", "vermogenskosten", "rente_lening"],
     "lease": ["lease"],
     "vaste_lasten": ["mrb", "verzekering", "onderhoud", "banden"],
     "energie": ["energie"],
@@ -127,6 +127,7 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
         eenmalig_totaal = f.ex_btw(r, eenmalig_totaal)
 
     operational = con.get("financiering") == "operational_lease"
+    lening_bv = con.get("financiering") == "lening_bv"           # prive gekocht met geld van de BV
     lening = leningschema(basis, con) if con.get("financiering") == "financial_lease" else None
     if lening:
         rente = p["rendementseis_bv_pct"]                      # over het eigen geld dat in de auto zit
@@ -165,6 +166,8 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
             eig["vermogenskosten"] = rente_lening + rente * ((w_prev + w_t) / 2 - saldo_gem)
         else:
             eig["vermogenskosten"] = rente * (w_prev + w_t) / 2
+        if lening_bv:
+            bv_l["rente_lening"] = -eig["vermogenskosten"]       # de rente die jij betaalt is winst voor de BV
         eig["mrb"] = sum(f.mrb_jaar(r, massa_ledig_kg=auto["massa_ledig_kg"], aandrijving=auto["aandrijving"],
                                     provincie=p["bv_provincie"], kalenderjaar=m[0], brandstof=auto.get("brandstof")) for m in maanden) / 12
         verz = auto.get("verzekering_pj") or max(700.0, 0.022 * w_prev * (1.21 if (bv and btw_auto) else 1.0))
@@ -222,6 +225,8 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
 
     if lening:
         eigen_geld = lening["aanbetaling"] + eenmalig_totaal
+    elif lening_bv:
+        eigen_geld = eenmalig_totaal                           # de auto zelf wordt door de BV voorgeschoten
     elif operational:
         eigen_geld = eenmalig_totaal
     else:
@@ -231,7 +236,8 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
             "eigen_geld_start": eigen_geld if offset == 0 else 0.0,
             "eigen_geld_later": {"jaar": offset + 1, "bedrag": eigen_geld} if offset > 0 else None,
             "start_jaar": offset, "jaren_actief": duur, "aanschafprijs": auto["aanschafprijs"],
-            "financiering": {k: v for k, v in lening.items() if not k.endswith("_per_maand")} if lening else None}
+            "financiering": ({k: v for k, v in lening.items() if not k.endswith("_per_maand")} if lening
+                             else {"type": "lening_bv", "rente_pct": con["rente_pct"], "bedrag": basis} if lening_bv else None)}
 
 
 def bereken_scenario(inv, scenario: dict, horizon: int) -> dict:
