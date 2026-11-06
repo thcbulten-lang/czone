@@ -188,3 +188,11 @@ Waar het geld zit: energie 4.371 (de 70% kilometers op benzine vreten de winst v
 **Toegevoegd en doorgerekend (prive, zeven jaar).** iX 2022 8.475; G9 occasion 2024 8.521; Nio EL7 2023 9.461 (merkrisico hoog: toekomst van Nio in Europa onzeker); Lynk & Co 08 2025 10.061; Model X 2022 10.425; Polestar 3 2024 10.673; 7X Core nieuw 10.710; EV9 2024 10.775; G9 nieuw 12.233; 7X Privilege nieuw 12.242.
 
 **Lezing.** Voor wie 2.500 kg wil trekken is de iX de enige elektrische auto onder de 50.000, Chinees of niet. Voor 2.000 kg zijn Zeekr 7X en 001 de Chinese opties, nieuw 12.000 tot 12.600 per jaar tegen 8.475 voor de iX, omdat een nieuwe auto de eerste jaren het hardst afschrijft en de Chinese curve het steilst is; een twee jaar oude 7X is pas een echt alternatief, en die bestaat nog niet. De Lynk & Co 08 is technisch het interessantste Chinese antwoord op de hybridevraag van vandaag, maar niet op de trekvraag.
+
+## 2026-11-06 Audi e-tron 55 uit 2019 voor 22.945
+
+**Gevonden.** Audi e-tron 55 quattro advanced, 95 kWh, bouwjaar 2019, 143.371 km, 22.945 euro bij SNBT in Etten-Leur, met de claim '100% SoH'. Trekt 1.800 kg, laadt met 150 kW, zeer comfortabel: een premium EV voor het geld van een Outlander.
+
+**Uitkomst (prive, zeven jaar).** Zie het vergelijk; hij voldoet aan alle eisen (elektrisch, 1.800 kg, vijf zitplaatsen) en staat bij de goedkoopste scenario's, in de buurt van de Model Y uit 2023. Op de BV is hij onbetaalbaar: de korting van 2019 is na 60 maanden verlopen, dus 18% over 30.000 en 22% over de rest van een nieuwprijs van rond de 95.000.
+
+**Kanttekeningen.** 143.000 km, en de accugarantie van Audi (acht jaar of 160.000 km) loopt binnen een jaar of 17.000 km af. '100% SoH' na zeven jaar en 143.000 km is niet geloofwaardig zonder een onafhankelijk accurapport; vraag dat op voor je gaat kijken. Verbruik rond 26 kWh per 100 km, dus 300 km echt bereik en met aanhanger de helft. Vanaf 2030 betaalt 2,5 ton volle wegenbelasting, in het model meegerekend.

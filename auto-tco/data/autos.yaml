@@ -2178,3 +2178,31 @@
   bron: "schatting; trekgewicht uit fabrieksgegevens, verifieren"
   zekerheid: laag
   datum: "2026-11-05"
+
+- id: audi_etron_55_occasion_2019_ettenleur
+  naam: "Audi e-tron 55 quattro 95 kWh (occasion 2019, 143.000 km, Etten-Leur)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: false
+  eerste_toelating: "2019-06"       # bouwjaar 2019; maand verifieren
+  catalogusprijs: 95000             # nieuwprijs destijds incl. opties, schatting; op de BV: 18% over 30.000 en 22% daarboven
+  aanschafprijs: 22945              # autotrack.nl, SNBT Etten-Leur (6-11-2026)
+  btw_auto: true                    # verifieren
+  km_stand: 143371
+  massa_ledig_kg: 2490
+  accu_kwh: 95
+  actieradius_wltp_km: 410
+  verbruik_praktijk_kwh_100km: 26   # zwaar en niet zuinig; met aanhanger fors meer
+  trekgewicht_geremd_kg: 1800
+  zitplaatsen: 5
+  bagageruimte_l: 660
+  restwaarde_curve: ev_europees_premium
+  onderhoud_pj: 500
+  banden_pj: 700
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1300
+  kwalitatief: {ruimte: 4, comfort: 5, trekervaring: 4, merkrisico: 4, laadsnelheid: 4}
+  notities: "Premium EV voor het geld van een Outlander: 1.800 kg, 150 kW laden, zeer comfortabel. Let op: 143.000 km, de accugarantie (8 jaar of 160.000 km) loopt binnen een jaar af, '100% SoH' is een dealerclaim die je met een accurapport moet laten onderbouwen, en 2,5 ton betaalt vanaf 2030 volle wegenbelasting."
+  bron: "autotrack.nl (advertentie 6-11-2026); specificaties uit fabrieksgegevens"
+  zekerheid: laag
+  datum: "2026-11-06"
