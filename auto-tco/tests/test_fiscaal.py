@@ -182,9 +182,14 @@ class Model(unittest.TestCase):
     def test_filters(self):
         inv = Invoer()
         s = {"id": "t", "naam": "t", "onderdelen": [{"auto": "jaecoo_7_shs", "constructie": "bv_koop"}]}
-        r = bereken_scenario(inv, s, 5)
+        streng = inv.kopie(); streng.profiel["eisen"]["elektrisch"] = True          # alleen volledig elektrisch
+        r = bereken_scenario(streng, s, 5)
         self.assertFalse(r["checks"]["elektrisch"])
         self.assertFalse(r["voldoet"])
+        ruim = inv.kopie(); ruim.profiel["eisen"]["elektrisch"] = "ev_of_phev"       # plug-in hybride mag ook
+        self.assertTrue(bereken_scenario(ruim, s, 5)["checks"]["elektrisch"])
+        benzine = {"id": "b", "naam": "b", "onderdelen": [{"auto": "skoda_kodiaq_tsi_occasion_2020", "constructie": "bv_koop"}]}
+        self.assertFalse(bereken_scenario(ruim, benzine, 5)["checks"]["elektrisch"])
 
 
 if __name__ == "__main__":

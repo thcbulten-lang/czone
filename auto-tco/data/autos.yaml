@@ -357,33 +357,34 @@
   datum: "2026-10-28"
 
 - id: jaecoo_7_shs
-  naam: "Jaecoo 7 SHS plug-in hybride (nieuw, referentie)"
+  naam: "Jaecoo 7 SHS-P Premium plug-in hybride (nieuw, herfstactie)"
   categorie: suv
   aandrijving: phev
   nieuw: true
   eerste_toelating: "2026-12"
-  catalogusprijs: 39900
-  aanschafprijs: 39900
+  catalogusprijs: 37990             # lijstprijs voor de actie; de bijtelling rekent over de lijstprijs, niet over de actieprijs (verifieren bij de dealer)
+  aanschafprijs: 34990              # actieprijs incl. 3.000 herfstvoordeel, voorraadmodellen (advertentie 8-11-2026)
   btw_auto: true
-  massa_ledig_kg: 1800
+  massa_ledig_kg: 1950
   accu_kwh: 18.3
-  actieradius_wltp_km: 90
-  verbruik_praktijk_kwh_100km: 20
-  ev_aandeel_km: 0.55               # deel van de kilometers elektrisch
-  brandstof_l_100km: 6.5
+  actieradius_wltp_km: 90           # 70 km in de praktijk; 124 km in de stad volgens de fabriek
+  verbruik_praktijk_kwh_100km: 21
+  ev_aandeel_km: 0.65               # met 70 km echt bereik en kantoor aan huis
+  laden_alleen_thuis: false         # snelladen tot 40 kW
+  brandstof_l_100km: 6.5            # in hybride-modus; 6,0 volgens WLTP
   trekgewicht_geremd_kg: 1500
   zitplaatsen: 5
   bagageruimte_l: 500
-  restwaarde_curve: phev
+  restwaarde_curve: ev_chinees_nieuw_merk
   onderhoud_pj: 500
-  banden_pj: 400
+  banden_pj: 450
   trekhaak_inbegrepen: false
   trekhaak_kosten: 1000
   kwalitatief: {ruimte: 3, comfort: 3, trekervaring: 3, merkrisico: 2, laadsnelheid: 2}
-  notities: "Niet volledig elektrisch, dus geen EV-korting op bijtelling en MRB. Staat erin om het fiscale verschil zichtbaar te maken."
-  bron: "autorai.nl (vanaf 37.900), viabovag"
-  zekerheid: laag
-  datum: "2026-10-28"
+  notities: "Plug-in hybride met 90 km WLTP elektrisch, zeven jaar garantie, 1.500 kg. Lage bijtelling omdat de nieuwprijs laag is: 22% over 37.990 is 8.358 per jaar, ongeveer evenveel als een Zeekr X van 41.990 met 18% over de eerste 30.000."
+  bron: "advertentie Jaecoo Nederland (vanaf 34.990 incl. 3.000 herfstvoordeel), autowereld (1.500 kg, 90 km), Franse specificaties (90 km WLTP)"
+  zekerheid: midden
+  datum: "2026-11-08"
 
 # ---------------------------------------------------------------- Zeekr, het hele Nederlandse aanbod (toegevoegd 2026-11-01)
 - id: zeekr_7x_long_range
@@ -2206,3 +2207,33 @@
   bron: "autotrack.nl (advertentie 6-11-2026); specificaties uit fabrieksgegevens"
   zekerheid: laag
   datum: "2026-11-06"
+
+- id: omoda_9_shs
+  naam: "Omoda 9 SHS-P Premium plug-in hybride (nieuw, actieprijs)"
+  categorie: suv
+  aandrijving: phev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 54440             # lijstprijs; actieprijs 48.440
+  aanschafprijs: 48440
+  btw_auto: true
+  massa_ledig_kg: 2200
+  accu_kwh: 34.5
+  actieradius_wltp_km: 145          # 110 tot 120 km in de praktijk
+  verbruik_praktijk_kwh_100km: 24
+  ev_aandeel_km: 0.80
+  laden_alleen_thuis: false         # snelladen tot 70 kW
+  brandstof_l_100km: 7.0
+  trekgewicht_geremd_kg: 1500       # verifieren
+  zitplaatsen: 5
+  bagageruimte_l: 660
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 500
+  banden_pj: 600
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1100
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 3, merkrisico: 2, laadsnelheid: 3}
+  notities: "De grote broer van de Jaecoo 7: 34,5 kWh, 145 km WLTP elektrisch, 449 pk, vierwielaandrijving. Op de BV 22% over 54.440."
+  bron: "viabovag (actieprijs van 54.440 nu voor 48.440; 145 km), autowereld"
+  zekerheid: laag
+  datum: "2026-11-08"

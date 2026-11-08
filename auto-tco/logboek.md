@@ -208,3 +208,15 @@ Waar het geld zit: energie 4.371 (de 70% kilometers op benzine vreten de winst v
 **In het model.** Nieuwe constructie 'Prive koop met lening van de BV + km-vergoeding' tegen 5%, voor alle auto's in de matrix. Over zeven jaar is die 180 tot 330 euro per jaar goedkoper dan prive kopen met eigen geld tegen 3%, en het eigen geld bij de start is alleen laadpaal en trekhaak. Nio EL7 uit Breukelen (2023, 29.900 km, 45.900): op de BV 15.637 (bijtelling over een nieuwprijs van rond 78.000), prive met eigen geld 9.459, prive met lening van de BV 9.147. Ter vergelijking met lening: iX 2022 8.144, e-tron 2019 6.898, Model Y 2023 6.139.
 
 **Lezing.** De constructie die je zoekt is: lening van de BV, prive kopen, kilometervergoeding. Niet: btw-truc. De Nio zelf blijft een gok op een merk met een onzekere toekomst in Europa; voor 1.400 euro per jaar minder rijd je een iX met meer trekgewicht.
+
+## 2026-11-08 De Jaecoo 7 voor 34.990: goedkoop in de bijtelling?
+
+**Vraag.** De Jaecoo 7 SHS-P staat in de aanbieding voor 34.990 (lijstprijs 37.990, 3.000 herfstvoordeel op voorraadmodellen). Dat is een derde van de prijs van een G9; is hij dan ook zo goedkoop in de bijtelling?
+
+**Antwoord.** Hij is goedkoop in de bijtelling omdat de nieuwprijs laag is, niet omdat een plug-in hybride korting krijgt. Een plug-in hybride betaalt gewoon 22% over de cataloguswaarde, en die cataloguswaarde is de lijstprijs van 37.990, niet de actieprijs: 8.358 per jaar, bij jouw tarief 4.200 belasting. Een volledig elektrische Zeekr X van 41.990 betaalt 18% over de eerste 30.000 en 22% over de rest: 8.038, dus minder dan de goedkopere Jaecoo. De G9 betaalt 13.098. De EV-korting is in 2026 nog maar 4% over 30.000 (1.200 euro bijtelling, 600 belasting) en verdwijnt in 2028; wat telt is de nieuwprijs.
+
+**Doorgerekend (vijf jaar, netto per jaar).** Jaecoo 7 op de BV 11.215, prive met lening van de BV 9.862. Zeekr X op de BV 10.936, prive 9.716. Omoda 9 SHS-P (34,5 kWh, 145 km elektrisch, actieprijs 48.440): BV 14.664, prive 12.388. De Jaecoo verliest het op de BV nipt van de Zeekr X door de benzine voor de 35% kilometers die niet elektrisch gaan en door de volle wegenbelasting, die een EV tot 2030 niet betaalt. Hij wint het ruim van alles wat groter is.
+
+**Aanpassingen.** De Jaecoo 7 staat nu met de actieprijs en de lijstprijs erin en niet meer als 'referentie'; de Omoda 9 is toegevoegd; en de eis 'elektrisch' staat op 'ev_of_phev', zodat plug-in hybrides groen zijn in de ranglijst. Dat laatste is terug te draaien met een woord in het profiel.
+
+**Lezing.** Voor een goedkope auto op de BV maakt het fiscaal weinig uit of hij een stekker met een kleine of een grote accu heeft; het gaat om de nieuwprijs. De Jaecoo 7 is dus een redelijke optie voor wie 1.500 kg genoeg vindt en een nieuwe auto met zeven jaar garantie wil voor het geld van een drie jaar oude EV. Maar een drie jaar oude Model Y of EV6 prive blijft 3.000 euro per jaar goedkoper, en een Zeekr X nieuw is op de BV net voordeliger.
