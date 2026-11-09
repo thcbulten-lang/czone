@@ -100,7 +100,8 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
     p, r = inv.profiel, inv.regels
     auto = dict(inv.autos[onderdeel["auto"]])
     auto.update(onderdeel.get("overrides") or {})            # bijvoorbeeld een andere aanschafprijs
-    con = inv.constructies[onderdeel["constructie"]]
+    con = dict(inv.constructies[onderdeel["constructie"]])
+    con.update(onderdeel.get("constructie_overrides") or {})  # bijvoorbeeld een actierente of andere slottermijn
     offset = int(onderdeel.get("start_jaar", 0))             # 0 = begint meteen; 2 = begint in jaar 3
     duur = int(onderdeel.get("jaren") or max(0, horizon - offset))
     duur = max(0, min(duur, horizon - offset))
@@ -168,6 +169,7 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
             eig["vermogenskosten"] = rente * (w_prev + w_t) / 2
         if lening_bv:
             bv_l["rente_lening"] = -eig["vermogenskosten"]       # de rente die jij betaalt is winst voor de BV
+            bv_l["vermogenskosten"] = p["rendementseis_bv_pct"] / 100 * (w_prev + w_t) / 2   # het geld van de BV zit in jouw auto
         eig["mrb"] = sum(f.mrb_jaar(r, massa_ledig_kg=auto["massa_ledig_kg"], aandrijving=auto["aandrijving"],
                                     provincie=p["bv_provincie"], kalenderjaar=m[0], brandstof=auto.get("brandstof")) for m in maanden) / 12
         verz = auto.get("verzekering_pj") or max(700.0, 0.022 * w_prev * (1.21 if (bv and btw_auto) else 1.0))

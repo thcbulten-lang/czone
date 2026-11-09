@@ -151,3 +151,10 @@ extra:
     onderdelen:
       - {auto: e_klasse_youngtimer, constructie: bv_koop, start_jaar: 0, jaren: 2}
       - {auto: kia_ev9_occasion_2026, constructie: prive_koop_kmvergoeding, start_jaar: 2, overrides: {aanschafprijs: 40000, km_stand: 50000}}
+
+  # ---- actie-financiering (toegevoegd 2026-11-09)
+  - id: g6_nieuw_santander
+    naam: "Xpeng G6 nieuw, BV financial lease Santander 0,99% (48 mnd, geen inleg, slottermijn 54%)"
+    onderdelen:
+      - {auto: xpeng_g6_nieuw, constructie: bv_financial_lease, constructie_overrides: {rente_pct: 0.99, aanbetaling: 0, slottermijn: null, slottermijn_pct: 54, looptijd_maanden: 48}}
+    notities: "De actie uit de advertentie: zakelijke financial lease via Santander, geldig tot eind 2026. Slottermijn zo gekozen dat het maandbedrag op circa 349 uitkomt; vraag de echte voorwaarden op."

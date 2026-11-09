@@ -174,10 +174,21 @@ class Model(unittest.TestCase):
         eigen = bereken_scenario(inv, {"id": "a", "naam": "a", "onderdelen": [{"auto": "tesla_model_y_nieuw", "constructie": "prive_koop_kmvergoeding"}]}, 5)
         lening = bereken_scenario(inv, {"id": "b", "naam": "b", "onderdelen": [{"auto": "tesla_model_y_nieuw", "constructie": "prive_koop_lening_bv"}]}, 5)
         self.assertEqual(lening["bijtelling_bruto_pj"], 0)
-        # rente 5% in plaats van 3% prive, en diezelfde rente komt als opbrengst bij de BV binnen
+        # rente 5% in plaats van 3% prive; diezelfde rente is opbrengst voor de BV, die wel haar rendementseis over het uitgeleende geld mist
         self.assertAlmostEqual(lening["lijnen_prive"]["vermogenskosten"], eigen["lijnen_prive"]["vermogenskosten"] * 5 / 3, places=2)
         self.assertAlmostEqual(lening["lijnen_bv"]["rente_lening"], -lening["lijnen_prive"]["vermogenskosten"], places=6)
+        self.assertAlmostEqual(lening["lijnen_bv"]["vermogenskosten"], lening["lijnen_prive"]["vermogenskosten"], places=6)   # beide 5%
         self.assertLess(lening["eigen_geld_start"], eigen["eigen_geld_start"])
+        self.assertGreater(lening["totaal"]["netto_prive_euro"], eigen["totaal"]["netto_prive_euro"])       # lenen van de BV is duurder dan eigen geld
+
+    def test_constructie_overrides(self):
+        inv = Invoer()
+        basis = bereken_scenario(inv, {"id": "a", "naam": "a", "onderdelen": [{"auto": "tesla_model_y_nieuw", "constructie": "bv_financial_lease"}]}, 5)
+        actie = bereken_scenario(inv, {"id": "b", "naam": "b", "onderdelen": [{"auto": "tesla_model_y_nieuw", "constructie": "bv_financial_lease",
+                                  "constructie_overrides": {"rente_pct": 0.99, "aanbetaling": 0, "slottermijn": None, "slottermijn_pct": 54}}]}, 5)
+        self.assertEqual(actie["onderdelen"][0]["financiering"]["rente_pct"], 0.99)
+        self.assertEqual(actie["onderdelen"][0]["financiering"]["aanbetaling"], 0)
+        self.assertLess(actie["totaal"]["netto_prive_euro"], basis["totaal"]["netto_prive_euro"])
 
     def test_filters(self):
         inv = Invoer()

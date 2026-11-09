@@ -2237,3 +2237,30 @@
   bron: "viabovag (actieprijs van 54.440 nu voor 48.440; 145 km), autowereld"
   zekerheid: laag
   datum: "2026-11-08"
+
+- id: xpeng_g6_nieuw
+  naam: "Xpeng G6 Standard Range RWD (nieuw)"
+  categorie: suv
+  aandrijving: ev
+  nieuw: true
+  eerste_toelating: "2026-12"
+  catalogusprijs: 42677             # autoreview.nl: vanaf 42.677; Long Range circa 47.700, Performance 52.677
+  aanschafprijs: 42677
+  btw_auto: true
+  massa_ledig_kg: 2000
+  accu_kwh: 68.5
+  actieradius_wltp_km: 525
+  verbruik_praktijk_kwh_100km: 18.5
+  trekgewicht_geremd_kg: 1500
+  zitplaatsen: 5
+  bagageruimte_l: 571
+  restwaarde_curve: ev_chinees_nieuw_merk
+  onderhoud_pj: 400
+  banden_pj: 500
+  trekhaak_inbegrepen: false
+  trekhaak_kosten: 1200
+  kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 3, merkrisico: 2, laadsnelheid: 5}
+  notities: "Vernieuwde G6 met supersnel laden (5C). Santander biedt tot eind 2026 zakelijke financial lease tegen 0,99%, vanaf 349 per maand."
+  bron: "autoreview.nl (prijs), advertentie Xpeng Nederland (349 per maand, 0,99%)"
+  zekerheid: laag
+  datum: "2026-11-09"
