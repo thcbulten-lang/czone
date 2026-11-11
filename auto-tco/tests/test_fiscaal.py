@@ -154,6 +154,7 @@ class Model(unittest.TestCase):
 
     def test_later_beginnend_onderdeel(self):
         inv = Invoer()
+        inv.autos["e_klasse_youngtimer"]["eenmalig_extra"] = 0      # een eenmalige post wordt over de actieve jaren verdeeld en zou de vergelijking verstoren
         nul = bereken_scenario(inv, {"id": "n", "naam": "n", "onderdelen": [{"auto": "e_klasse_youngtimer", "constructie": "bv_koop"}]}, 7)
         wacht = bereken_scenario(inv, {"id": "w", "naam": "w", "hoofd_auto": "zeekr_7x_core_occasion_2026", "onderdelen": [
             {"auto": "e_klasse_youngtimer", "constructie": "bv_koop", "start_jaar": 0, "jaren": 2},
