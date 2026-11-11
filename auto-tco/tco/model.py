@@ -123,7 +123,7 @@ def bereken_onderdeel(inv, onderdeel: dict, horizon: int) -> dict:
     laadpaal = 0.0
     if auto["aandrijving"] in ("ev", "phev") and p["laden"]["thuis_mogelijk"] and not p["laden"]["laadpaal_aanwezig"]:
         laadpaal = p["laden"]["laadpaal_kosten"]
-    eenmalig_totaal = trekhaak + laadpaal
+    eenmalig_totaal = trekhaak + laadpaal + float(auto.get("eenmalig_extra", 0.0))   # bijvoorbeeld een opknapbeurt bij de start
     if bv:
         eenmalig_totaal = f.ex_btw(r, eenmalig_totaal)
 

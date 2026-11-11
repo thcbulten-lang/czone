@@ -24,8 +24,9 @@
   banden_pj: 350
   verzekering_pj: 700
   trekhaak_inbegrepen: true
+  eenmalig_extra: 2500              # opknapbeurt bij de start (besluit 11-11-2026), incl. btw
   kwalitatief: {ruimte: 4, comfort: 4, trekervaring: 4, merkrisico: 5, laadsnelheid: 1}
-  notities: "Vul in: type, bouwjaar, brandstof, dagwaarde, werkelijk verbruik en onderhoud van de laatste jaren."
+  notities: "Staat nu in de eenmanszaak en gaat naar de BV. Vul in: type, bouwjaar, brandstof, dagwaarde (taxatie), werkelijk verbruik en onderhoud van de laatste jaren."
   bron: "aannames"
   zekerheid: laag
   datum: "2026-10-28"
